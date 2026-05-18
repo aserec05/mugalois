@@ -1,0 +1,24 @@
+[project]
+name = "mugalois"
+version = "0.1.0"
+description = "LLM-based RDF triplet extraction — µ-Galois / LLMTripletScan"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+known_first_party = ["llm", "scan", "utils"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
