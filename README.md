@@ -7,7 +7,7 @@ LLM-based RDF triplet extraction — implementation of LLMTripletScan.
 **Requirements:** Python ≥ 3.11, [Ollama](https://ollama.com) installed and running.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mugalois.git
+git clone https://github.com/aserec05/mugalois.git
 cd mugalois
 
 python -m venv .venv
