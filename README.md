@@ -14,6 +14,7 @@ python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 
 pip install -r requirements.txt
+pip install -e .
 ```
 
 Pull a model in Ollama:
@@ -31,15 +32,18 @@ cp .env.example .env
 Check the connection:
 
 ```bash
-python tests/check_ollama.py
+python tests/test_llm_client.py
 ```
 
 ## Project structure
 
 ```
-src/        # source code (in progress)
+src/
+  mugalois/
+    llm/
+      llm_client.py
 tests/
-  check_ollama.py
+  test_llm_client.py
 ```
 
 ## Note on Ollama URL
