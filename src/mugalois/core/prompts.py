@@ -19,20 +19,20 @@ Global rules that always apply:
 - Never add explanations or text outside the JSON structure."""
 
 
-def _build_constraints(pattern: TriplePattern, env: Environment) -> str:
-    """Build seed constraint lines to inject into prompts."""
+def _build_constraints(pattern: TriplePattern, env: Environment,
+                       side: str = "both") -> str:
+    """Build seed constraint lines to inject into prompts.
+
+    side: 'both' (default), 's' (subject only), 'o' (object only).
+    """
     lines = []
     seedsS = seedsOf(pattern.s, env)
     seedsO = seedsOf(pattern.o, env)
 
-    if pattern.s_is_var() and seedsS:
-        lines.append(
-            f"- {pattern.s} is one of: {', '.join(sorted(seedsS))}"
-        )
-    if pattern.o_is_var() and seedsO:
-        lines.append(
-            f"- {pattern.o} is one of: {', '.join(sorted(seedsO))}"
-        )
+    if side in ("both", "s") and pattern.s_is_var() and seedsS:
+        lines.append(f"- {pattern.s} is one of: {', '.join(sorted(seedsS))}")
+    if side in ("both", "o") and pattern.o_is_var() and seedsO:
+        lines.append(f"- {pattern.o} is one of: {', '.join(sorted(seedsO))}")
 
     return "\n".join(lines)
 
@@ -73,35 +73,26 @@ def genKeyCrankPrompt(
     One prompt instance is generated per seed value (parallelizable).
     """
     if direction == "L->R":
-        other_seeds = seedsOf(pattern.o, env)
-
-        
-        constraint = ""
-        if pattern.o_is_var() and other_seeds:
-            constraint = f"- {pattern.o} ∈ {{{', '.join(sorted(other_seeds))}}}\n"
-
+        # contrainte sur l'objet uniquement — le sujet est fixé
+        constraint = _build_constraints(pattern, env, side="o")
         return (
             f"Context: The subject is fixed: {seed_value}. "
             f"The predicate is {pattern.p}.\n\n"
             f"Task: List all triples ({seed_value}, {pattern.p}, {pattern.o}) "
             f"that factually hold.\n"
-            f"{constraint}"
+            f"{constraint}\n"
             f"Return only factual values."
         )
 
     else:  # R->L
-        other_seeds = seedsOf(pattern.s, env)
-
-        constraint = ""
-        if pattern.s_is_var() and other_seeds:
-            constraint = f"- {pattern.s} ∈ {{{', '.join(sorted(other_seeds))}}}\n"
-
+        # contrainte sur le sujet uniquement — l'objet est fixé
+        constraint = _build_constraints(pattern, env, side="s")
         return (
             f"Context: The object is fixed: {seed_value}. "
             f"The predicate is {pattern.p}.\n\n"
             f"Task: List all triples ({pattern.s}, {pattern.p}, {seed_value}) "
             f"that factually hold.\n"
-            f"{constraint}"
+            f"{constraint}\n"
             f"Return only factual values."
         )
 
