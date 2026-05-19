@@ -1,0 +1,7 @@
+{
+  "predicate": "schema:capital",
+  "model": "phi3",
+  "max_iter": 5,
+  "n_triples": 0,
+  "triples": []
+}
