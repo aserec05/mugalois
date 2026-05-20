@@ -1,0 +1,60 @@
+{
+  "predicate": "schema:spouse",
+  "model": "tinyllama",
+  "max_iter": 2,
+  "seeds_person": [
+    "Elvis Presley",
+    "John Lennon",
+    "Paul McCartney"
+  ],
+  "seeds_spouse": [
+    "Linda Eastman",
+    "Priscilla Presley",
+    "Yoko Ono"
+  ],
+  "n_triples": 4,
+  "triples": [
+    {
+      "s": "Linda Eastman",
+      "p": "spouse",
+      "o": "Paul McCartney"
+    },
+    {
+      "s": "Elvis Presley",
+      "p": "schema:spouse",
+      "o": "John Lennon"
+    },
+    {
+      "s": "Linda Eastman",
+      "p": "schema:spouse",
+      "o": "Paul McCartney"
+    },
+    {
+      "s": "Elvis Presley",
+      "p": "spouse",
+      "o": "John Lennon"
+    }
+  ],
+  "out_of_seeds": [
+    {
+      "s": "Linda Eastman",
+      "p": "spouse",
+      "o": "Paul McCartney"
+    },
+    {
+      "s": "Elvis Presley",
+      "p": "schema:spouse",
+      "o": "John Lennon"
+    },
+    {
+      "s": "Linda Eastman",
+      "p": "schema:spouse",
+      "o": "Paul McCartney"
+    },
+    {
+      "s": "Elvis Presley",
+      "p": "spouse",
+      "o": "John Lennon"
+    }
+  ]
+}

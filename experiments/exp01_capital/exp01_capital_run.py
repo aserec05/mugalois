@@ -15,7 +15,7 @@ PREDICATE = "schema:capital"
 PATTERN   = TriplePattern("?country", PREDICATE, "?capital")
 MODEL     = os.getenv("OLLAMA_MODEL", "phi3")
 BASE_URL  = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
-MAX_ITER  = 5
+MAX_ITER = 2
 
 if __name__ == "__main__":
     llm = OllamaClient(model=MODEL, base_url=BASE_URL)

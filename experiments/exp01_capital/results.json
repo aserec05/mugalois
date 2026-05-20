@@ -1,7 +1,28 @@
 {
   "predicate": "schema:capital",
   "model": "phi3",
-  "max_iter": 5,
-  "n_triples": 0,
-  "triples": []
+  "max_iter": 2,
+  "n_triples": 4,
+  "triples": [
+    {
+      "s": "Afghanistan",
+      "p": "schema:capital",
+      "o": "Kabul"
+    },
+    {
+      "s": "Bangladesh",
+      "p": "schema:capital",
+      "o": "Dhaka"
+    },
+    {
+      "s": "Belarus",
+      "p": "schema:capital",
+      "o": "Minsk"
+    },
+    {
+      "s": "Albania",
+      "p": "schema:capital",
+      "o": "Tirana"
+    }
+  ]
 }

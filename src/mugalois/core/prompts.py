@@ -48,16 +48,14 @@ def genTableScanPrompt(pattern: TriplePattern) -> str:
 
 
 def genSeedCrankPrompt(pattern: TriplePattern, env: Environment) -> str:
-    """Prompt (ii) — SeedCrank. Seeds known on one or both sides."""
     constraints = _build_constraints(pattern, env)
     return (
         f"Context: The following values are already known:\n"
         f"{constraints}\n\n"
-        f"Task: List all triples ({pattern.s}, {pattern.p}, {pattern.o}) "
-        f"that factually hold, knowing that:\n"
-        f"{constraints}\n"
-        f"Return only factual values. "
-        f"Do not introduce entities outside the sets provided."
+        f"Task: List all triples ({pattern.s}, {pattern.p}, {pattern.o}) that factually hold.\n"
+        f"- {pattern.s} must be the subject. {pattern.o} must be the object.\n"
+        f"- Use exactly {pattern.p} as predicate. No variation.\n"
+        f"- Only use values from the sets above."
     )
 
 

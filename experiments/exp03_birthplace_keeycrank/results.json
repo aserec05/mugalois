@@ -1,0 +1,82 @@
+{
+  "predicate": "schema:birthPlace",
+  "model": "tinyllama",
+  "results": [
+    {
+      "label": "L->R (seeds on subject side)",
+      "n_triples": 3,
+      "triples": [
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "France"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "birthPlace",
+          "o": "https://schema.org/location"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Berlin"
+        }
+      ],
+      "out_of_seeds": []
+    },
+    {
+      "label": "R->L (seeds on object side)",
+      "n_triples": 3,
+      "triples": [
+        {
+          "s": "http://example.org/persons/1",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "http://example.org/people/1",
+          "p": "schema:birthPlace",
+          "o": "Ulm"
+        },
+        {
+          "s": "http://example.org/people/1",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        }
+      ],
+      "out_of_seeds": []
+    },
+    {
+      "label": "Both sides (direction by cardinality)",
+      "n_triples": 5,
+      "triples": [
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Ulm"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "birthingPlace",
+          "o": "Paris"
+        }
+      ],
+      "out_of_seeds": []
+    }
+  ]
+}
