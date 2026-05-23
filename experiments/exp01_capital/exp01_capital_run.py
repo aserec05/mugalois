@@ -9,19 +9,18 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 
 from mugalois.core.types import TriplePattern, Environment
 from mugalois.scans.table_scan import LLMTableScan
-from mugalois.llm.llm_client import OllamaClient
+from mugalois.llm.llm_client import AzureOpenAIClient
 
 PREDICATE = "schema:capital"
 PATTERN   = TriplePattern("?country", PREDICATE, "?capital")
-MODEL     = os.getenv("OLLAMA_MODEL", "phi3")
-BASE_URL  = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
-MAX_ITER = 2
+MODEL     = os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4o-mini-2")
+MAX_ITER  = 20
 
 if __name__ == "__main__":
-    llm = OllamaClient(model=MODEL, base_url=BASE_URL)
+    llm = AzureOpenAIClient()
     env = Environment()
 
-    print(f"Running TableScan on {PREDICATE} with {MODEL} at {BASE_URL}...")
+    print(f"Running TableScan on {PREDICATE} with {MODEL}...")
     T = LLMTableScan(PATTERN, env, llm=llm, max_iter=MAX_ITER)
 
     print(f"\nTriples found: {len(T)}")

@@ -1,0 +1,179 @@
+{
+  "predicate": "schema:birthPlace",
+  "model": "gpt-4o-mini-2",
+  "results": [
+    {
+      "strategy": "TableScan (no seeds)",
+      "n_triples": 0,
+      "triples": []
+    },
+    {
+      "strategy": "SeedCrank (subject seeds, single call)",
+      "n_triples": 10,
+      "triples": [
+        {
+          "s": "Ada Lovelace",
+          "p": "schema:birthPlace",
+          "o": "London, England"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "schema:birthPlace",
+          "o": "Warsaw, Poland"
+        },
+        {
+          "s": "Nikola Tesla",
+          "p": "schema:birthPlace",
+          "o": "Smiljan, Croatia"
+        },
+        {
+          "s": "Charles Darwin",
+          "p": "schema:birthPlace",
+          "o": "Shrewsbury, England"
+        },
+        {
+          "s": "Isaac Newton",
+          "p": "schema:birthPlace",
+          "o": "Woolsthorpe, England"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Ulm, Germany"
+        },
+        {
+          "s": "Louis Pasteur",
+          "p": "schema:birthPlace",
+          "o": "Dole, France"
+        },
+        {
+          "s": "Galileo Galilei",
+          "p": "schema:birthPlace",
+          "o": "Pisa, Italy"
+        },
+        {
+          "s": "Leonardo da Vinci",
+          "p": "schema:birthPlace",
+          "o": "Vinci, Italy"
+        },
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Ajaccio, France"
+        }
+      ]
+    },
+    {
+      "strategy": "KeyCrank (subject seeds, one call per seed)",
+      "n_triples": 10,
+      "triples": [
+        {
+          "s": "Isaac Newton",
+          "p": "schema:birthPlace",
+          "o": "Woolsthorpe, Lincolnshire, England"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "Galileo Galilei",
+          "p": "schema:birthPlace",
+          "o": "Pisa"
+        },
+        {
+          "s": "Leonardo da Vinci",
+          "p": "schema:birthPlace",
+          "o": "Vinci, Italy"
+        },
+        {
+          "s": "Charles Darwin",
+          "p": "schema:birthPlace",
+          "o": "Shrewsbury, England"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Ulm, Kingdom of W\u00fcrttemberg, German Empire"
+        },
+        {
+          "s": "Ada Lovelace",
+          "p": "schema:birthPlace",
+          "o": "London"
+        },
+        {
+          "s": "Louis Pasteur",
+          "p": "schema:birthPlace",
+          "o": "Dole, France"
+        },
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Ajaccio, Corsica"
+        },
+        {
+          "s": "Nikola Tesla",
+          "p": "schema:birthPlace",
+          "o": "Smiljan"
+        }
+      ]
+    },
+    {
+      "strategy": "TripletScan (automatic routing)",
+      "n_triples": 10,
+      "triples": [
+        {
+          "s": "Ada Lovelace",
+          "p": "schema:birthPlace",
+          "o": "London, England"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "schema:birthPlace",
+          "o": "Warsaw, Poland"
+        },
+        {
+          "s": "Nikola Tesla",
+          "p": "schema:birthPlace",
+          "o": "Smiljan, Croatia"
+        },
+        {
+          "s": "Charles Darwin",
+          "p": "schema:birthPlace",
+          "o": "Shrewsbury, England"
+        },
+        {
+          "s": "Isaac Newton",
+          "p": "schema:birthPlace",
+          "o": "Woolsthorpe, England"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Ulm, Germany"
+        },
+        {
+          "s": "Louis Pasteur",
+          "p": "schema:birthPlace",
+          "o": "Dole, France"
+        },
+        {
+          "s": "Galileo Galilei",
+          "p": "schema:birthPlace",
+          "o": "Pisa, Italy"
+        },
+        {
+          "s": "Leonardo da Vinci",
+          "p": "schema:birthPlace",
+          "o": "Vinci, Italy"
+        },
+        {
+          "s": "Napoleon Bonaparte",
+          "p": "schema:birthPlace",
+          "o": "Ajaccio, France"
+        }
+      ]
+    }
+  ]
+}

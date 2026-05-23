@@ -1,6 +1,6 @@
 {
   "predicate": "schema:birthPlace",
-  "model": "tinyllama",
+  "model": "gpt-4o-mini-2",
   "results": [
     {
       "label": "L->R (seeds on subject side)",
@@ -9,56 +9,121 @@
         {
           "s": "Napoleon Bonaparte",
           "p": "schema:birthPlace",
-          "o": "France"
+          "o": "Ajaccio, Corsica"
         },
         {
           "s": "Marie Curie",
-          "p": "birthPlace",
-          "o": "https://schema.org/location"
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
         },
         {
           "s": "Albert Einstein",
           "p": "schema:birthPlace",
-          "o": "Berlin"
+          "o": "Ulm, Kingdom of W\u00fcrttemberg, German Empire"
         }
       ],
       "out_of_seeds": []
     },
     {
       "label": "R->L (seeds on object side)",
-      "n_triples": 3,
+      "n_triples": 17,
       "triples": [
         {
-          "s": "http://example.org/persons/1",
+          "s": "Claude Monet",
           "p": "schema:birthPlace",
           "o": "Paris"
         },
         {
-          "s": "http://example.org/people/1",
+          "s": "Victor Hugo",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Friedrich H\u00f6lderlin",
           "p": "schema:birthPlace",
           "o": "Ulm"
         },
         {
-          "s": "http://example.org/people/1",
+          "s": "Charles de Gaulle",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Louis Pasteur",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Witold Gombrowicz",
           "p": "schema:birthPlace",
           "o": "Warsaw"
+        },
+        {
+          "s": "Simone de Beauvoir",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Coco Chanel",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Marie Curie",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "Jean-Paul Sartre",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Jerzy Grotowski",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "\u00c9mile Zola",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Albert Einstein",
+          "p": "schema:birthPlace",
+          "o": "Ulm"
+        },
+        {
+          "s": "Tadeusz Ko\u015bciuszko",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "Marcel Proust",
+          "p": "schema:birthPlace",
+          "o": "Paris"
+        },
+        {
+          "s": "Czes\u0142aw Mi\u0142osz",
+          "p": "schema:birthPlace",
+          "o": "Warsaw"
+        },
+        {
+          "s": "Henri Matisse",
+          "p": "schema:birthPlace",
+          "o": "Paris"
         }
       ],
       "out_of_seeds": []
     },
     {
       "label": "Both sides (direction by cardinality)",
-      "n_triples": 5,
+      "n_triples": 3,
       "triples": [
         {
-          "s": "Napoleon Bonaparte",
+          "s": "Marie Curie",
           "p": "schema:birthPlace",
           "o": "Warsaw"
-        },
-        {
-          "s": "Napoleon Bonaparte",
-          "p": "schema:birthPlace",
-          "o": "Paris"
         },
         {
           "s": "Napoleon Bonaparte",
@@ -68,12 +133,7 @@
         {
           "s": "Albert Einstein",
           "p": "schema:birthPlace",
-          "o": "Paris"
-        },
-        {
-          "s": "Marie Curie",
-          "p": "birthingPlace",
-          "o": "Paris"
+          "o": "Ulm"
         }
       ],
       "out_of_seeds": []

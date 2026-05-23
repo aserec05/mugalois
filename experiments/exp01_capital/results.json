@@ -1,28 +1,298 @@
 {
   "predicate": "schema:capital",
-  "model": "phi3",
-  "max_iter": 2,
-  "n_triples": 4,
+  "model": "gpt-4o-mini-2",
+  "max_iter": 20,
+  "n_triples": 58,
   "triples": [
     {
-      "s": "Afghanistan",
-      "p": "schema:capital",
-      "o": "Kabul"
+      "s": "http://dbpedia.org/resource/Mexico",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Mexico_City"
     },
     {
-      "s": "Bangladesh",
-      "p": "schema:capital",
-      "o": "Dhaka"
+      "s": "http://dbpedia.org/resource/Spain",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Madrid"
     },
     {
-      "s": "Belarus",
-      "p": "schema:capital",
-      "o": "Minsk"
+      "s": "http://dbpedia.org/resource/Portugal",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Lisbon"
     },
     {
-      "s": "Albania",
-      "p": "schema:capital",
-      "o": "Tirana"
+      "s": "http://dbpedia.org/resource/Vietnam",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Hanoi"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Colombia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Bogot\u00e1"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Australia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Canberra"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Ukraine",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Kyiv"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Malaysia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Kuala_Lumpur"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Sri_Lanka",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Sri_Jayawardenepura_Kotte"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Egypt",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Cairo"
+    },
+    {
+      "s": "http://dbpedia.org/resource/South_Africa",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Pretoria"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Brunei",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Bandar_Seri_Begawan"
+    },
+    {
+      "s": "http://dbpedia.org/resource/India",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/New_Delhi"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Israel",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Jerusalem"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Iran",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Tehran"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Turkey",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Ankara"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Sweden",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Stockholm"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Czech_Republic",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Prague"
+    },
+    {
+      "s": "http://dbpedia.org/resource/South_Korea",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Seoul"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Armenia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Yerevan"
+    },
+    {
+      "s": "http://dbpedia.org/resource/France",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Paris"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Uzbekistan",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Tashkent"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Myanmar",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Naypyidaw"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Germany",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Berlin"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Japan",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Tokyo"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Hungary",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Budapest"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Laos",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Vientiane"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Morocco",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Rabat"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Georgia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Tbilisi"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Netherlands",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Amsterdam"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Peru",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Lima"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Belgium",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Brussels"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Singapore",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Singapore"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Russia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Moscow"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Algeria",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Algiers"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Argentina",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Buenos_Aires"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Canada",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Ottawa"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Saudi_Arabia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Riyadh"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Iraq",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Baghdad"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Angola",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Luanda"
+    },
+    {
+      "s": "http://dbpedia.org/resource/United_Kingdom",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/London"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Azerbaijan",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Baku"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Norway",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Oslo"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Philippines",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Manila"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Serbia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Belgrade"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Chile",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Santiago"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Palestine",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/East_Jerusalem"
+    },
+    {
+      "s": "http://dbpedia.org/resource/United_States",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Washington,_D.C."
+    },
+    {
+      "s": "http://dbpedia.org/resource/Thailand",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Bangkok"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Kenya",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Nairobi"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Kazakhstan",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Nur-Sultan"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Brazil",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Bras\u00edlia"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Italy",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Rome"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Cambodia",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Phnom_Penh"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Switzerland",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Bern"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Finland",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Helsinki"
+    },
+    {
+      "s": "http://dbpedia.org/resource/Nigeria",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Abuja"
+    },
+    {
+      "s": "http://dbpedia.org/resource/China",
+      "p": "http://schema.org/capital",
+      "o": "http://dbpedia.org/resource/Beijing"
     }
   ]
 }

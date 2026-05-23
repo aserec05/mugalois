@@ -12,9 +12,8 @@ Your job is to retrieve factual RDF triples from your knowledge with high precis
 You will be given a Context describing what is already known, and a Task to perform.
 
 Global rules that always apply:
-- Never invent, speculate, or hallucinate entities or relationships.
-- Only assert triples you are certain about.
-- If uncertain or no triples exist, return {{"triples": []}}.
+- Draw on your knowledge to provide factual triples.
+- Only assert triples you are confident about.
 - Always respond in valid JSON using this schema: {JSON_SCHEMA}
 - Never add explanations or text outside the JSON structure."""
 
@@ -41,9 +40,18 @@ def genTableScanPrompt(pattern: TriplePattern) -> str:
     """Prompt (i) — TableScan. No seeds."""
     return (
         f"Context: No prior information is available about {pattern.p}.\n\n"
-        f"Task: Given the predicate {pattern.p}, list all known triples "
+        f"Task: Given the predicate {pattern.p}, list ALL known triples "
         f"({pattern.s}, {pattern.p}, {pattern.o}) that factually hold. "
-        f"If you are unsure or no triples exist, return an empty list."
+        f"Be exhaustive. Do not stop after a few examples."
+    )
+
+
+def genIterativePrompt(already_found: set) -> str:
+    """Iterative prompt — conversational continuation."""
+    return (
+        f"Task: Continue listing more triples. "
+        f"Do not repeat already listed values. "
+        f"If there are truly no more, return an empty list."
     )
 
 
@@ -128,19 +136,6 @@ def genConfidencePrompt(pattern: TriplePattern, env: Environment) -> str:
     )
 
 
-def genIterativePrompt(already_found: set) -> str:
-    """Iterative prompt — used in TableScan and SeedCrank after the first call.
-
-   found triples are injected to avoid repetitions
-    """
-    triples_str = ", ".join(str(t) for t in already_found)
-    return (
-        f"Context: The following triples have already been retrieved:\n"
-        f"{triples_str}\n\n"
-        f"Task: List more triples if there are more. "
-        f"Do not repeat already retrieved values. "
-        f"If there are no more, return an empty list."
-    )
 
 
 def build_messages(user_prompt: str) -> list:
