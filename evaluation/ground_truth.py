@@ -15,13 +15,6 @@ Example
         print(t)
     # {"s": "https://yago.../Albert_Einstein", "p": "https://schema.org/birthPlace", "o": "..."}
 
-Note on YAGO endpoint
----------------------
-The YAGO SPARQL endpoint (yago-knowledge.org/sparql/query) currently returns
-HTML regardless of the Accept header sent by SPARQLWrapper.
-When source="yago" is selected and the endpoint returns HTML, the extractor
-automatically retries on DBpedia using the equivalent predicate URI.
-If no DBpedia equivalent exists, a RuntimeError is raised.
 """
 
 from __future__ import annotations
@@ -112,8 +105,7 @@ class GroundTruthExtractor:
         self._sparql.setReturnFormat(JSON)
         self._sparql.setTimeout(timeout)
 
-        # Force JSON response — without this some endpoints (e.g. YAGO)
-        # return HTML instead of JSON, causing an AttributeError in _parse
+
         self._sparql.addCustomHttpHeader(
             "Accept", "application/sparql-results+json"
         )
@@ -154,8 +146,7 @@ class GroundTruthExtractor:
         try:
             raw = self._run_query(query)
         except RuntimeError as exc:
-            # YAGO endpoint currently returns HTML regardless of Accept header.
-            # Automatically retry on DBpedia using the equivalent predicate.
+            
             if self.source == "yago" and "HTML" in str(exc):
                 logger.warning(
                     "YAGO endpoint returned HTML — retrying on DBpedia fallback."
@@ -188,7 +179,7 @@ class GroundTruthExtractor:
         Retry the fetch on DBpedia when YAGO is unavailable.
         Entity names are reused as-is (local names are identical in both KGs).
         """
-        # Resolve predicate short name to DBpedia equivalent
+
         short_name = self._short_name(predicate)
         if short_name not in YAGO_TO_DBPEDIA_PREDICATE:
             raise RuntimeError(
@@ -265,9 +256,7 @@ class GroundTruthExtractor:
                 f"La requête SPARQL a échoué ({self.endpoint_url}) : {exc}"
             ) from exc
 
-        # If the endpoint returns HTML instead of JSON (e.g. wrong URL or
-        # missing Accept header), SPARQLWrapper returns bytes with no exception.
-        # We catch it here to give a clear error message.
+    
         if isinstance(raw, bytes):
             preview = raw[:200].decode("utf-8", errors="replace")
             raise RuntimeError(
