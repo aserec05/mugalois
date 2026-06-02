@@ -36,8 +36,16 @@ def _build_constraints(pattern: TriplePattern, env: Environment,
     return "\n".join(lines)
 
 
-def genTableScanPrompt(pattern: TriplePattern) -> str:
-    """Prompt (i) — TableScan. No seeds."""
+def genTableScanPrompt(pattern: TriplePattern, context: str = "") -> str:
+    """Prompt (i) — TableScan. No seeds. Optional subgraph context."""
+    if context:
+        return (
+            f"Context: Here are known triples about {pattern.p}:\n\n"
+            f"{context}\n\n"
+            f"Task: Based on this context AND your knowledge, list ALL triples "
+            f"({pattern.s}, {pattern.p}, {pattern.o}) that factually hold. "
+            f"Be exhaustive. Do not stop after a few examples."
+        )
     return (
         f"Context: No prior information is available about {pattern.p}.\n\n"
         f"Task: Given the predicate {pattern.p}, list ALL known triples "

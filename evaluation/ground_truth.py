@@ -1,20 +1,19 @@
 """
-Triples Extraction from YAGO or DBpedia via SPARQL.
+Triples Extraction from Wikidata, YAGO or DBpedia via SPARQL.
 
 
 Example
 ------------------
     from ground_truth import GroundTruthExtractor
 
-    gt = GroundTruthExtractor(source="yago")
+    gt = GroundTruthExtractor(source="wikidata")
     triples = gt.fetch(
         predicate="birthPlace",
         seeds=["Albert_Einstein", "Marie_Curie"],
     )
     for t in triples:
         print(t)
-    # {"s": "https://yago.../Albert_Einstein", "p": "https://schema.org/birthPlace", "o": "..."}
-
+    # (http://www.wikidata.org/entity/Q937, birthPlace, Ulm)
 """
 
 from __future__ import annotations
@@ -27,18 +26,22 @@ try:
 except ImportError:
     raise ImportError("Installe SPARQLWrapper :  pip install SPARQLWrapper")
 
+from mugalois.core.types import Triple
+
 logger = logging.getLogger(__name__)
 
-# Consts
+# ─── Consts ───────────────────────────────────────────────────────────────────
 
 ENDPOINTS = {
-    "yago":    "https://yago-knowledge.org/sparql/query",
-    "dbpedia": "https://dbpedia.org/sparql",
+    "yago":     "https://yago-knowledge.org/sparql/query",
+    "dbpedia":  "https://dbpedia.org/sparql",
+    "wikidata": "https://query.wikidata.org/sparql",
 }
 
 RESOURCE_PREFIXES = {
     "yago":    "https://yago-knowledge.org/resource/",
     "dbpedia": "http://dbpedia.org/resource/",
+    # Wikidata uses QIDs — seeds are resolved via label lookup
 }
 
 PREDICATES = {
@@ -59,8 +62,16 @@ PREDICATES = {
         "almaMater":   "http://dbpedia.org/ontology/almaMater",
         "award":       "http://dbpedia.org/ontology/award",
     },
+    "wikidata": {
+        "birthPlace":  "wdt:P19",
+        "deathPlace":  "wdt:P20",
+        "spouse":      "wdt:P26",
+        "nationality": "wdt:P27",
+        "almaMater":   "wdt:P69",
+        "award":       "wdt:P166",
+        "employer":    "wdt:P108",
+    },
 }
-
 
 YAGO_TO_DBPEDIA_PREDICATE = {
     "birthPlace":  "birthPlace",
@@ -70,47 +81,46 @@ YAGO_TO_DBPEDIA_PREDICATE = {
     "award":       "award",
 }
 
-YAGO_TO_DBPEDIA_RESOURCE_PREFIX = {
-    "yago":    "https://yago-knowledge.org/resource/",
-    "dbpedia": "http://dbpedia.org/resource/",
-}
-
 DEFAULT_TIMEOUT = 30
 DEFAULT_LIMIT   = 500
 
 
+# ─── Main class ───────────────────────────────────────────────────────────────
+
 class GroundTruthExtractor:
     """
-    Retrieve triplets RDF
+    Retrieve RDF triples from Wikidata, YAGO or DBpedia.
 
-    source : "yago" | "dbpedia"
-    timeout : int   — timeout SPARQL en secondes
+    source : "wikidata" | "yago" | "dbpedia"
+    timeout : int
     """
 
     def __init__(
         self,
-        source: Literal["yago", "dbpedia"] = "yago",
+        source: Literal["wikidata", "yago", "dbpedia"] = "wikidata",
         timeout: int = DEFAULT_TIMEOUT,
     ) -> None:
         if source not in ENDPOINTS:
             raise ValueError(
                 f"Source inconnue '{source}'. Choix possibles : {list(ENDPOINTS)}"
             )
-        self.source          = source
-        self.endpoint_url    = ENDPOINTS[source]
-        self.predicate_map   = PREDICATES[source]
-        self.resource_prefix = RESOURCE_PREFIXES[source]
+        self.source        = source
+        self.endpoint_url  = ENDPOINTS[source]
+        self.predicate_map = PREDICATES[source]
 
         self._sparql = SPARQLWrapper(self.endpoint_url)
         self._sparql.setReturnFormat(JSON)
         self._sparql.setTimeout(timeout)
-
-
         self._sparql.addCustomHttpHeader(
             "Accept", "application/sparql-results+json"
         )
+        # Wikidata requires a User-Agent header
+        if source == "wikidata":
+            self._sparql.addCustomHttpHeader(
+                "User-Agent", "muGalois-evaluation/1.0"
+            )
 
-    # API publique
+    # ── Public API ────────────────────────────────────────────────────────────
 
     def fetch(
         self,
@@ -118,55 +128,92 @@ class GroundTruthExtractor:
         seeds: list[str] | None = None,
         seed_side: Literal["subject", "object"] = "subject",
         limit: int = DEFAULT_LIMIT,
-    ) -> list[dict]:
+    ) -> set[Triple]:
         """
-        Retrieve by a predicate given.
-
-        Paramètres
-        ----------
-        predicate : str
-            example ("birthPlace") ou full URI.
-        seeds : list[str] | None
-            ex. ["Albert_Einstein"].
-           Can be None.
-        seed_side : "subject" | "object"
-        limit : int
-            Nombre max de triplets
+        Retrieve ground-truth triples for a given predicate.
 
         Return
-        --------
-        list[dict]  — with keys "s", "p", "o"
+        ------
+        set[Triple]
         """
+        if self.source == "wikidata":
+            return self._fetch_wikidata(predicate, seeds, limit)
+
         predicate_uri = self._resolve_predicate(predicate)
         seed_uris     = self._build_seed_uris(seeds) if seeds else None
         query         = self._build_query(predicate_uri, seed_uris, seed_side, limit)
 
-        logger.debug("Requête SPARQL :\n%s", query)
-
         try:
             raw = self._run_query(query)
         except RuntimeError as exc:
-            
             if self.source == "yago" and "HTML" in str(exc):
-                logger.warning(
-                    "YAGO endpoint returned HTML — retrying on DBpedia fallback."
-                )
+                logger.warning("YAGO endpoint returned HTML — retrying on DBpedia.")
                 return self._fetch_via_dbpedia(predicate, seeds, seed_side, limit)
             raise
 
         triples = self._parse(raw, predicate_uri)
-
-        logger.info(
-            "%d triplets récupérés — prédicat '%s', source '%s'",
-            len(triples), predicate, self.source,
-        )
+        logger.info("%d triples — predicate '%s', source '%s'",
+                    len(triples), predicate, self.source)
         return triples
 
     def available_predicates(self) -> list[str]:
-        """Retourne les noms courts de prédicats disponibles pour cette source."""
         return list(self.predicate_map.keys())
 
-    # Fallback
+    # ── Wikidata ──────────────────────────────────────────────────────────────
+
+    def _fetch_wikidata(
+        self,
+        predicate: str,
+        seeds: list[str] | None,
+        limit: int,
+    ) -> set[Triple]:
+        """
+        Wikidata-specific fetch.
+        Seeds are plain entity names (e.g. "Albert_Einstein").
+        The query resolves them by rdfs:label and returns the place label as object.
+        Returns one triple per subject — one value per entity.
+        """
+        prop = self._resolve_predicate(predicate)
+
+        if seeds:
+            names = [s.replace("_", " ") for s in seeds]
+            values_block = "VALUES ?label { " + " ".join(
+                f'"{n}"@en' for n in names
+            ) + " }"
+            query = f"""
+SELECT DISTINCT ?person ?personLabel ?placeLabel WHERE {{
+  {values_block}
+  ?person rdfs:label ?label .
+  ?person {prop} ?place .
+  ?place rdfs:label ?placeLabel .
+  FILTER(LANG(?placeLabel) = "en")
+}}
+LIMIT {limit}
+"""
+        else:
+            query = f"""
+SELECT DISTINCT ?person ?placeLabel WHERE {{
+  ?person {prop} ?place .
+  ?place rdfs:label ?placeLabel .
+  FILTER(LANG(?placeLabel) = "en")
+}}
+LIMIT {limit}
+"""
+
+        raw = self._run_query(query)
+        return self._parse_wikidata(raw, predicate)
+
+    def _parse_wikidata(self, raw: dict, predicate: str) -> set[Triple]:
+        triples  = set()
+        bindings = raw.get("results", {}).get("bindings", [])
+        for b in bindings:
+            s_val = b.get("person", {}).get("value", "")
+            o_val = b.get("placeLabel", {}).get("value", "")
+            if s_val and o_val:
+                triples.add(Triple(s_val, predicate, o_val))
+        return triples
+
+    # ── YAGO / DBpedia ────────────────────────────────────────────────────────
 
     def _fetch_via_dbpedia(
         self,
@@ -174,30 +221,22 @@ class GroundTruthExtractor:
         seeds: list[str] | None,
         seed_side: str,
         limit: int,
-    ) -> list[dict]:
-        """
-        Retry the fetch on DBpedia when YAGO is unavailable.
-        Entity names are reused as-is (local names are identical in both KGs).
-        """
-
+    ) -> set[Triple]:
         short_name = self._short_name(predicate)
         if short_name not in YAGO_TO_DBPEDIA_PREDICATE:
             raise RuntimeError(
                 f"YAGO endpoint is unavailable and predicate '{predicate}' "
-                f"has no DBpedia equivalent. Cannot fetch ground truth."
+                f"has no DBpedia equivalent."
             )
-
-        dbpedia_predicate = YAGO_TO_DBPEDIA_PREDICATE[short_name]
         fallback = GroundTruthExtractor(source="dbpedia")
         return fallback.fetch(
-            predicate=dbpedia_predicate,
+            predicate=YAGO_TO_DBPEDIA_PREDICATE[short_name],
             seeds=seeds,
             seed_side=seed_side,
             limit=limit,
         )
 
     def _short_name(self, predicate: str) -> str:
-        """Return the short name of a predicate (reverse lookup from URI if needed)."""
         if not predicate.startswith("http"):
             return predicate
         for short, uri in self.predicate_map.items():
@@ -205,24 +244,22 @@ class GroundTruthExtractor:
                 return short
         return predicate
 
-    # Build
-
     def _resolve_predicate(self, predicate: str) -> str:
-        if predicate.startswith("http"):
+        if predicate.startswith("http") or predicate.startswith("wdt:"):
             return predicate
         if predicate not in self.predicate_map:
             raise ValueError(
-                f"Prédicat inconnu '{predicate}' pour la source '{self.source}'.\n"
+                f"Prédicat inconnu '{predicate}' pour '{self.source}'.\n"
                 f"Disponibles : {list(self.predicate_map)}"
             )
         return self.predicate_map[predicate]
 
     def _build_seed_uris(self, seeds: list[str]) -> list[str]:
-        uris = []
-        for s in seeds:
-            uri = s if s.startswith("http") else self.resource_prefix + s
-            uris.append(uri)
-        return uris
+        prefix = RESOURCE_PREFIXES.get(self.source, "")
+        return [
+            s if s.startswith("http") else prefix + s
+            for s in seeds
+        ]
 
     def _build_query(
         self,
@@ -245,7 +282,7 @@ class GroundTruthExtractor:
             f"LIMIT {limit}"
         )
 
-    # parsing
+    # ── Query execution ───────────────────────────────────────────────────────
 
     def _run_query(self, query: str) -> dict:
         self._sparql.setQuery(query)
@@ -253,26 +290,23 @@ class GroundTruthExtractor:
             raw = self._sparql.query().convert()
         except Exception as exc:
             raise RuntimeError(
-                f"La requête SPARQL a échoué ({self.endpoint_url}) : {exc}"
+                f"SPARQL query failed ({self.endpoint_url}) : {exc}"
             ) from exc
 
-    
         if isinstance(raw, bytes):
             preview = raw[:200].decode("utf-8", errors="replace")
             raise RuntimeError(
                 f"Endpoint '{self.endpoint_url}' returned HTML instead of JSON.\n"
-                f"Possible causes: wrong URL, endpoint down, rate limit.\n"
                 f"Response preview: {preview}"
             )
-
         return raw
 
-    def _parse(self, raw: dict, predicate_uri: str) -> list[dict]:
-        triples  = []
+    def _parse(self, raw: dict, predicate_uri: str) -> set[Triple]:
+        triples  = set()
         bindings = raw.get("results", {}).get("bindings", [])
         for b in bindings:
             s_val = b.get("s", {}).get("value", "")
             o_val = b.get("o", {}).get("value", "")
             if s_val and o_val:
-                triples.append({"s": s_val, "p": predicate_uri, "o": o_val})
+                triples.add(Triple(s_val, predicate_uri, o_val))
         return triples

@@ -1,0 +1,27 @@
+{
+  "predicate": "birthPlace \u2014 T2 Exp A (no seed, ?x born in Ulm)",
+  "timestamp": "2026-06-03T00:27:54",
+  "results": {
+    "Baseline NL": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_triple": 0.6667,
+      "cardinality": 0.5,
+      "avg_score": 0.5833
+    },
+    "Baseline SPARQL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "TableScan": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_triple": 0.6667,
+      "cardinality": 0.5,
+      "avg_score": 0.5833
+    }
+  }
+}

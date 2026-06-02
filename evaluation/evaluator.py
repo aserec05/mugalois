@@ -2,27 +2,21 @@
 Evaluator for µ-Galois.
 
 Compares actual triples against expected triples (ground truth).
-Both inputs follow the same JSON schema.
-
+Both inputs are set[Triple].
 
 Example
 -------
     from evaluator import Evaluator
 
-    actual = [
-        {"s": "Einstein", "p": "birthPlace", "o": "Ulm"},
-        {"s": "Curie",    "p": "birthPlace", "o": "Paris"},
-    ]
-    expected = [
-        {"s": "Einstein", "p": "birthPlace", "o": "Ulm"},
-        {"s": "Curie",    "p": "birthPlace", "o": "Warsaw"},
-    ]
+    actual   = {Triple("Einstein", "birthPlace", "Ulm")}
+    expected = {Triple("Einstein", "birthPlace", "Ulm"),
+                Triple("Curie",    "birthPlace", "Warsaw")}
 
     ev = Evaluator(actual, expected)
     scores = ev.evaluate()
     print(scores)
 
-    # From files
+    # From JSON files
     ev = Evaluator.from_files("actual.json", "expected.json")
     scores = ev.evaluate()
 """
@@ -32,36 +26,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from mugalois.core.types import Triple
 from evaluation.metrics import Metrics, MetricScores
-
-
-# let's type check first
-
-def _validate(triples: list, label: str) -> None:
-    """
-    Raise ValueError if the list does not follow the triple schema.
-    Each item must be a dict with at least keys "s" and "o".
-    "p" is optional but recommended.
-    """
-    if not isinstance(triples, list):
-        raise ValueError(f"'{label}' must be a list, got {type(triples).__name__}")
-
-    for i, t in enumerate(triples):
-        if not isinstance(t, dict):
-            raise ValueError(
-                f"'{label}[{i}]' must be a dict, got {type(t).__name__}"
-            )
-        for key in ("s", "o"):
-            if key not in t:
-                raise ValueError(
-                    f"'{label}[{i}]' is missing required key '{key}'. "
-                    f"Got keys: {list(t.keys())}"
-                )
-            if not isinstance(t[key], str):
-                raise ValueError(
-                    f"'{label}[{i}][{key}]' must be a string, "
-                    f"got {type(t[key]).__name__}"
-                )
 
 
 class Evaluator:
@@ -70,30 +36,25 @@ class Evaluator:
 
     Parameters
     ----------
-    actual : list[dict]
-        Triples returned by a strategy. Schema: [{"s": ..., "p": ..., "o": ...}]
-    expected : list[dict]
-        Ground-truth triples. Same schema.
-    similarity_threshold : float
-        Edit-distance tolerance as fraction of expected value length (default 0.10).
-    numeric_tolerance : float
-        Relative tolerance for numeric values (default 0.10).
+    actual : set[Triple]
+    expected : set[Triple]
+    similarity_threshold : float  (default 0.10)
+    numeric_tolerance : float     (default 0.10)
     """
 
     def __init__(
         self,
-        actual: list[dict],
-        expected: list[dict],
+        actual: set[Triple],
+        expected: set[Triple],
         similarity_threshold: float = 0.10,
         numeric_tolerance: float = 0.10,
     ) -> None:
-        _validate(actual,   "actual")
-        _validate(expected, "expected")
-
-        self.actual               = actual
-        self.expected             = expected
+        self.actual               = set(actual)
+        self.expected             = set(expected)
         self.similarity_threshold = similarity_threshold
         self.numeric_tolerance    = numeric_tolerance
+
+
 
     @classmethod
     def from_files(
@@ -104,11 +65,11 @@ class Evaluator:
         numeric_tolerance: float = 0.10,
     ) -> "Evaluator":
         """
-        Load actual and expected triples from two JSON files.
-        Each file must contain a JSON array of triple objects.
+        Load from two JSON files.
+        Each file must contain a JSON array: [{"s": ..., "p": ..., "o": ...}]
         """
-        actual   = _load_json(actual_path)
-        expected = _load_json(expected_path)
+        actual   = _load_triples(actual_path)
+        expected = _load_triples(expected_path)
         return cls(actual, expected, similarity_threshold, numeric_tolerance)
 
     @classmethod
@@ -121,12 +82,10 @@ class Evaluator:
         numeric_tolerance: float = 0.10,
     ) -> "Evaluator":
         """
-        Load actual and expected triples from a single dict with two keys.
-
-        Useful when both lists are stored in the same JSON file:
+        Load from a single dict with two keys.
         {
-            "actual":   [...],
-            "expected": [...]
+            "actual":   [{"s":..., "p":..., "o":...}],
+            "expected": [{"s":..., "p":..., "o":...}]
         }
         """
         if actual_key not in data:
@@ -135,16 +94,14 @@ class Evaluator:
             raise ValueError(f"Key '{expected_key}' not found in dict.")
 
         return cls(
-            data[actual_key],
-            data[expected_key],
+            _dicts_to_triples(data[actual_key]),
+            _dicts_to_triples(data[expected_key]),
             similarity_threshold,
             numeric_tolerance,
         )
 
+
     def evaluate(self) -> MetricScores:
-        """
-        Compute all metrics and return a MetricScores object.
-        """
         return Metrics.compute(
             self.actual,
             self.expected,
@@ -153,9 +110,7 @@ class Evaluator:
         )
 
     def summary(self) -> dict:
-        """
-        Return a plain dict with counts and scores — ready to serialize to JSON.
-        """
+        """Plain dict with counts and scores — ready to serialize to JSON."""
         scores = self.evaluate()
         return {
             "n_actual":   len(self.actual),
@@ -164,23 +119,24 @@ class Evaluator:
         }
 
     def save_summary(self, path: str | Path) -> None:
-        """
-        Save the evaluation summary to a JSON file.
-        """
+        """Save the evaluation summary to a JSON file."""
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(self.summary(), f, indent=2)
 
 
-def _load_json(path: str | Path) -> list[dict]:
+
+def _dicts_to_triples(data: list[dict]) -> set[Triple]:
+    return {Triple(t["s"], t["p"], t["o"]) for t in data}
+
+
+def _load_triples(path: str | Path) -> set[Triple]:
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError(f"File not found: {path}")
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     if not isinstance(data, list):
-        raise ValueError(
-            f"'{path}' must contain a JSON array, got {type(data).__name__}"
-        )
-    return data
+        raise ValueError(f"'{path}' must contain a JSON array.")
+    return _dicts_to_triples(data)

@@ -10,7 +10,8 @@ def LLMTableScan(
     pattern: TriplePattern,
     env: Environment,
     llm: BaseLLM,
-    max_iter: int = 5
+    max_iter: int = 5,
+    context: str = ""  
 ) -> set[Triple]:
     """Algorithm 2 — TableScan with conversational context."""
     T   = set()

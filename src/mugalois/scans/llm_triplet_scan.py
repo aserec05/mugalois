@@ -35,4 +35,4 @@ def LLMTripletScan(
     if c > tau_strategie: # the LLM is confident
         return LLMSeedCrank(pattern, env, llm, max_iter)
     else:
-        return LLMKeyCrank(pattern, env, llm, max_iter)
+        return LLMKeyCrank(pattern, env, llm)

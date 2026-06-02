@@ -1,0 +1,22 @@
+{
+  "total_triples": 5000,
+  "unique_subjects": 546,
+  "unique_predicates": 10,
+  "unique_objects": 3438,
+  "triples_per_predicate": {
+    "almaMater": 612,
+    "award": 1230,
+    "birthPlace": 684,
+    "deathPlace": 376,
+    "doctoralAdvisor": 191,
+    "doctoralStudent": 591,
+    "employer": 2,
+    "knownFor": 1214,
+    "nationality": 57,
+    "spouse": 43
+  },
+  "triples_per_source": {
+    "seed": 3872,
+    "popular": 1128
+  }
+}
