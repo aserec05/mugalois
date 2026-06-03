@@ -46,7 +46,7 @@ def LLMKeyCrank(
     T = set()
 
     for k in iter_seeds:
-        if not pattern.is_variable(other) or len(other_seeds) == 1:
+        if not pattern.is_variable(other) or len(other_seeds) == 1: # one to one
             k_prime = other if not pattern.is_variable(other) else list(other_seeds)[0]
             triple  = Triple(k, pattern.p, k_prime) if direction == "L->R" \
                       else Triple(k_prime, pattern.p, k)
@@ -54,7 +54,7 @@ def LLMKeyCrank(
             response = llm.chat(build_messages(prompt))
             if response.text.strip().lower().startswith("yes"):
                 T.add(triple)
-        else:
+        else: # one to many 
             prompt   = genKeyCrankPrompt(pattern, env, k, direction)
             response = llm.chat(build_messages(prompt))
             T = T | json_to_triples(response.text)

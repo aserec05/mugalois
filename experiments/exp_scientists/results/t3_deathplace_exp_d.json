@@ -1,0 +1,48 @@
+{
+  "predicate": "deathPlace \u2014 Exp D \u2014 seed ?y small (5)",
+  "timestamp": "2026-06-03T10:39:56",
+  "results": {
+    "Baseline NL+Filter": {
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1_triple": 0.3333,
+      "cardinality": 0.2,
+      "avg_score": 0.2667
+    },
+    "Baseline SPARQL+Filter": {
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1_triple": 0.3333,
+      "cardinality": 0.2,
+      "avg_score": 0.2667
+    },
+    "TableScan+Filter": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_triple": 0.0,
+      "cardinality": 0.0,
+      "avg_score": 0.0
+    },
+    "SeedCrank": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_triple": 0.0,
+      "cardinality": 0.0,
+      "avg_score": 0.0
+    },
+    "KeyCrank": {
+      "precision": 0.1667,
+      "recall": 0.2,
+      "f1_triple": 0.1818,
+      "cardinality": 0.8333,
+      "avg_score": 0.5076
+    },
+    "TripletScan": {
+      "precision": 0.1429,
+      "recall": 0.2,
+      "f1_triple": 0.1667,
+      "cardinality": 0.7143,
+      "avg_score": 0.4405
+    }
+  }
+}

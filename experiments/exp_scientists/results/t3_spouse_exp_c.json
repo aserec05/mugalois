@@ -1,0 +1,48 @@
+{
+  "predicate": "spouse \u2014 Exp C \u2014 seed ?x large (20)",
+  "timestamp": "2026-06-03T10:05:17",
+  "results": {
+    "Baseline NL+Filter": {
+      "precision": 0.4,
+      "recall": 0.3478,
+      "f1_triple": 0.3721,
+      "cardinality": 0.8696,
+      "avg_score": 0.6208
+    },
+    "Baseline SPARQL+Filter": {
+      "precision": 0.45,
+      "recall": 0.3913,
+      "f1_triple": 0.4186,
+      "cardinality": 0.8696,
+      "avg_score": 0.6441
+    },
+    "TableScan+Filter": {
+      "precision": 0.5,
+      "recall": 0.0435,
+      "f1_triple": 0.08,
+      "cardinality": 0.087,
+      "avg_score": 0.0835
+    },
+    "SeedCrank": {
+      "precision": 0.5714,
+      "recall": 0.1739,
+      "f1_triple": 0.2667,
+      "cardinality": 0.3043,
+      "avg_score": 0.2855
+    },
+    "KeyCrank": {
+      "precision": 0.5238,
+      "recall": 0.4783,
+      "f1_triple": 0.5,
+      "cardinality": 0.913,
+      "avg_score": 0.7065
+    },
+    "TripletScan": {
+      "precision": 0.5238,
+      "recall": 0.4783,
+      "f1_triple": 0.5,
+      "cardinality": 0.913,
+      "avg_score": 0.7065
+    }
+  }
+}

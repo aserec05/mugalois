@@ -1,0 +1,4 @@
+strategy,precision,recall,f1_triple,cardinality,avg_score
+Baseline NL,1.0,0.0133,0.0262,0.0133,0.0198
+Baseline SPARQL,0.4,0.0053,0.0105,0.0133,0.0119
+TableScan,0.5,0.0133,0.0259,0.0266,0.0263

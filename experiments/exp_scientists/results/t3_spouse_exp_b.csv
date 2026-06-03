@@ -1,0 +1,7 @@
+strategy,precision,recall,f1_triple,cardinality,avg_score
+Baseline NL+Filter,0.4,0.2857,0.3333,0.7143,0.5238
+Baseline SPARQL+Filter,0.5,0.2857,0.3636,0.5714,0.4675
+TableScan+Filter,0.0,0.0,0.0,0.0,0.0
+SeedCrank,0.5,0.1429,0.2222,0.2857,0.254
+KeyCrank,0.8,0.5714,0.6667,0.7143,0.6905
+TripletScan,0.8,0.5714,0.6667,0.7143,0.6905

@@ -11,14 +11,15 @@ def LLMTableScan(
     env: Environment,
     llm: BaseLLM,
     max_iter: int = 5,
-    context: str = ""  
+    context: str = "",
+    encoding="current"  
 ) -> set[Triple]:
     """Algorithm 2 — TableScan with conversational context."""
     T   = set()
     ctx = []
 
     for i in range(max_iter):
-        prompt = genTableScanPrompt(pattern) if i == 0 else genIterativePrompt(T)
+        prompt = genTableScanPrompt(pattern, context, encoding) if i == 0 else genIterativePrompt(T)
 
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},

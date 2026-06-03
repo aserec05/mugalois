@@ -1,0 +1,48 @@
+{
+  "predicate": "spouse \u2014 Exp F \u2014 ?x=1, ?y=large",
+  "timestamp": "2026-06-03T10:06:45",
+  "results": {
+    "Baseline NL+Filter": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "Baseline SPARQL+Filter": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "TableScan+Filter": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "SeedCrank": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "KeyCrank": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    },
+    "TripletScan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_triple": 1.0,
+      "cardinality": 1.0,
+      "avg_score": 1.0
+    }
+  }
+}
