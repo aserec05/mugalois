@@ -1,0 +1,80 @@
+{
+  "query_id": "q2",
+  "template": "T1a+T1b",
+  "predicate": "dbo:doctoralAdvisor",
+  "n_expected": 1,
+  "timestamp": "2026-06-08T13:13:04",
+  "results": {
+    "NL": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [
+          "Max Born"
+        ],
+        "fn": [
+          "Arnold Sommerfeld"
+        ]
+      }
+    },
+    "SPARQL_T1a": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [
+          "Max Born"
+        ],
+        "fn": [
+          "Arnold Sommerfeld"
+        ]
+      }
+    },
+    "SPARQL_T1b": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "examples": {
+        "fp": [
+          "Max Born",
+          "Niels Bohr"
+        ],
+        "fn": [
+          "Arnold Sommerfeld"
+        ]
+      }
+    },
+    "ValueScan": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "examples": {
+        "fp": [
+          "Max Born"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

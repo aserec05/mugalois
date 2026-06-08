@@ -1,0 +1,65 @@
+{
+  "query_id": "q3",
+  "template": "T1a+T1b",
+  "predicate": "dbo:spouse",
+  "n_expected": 1,
+  "timestamp": "2026-06-08T13:13:22",
+  "results": {
+    "NL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_T1a": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_T1b": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

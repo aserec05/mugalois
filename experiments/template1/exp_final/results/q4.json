@@ -1,0 +1,87 @@
+{
+  "query_id": "q4",
+  "template": "T1a+T1b",
+  "predicate": "dbo:award",
+  "n_expected": 17,
+  "timestamp": "2026-06-08T13:13:38",
+  "results": {
+    "NL": {
+      "precision_mean": 0.6286,
+      "precision_std": 0.0783,
+      "recall_mean": 0.2588,
+      "recall_std": 0.0322,
+      "f1_mean": 0.3667,
+      "f1_std": 0.0457,
+      "n_runs": 5,
+      "n_generated": 7,
+      "examples": {
+        "fp": [
+          "Copley Medal (1909)",
+          "Honorary Membership of the French Academy of Sciences (1911)"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "SPARQL_T1a": {
+      "precision_mean": 0.8286,
+      "precision_std": 0.1565,
+      "recall_mean": 0.2235,
+      "recall_std": 0.0967,
+      "f1_mean": 0.3342,
+      "f1_std": 0.1129,
+      "n_runs": 5,
+      "n_generated": 5,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Gold Medal of the Royal Society of Arts"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "SPARQL_T1b": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1176,
+      "recall_std": 0.0,
+      "f1_mean": 0.2105,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "ValueScan": {
+      "precision_mean": 0.7143,
+      "precision_std": 0.175,
+      "recall_mean": 0.2353,
+      "recall_std": 0.0721,
+      "f1_mean": 0.3421,
+      "f1_std": 0.0846,
+      "n_runs": 5,
+      "n_generated": 6,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    }
+  }
+}

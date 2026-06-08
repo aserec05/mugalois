@@ -199,7 +199,7 @@ class AzureOpenAIClient(BaseLLM):
             model=self.model,
             messages=messages,
             temperature=0.0,
-            max_tokens=10000,
+            max_tokens=16000,
         )
         text = resp.choices[0].message.content or ""
         usage = getattr(resp, "usage", None)

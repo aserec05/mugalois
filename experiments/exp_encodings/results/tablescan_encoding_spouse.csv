@@ -1,4 +1,0 @@
-strategy,precision,recall,f1_triple,cardinality,avg_score
-TableScan sparql,0.4286,0.0698,0.12,0.1628,0.1414
-TableScan pattern,0.3333,0.0698,0.1154,0.2093,0.1623
-TableScan current,0.3158,0.1395,0.1935,0.4419,0.3177

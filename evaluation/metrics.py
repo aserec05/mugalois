@@ -1,43 +1,14 @@
-"""
-Metrics for µ-Galois evaluation.
-Inspired by Galois (Satriani et al., SIGMOD 2025).
-
-Metrics
--------
-- Precision     : fraction of returned triples that are correct
-- Recall        : fraction of expected triples that were found
-- F1-Triple     : harmonic mean of Precision and Recall (main metric)
-- Cardinality   : ratio of result sizes  min(|actual|, |expected|) / max(...)
-- AVG-Score     : average of F1-Triple, Cardinality  (summary metric)
-
-All metrics return values in [0, 1]. Higher is better.
-
-Example
--------
-    from metrics import Metrics
-
-    actual = {
-        Triple("Einstein", "birthPlace", "Ulm"),
-        Triple("Curie",    "birthPlace", "Paris"),   # wrong
-    }
-    expected = {
-        Triple("Einstein", "birthPlace", "Ulm"),
-        Triple("Curie",    "birthPlace", "Warsaw"),
-    }
-
-    scores = Metrics.compute(actual, expected)
-    print(scores)
-    # MetricScores(precision=0.5, recall=0.5, f1_triple=0.5, cardinality=1.0, avg_score=0.75)
-"""
-
 from __future__ import annotations
 
 import math
+import re
+import statistics
 from dataclasses import dataclass, asdict
+from typing import Union
 
 from mugalois.core.types import Triple
 
-
+_re_paren = re.compile(r"\s*\(.*?\)")
 
 
 def _normalize(value: str) -> str:
@@ -45,209 +16,156 @@ def _normalize(value: str) -> str:
         value = value.rstrip("/").split("/")[-1]
     if "#" in value:
         value = value.split("#")[-1]
-    if ":" in value:                          
+    if ":" in value:
         value = value.split(":")[-1]
+    # strip parenthetical details e.g. "Copley Medal (1909)" → "Copley Medal"
+    value = _re_paren.sub("", value)
     return value.replace("_", " ").lower().strip()
 
 
-
-
 def _edit_distance(a: str, b: str) -> int:
-    """Standard Levenshtein edit distance."""
     m, n = len(a), len(b)
     dp = list(range(n + 1))
     for i in range(1, m + 1):
-        prev = dp[0]
-        dp[0] = i
+        prev, dp[0] = dp[0], i
         for j in range(1, n + 1):
             temp = dp[j]
-            if a[i - 1] == b[j - 1]:
-                dp[j] = prev
-            else:
-                dp[j] = 1 + min(prev, dp[j], dp[j - 1])
+            dp[j] = prev if a[i-1] == b[j-1] else 1 + min(prev, dp[j], dp[j-1])
             prev = temp
     return dp[n]
 
 
-def _is_numeric(s: str) -> bool:
-    try:
-        float(s.replace(",", "").replace("%", ""))
-        return True
-    except ValueError:
-        return False
-
-
-def _values_match(
-    actual: str,
-    expected: str,
-    similarity_threshold: float = 0.10,
-    numeric_tolerance: float = 0.10,
-) -> bool:
-    """
-    Return True if two values are considered equal.
-
-    Rules (same as Galois):
-    - Normalize both values first.
-    - Numeric  : allow ± numeric_tolerance relative difference.
-    - String   : allow edit distance ≤ similarity_threshold * len(expected).
-    """
+def _values_match(actual: str, expected: str,
+                  similarity_threshold: float = 0.30) -> bool:
     a = _normalize(actual)
     e = _normalize(expected)
-
     if a == e:
         return True
-
-    if _is_numeric(a) and _is_numeric(e):
-        va = float(a.replace(",", "").replace("%", ""))
-        ve = float(e.replace(",", "").replace("%", ""))
-        if ve == 0:
-            return va == 0
-        return abs(va - ve) / abs(ve) <= numeric_tolerance
-
+    if a in e or e in a:
+        return True
     max_dist = max(1, math.ceil(len(e) * similarity_threshold))
     return _edit_distance(a, e) <= max_dist
 
 
-
-def _triples_match(
-    actual: Triple,
-    expected: Triple,
-    similarity_threshold: float,
-    numeric_tolerance: float,
-) -> bool:
-    """
-    Return True if two triples match.
-    Both s and o must match — p is ignored (it is always fixed in our patterns).
-    """
-    return _values_match(
-        actual.s, expected.s, similarity_threshold, numeric_tolerance,
-    ) and _values_match(
-        actual.o, expected.o, similarity_threshold, numeric_tolerance,
+def _triple_match(actual: Triple, expected: Triple,
+                  similarity_threshold: float) -> bool:
+    return (
+        _values_match(actual.s, expected.s, similarity_threshold)
+        and _values_match(actual.o, expected.o, similarity_threshold)
     )
 
 
-#  dataclass 
+def _count_tp_values(actual: set[str], expected: set[str],
+                     similarity_threshold: float) -> int:
+    expected_list = list(expected)
+    matched = [False] * len(expected_list)
+    tp = 0
+    for a in actual:
+        for i, e in enumerate(expected_list):
+            if not matched[i] and _values_match(a, e, similarity_threshold):
+                matched[i] = True
+                tp += 1
+                break
+    return tp
+
+
+def _count_tp_triples(actual: set[Triple], expected: set[Triple],
+                      similarity_threshold: float) -> int:
+    expected_list = list(expected)
+    matched = [False] * len(expected_list)
+    tp = 0
+    for a in actual:
+        for i, e in enumerate(expected_list):
+            if not matched[i] and _triple_match(a, e, similarity_threshold):
+                matched[i] = True
+                tp += 1
+                break
+    return tp
+
 
 @dataclass
 class MetricScores:
-    precision:   float
-    recall:      float
-    f1_triple:   float
-    cardinality: float
-    avg_score:   float
+    precision: float
+    recall:    float
+    f1:        float
+    n_actual:  int = 0
 
     def to_dict(self) -> dict:
         return asdict(self)
 
     def __str__(self) -> str:
-        return (
-            f"Precision={self.precision:.4f}  "
-            f"Recall={self.recall:.4f}  "
-            f"F1-Triple={self.f1_triple:.4f}  "
-            f"Cardinality={self.cardinality:.4f}  "
-            f"AVG-Score={self.avg_score:.4f}"
+        return (f"Precision={self.precision:.4f}  "
+                f"Recall={self.recall:.4f}  "
+                f"F1={self.f1:.4f}")
+
+
+@dataclass
+class AggregatedScores:
+    precision_mean: float
+    precision_std:  float
+    recall_mean:    float
+    recall_std:     float
+    f1_mean:        float
+    f1_std:         float
+    n_runs:         int
+    n_generated:    float = 0.0   # mean number of values generated
+
+    @classmethod
+    def from_runs(cls, scores: list[MetricScores]) -> "AggregatedScores":
+        if not scores:
+            raise ValueError("No scores to aggregate.")
+        n = len(scores)
+        std_fn = statistics.stdev if n > 1 else lambda _: 0.0
+        ps = [s.precision for s in scores]
+        rs = [s.recall    for s in scores]
+        fs = [s.f1        for s in scores]
+        gs = [s.n_actual  for s in scores]
+        return cls(
+            precision_mean=round(statistics.mean(ps), 4),
+            precision_std =round(std_fn(ps), 4),
+            recall_mean   =round(statistics.mean(rs), 4),
+            recall_std    =round(std_fn(rs), 4),
+            f1_mean       =round(statistics.mean(fs), 4),
+            f1_std        =round(std_fn(fs), 4),
+            n_runs        =n,
+            n_generated   =round(statistics.mean(gs), 1),
         )
 
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+    def __str__(self) -> str:
+        return (f"Precision={self.precision_mean:.4f}±{self.precision_std:.4f}  "
+                f"Recall={self.recall_mean:.4f}±{self.recall_std:.4f}  "
+                f"F1={self.f1_mean:.4f}±{self.f1_std:.4f}  "
+                f"(N={self.n_runs})")
 
 
 class Metrics:
-    """
-    Computes evaluation metrics for RDF triple extraction.
-    All methods are static — no instantiation needed.
-
-    Parameters (all methods)
-    ------------------------
-    actual   : set[Triple]
-    expected : set[Triple]
-    """
-
     @staticmethod
     def compute(
-        actual: set[Triple],
-        expected: set[Triple],
-        similarity_threshold: float = 0.10,
-        numeric_tolerance: float = 0.10,
+        actual:   Union[set[str], set[Triple]],
+        expected: Union[set[str], set[Triple]],
+        mode: str = "values",
+        similarity_threshold: float = 0.30,
     ) -> MetricScores:
-        p    = Metrics.precision(actual, expected, similarity_threshold, numeric_tolerance)
-        r    = Metrics.recall(actual, expected, similarity_threshold, numeric_tolerance)
-        f1   = Metrics.f1_triple(actual, expected, similarity_threshold, numeric_tolerance)
-        card = Metrics.cardinality(actual, expected)
-        avg  = (f1 + card) / 2.0
+        if mode == "values":
+            tp = _count_tp_values(actual, expected, similarity_threshold)
+        elif mode == "triples":
+            tp = _count_tp_triples(actual, expected, similarity_threshold)
+        else:
+            raise ValueError(f"Unknown mode '{mode}'.")
+
+        n_actual   = len(actual)
+        n_expected = len(expected)
+
+        precision = (tp / n_actual)   if n_actual   else (1.0 if not expected else 0.0)
+        recall    = (tp / n_expected) if n_expected  else 1.0
+        f1        = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0
 
         return MetricScores(
-            precision=round(p, 4),
-            recall=round(r, 4),
-            f1_triple=round(f1, 4),
-            cardinality=round(card, 4),
-            avg_score=round(avg, 4),
+            precision=round(precision, 4),
+            recall   =round(recall,    4),
+            f1       =round(f1,        4),
+            n_actual =n_actual,
         )
-
-    @staticmethod
-    def precision(
-        actual: set[Triple],
-        expected: set[Triple],
-        similarity_threshold: float = 0.10,
-        numeric_tolerance: float = 0.10,
-    ) -> float:
-        if not actual:
-            return 1.0 if not expected else 0.0
-        tp = _count_true_positives(actual, expected, similarity_threshold, numeric_tolerance)
-        return tp / len(actual)
-
-    @staticmethod
-    def recall(
-        actual: set[Triple],
-        expected: set[Triple],
-        similarity_threshold: float = 0.10,
-        numeric_tolerance: float = 0.10,
-    ) -> float:
-        if not expected:
-            return 1.0
-        tp = _count_true_positives(actual, expected, similarity_threshold, numeric_tolerance)
-        return tp / len(expected)
-
-    @staticmethod
-    def f1_triple(
-        actual: set[Triple],
-        expected: set[Triple],
-        similarity_threshold: float = 0.10,
-        numeric_tolerance: float = 0.10,
-    ) -> float:
-        p = Metrics.precision(actual, expected, similarity_threshold, numeric_tolerance)
-        r = Metrics.recall(actual, expected, similarity_threshold, numeric_tolerance)
-        if p + r == 0:
-            return 0.0
-        return 2 * p * r / (p + r)
-
-    @staticmethod
-    def cardinality(actual: set[Triple], expected: set[Triple]) -> float:
-        n_a = len(actual)
-        n_e = len(expected)
-        if n_a == 0 and n_e == 0:
-            return 1.0
-        if n_a == 0 or n_e == 0:
-            return 0.0
-        return min(n_a, n_e) / max(n_a, n_e)
-
-
-# ─── Internal helper ──────────────────────────────────────────────────────────
-
-def _count_true_positives(
-    actual: set[Triple],
-    expected: set[Triple],
-    similarity_threshold: float,
-    numeric_tolerance: float,
-) -> int:
-    """Greedy one-to-one matching."""
-    expected_list = list(expected)
-    matched = [False] * len(expected_list)
-    tp = 0
-    for act in actual:
-        for i, exp in enumerate(expected_list):
-            if not matched[i] and _triples_match(
-                act, exp, similarity_threshold, numeric_tolerance
-            ):
-                matched[i] = True
-                tp += 1
-                break
-    return tp
