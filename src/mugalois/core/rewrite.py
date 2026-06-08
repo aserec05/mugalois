@@ -11,6 +11,7 @@ from mugalois.core.types import (
     AnyCondition, Condition, ConditionIN,
     Environment,
 )
+from mugalois.core.operators import _apply
 
 
 def RW1(
@@ -23,17 +24,17 @@ def RW1(
 
     For each condition c on variable ?x:
 
-    1. Equality / IN (= or IN)
-       - no seeds yet  → env.set(?x, {val})
-       - seeds exist   → env.set(?x, existing ∩ {val})   # intersect
+    1. Equality / IN
+       - no seeds  → env.set(?x, {val})
+       - seeds     → env.set(?x, existing ∩ {val})
 
-    2. Numeric / inequality (>, <, >=, <=, !=) with seeds known
-       → env.set(?x, filter(existing, c))                 # filter seeds directly
+    2. Numeric / inequality with known seeds
+       → env.set(?x, filter(existing, c))
 
     3. Otherwise (no seeds, not equality)
-       → gamma.add(?x, c)                                 # LLM handles in prompt
+       → gamma.add(?x, c)   — LLM handles in prompt
 
-    Returns updated (env, gamma).
+    Returns (env, gamma).
     """
     for c in conditions:
 
@@ -54,29 +55,10 @@ def RW1(
                     env.set(c.var, {c.val})
 
             elif existing:
-                # numeric or != with known seeds → filter directly
                 filtered = {v for v in existing if _apply(v, c.op, c.val)}
                 env.set(c.var, filtered)
 
             else:
-                # no seeds, not equality → LLM handles
                 gamma.add(c.var, c)
 
     return env, gamma
-
-
-def _apply(value: str, op: str, threshold: str) -> bool:
-    """Apply a single comparison between value and threshold."""
-    try:
-        v = float(value.replace(",", ""))
-        t = float(threshold.replace(",", ""))
-        if op == ">":  return v > t
-        if op == "<":  return v < t
-        if op == ">=": return v >= t
-        if op == "<=": return v <= t
-        if op == "!=": return v != t
-    except ValueError:
-        if op == "!=": return value != threshold
-        if op == ">":  return value > threshold
-        if op == "<":  return value < threshold
-    return False
