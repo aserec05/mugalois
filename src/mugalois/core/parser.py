@@ -15,10 +15,12 @@ def json_to_triples(response_text: str) -> set[Triple]:
         end   = text.rfind("}") + 1
         if start != -1 and end > 0:
             data = json.loads(text[start:end])
-            return {
+            triples = {
                 Triple(t["s"], t["p"], t["o"])
                 for t in data.get("triples", [])
             }
+            if triples:
+                return triples
     except (json.JSONDecodeError, KeyError, TypeError, AttributeError):
         pass
 
@@ -33,9 +35,16 @@ def json_to_values(response_text: str) -> set[str]:
     """Parse LLM JSON response into a set of string values.
 
     Expected: {"values": ["...", "..."]}
-    Falls back to extracting any JSON array of strings.
+
+    Strategy:
+    1. Try clean JSON parse
+    2. Try bare array
+    3. Fallback: regex extract all quoted strings
+       (handles truncated JSON from token limits)
     """
     text = response_text.strip()
+
+    # 1. clean JSON parse
     try:
         start = text.find("{")
         end   = text.rfind("}") + 1
@@ -46,7 +55,7 @@ def json_to_values(response_text: str) -> set[str]:
     except (json.JSONDecodeError, KeyError, TypeError, AttributeError):
         pass
 
-    # fallback — try bare array
+    # 2. bare array
     try:
         start = text.find("[")
         end   = text.rfind("]") + 1
@@ -57,4 +66,9 @@ def json_to_values(response_text: str) -> set[str]:
     except (json.JSONDecodeError, TypeError):
         pass
 
-    return set()
+    # 3. regex fallback — handles truncated JSON
+    # extract all quoted strings, exclude JSON keys
+    JSON_KEYS = {"values", "triples", "s", "p", "o"}
+    candidates = re.findall(r'"([^"]+)"', text)
+    result = {v for v in candidates if v not in JSON_KEYS and len(v) > 1}
+    return result
