@@ -1,0 +1,4 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+LLMScan,17,0.8143,0.0587,0.3529,0.0,0.492,0.011,5,7.4,4.63,0.66,687.0,6.0
+LLMScan\_Motiv,17,0.8143,0.0587,0.3529,0.0,0.492,0.011,5,7.4,4.28,0.46,684.0,8.0
+LLMScan\_Tel,17,0.8143,0.0587,0.3529,0.0,0.492,0.011,5,7.4,4.48,0.36,690.0,0.0

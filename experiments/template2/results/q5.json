@@ -1,0 +1,79 @@
+{
+  "query_id": "q5",
+  "template": "T2",
+  "predicate": "population",
+  "n_expected": 90,
+  "timestamp": "2026-06-16T12:43:41",
+  "results": {
+    "LLMScan": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1556,
+      "recall_std": 0.0,
+      "f1_mean": 0.2692,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 14,
+      "time_mean": 5.95,
+      "time_std": 5.7,
+      "tokens_mean": 959.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Argentina"
+        ]
+      }
+    },
+    "LLMScan\\_Motiv": {
+      "precision_mean": 0.5049,
+      "precision_std": 0.0288,
+      "recall_mean": 0.72,
+      "recall_std": 0.0855,
+      "f1_mean": 0.5927,
+      "f1_std": 0.0448,
+      "n_runs": 5,
+      "n_generated": 128.2,
+      "time_mean": 30.27,
+      "time_std": 9.41,
+      "tokens_mean": 24602.0,
+      "tokens_std": 7529.0,
+      "examples": {
+        "fp": [
+          "Andorra",
+          "Anguilla",
+          "Antigua and Barbuda"
+        ],
+        "fn": [
+          "Australia",
+          "Benin",
+          "Bolivia"
+        ]
+      }
+    },
+    "LLMScan\\_Tel": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2911,
+      "recall_std": 0.0122,
+      "f1_mean": 0.4508,
+      "f1_std": 0.0146,
+      "n_runs": 5,
+      "n_generated": 26.2,
+      "time_mean": 10.63,
+      "time_std": 1.83,
+      "tokens_mean": 6524.0,
+      "tokens_std": 2172.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Azerbaijan"
+        ]
+      }
+    }
+  }
+}

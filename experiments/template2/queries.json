@@ -1,0 +1,764 @@
+{
+  "q1": {
+    "cardinality": "low",
+    "ground_truth": [
+      "Paris",
+      "Thimphu",
+      "Asmara"
+    ],
+    "wikidata": "SELECT DISTINCT ?capitalLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P36 ?capital ; rdfs:label ?name. FILTER(?name IN ('France'@en, 'Bhutan'@en, 'Eritrea'@en)) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
+    "nl_prompt": "what are the capitals of France, Bhutan and Eritrea?",
+    "pattern": {
+      "s": "?country",
+      "p": "capital",
+      "o": "?y"
+    },
+    "pattern_nl": {
+      "s": "?country",
+      "p": "capital",
+      "o": "?y"
+    },
+    "conditions": [
+      {
+        "type": "IN",
+        "var": "?country",
+        "values": [
+          "France",
+          "Bhutan",
+          "Eritrea"
+        ]
+      }
+    ],
+    "sparql_prompt": "SELECT ?y WHERE { ?country capital ?y . FILTER(?country IN (France, Bhutan, Eritrea)) }",
+    "return_var": "?y",
+    "ground_truth_triples": [
+      [
+        "France",
+        "capital",
+        "Paris"
+      ],
+      [
+        "Bhutan",
+        "capital",
+        "Thimphu"
+      ],
+      [
+        "Eritrea",
+        "capital",
+        "Asmara"
+      ]
+    ]
+  },
+  "q2": {
+    "cardinality": "high",
+    "motivational": true,
+    "ground_truth": [
+      "2001: A Space Odyssey",
+      "42 One Dream Rush",
+      "A Clockwork Orange",
+      "Absurda",
+      "Barry Lyndon",
+      "Batman Begins",
+      "Blue Velvet",
+      "Death Proof",
+      "Django Unchained",
+      "Dr. Strangelove",
+      "Dune",
+      "Dunkirk",
+      "Duran Duran: Unstaged",
+      "Eraserhead",
+      "Eyes Wide Shut",
+      "Fear and Desire",
+      "Following",
+      "Four Rooms",
+      "Full Metal Jacket",
+      "Inception",
+      "Inglourious Basterds",
+      "Inland Empire",
+      "Insomnia",
+      "Interstellar",
+      "Jackie Brown",
+      "Kill Bill: Volume 1",
+      "Kill Bill: Volume 2",
+      "Killer's Kiss",
+      "Lolita",
+      "Lost Highway",
+      "Lumière and Company",
+      "Memento",
+      "Mulholland Drive",
+      "Once Upon a Time in Hollywood",
+      "Oppenheimer",
+      "Paths of Glory",
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "Spartacus",
+      "Tenet",
+      "The Alphabet",
+      "The Amputee",
+      "The Dark Knight",
+      "The Dark Knight Rises",
+      "The Elephant Man",
+      "The French as Seen By...",
+      "The Grandmother",
+      "The Hateful Eight",
+      "The Killing",
+      "The Prestige",
+      "The Shining",
+      "The Short Films of David Lynch",
+      "The Straight Story",
+      "To Each His Own Cinema",
+      "Twin Peaks. Pilot Episode",
+      "Twin Peaks: Fire Walk with Me",
+      "Twin Peaks: The Missing Pieces",
+      "Wild at Heart"
+    ],
+    "wikidata": "SELECT DISTINCT ?filmLabel WHERE { ?film wdt:P57 ?director ; wdt:P31 wd:Q11424 ; wdt:P577 ?date. FILTER(?director IN (wd:Q2001, wd:Q25191, wd:Q3772, wd:Q2071)) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?filmLabel",
+    "nl_prompt": "what films were directed by Kubrick, Nolan, Tarantino or Lynch? List as many as you know.",
+    "pattern": {
+      "s": "?film",
+      "p": "directedBy",
+      "o": "?director"
+    },
+    "pattern_nl": {
+      "s": "?film",
+      "p": "directed by",
+      "o": "?director"
+    },
+    "conditions": [
+      {
+        "type": "IN",
+        "var": "?director",
+        "values": [
+          "Kubrick",
+          "Nolan",
+          "Tarantino",
+          "Lynch"
+        ]
+      }
+    ],
+    "sparql_prompt": "SELECT ?film WHERE { ?film directedBy ?director . FILTER(?director IN (Kubrick, Nolan, Tarantino, Lynch)) }",
+    "return_var": "?film",
+    "ground_truth_triples": [
+      [
+        "2001: A Space Odyssey",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "A Clockwork Orange",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Barry Lyndon",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Dr. Strangelove",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Eyes Wide Shut",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Fear and Desire",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Full Metal Jacket",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Killer's Kiss",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Lolita",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Paths of Glory",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Spartacus",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "The Killing",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "The Shining",
+        "directed by",
+        "Kubrick"
+      ],
+      [
+        "Batman Begins",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Dunkirk",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Following",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Inception",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Insomnia",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Interstellar",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Memento",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Oppenheimer",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Tenet",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "The Dark Knight",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "The Dark Knight Rises",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "The Prestige",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Larceny",
+        "directed by",
+        "Nolan"
+      ],
+      [
+        "Death Proof",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Django Unchained",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Four Rooms",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Inglourious Basterds",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Jackie Brown",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Kill Bill: Volume 1",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Kill Bill: Volume 2",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Once Upon a Time in Hollywood",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Pulp Fiction",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "Reservoir Dogs",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "The Hateful Eight",
+        "directed by",
+        "Tarantino"
+      ],
+      [
+        "42 One Dream Rush",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Absurda",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Blue Velvet",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Dune",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Duran Duran: Unstaged",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Eraserhead",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Inland Empire",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Lost Highway",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Lumière and Company",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Mulholland Drive",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Alphabet",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Amputee",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Elephant Man",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The French as Seen By...",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Grandmother",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Short Films of David Lynch",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "The Straight Story",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "To Each His Own Cinema",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Twin Peaks. Pilot Episode",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Twin Peaks: Fire Walk with Me",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Twin Peaks: The Missing Pieces",
+        "directed by",
+        "Lynch"
+      ],
+      [
+        "Wild at Heart",
+        "directed by",
+        "Lynch"
+      ]
+    ]
+  },
+  "q3": {
+    "cardinality": "medium",
+    "ground_truth": [
+      "Britpop",
+      "alternative rock",
+      "art pop",
+      "art rock",
+      "beat music",
+      "blues rock",
+      "chamber pop",
+      "classic rock",
+      "electronic rock",
+      "experimental rock",
+      "folk rock",
+      "hard rock",
+      "neo-prog",
+      "psychedelic rock",
+      "rock and roll",
+      "rock music",
+      "traditional folk music"
+    ],
+    "wikidata": "SELECT DISTINCT ?genreLabel WHERE { VALUES ?artist { wd:Q1299 wd:Q44190 } ?artist wdt:P136 ?genre. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?genreLabel",
+    "nl_prompt": "what music genres are associated with the Beatles and Radiohead, excluding pop?",
+    "pattern": {
+      "s": "?artist",
+      "p": "genre",
+      "o": "?y"
+    },
+    "pattern_nl": {
+      "s": "?artist",
+      "p": "genre",
+      "o": "?y"
+    },
+    "conditions": [
+      {
+        "type": "IN",
+        "var": "?artist",
+        "values": [
+          "Beatles",
+          "Radiohead"
+        ]
+      },
+      {
+        "type": "!=",
+        "var": "?y",
+        "val": "pop music"
+      }
+    ],
+    "sparql_prompt": "SELECT ?y WHERE { ?artist genre ?y . FILTER(?artist IN (Beatles, Radiohead) && ?y != 'pop music') }",
+    "return_var": "?y",
+    "ground_truth_triples": [
+      [
+        "Beatles",
+        "genre",
+        "beat music"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "blues rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "classic rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "experimental rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "folk rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "hard rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "psychedelic rock"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "rock and roll"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "rock music"
+      ],
+      [
+        "Beatles",
+        "genre",
+        "traditional folk music"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "Britpop"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "alternative rock"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "art pop"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "art rock"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "chamber pop"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "electronic rock"
+      ],
+      [
+        "Radiohead",
+        "genre",
+        "neo-prog"
+      ]
+    ]
+  },
+  "q4": {
+    "cardinality": "medium",
+    "ground_truth": [
+      "Afghanistan",
+      "Angola",
+      "Bolivia",
+      "Botswana",
+      "Central African Republic",
+      "Chad",
+      "Chile",
+      "Colombia",
+      "Egypt",
+      "Ethiopia",
+      "France",
+      "Indonesia",
+      "Iran",
+      "Kenya",
+      "Libya",
+      "Madagascar",
+      "Mali",
+      "Mauritania",
+      "Mexico",
+      "Mongolia",
+      "Mozambique",
+      "Myanmar",
+      "Namibia",
+      "Niger",
+      "Nigeria",
+      "Pakistan",
+      "Peru",
+      "Somalia",
+      "South Africa",
+      "South Sudan",
+      "Spain",
+      "Sudan",
+      "Tanzania",
+      "Thailand",
+      "Turkey",
+      "Ukraine",
+      "Venezuela",
+      "Zambia"
+    ],
+    "wikidata": "SELECT DISTINCT ?countryLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P2046 ?area. FILTER(?area > 500000 && ?area < 2000000) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?countryLabel",
+    "nl_prompt": "which countries have an area between 500,000 and 2,000,000 km²? List as many as you know.",
+    "pattern": {
+      "s": "?country",
+      "p": "area",
+      "o": "?y"
+    },
+    "pattern_nl": {
+      "s": "?country",
+      "p": "area",
+      "o": "?y"
+    },
+    "conditions": [
+      {
+        "type": ">",
+        "var": "?y",
+        "val": "500000"
+      },
+      {
+        "type": "<",
+        "var": "?y",
+        "val": "2000000"
+      }
+    ],
+    "sparql_prompt": "SELECT ?country WHERE { ?country area ?y . FILTER(?y > 500000 && ?y < 2000000) }",
+    "return_var": "?country",
+    "motivational": true
+  },
+  "q5": {
+    "cardinality": "high",
+    "motivational": true,
+    "ground_truth": [
+      "People's Republic of China",
+      "India",
+      "United States",
+      "Indonesia",
+      "Pakistan",
+      "Brazil",
+      "Nigeria",
+      "Bangladesh",
+      "Russia",
+      "Mexico",
+      "Ethiopia",
+      "Japan",
+      "Egypt",
+      "Philippines",
+      "Democratic Republic of the Congo",
+      "Vietnam",
+      "Iran",
+      "Turkey",
+      "Germany",
+      "France",
+      "United Kingdom",
+      "Thailand",
+      "South Africa",
+      "Italy",
+      "Tanzania",
+      "Myanmar",
+      "Colombia",
+      "South Korea",
+      "Spain",
+      "Kenya",
+      "Argentina",
+      "Uganda",
+      "Algeria",
+      "Afghanistan",
+      "Ukraine",
+      "Sudan",
+      "Iraq",
+      "Poland",
+      "Canada",
+      "Morocco",
+      "Angola",
+      "Uzbekistan",
+      "Peru",
+      "Saudi Arabia",
+      "Ghana",
+      "Malaysia",
+      "Madagascar",
+      "Venezuela",
+      "Ivory Coast",
+      "Mozambique",
+      "Nepal",
+      "Cameroon",
+      "Yemen",
+      "Australia",
+      "North Korea",
+      "Syria",
+      "Taiwan",
+      "Burkina Faso",
+      "Mali",
+      "Niger",
+      "Sri Lanka",
+      "Kazakhstan",
+      "Zambia",
+      "Chile",
+      "Chad",
+      "Romania",
+      "Malawi",
+      "Cambodia",
+      "Guatemala",
+      "Ecuador",
+      "Senegal",
+      "Zimbabwe",
+      "Rwanda",
+      "Benin",
+      "Burundi",
+      "Guinea",
+      "South Sudan",
+      "Bolivia",
+      "Belgium",
+      "Tunisia",
+      "Somalia",
+      "Cuba",
+      "Haiti",
+      "Czech Republic",
+      "Dominican Republic",
+      "Sweden",
+      "Greece",
+      "Jordan",
+      "Portugal",
+      "Azerbaijan"
+    ],
+    "wikidata": "SELECT DISTINCT ?countryLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P1082 ?pop. FILTER(?pop > 10000000) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY DESC(?pop)",
+    "nl_prompt": "which countries have a population greater than 10 million? List as many as you know.",
+    "pattern": {
+      "s": "?country",
+      "p": "population",
+      "o": "?y"
+    },
+    "pattern_nl": {
+      "s": "?country",
+      "p": "population",
+      "o": "?y"
+    },
+    "conditions": [
+      {
+        "type": ">",
+        "var": "?y",
+        "val": "10000000"
+      }
+    ],
+    "sparql_prompt": "SELECT ?country WHERE { ?country population ?y . FILTER(?y > 10000000) }",
+    "return_var": "?country"
+  }
+}

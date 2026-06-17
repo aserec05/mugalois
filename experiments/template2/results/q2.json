@@ -1,0 +1,125 @@
+{
+  "query_id": "q2",
+  "template": "T2",
+  "predicate": "directed by",
+  "n_expected": 58,
+  "timestamp": "2026-06-13T17:44:38",
+  "results": {
+    "NL": {
+      "precision_mean": 0.9509,
+      "precision_std": 0.0027,
+      "recall_mean": 0.3345,
+      "recall_std": 0.0197,
+      "f1_mean": 0.4946,
+      "f1_std": 0.0218,
+      "n_runs": 5,
+      "n_generated": 20.4,
+      "time_mean": 1.59,
+      "time_std": 0.36,
+      "tokens_mean": 191.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Barry Lyndon"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.9,
+      "precision_std": 0.0559,
+      "recall_mean": 0.1276,
+      "recall_std": 0.0154,
+      "f1_mean": 0.2234,
+      "f1_std": 0.0253,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 1.15,
+      "time_std": 0.25,
+      "tokens_mean": 131.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Barry Lyndon"
+        ]
+      }
+    },
+    "LLMScan": {
+      "precision_mean": 0.9579,
+      "precision_std": 0.0015,
+      "recall_mean": 0.3931,
+      "recall_std": 0.0144,
+      "f1_mean": 0.5573,
+      "f1_std": 0.0147,
+      "n_runs": 5,
+      "n_generated": 23.8,
+      "time_mean": 7.47,
+      "time_std": 0.58,
+      "tokens_mean": 1143.0,
+      "tokens_std": 39.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Batman Begins"
+        ]
+      }
+    },
+    "LLMScan_KeyOnly": {
+      "precision_mean": 0.9599,
+      "precision_std": 0.0023,
+      "recall_mean": 0.4138,
+      "recall_std": 0.0244,
+      "f1_mean": 0.578,
+      "f1_std": 0.0244,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 6.64,
+      "time_std": 0.47,
+      "tokens_mean": 965.0,
+      "tokens_std": 21.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Batman Begins"
+        ]
+      }
+    },
+    "LLMScan_PostFilter": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 4.31,
+      "time_std": 0.46,
+      "tokens_mean": 1248.0,
+      "tokens_std": 11.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "2001: A Space Odyssey",
+          "42 One Dream Rush",
+          "A Clockwork Orange"
+        ]
+      }
+    }
+  }
+}

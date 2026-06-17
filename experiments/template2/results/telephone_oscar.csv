@@ -1,0 +1,5 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+Standard,922,0.9167,0.0,0.0119,0.0,0.0236,0.0,5,12,3.01,0.56,788.0,48.0
+Motivational,922,0.9167,0.0,0.0119,0.0,0.0236,0.0,5,12,2.81,0.33,780.0,0.0
+Telephone_names,922,0.8919,0.0437,0.044,0.0049,0.0839,0.0086,5,45.8,15.87,3.3,23287.0,5774.0
+Telephone_dirs,922,0.8918,0.0756,0.029,0.0254,0.055,0.0461,5,31.8,9.34,7.92,11621.0,16480.0

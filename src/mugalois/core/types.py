@@ -15,6 +15,9 @@ class Triple:
     def __repr__(self):
         return f"({self.s}, {self.p}, {self.o})"
 
+    def __lt__(self, other: "Triple") -> bool:
+        return (self.s, self.p, self.o) < (other.s, other.p, other.o)
+
 
 @dataclass(frozen=True)
 class TriplePattern:
@@ -158,8 +161,10 @@ class Environment:
     def set(self, var: str, values: set) -> None:
         self._bindings[var] = set(values)
 
-    def add(self, var: str, values: set) -> None:
-        self._bindings[var] = self.get(var) | set(values)
+    def add(self, var: str, value) -> None:
+        current = self.get(var)
+        current.add(value)
+        self._bindings[var] = current
 
     def update(self, var: str, values: set) -> None:
         self._bindings[var] = self.get(var) | set(values)

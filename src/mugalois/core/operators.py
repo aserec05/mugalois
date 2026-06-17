@@ -26,7 +26,7 @@ def _apply(value: str, op: str, threshold: str) -> bool:
     Operators: =, !=, >, <, >=, <=
     """
     try:
-        v = float(value.replace(",", ""))
+        v = float(str(value).replace(",", ""))
         t = float(threshold.replace(",", ""))
         if op == "=":  return v == t
         if op == ">":  return v > t
@@ -62,3 +62,20 @@ def filter_by_subject_object(T1: set[Triple], T2: set[Triple]) -> set[Triple]:
     """Keep triples from T1 whose subject appears as object in T2."""
     objects_T2 = {_normalize(t.o) for t in T2}
     return {t for t in T1 if _normalize(t.s) in objects_T2}
+
+
+# ── Path join ─────────────────────────────────────────────────────────────────
+
+def path_join(T1: set[Triple], T2: set[Triple]) -> set[str]:
+    """
+    Join T1 and T2 on the shared intermediate variable ?b.
+
+    T1 : (s, p1, ?b)  — ?b is the object
+    T2 : (?b, p2, t)  — ?b is the subject
+
+    Returns the set of ?b values that appear in both T1.o and T2.s.
+    These are the valid intermediate nodes connecting s to t.
+    """
+    b_from_T1 = {_normalize(t.o) for t in T1}
+    b_from_T2 = {_normalize(t.s) for t in T2}
+    return b_from_T1 & b_from_T2

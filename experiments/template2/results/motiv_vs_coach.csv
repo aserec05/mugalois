@@ -1,0 +1,3 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+Motivational,46,0.6005,0.0272,0.4174,0.0238,0.4922,0.0222,5,32,9.38,1.59,5548.0,1076.0
+Motivational+Coach,46,0.4991,0.0294,0.4217,0.0195,0.4565,0.015,5,39,18.92,6.02,20570.0,11419.0

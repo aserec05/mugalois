@@ -42,6 +42,15 @@ def _bound_term(pattern: TriplePattern) -> tuple[str, str, str]:
     return ("o", pattern.o, pattern.s)
 
 
+# ── Motivational ─────────────────────────────────────────────────────────────
+
+MOTIVATIONAL = (
+    "You can do it! Dig deeper into your memory — "
+    "list entities you know that are less well-known. "
+    "Push beyond the obvious ones!"
+)
+
+
 # ── NL baseline ───────────────────────────────────────────────────────────────
 
 def genNLPrompt(nl_question: str) -> str:
@@ -66,24 +75,28 @@ def genSPARQLPrompt(sparql_query: str) -> str:
 # ── TripleScan ────────────────────────────────────────────────────────────────
 
 def genTripleScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
-                        conditions: list = None) -> str:
-    """TripleScan — returns full triples, variable side projected by experiment.
+                        conditions: list = None,
+                        lookahead: str = "") -> str:
+    """TripleScan — returns full triples.
 
-    encoding : "pattern"     → (s, p, o) RDF pattern notation
-               "constrained" → explicit fixed/variable context
-               "sparql"      → SPARQL SELECT pattern
+    encoding  : "pattern" | "constrained" | "sparql"
+    lookahead : optional hint about how results will be used next
     """
     bound_side, bound_val, var_name = _bound_term(pattern)
     s, p, o = pattern.s, pattern.p, pattern.o
 
     cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    la_block   = f"Note: these results will then be used for: {lookahead}\n\n" \
+                 if lookahead else ""
 
     if encoding == "pattern":
         return (
             f"Task: List all factual triples matching this RDF pattern:\n"
             f"({s}, {p}, {o})\n\n"
             f"{cond_block}"
-            f"Be exhaustive. Return as many results as you know.\n"
+            f"{la_block}"
+            f"Be exhaustive. "
+            f"Return as many results as you know.\n"
             f"{_TRIPLE_REMIND}"
         )
 
@@ -93,6 +106,7 @@ def genTripleScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
                 f"Context: The object is fixed: {bound_val}\n"
                 f"         The predicate is fixed: {p}\n\n"
                 f"{cond_block}"
+                f"{la_block}"
                 f"Task: Find all values of {var_name} such that the triple\n"
                 f"({var_name}, {p}, {bound_val}) factually holds.\n"
                 f"Only return values you are certain about.\n"
@@ -104,6 +118,7 @@ def genTripleScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
                 f"Context: The subject is fixed: {bound_val}\n"
                 f"         The predicate is fixed: {p}\n\n"
                 f"{cond_block}"
+                f"{la_block}"
                 f"Task: Find all values of {var_name} such that the triple\n"
                 f"({bound_val}, {p}, {var_name}) factually holds.\n"
                 f"Only return values you are certain about.\n"
@@ -116,20 +131,17 @@ def genTripleScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
             f"Task: Execute this SPARQL pattern using your knowledge:\n"
             f"SELECT {var_name} WHERE {{ {s} {p} {o} }}\n\n"
             f"{cond_block}"
+            f"{la_block}"
             f"Return all matching triples in full (s, p, o) form.\n"
             f"Be exhaustive.\n"
             f"{_TRIPLE_REMIND}"
         )
 
-    raise ValueError(f"Unknown encoding '{encoding}'. Use 'pattern', 'constrained', or 'sparql'.")
+    raise ValueError(f"Unknown encoding '{encoding}'.")
 
 
-def genTripleScanIterativePrompt(already_found: set[str]) -> str:
-    """Iterative prompt for TripleScan — avoids repetition.
-    
-    already_found : set[str] — already projected values (not Triples).
-    """
-    values = ", ".join(sorted(already_found))
+def genTripleScanIterativePrompt(already_found: set, pattern=None) -> str:
+    values = ", ".join(sorted(str(t) for t in already_found))
     return (
         f"Context: The following values have already been retrieved:\n"
         f"{values}\n\n"
@@ -143,22 +155,27 @@ def genTripleScanIterativePrompt(already_found: set[str]) -> str:
 # ── ValueScan ─────────────────────────────────────────────────────────────────
 
 def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
-                       conditions: list = None) -> str:
-    """ValueScan — returns values directly, no triple structure.
+                       conditions: list = None,
+                       lookahead: str = "") -> str:
+    """ValueScan — returns values directly.
 
-    Same encodings as TripleScan but schema is {"values": ["..."]}.
+    lookahead : optional hint about how results will be used next
     """
     bound_side, bound_val, var_name = _bound_term(pattern)
     s, p, o = pattern.s, pattern.p, pattern.o
 
     cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    la_block   = f"Note: these results will then be used for: {lookahead}\n\n" \
+                 if lookahead else ""
 
     if encoding == "pattern":
         return (
             f"Task: List all values of {var_name} such that:\n"
             f"({s}, {p}, {o}) factually holds.\n\n"
             f"{cond_block}"
-            f"Be exhaustive. Return as many values as you know.\n"
+            f"{la_block}"
+            f"Be exhaustive. "
+            f"Return as many values as you know.\n"
             f"{_VALUE_REMIND}"
         )
 
@@ -168,6 +185,7 @@ def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
                 f"Context: The object is fixed: {bound_val}\n"
                 f"         The predicate is fixed: {p}\n\n"
                 f"{cond_block}"
+                f"{la_block}"
                 f"Task: Find all values of {var_name} such that the triple\n"
                 f"({var_name}, {p}, {bound_val}) factually holds.\n"
                 f"Only return values you are certain about.\n"
@@ -179,6 +197,7 @@ def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
                 f"Context: The subject is fixed: {bound_val}\n"
                 f"         The predicate is fixed: {p}\n\n"
                 f"{cond_block}"
+                f"{la_block}"
                 f"Task: Find all values of {var_name} such that the triple\n"
                 f"({bound_val}, {p}, {var_name}) factually holds.\n"
                 f"Only return values you are certain about.\n"
@@ -191,16 +210,16 @@ def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
             f"Task: Execute this SPARQL pattern using your knowledge:\n"
             f"SELECT {var_name} WHERE {{ {s} {p} {o} }}\n\n"
             f"{cond_block}"
+            f"{la_block}"
             f"Return only the values of {var_name}. Be exhaustive.\n"
             f"{_VALUE_REMIND}"
         )
 
-    raise ValueError(f"Unknown encoding '{encoding}'. Use 'pattern', 'constrained', or 'sparql'.")
+    raise ValueError(f"Unknown encoding '{encoding}'.")
 
 
-def genValueScanIterativePrompt(already_found: set[str]) -> str:
-    """Iterative prompt for ValueScan — avoids repetition."""
-    values = ", ".join(sorted(already_found))
+def genValueScanIterativePrompt(already_found: set, pattern=None) -> str:
+    values = ", ".join(sorted(str(t) for t in already_found))
     return (
         f"Context: The following values have already been retrieved:\n"
         f"{values}\n\n"
@@ -211,10 +230,46 @@ def genValueScanIterativePrompt(already_found: set[str]) -> str:
     )
 
 
+# ── Path prompts (T3) ─────────────────────────────────────────────────────────
+
+def genSimpleConfPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMSimpleConf — confidence to solve the full two-hop path at once."""
+    return (
+        f"You need to find all ?b such that:\n"
+        f"  ({s}, {p1}, ?b) AND (?b, {p2}, {t}) both hold factually.\n\n"
+        f"How confident are you (0 to 1) that you can list all such ?b "
+        f"in a single answer without decomposing the problem?\n"
+        f"Answer with a single float. No explanation."
+    )
+
+
+def genDirectionConfPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMDirectionConf — which direction is most efficient."""
+    return (
+        f"To find all ?b where ({s}, {p1}, ?b) AND (?b, {p2}, {t}), "
+        f"I can start from either side:\n\n"
+        f"  A = start from {s}: find all {p1}s of {s}, then filter by {p2}={t}\n"
+        f"  B = start from {t}: find all entities with {p2}={t}, then filter by {p1} of {s}\n\n"
+        f"  A = how many {p1}s does {s} have?\n"
+        f"  B = how many entities have {p2} equal to {t}?\n\n"
+        f"Choose the smaller set to minimize intermediate candidates.\n"
+        f"You may reason briefly, but end with exactly one word: A or B."
+    )
+
+
+def genSimpleScanPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMSimpleScan — single call for the full two-hop path."""
+    return (
+        f"Task: Find all values of ?b such that:\n"
+        f"  ({s}, {p1}, ?b) AND (?b, {p2}, {t}) both hold factually.\n\n"
+        f"Be exhaustive. Return as many values as you know.\n"
+        f"{_VALUE_REMIND}"
+    )
+
+
 # ── Message builders ──────────────────────────────────────────────────────────
 
 def build_messages(user_prompt: str) -> list:
-    """TripleScan messages — uses TRIPLE_SCHEMA system prompt."""
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user",   "content": user_prompt},
@@ -222,17 +277,16 @@ def build_messages(user_prompt: str) -> list:
 
 
 def build_value_messages(user_prompt: str) -> list:
-    """ValueScan / NL / SPARQL messages — uses VALUE_SCHEMA system prompt."""
     return [
         {"role": "system", "content": SYSTEM_PROMPT_VALUE},
         {"role": "user",   "content": user_prompt},
     ]
 
 
-# ── Legacy — kept for compatibility ───────────────────────────────────────────
+# ── Legacy ────────────────────────────────────────────────────────────────────
 
-def genTableScanPrompt(pattern: TriplePattern, context: str = "", encoding: str = "current") -> str:
-    """Legacy TableScan — kept for compatibility with existing algorithms."""
+def genTableScanPrompt(pattern: TriplePattern, context: str = "",
+                       encoding: str = "current") -> str:
     p_label = pattern.p.split(":")[-1] if ":" in pattern.p else pattern.p
     if context:
         return (
@@ -300,7 +354,7 @@ def genKeyCrankPrompt(pattern: TriplePattern, env: Environment,
         constraint = constraint.replace("is one of", "may be one of")
         return (
             f"Context: The subject is fixed: {seed_value}. "
-            f"The predicate is {pattern.p}.\n\n"
+            f"The predicate is {pattern.p}.\n"
             f"{cond_block}"
             f"Task: List all triples ({seed_value}, {pattern.p}, {pattern.o}) "
             f"that factually hold.\n"
@@ -314,7 +368,7 @@ def genKeyCrankPrompt(pattern: TriplePattern, env: Environment,
         constraint = constraint.replace("is one of", "may be one of")
         return (
             f"Context: The object is fixed: {seed_value}. "
-            f"The predicate is {pattern.p}.\n\n"
+            f"The predicate is {pattern.p}.\n"
             f"{cond_block}"
             f"Task: List all triples ({pattern.s}, {pattern.p}, {seed_value}) "
             f"that factually hold.\n"
@@ -349,6 +403,7 @@ def genConfidencePrompt(pattern: TriplePattern, env: Environment) -> str:
         f"Do not add any comment."
     )
 
+
 def genConfidenceConditionTripleScanPrompt(
     pattern:      TriplePattern,
     env:          Environment,
@@ -356,18 +411,20 @@ def genConfidenceConditionTripleScanPrompt(
     seed_example: str | None = None,
 ) -> str:
     constraints = _build_constraints(pattern, env)
-    seed_block = f"Reference seed: {seed_example}\n" if seed_example else ""
+    seed_block  = f"\nReference example: {seed_example}\n" if seed_example else ""
+    cond_desc   = condition.replace("FILTER(", "").rstrip(")")
     return (
-        f"Context: The following values are already known:\n"
-        f"{constraints}\n"
-        f"{seed_block}\n"
-        f"Task: Given the triple pattern ({pattern.s}, {pattern.p}, {pattern.o}) "
-        f"and a NEW condition {condition}, "
-        f"how confident are you to list factual values holding the condition \"{condition}\"?\n"
-        f"Respond only with a float between 0 and 1, "
-        f"where 1 means fully confident and 0 means unable. "
-        f"Do not add any comment."
+        f"Context: You are scanning the triple pattern "
+        f"({pattern.s}, {pattern.p}, {pattern.o}).\n"
+        f"{constraints}"
+        f"{seed_block}"
+        f"Condition to satisfy: {cond_desc}\n\n"
+        f"Task: How confident are you (0 to 1) that you can list factual triples "
+        f"for this pattern while correctly respecting the condition above?\n"
+        f"Answer with a single float between 0 and 1. No explanation."
     )
+
+
 def genConditionsPrompt(conditions: set[str]) -> str:
     conditions_str = "\n".join(f"- {c}" for c in sorted(conditions))
     return (

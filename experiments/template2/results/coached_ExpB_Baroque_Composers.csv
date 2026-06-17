@@ -1,0 +1,5 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+Standard,46,1.0,0.0,0.2174,0.0,0.3571,0.0,5,10,4.16,2.88,714.0,0.0
+Motivational,46,0.6002,0.0462,0.413,0.0,0.4888,0.0147,5,31.8,9.83,1.52,5544.0,1083.0
+Coached_blind,46,0.8625,0.3075,0.2174,0.0,0.337,0.045,5,14.4,4.41,2.36,2770.0,2977.0
+Coached_context,46,0.5283,0.0489,0.3652,0.0283,0.4309,0.0297,5,32,8.85,1.0,8709.0,2678.0

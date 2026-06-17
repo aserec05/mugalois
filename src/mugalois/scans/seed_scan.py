@@ -1,11 +1,4 @@
 # src/mugalois/scans/seed_scan.py
-"""
-SeedScan — Algorithm 3.
-
-Receives (inject_conds, post_filter_conds) already computed by the orchestrator.
-Never calls LLMConfCond — condition split happened once upstream.
-"""
-
 from __future__ import annotations
 
 from mugalois.core.types import Triple, TriplePattern, Environment, AnyCondition
@@ -17,6 +10,12 @@ from mugalois.core.prompts import (
 from mugalois.core.condition_filter import post_filter
 from mugalois.llm.llm_client import BaseLLM
 
+MOTIVATIONAL_PROMPT = (
+    "You can do it! Dig deeper into your memory — "
+    "list entities you know that are less well-known. "
+    "Push beyond the obvious ones!"
+)
+
 
 def LLMSeedScan(
     pattern:           TriplePattern,
@@ -25,13 +24,8 @@ def LLMSeedScan(
     inject_conds:      list[AnyCondition] = None,
     post_filter_conds: list[AnyCondition] = None,
     max_iter:          int = 5,
+    motivational:      bool = False,
 ) -> set[Triple]:
-    """
-    SeedScan with pre-split conditions.
-
-    inject_conds      → passed to genSeedCrankPrompt to narrow LLM search space.
-    post_filter_conds → applied programmatically on the final triple set.
-    """
     inject_conds      = inject_conds      or []
     post_filter_conds = post_filter_conds or []
 
@@ -41,6 +35,14 @@ def LLMSeedScan(
     for i in range(max_iter):
         if i == 0:
             prompt = genSeedCrankPrompt(pattern, env, conditions=inject_conds)
+        elif motivational:
+            already = ", ".join(sorted(str(t) for t in T))
+            prompt = (
+                f"Context: Already retrieved:\n{already}\n\n"
+                f"{MOTIVATIONAL_PROMPT}\n"
+                f"List more triples if any remain. "
+                f"If truly none, return an empty list."
+            )
         else:
             prompt = genIterativePrompt(T)
 
@@ -49,9 +51,8 @@ def LLMSeedScan(
             *ctx,
             {"role": "user", "content": prompt},
         ]
-
         response = llm.chat(messages)
-        T_new = json_to_triples(response.text)
+        T_new    = json_to_triples(response.text)
 
         if T_new.issubset(T):
             break

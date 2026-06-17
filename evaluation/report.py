@@ -23,15 +23,14 @@ class Report:
         self._examples: dict[str, dict] = {}
 
     def add(self, strategy: str, scores: AggregatedScores,
-            actual: set[str] | None = None,
-            expected: set[str] | None = None,
+            actual=None, expected=None,
             similarity_threshold: float = 0.30) -> "Report":
         if not isinstance(scores, AggregatedScores):
             raise ValueError(f"Expected AggregatedScores, got {type(scores).__name__}.")
         self._results[strategy] = scores
         if actual is not None and expected is not None:
-            self._examples[strategy] = _fp_fn_examples(actual, expected,
-                                                        similarity_threshold)
+            self._examples[strategy] = _fp_fn_examples(
+                actual, expected, similarity_threshold)
         return self
 
     def print_table(self) -> None:
@@ -44,7 +43,8 @@ class Report:
 
         header = (f"{'Strategy':<{strat_w}}"
                   f"{'GT':>6}{'Gen':>6}"
-                  f"{'Precision':>{COL_W}}{'Recall':>{COL_W}}{'F1':>{COL_W}}")
+                  f"{'Precision':>{COL_W}}{'Recall':>{COL_W}}{'F1':>{COL_W}}"
+                  f"{'Time(s)':>10}{'Tokens':>10}")
         sep = "─" * len(header)
 
         print()
@@ -62,9 +62,13 @@ class Report:
             r = f"{scores.recall_mean:.3f}±{scores.recall_std:.3f}"
             f = f"{scores.f1_mean:.3f}±{scores.f1_std:.3f}"
             gen = f"{scores.n_generated:.0f}"
+            t = f"{scores.time_mean:.1f}±{scores.time_std:.1f}"
+            tok = f"{scores.tokens_mean:.0f}"
+
             print(f"{strategy:<{strat_w}}"
                   f"{self.n_expected:>6}{gen:>6}"
-                  f"{p:>{COL_W}}{r:>{COL_W}}{f:>{COL_W}}{marker}")
+                  f"{p:>{COL_W}}{r:>{COL_W}}{f:>{COL_W}}"
+                  f"{t:>10}{tok:>10}{marker}")
 
             if strategy in self._examples:
                 ex = self._examples[strategy]
@@ -97,15 +101,16 @@ class Report:
 
     def save_csv(self, path) -> None:
         _ensure_dir(path)
-        keys = ["precision_mean", "precision_std", "recall_mean",
-                "recall_std", "f1_mean", "f1_std", "n_runs", "n_generated"]
+        keys = ["precision_mean", "precision_std", "recall_mean", "recall_std",
+                "f1_mean", "f1_std", "n_runs", "n_generated",
+                "time_mean", "time_std", "tokens_mean", "tokens_std"]
         with open(path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["strategy", "n_expected"] + keys)
             writer.writeheader()
             for s, sc in self._results.items():
                 writer.writerow({"strategy": s,
                                  "n_expected": self.n_expected,
-                                 **sc.to_dict()})
+                                 **{k: getattr(sc, k, 0) for k in keys}})
         print(f"  Saved → {path}")
 
     def to_dict(self) -> dict:
@@ -130,5 +135,4 @@ def _fp_fn_examples(actual, expected, similarity_threshold):
 
 
 def _ensure_dir(path) -> None:
-    from pathlib import Path
     Path(path).parent.mkdir(parents=True, exist_ok=True)

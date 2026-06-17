@@ -45,8 +45,13 @@ def LLMConfCond(
     )
     response = llm.chat(build_messages(prompt))
     try:
-        return max(0.0, min(1.0, float(response.text.strip())))
-    except ValueError:
+        text = response.text.strip()
+        if text.startswith("{"):
+            import json as _json
+            data = _json.loads(text)
+            text = str(data.get("confidence", data.get("score", 0.0)))
+        return max(0.0, min(1.0, float(text)))
+    except (ValueError, KeyError, Exception):
         return 0.0
 
 

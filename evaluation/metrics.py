@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 import re
 import statistics
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Union
 
 from mugalois.core.types import Triple
@@ -18,7 +18,6 @@ def _normalize(value: str) -> str:
         value = value.split("#")[-1]
     if ":" in value:
         value = value.split(":")[-1]
-    # strip parenthetical details e.g. "Copley Medal (1909)" → "Copley Medal"
     value = _re_paren.sub("", value)
     return value.replace("_", " ").lower().strip()
 
@@ -55,8 +54,7 @@ def _triple_match(actual: Triple, expected: Triple,
     )
 
 
-def _count_tp_values(actual: set[str], expected: set[str],
-                     similarity_threshold: float) -> int:
+def _count_tp_values(actual, expected, similarity_threshold):
     expected_list = list(expected)
     matched = [False] * len(expected_list)
     tp = 0
@@ -69,8 +67,7 @@ def _count_tp_values(actual: set[str], expected: set[str],
     return tp
 
 
-def _count_tp_triples(actual: set[Triple], expected: set[Triple],
-                      similarity_threshold: float) -> int:
+def _count_tp_triples(actual, expected, similarity_threshold):
     expected_list = list(expected)
     matched = [False] * len(expected_list)
     tp = 0
@@ -88,15 +85,16 @@ class MetricScores:
     precision: float
     recall:    float
     f1:        float
-    n_actual:  int = 0
+    n_actual:  int   = 0
+    time_s:    float = 0.0
+    tokens:    int   = 0
 
     def to_dict(self) -> dict:
         return asdict(self)
 
     def __str__(self) -> str:
-        return (f"Precision={self.precision:.4f}  "
-                f"Recall={self.recall:.4f}  "
-                f"F1={self.f1:.4f}")
+        return (f"P={self.precision:.4f} R={self.recall:.4f} "
+                f"F1={self.f1:.4f} t={self.time_s:.1f}s tok={self.tokens}")
 
 
 @dataclass
@@ -108,7 +106,11 @@ class AggregatedScores:
     f1_mean:        float
     f1_std:         float
     n_runs:         int
-    n_generated:    float = 0.0   # mean number of values generated
+    n_generated:    float = 0.0
+    time_mean:      float = 0.0
+    time_std:       float = 0.0
+    tokens_mean:    float = 0.0
+    tokens_std:     float = 0.0
 
     @classmethod
     def from_runs(cls, scores: list[MetricScores]) -> "AggregatedScores":
@@ -120,6 +122,8 @@ class AggregatedScores:
         rs = [s.recall    for s in scores]
         fs = [s.f1        for s in scores]
         gs = [s.n_actual  for s in scores]
+        ts = [s.time_s    for s in scores]
+        tk = [float(s.tokens) for s in scores]
         return cls(
             precision_mean=round(statistics.mean(ps), 4),
             precision_std =round(std_fn(ps), 4),
@@ -129,23 +133,25 @@ class AggregatedScores:
             f1_std        =round(std_fn(fs), 4),
             n_runs        =n,
             n_generated   =round(statistics.mean(gs), 1),
+            time_mean     =round(statistics.mean(ts), 2),
+            time_std      =round(std_fn(ts), 2),
+            tokens_mean   =round(statistics.mean(tk), 0),
+            tokens_std    =round(std_fn(tk), 0),
         )
 
     def to_dict(self) -> dict:
         return asdict(self)
 
     def __str__(self) -> str:
-        return (f"Precision={self.precision_mean:.4f}±{self.precision_std:.4f}  "
-                f"Recall={self.recall_mean:.4f}±{self.recall_std:.4f}  "
-                f"F1={self.f1_mean:.4f}±{self.f1_std:.4f}  "
-                f"(N={self.n_runs})")
+        return (f"F1={self.f1_mean:.4f}±{self.f1_std:.4f} "
+                f"t={self.time_mean:.1f}s tok={self.tokens_mean:.0f}")
 
 
 class Metrics:
     @staticmethod
     def compute(
-        actual:   Union[set[str], set[Triple]],
-        expected: Union[set[str], set[Triple]],
+        actual:   Union[set, set],
+        expected: Union[set, set],
         mode: str = "values",
         similarity_threshold: float = 0.30,
     ) -> MetricScores:

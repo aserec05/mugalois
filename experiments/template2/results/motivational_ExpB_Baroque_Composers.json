@@ -1,0 +1,37 @@
+{
+  "query_id": "ExpB_Baroque_Composers",
+  "template": "motivational_study",
+  "predicate": "style",
+  "n_expected": 46,
+  "timestamp": "2026-06-11T17:07:20",
+  "results": {
+    "Standard": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2174,
+      "recall_std": 0.0,
+      "f1_mean": 0.3571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 3.22,
+      "time_std": 0.82,
+      "tokens_mean": 713.0,
+      "tokens_std": 2.0
+    },
+    "Motivational": {
+      "precision_mean": 0.5964,
+      "precision_std": 0.039,
+      "recall_mean": 0.4087,
+      "recall_std": 0.0097,
+      "f1_mean": 0.4848,
+      "f1_std": 0.0183,
+      "n_runs": 5,
+      "n_generated": 31.6,
+      "time_mean": 9.94,
+      "time_std": 0.89,
+      "tokens_mean": 5550.0,
+      "tokens_std": 1073.0
+    }
+  }
+}

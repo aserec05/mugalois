@@ -1,0 +1,55 @@
+{
+  "q1": {
+    "description": "Films directed by Nolan with genre Thriller",
+    "cardinality": "low",
+    "optimal_direction": "GD",
+    "s": "Nolan",
+    "p1": "directed",
+    "p2": "genre",
+    "t": "Thriller",
+    "nl_prompt": "which films directed by Christopher Nolan belong to the thriller genre?",
+    "sparql_prompt": "SELECT ?film WHERE { ?film wdt:P57 wd:Q25191 ; wdt:P136 wd:Q2484376 . }",
+    "ground_truth": [
+      "Following",
+      "Inception",
+      "Insomnia",
+      "Interstellar",
+      "Memento",
+      "Oppenheimer",
+      "Tenet",
+      "The Dark Knight",
+      "The Dark Knight Rises",
+      "The Prestige"
+    ]
+  },
+  "q2": {
+    "description": "Prime Ministers of Italy from Democrazia Cristiana",
+    "cardinality": "medium",
+    "optimal_direction": "DG",
+    "s": "Democrazia Cristiana",
+    "p1": "member",
+    "p2": "heldPosition",
+    "t": "Prime Minister of Italy",
+    "nl_prompt": "which Prime Ministers of Italy were members of Democrazia Cristiana?",
+    "sparql_prompt": "SELECT ?pm WHERE { ?pm p:P39 [ps:P39 wd:Q796897] ; wdt:P102 wd:Q815348 . }",
+    "ground_truth": [
+      "Adone Zoli",
+      "Alcide De Gasperi",
+      "Aldo Moro",
+      "Amintore Fanfani",
+      "Antonio Segni",
+      "Arnaldo Forlani",
+      "Ciriaco De Mita",
+      "Emilio Colombo",
+      "Fernando Tambroni",
+      "Francesco Cossiga",
+      "Giovanni Goria",
+      "Giovanni Leone",
+      "Giulio Andreotti",
+      "Giuseppe Pella",
+      "Mariano Rumor",
+      "Mario Scelba",
+      "Romano Prodi"
+    ]
+  }
+}

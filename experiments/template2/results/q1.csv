@@ -1,0 +1,6 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+NL,3,1.0,0.0,1.0,0.0,1.0,0.0,5,3,0.97,0.52,76.0,0.0
+SPARQL,3,1.0,0.0,1.0,0.0,1.0,0.0,5,3,0.86,0.19,102.0,0.0
+LLMScan,3,1.0,0.0,1.0,0.0,1.0,0.0,5,3,3.3,0.49,591.0,0.0
+LLMScan_KeyOnly,3,1.0,0.0,1.0,0.0,1.0,0.0,5,3,2.97,0.41,407.0,0.0
+LLMScan_PostFilter,3,1.0,0.0,0.3333,0.0,0.5,0.0,5,1,5.43,0.4,2066.0,139.0

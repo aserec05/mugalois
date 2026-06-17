@@ -1,0 +1,49 @@
+{
+  "query_id": "mugalois_portuguese",
+  "template": "T3_mugalois",
+  "predicate": "member/official language",
+  "n_expected": 9,
+  "timestamp": "2026-06-16T00:21:09",
+  "results": {
+    "MuGalois": {
+      "precision_mean": 0.9492,
+      "precision_std": 0.0705,
+      "recall_mean": 0.8445,
+      "recall_std": 0.0994,
+      "f1_mean": 0.8925,
+      "f1_std": 0.0828,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 11.24,
+      "time_std": 4.79,
+      "tokens_mean": 1960.0,
+      "tokens_std": 97.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "MuGalois_lowTau": {
+      "precision_mean": 0.9714,
+      "precision_std": 0.0639,
+      "recall_mean": 0.8445,
+      "recall_std": 0.0994,
+      "f1_mean": 0.903,
+      "f1_std": 0.0855,
+      "n_runs": 5,
+      "n_generated": 7.8,
+      "time_mean": 7.25,
+      "time_std": 3.3,
+      "tokens_mean": 1649.0,
+      "tokens_std": 786.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    }
+  }
+}
