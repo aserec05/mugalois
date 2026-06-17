@@ -1,0 +1,69 @@
+{
+  "query_id": "q1",
+  "template": "T1a+T1b",
+  "predicate": "dbo:spouse",
+  "n_expected": 2,
+  "timestamp": "2026-06-08T13:12:48",
+  "results": {
+    "NL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_T1a": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.2236,
+      "f1_mean": 0.7334,
+      "f1_std": 0.1491,
+      "n_runs": 5,
+      "n_generated": 1.2,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Elsa Einstein"
+        ]
+      }
+    },
+    "SPARQL_T1b": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Elsa Einstein"
+        ]
+      }
+    },
+    "ValueScan": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

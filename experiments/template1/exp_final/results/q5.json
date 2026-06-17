@@ -1,0 +1,97 @@
+{
+  "query_id": "q5",
+  "template": "T1a+T1b",
+  "predicate": "dbo:award",
+  "n_expected": 77,
+  "timestamp": "2026-06-08T14:07:59",
+  "results": {
+    "NL": {
+      "precision_mean": 0.7534,
+      "precision_std": 0.0182,
+      "recall_mean": 0.3169,
+      "recall_std": 0.0269,
+      "f1_mean": 0.4456,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 32.4,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton",
+          "Jeff Dean",
+          "John D. Cook"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_T1a": {
+      "precision_mean": 0.8035,
+      "precision_std": 0.0225,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0305,
+      "f1_mean": 0.2957,
+      "f1_std": 0.0418,
+      "n_runs": 5,
+      "n_generated": 17.4,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_T1b": {
+      "precision_mean": 0.7839,
+      "precision_std": 0.0557,
+      "recall_mean": 0.1195,
+      "recall_std": 0.0383,
+      "f1_mean": 0.206,
+      "f1_std": 0.0601,
+      "n_runs": 5,
+      "n_generated": 11.6,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan": {
+      "precision_mean": 0.7265,
+      "precision_std": 0.0403,
+      "recall_mean": 0.2831,
+      "recall_std": 0.0577,
+      "f1_mean": 0.4047,
+      "f1_std": 0.0657,
+      "n_runs": 5,
+      "n_generated": 30,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "Jeff Dean"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    }
+  }
+}

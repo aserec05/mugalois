@@ -1,0 +1,117 @@
+{
+  "q1": {
+    "cardinality": "low",
+    "ground_truth": ["Mileva Marić", "Elsa Einstein"],
+    "wikidata": "SELECT ?l WHERE { wd:Q937 wdt:P26 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
+    "nl_prompt": "who were Albert Einstein's spouses? List as many as you know.",
+    "T1a": {
+      "pattern":    { "s": "dbr:Albert_Einstein", "p": "dbo:spouse", "o": "?y" },
+      "pattern_nl": { "s": "Albert Einstein",     "p": "spouse",     "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { dbr:Albert_Einstein dbo:spouse ?y }"
+    },
+    "T1b": {
+      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "?y" },
+      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "?y" },
+      "filter": "?x = dbr:Albert_Einstein",
+      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:spouse ?y . FILTER(?x = dbr:Albert_Einstein) }"
+    }
+  },
+  "q2": {
+    "cardinality": "low",
+    "ground_truth": ["Arnold Sommerfeld"],
+    "wikidata": "SELECT ?l WHERE { wd:Q41523 wdt:P184 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
+    "nl_prompt": "who was Werner Heisenberg's doctoral advisor?",
+    "T1a": {
+      "pattern":    { "s": "dbr:Werner_Heisenberg", "p": "dbo:doctoralAdvisor", "o": "?y" },
+      "pattern_nl": { "s": "Werner Heisenberg",     "p": "doctoral advisor",    "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { dbr:Werner_Heisenberg dbo:doctoralAdvisor ?y }"
+    },
+    "T1b": {
+      "pattern":    { "s": "?x", "p": "dbo:doctoralAdvisor", "o": "?y" },
+      "pattern_nl": { "s": "?x", "p": "doctoral advisor",    "o": "?y" },
+      "filter": "?x = dbr:Werner_Heisenberg",
+      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:doctoralAdvisor ?y . FILTER(?x = dbr:Werner_Heisenberg) }"
+    }
+  },
+  "q3": {
+    "cardinality": "low",
+    "ground_truth": ["Albert Einstein"],
+    "wikidata": "SELECT ?l WHERE { ?s wdt:P26 wd:Q62730. ?s rdfs:label ?l. FILTER(LANG(?l)='en') }",
+    "nl_prompt": "who was married to Mileva Marić?",
+    "T1a": {
+      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "dbr:Mileva_Marić" },
+      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "Mileva Marić"     },
+      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:spouse dbr:Mileva_Marić }"
+    },
+    "T1b": {
+      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "?y" },
+      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "?y" },
+      "filter": "?y = dbr:Mileva_Marić",
+      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:spouse ?y . FILTER(?y = dbr:Mileva_Marić) }"
+    }
+  },
+  "q4": {
+    "cardinality": "medium",
+    "ground_truth": [
+      "Nobel Prize in Physics", "Nobel Prize in Chemistry", "Davy Medal",
+      "Willard Gibbs Award", "Order of the White Eagle", "Elliott Cresson Medal",
+      "Matteucci Medal", "John Scott Award", "Actonian Prize", "Albert Medal",
+      "Benjamin Franklin Medal", "Knight of the Legion of Honour",
+      "honorary doctor of the Jagiellonian University of Krakow",
+      "Cameron Prize of the University of Edinburgh", "prix Gegner",
+      "Honorary Fellow of the Royal Society Te Apārangi",
+      "72 scientist women names on the Eiffel tower"
+    ],
+    "wikidata": "SELECT ?l WHERE { wd:Q7186 wdt:P166 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
+    "nl_prompt": "what awards did Marie Curie receive? List as many as you know.",
+    "T1a": {
+      "pattern":    { "s": "dbr:Marie_Curie", "p": "dbo:award", "o": "?y" },
+      "pattern_nl": { "s": "Marie Curie",     "p": "award",     "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { dbr:Marie_Curie dbo:award ?y }"
+    },
+    "T1b": {
+      "pattern":    { "s": "?x", "p": "dbo:award", "o": "?y" },
+      "pattern_nl": { "s": "?x", "p": "award",     "o": "?y" },
+      "filter": "?x = dbr:Marie_Curie",
+      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:award ?y . FILTER(?x = dbr:Marie_Curie) }"
+    }
+  },
+  "q5": {
+    "cardinality": "high",
+    "ground_truth": [
+      "Adi Shamir", "Alan Kay", "Alan Perlis", "Alfred Aho", "Allen Newell",
+      "Amir Pnueli", "Andrew Yao", "Avi Wigderson", "Barbara Liskov",
+      "Bob Kahn", "Butler Lampson", "Charles Bachman", "Charles P. Thacker",
+      "Dana Scott", "David A. Patterson", "Dennis M. Ritchie", "Donald Knuth",
+      "Douglas Engelbart", "E. Allen Emerson", "Edgar F. Codd",
+      "Edmund M. Clarke", "Edsger W. Dijkstra", "Edward Feigenbaum",
+      "Edwin Catmull", "Fernando J. Corbató", "Frances Allen", "Fred Brooks",
+      "Gilles Brassard", "Herbert Simon", "Iosif Sifakis", "Ivan Sutherland",
+      "Jack Dongarra", "James H. Wilkinson", "Jeffrey David Ullman", "Jim Gray",
+      "John Backus", "John Cocke", "John Edward Hopcroft", "John L. Hennessy",
+      "John McCarthy", "Judea Pearl", "Juris Hartmanis", "Kenneth E. Iverson",
+      "Kristen Nygaard", "Leonard Adleman", "Leslie Lamport", "Leslie Valiant",
+      "Manuel Blum", "Martin Edward Hellman", "Marvin Minsky", "Maurice Wilkes",
+      "Michael O. Rabin", "Michael Stonebraker", "Niklaus Wirth", "Ole-Johan Dahl",
+      "Pat Hanrahan", "Peter Naur", "Raj Reddy", "Richard E. Stearns",
+      "Richard Hamming", "Richard M. Karp", "Richard S. Sutton", "Robert Metcalfe",
+      "Robert Tarjan", "Robert W. Floyd", "Robin Milner", "Ron Rivest",
+      "Shafrira Goldwasser", "Silvio Micali", "Stephen Cook", "Tim Berners-Lee",
+      "Tony Hoare", "Vint Cerf", "Whitfield Diffie", "William Kahan",
+      "Yann Le Cun", "Yoshua Bengio"
+    ],
+    "wikidata": "SELECT ?l WHERE { ?s wdt:P166 wd:Q185667. ?s rdfs:label ?l. FILTER(LANG(?l)='en') ORDER BY ?l }",
+    "nl_prompt": "who are Turing Award winners? List as many as you know.",
+    "T1a": {
+      "pattern":    { "s": "?x", "p": "dbo:award", "o": "dbr:Turing_Award" },
+      "pattern_nl": { "s": "?x", "p": "award",     "o": "Turing Award"     },
+      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:award dbr:Turing_Award }"
+    },
+    "T1b": {
+      "pattern":    { "s": "?x", "p": "dbo:award", "o": "?y" },
+      "pattern_nl": { "s": "?x", "p": "award",     "o": "?y" },
+      "filter": "?y = dbr:Turing_Award",
+      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:award ?y . FILTER(?y = dbr:Turing_Award) }"
+    }
+  }
+}

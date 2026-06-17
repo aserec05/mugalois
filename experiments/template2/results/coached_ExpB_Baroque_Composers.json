@@ -1,0 +1,65 @@
+{
+  "query_id": "ExpB_Baroque_Composers",
+  "template": "coached_study",
+  "predicate": "style",
+  "n_expected": 46,
+  "timestamp": "2026-06-11T21:34:20",
+  "results": {
+    "Standard": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2174,
+      "recall_std": 0.0,
+      "f1_mean": 0.3571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 4.16,
+      "time_std": 2.88,
+      "tokens_mean": 714.0,
+      "tokens_std": 0.0
+    },
+    "Motivational": {
+      "precision_mean": 0.6002,
+      "precision_std": 0.0462,
+      "recall_mean": 0.413,
+      "recall_std": 0.0,
+      "f1_mean": 0.4888,
+      "f1_std": 0.0147,
+      "n_runs": 5,
+      "n_generated": 31.8,
+      "time_mean": 9.83,
+      "time_std": 1.52,
+      "tokens_mean": 5544.0,
+      "tokens_std": 1083.0
+    },
+    "Coached_blind": {
+      "precision_mean": 0.8625,
+      "precision_std": 0.3075,
+      "recall_mean": 0.2174,
+      "recall_std": 0.0,
+      "f1_mean": 0.337,
+      "f1_std": 0.045,
+      "n_runs": 5,
+      "n_generated": 14.4,
+      "time_mean": 4.41,
+      "time_std": 2.36,
+      "tokens_mean": 2770.0,
+      "tokens_std": 2977.0
+    },
+    "Coached_context": {
+      "precision_mean": 0.5283,
+      "precision_std": 0.0489,
+      "recall_mean": 0.3652,
+      "recall_std": 0.0283,
+      "f1_mean": 0.4309,
+      "f1_std": 0.0297,
+      "n_runs": 5,
+      "n_generated": 32,
+      "time_mean": 8.85,
+      "time_std": 1.0,
+      "tokens_mean": 8709.0,
+      "tokens_std": 2678.0
+    }
+  }
+}

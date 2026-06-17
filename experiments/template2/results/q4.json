@@ -1,0 +1,83 @@
+{
+  "query_id": "q4",
+  "template": "T2",
+  "predicate": "area",
+  "n_expected": 38,
+  "timestamp": "2026-06-16T12:37:56",
+  "results": {
+    "LLMScan": {
+      "precision_mean": 0.2673,
+      "precision_std": 0.1948,
+      "recall_mean": 0.3,
+      "recall_std": 0.1866,
+      "f1_mean": 0.281,
+      "f1_std": 0.1883,
+      "n_runs": 5,
+      "n_generated": 35.8,
+      "time_mean": 30.82,
+      "time_std": 46.35,
+      "tokens_mean": 5108.0,
+      "tokens_std": 6292.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Bolivia"
+        ]
+      }
+    },
+    "LLMScan\\_Motiv": {
+      "precision_mean": 0.2835,
+      "precision_std": 0.0517,
+      "recall_mean": 0.6158,
+      "recall_std": 0.0236,
+      "f1_mean": 0.3863,
+      "f1_std": 0.0506,
+      "n_runs": 5,
+      "n_generated": 84.6,
+      "time_mean": 21.03,
+      "time_std": 5.16,
+      "tokens_mean": 18447.0,
+      "tokens_std": 7489.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Argentina",
+          "Australia"
+        ],
+        "fn": [
+          "Afghanistan",
+          "Bolivia",
+          "Colombia"
+        ]
+      }
+    },
+    "LLMScan\\_Tel": {
+      "precision_mean": 0.5155,
+      "precision_std": 0.0449,
+      "recall_mean": 0.4263,
+      "recall_std": 0.0861,
+      "f1_mean": 0.4656,
+      "f1_std": 0.0684,
+      "n_runs": 5,
+      "n_generated": 31.2,
+      "time_mean": 12.32,
+      "time_std": 1.71,
+      "tokens_mean": 6624.0,
+      "tokens_std": 386.0,
+      "examples": {
+        "fp": [
+          "Algeria",
+          "Argentina",
+          "Australia"
+        ],
+        "fn": [
+          "Afghanistan",
+          "Botswana",
+          "Central African Republic"
+        ]
+      }
+    }
+  }
+}

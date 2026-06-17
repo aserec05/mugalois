@@ -1,0 +1,37 @@
+{
+  "query_id": "ExpA_Oscar_Films",
+  "template": "motivational_study",
+  "predicate": "award",
+  "n_expected": 922,
+  "timestamp": "2026-06-11T17:24:36",
+  "results": {
+    "Standard": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.0119,
+      "recall_std": 0.0,
+      "f1_mean": 0.0236,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.76,
+      "time_std": 0.94,
+      "tokens_mean": 766.0,
+      "tokens_std": 0.0
+    },
+    "Motivational": {
+      "precision_mean": 0.9449,
+      "precision_std": 0.043,
+      "recall_mean": 0.0369,
+      "recall_std": 0.0046,
+      "f1_mean": 0.0709,
+      "f1_std": 0.0083,
+      "n_runs": 5,
+      "n_generated": 36.2,
+      "time_mean": 9.5,
+      "time_std": 0.74,
+      "tokens_mean": 6525.0,
+      "tokens_std": 1151.0
+    }
+  }
+}

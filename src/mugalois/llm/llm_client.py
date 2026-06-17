@@ -5,7 +5,7 @@ import os, json, time, random
 from typing import List, Dict, Any, Optional
 import requests
 
-# from openai import OpenAI
+from openai import AzureOpenAI
 # from ibm_watsonx_ai import Credentials
 # from ibm_watsonx_ai.foundation_models import ModelInference
 # from ibm_watsonx_ai.foundation_models.schema import TextChatParameters
@@ -178,6 +178,33 @@ class OllamaClient(BaseLLM):
 #         except Exception: tokens = 0
 #         return LLMResponse(text=text, usage_tokens=tokens, latency_s=time.time() - t0)
 
+
+
+
+class AzureOpenAIClient(BaseLLM):
+    '''
+    Azure OpenAI — uses AzureOpenAI SDK.
+    '''
+    def __init__(self):
+        self._client = AzureOpenAI(
+            azure_endpoint=os.getenv("AZURE_OPENAI_BASE_URL"),
+            api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+            api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+        )
+        self.model = os.getenv("AZURE_OPENAI_DEPLOYMENT")
+
+    def chat(self, messages, **kwargs) -> LLMResponse:
+        t0 = time.time()
+        resp = self._client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            temperature=0.0,
+            max_tokens=16000,
+        )
+        text = resp.choices[0].message.content or ""
+        usage = getattr(resp, "usage", None)
+        tokens = ((getattr(usage, "prompt_tokens", 0) or 0) + (getattr(usage, "completion_tokens", 0) or 0)) if usage else 0
+        return LLMResponse(text=text, usage_tokens=tokens, latency_s=time.time() - t0)
 
 # class OpenAIClient(BaseLLM):
 #     '''

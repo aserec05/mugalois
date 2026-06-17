@@ -1,0 +1,389 @@
+{
+  "query_id": "q1",
+  "template": "T1a",
+  "predicate": "dbo:spouse",
+  "timestamp": "2026-06-07T21:15:51",
+  "results": {
+    "NL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.2887,
+      "f1_mean": 0.8889,
+      "f1_std": 0.1924,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_pattern_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_pattern_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_pattern_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_pattern_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_constrained_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_constrained_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Mileva Mari\u0107"
+        ]
+      }
+    },
+    "TripleScan_constrained_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_constrained_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_sparql_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_sparql_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_sparql_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "TripleScan_sparql_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_pattern_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_pattern_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_pattern_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_pattern_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_constrained_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_constrained_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Mileva Mari\u0107"
+        ]
+      }
+    },
+    "ValueScan_constrained_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_constrained_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_sparql_local": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_sparql_prefixed": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.2887,
+      "f1_mean": 0.8889,
+      "f1_std": 0.1924,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_sparql_full": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "ValueScan_sparql_nl": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

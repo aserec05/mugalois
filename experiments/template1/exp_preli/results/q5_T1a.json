@@ -1,0 +1,602 @@
+{
+  "query_id": "q5",
+  "template": "T1a",
+  "predicate": "dbo:award",
+  "timestamp": "2026-06-07T21:26:37",
+  "results": {
+    "NL": {
+      "precision_mean": 0.4942,
+      "precision_std": 0.4286,
+      "recall_mean": 0.2338,
+      "recall_std": 0.2029,
+      "f1_mean": 0.3171,
+      "f1_std": 0.2747,
+      "n_runs": 3,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_local": {
+      "precision_mean": 0.6181,
+      "precision_std": 0.5354,
+      "recall_mean": 0.1126,
+      "recall_std": 0.1009,
+      "f1_mean": 0.1899,
+      "f1_std": 0.1688,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_prefixed": {
+      "precision_mean": 0.7731,
+      "precision_std": 0.0252,
+      "recall_mean": 0.1991,
+      "recall_std": 0.0983,
+      "f1_mean": 0.3078,
+      "f1_std": 0.1164,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_full": {
+      "precision_mean": 0.5036,
+      "precision_std": 0.4369,
+      "recall_mean": 0.2251,
+      "recall_std": 0.1954,
+      "f1_mean": 0.3108,
+      "f1_std": 0.2693,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Alonzo Church",
+          "David Parnas"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL_nl": {
+      "precision_mean": 0.9043,
+      "precision_std": 0.0326,
+      "recall_mean": 0.1601,
+      "recall_std": 0.0075,
+      "f1_mean": 0.272,
+      "f1_std": 0.0092,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton",
+          "Vinton G. Cerf"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_pattern_local": {
+      "precision_mean": 0.7389,
+      "precision_std": 0.0673,
+      "recall_mean": 0.1775,
+      "recall_std": 0.0417,
+      "f1_mean": 0.2855,
+      "f1_std": 0.0599,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan_Turing",
+          "Barbara_Berger",
+          "Donald_Davies"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_pattern_prefixed": {
+      "precision_mean": 0.7997,
+      "precision_std": 0.01,
+      "recall_mean": 0.2078,
+      "recall_std": 0.013,
+      "f1_mean": 0.3298,
+      "f1_std": 0.0172,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "dbr:Alonzo_Church",
+          "dbr:John_G._Proakis",
+          "dbr:John_Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_pattern_full": {
+      "precision_mean": 0.7444,
+      "precision_std": 0.0632,
+      "recall_mean": 0.1515,
+      "recall_std": 0.015,
+      "f1_mean": 0.2518,
+      "f1_std": 0.0241,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "http://dbpedia.org/resource/Alonzo_Church",
+          "http://dbpedia.org/resource/Donald_Davis",
+          "http://dbpedia.org/resource/John_Goodenough"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_pattern_nl": {
+      "precision_mean": 0.8462,
+      "precision_std": 0.0404,
+      "recall_mean": 0.2121,
+      "recall_std": 0.0327,
+      "f1_mean": 0.3383,
+      "f1_std": 0.042,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_constrained_local": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.0692,
+      "recall_std": 0.03,
+      "f1_mean": 0.1264,
+      "f1_std": 0.0498,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          ":John_Hopcroft",
+          ":John_von_Neumann"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_constrained_prefixed": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "dbr:ACM",
+          "dbr:Association_for_Computing_Machinery",
+          "dbr:IEEE"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_constrained_full": {
+      "precision_mean": 0.5,
+      "precision_std": 0.4359,
+      "recall_mean": 0.0649,
+      "recall_std": 0.0566,
+      "f1_mean": 0.1149,
+      "f1_std": 0.1002,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "http://dbpedia.org/resource/Donald_Davies",
+          "http://dbpedia.org/resource/John_Hopcroft",
+          "http://dbpedia.org/resource/John_von_Neumann"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_constrained_nl": {
+      "precision_mean": 0.7965,
+      "precision_std": 0.0061,
+      "recall_mean": 0.1342,
+      "recall_std": 0.0525,
+      "f1_mean": 0.2268,
+      "f1_std": 0.0742,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "John H. Holland",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_sparql_local": {
+      "precision_mean": 0.7667,
+      "precision_std": 0.0577,
+      "recall_mean": 0.0996,
+      "recall_std": 0.0075,
+      "f1_mean": 0.1762,
+      "f1_std": 0.0133,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan_Turing",
+          "John_Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_sparql_prefixed": {
+      "precision_mean": 0.8259,
+      "precision_std": 0.0651,
+      "recall_mean": 0.1342,
+      "recall_std": 0.0417,
+      "f1_mean": 0.2285,
+      "f1_std": 0.0585,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "http://dbpedia.org/resource/Geoffrey_Hinton",
+          "http://dbpedia.org/resource/John_Goodenough"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_sparql_full": {
+      "precision_mean": 0.6351,
+      "precision_std": 0.0208,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.2332,
+      "f1_std": 0.0014,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "http://dbpedia.org/resource/Alonzo_Church",
+          "http://dbpedia.org/resource/Donald_Davies",
+          "http://dbpedia.org/resource/Geoffrey_Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "TripleScan_sparql_nl": {
+      "precision_mean": 0.8436,
+      "precision_std": 0.0328,
+      "recall_mean": 0.1818,
+      "recall_std": 0.039,
+      "f1_mean": 0.2975,
+      "f1_std": 0.0513,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "Jeff Dean"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_pattern_local": {
+      "precision_mean": 0.8254,
+      "precision_std": 0.0275,
+      "recall_mean": 0.2251,
+      "recall_std": 0.0075,
+      "f1_mean": 0.3537,
+      "f1_std": 0.0118,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_pattern_prefixed": {
+      "precision_mean": 0.8254,
+      "precision_std": 0.0275,
+      "recall_mean": 0.2251,
+      "recall_std": 0.0075,
+      "f1_mean": 0.3537,
+      "f1_std": 0.0118,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_pattern_full": {
+      "precision_mean": 0.7289,
+      "precision_std": 0.0259,
+      "recall_mean": 0.1861,
+      "recall_std": 0.0075,
+      "f1_mean": 0.2966,
+      "f1_std": 0.0111,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "<http://dbpedia.org/resource/Alonzo_Church>",
+          "<http://dbpedia.org/resource/John_D._Cook>",
+          "<http://dbpedia.org/resource/John_Goodenough>"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_pattern_nl": {
+      "precision_mean": 0.8454,
+      "precision_std": 0.005,
+      "recall_mean": 0.2597,
+      "recall_std": 0.0343,
+      "f1_mean": 0.3965,
+      "f1_std": 0.0406,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "Jaron Lanier"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_constrained_local": {
+      "precision_mean": 0.7465,
+      "precision_std": 0.0449,
+      "recall_mean": 0.1342,
+      "recall_std": 0.0541,
+      "f1_mean": 0.2252,
+      "f1_std": 0.0784,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan_Turing",
+          "Geoffrey_Hinton",
+          "John_Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_constrained_prefixed": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "dbr:ACM",
+          "dbr:Computer_Society_of_IEEE",
+          "dbr:IEEE"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_constrained_full": {
+      "precision_mean": 0.6784,
+      "precision_std": 0.0101,
+      "recall_mean": 0.1731,
+      "recall_std": 0.0075,
+      "f1_mean": 0.2758,
+      "f1_std": 0.0086,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "http://dbpedia.org/resource/Alonzo_Church",
+          "http://dbpedia.org/resource/Donald_Davis",
+          "http://dbpedia.org/resource/Geoffrey_Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_constrained_nl": {
+      "precision_mean": 0.7579,
+      "precision_std": 0.0365,
+      "recall_mean": 0.1558,
+      "recall_std": 0.045,
+      "f1_mean": 0.2558,
+      "f1_std": 0.0622,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_sparql_local": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.2472,
+      "f1_std": 0.0,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_sparql_prefixed": {
+      "precision_mean": 0.7718,
+      "precision_std": 0.0364,
+      "recall_mean": 0.2381,
+      "recall_std": 0.1178,
+      "f1_mean": 0.352,
+      "f1_std": 0.1325,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Alonzo Church",
+          "David Parnas"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_sparql_full": {
+      "precision_mean": 0.8069,
+      "precision_std": 0.0127,
+      "recall_mean": 0.2511,
+      "recall_std": 0.0417,
+      "f1_mean": 0.3815,
+      "f1_std": 0.0462,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "ValueScan_sparql_nl": {
+      "precision_mean": 0.9222,
+      "precision_std": 0.0096,
+      "recall_mean": 0.1559,
+      "recall_std": 0.0225,
+      "f1_mean": 0.2662,
+      "f1_std": 0.033,
+      "n_runs": 3,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,433 @@
+# src/mugalois/core/prompts.py
+
+from mugalois.core.types import TriplePattern, Environment
+from mugalois.core.helpers import seedsOf
+
+
+# ── Schemas ───────────────────────────────────────────────────────────────────
+
+TRIPLE_SCHEMA = '{"triples":[{"s":"...","p":"...","o":"..."}]}'
+VALUE_SCHEMA  = '{"values":["..."]}'
+
+_TRIPLE_REMIND = "Respond ONLY in valid JSON following the schema provided."
+_VALUE_REMIND  = "Respond ONLY in valid JSON following the schema provided."
+
+# ── System prompts ────────────────────────────────────────────────────────────
+
+SYSTEM_PROMPT = f"""You are an RDF knowledge graph assistant.
+Using your knowledge, respond ONLY in valid JSON: {TRIPLE_SCHEMA}"""
+
+SYSTEM_PROMPT_VALUE = f"""You are an RDF knowledge graph assistant.
+Using your knowledge, respond ONLY in valid JSON: {VALUE_SCHEMA}"""
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _build_constraints(pattern: TriplePattern, env: Environment,
+                       side: str = "both") -> str:
+    lines = []
+    seedsS = seedsOf(pattern.s, env)
+    seedsO = seedsOf(pattern.o, env)
+    if side in ("both", "s") and pattern.s_is_var() and seedsS:
+        lines.append(f"- {pattern.s} is one of: {', '.join(sorted(seedsS))}")
+    if side in ("both", "o") and pattern.o_is_var() and seedsO:
+        lines.append(f"- {pattern.o} is one of: {', '.join(sorted(seedsO))}")
+    return "\n".join(lines)
+
+
+def _bound_term(pattern: TriplePattern) -> tuple[str, str, str]:
+    """Return (bound_side, bound_value, var_name) for T1 patterns."""
+    if not pattern.s_is_var():
+        return ("s", pattern.s, pattern.o)
+    return ("o", pattern.o, pattern.s)
+
+
+# ── Motivational ─────────────────────────────────────────────────────────────
+
+MOTIVATIONAL = (
+    "You can do it! Dig deeper into your memory — "
+    "list entities you know that are less well-known. "
+    "Push beyond the obvious ones!"
+)
+
+
+# ── NL baseline ───────────────────────────────────────────────────────────────
+
+def genNLPrompt(nl_question: str) -> str:
+    return (
+        f"By your knowledge, {nl_question}\n"
+        f"Respond ONLY in valid JSON following the schema provided."
+    )
+
+
+# ── SPARQL baseline ───────────────────────────────────────────────────────────
+
+def genSPARQLPrompt(sparql_query: str) -> str:
+    """SPARQL baseline — raw SPARQL query fed to the LLM."""
+    return (
+        f"By your knowledge, execute this SPARQL query and return all results:\n\n"
+        f"{sparql_query}\n\n"
+        f"Be exhaustive.\n"
+        f"{_VALUE_REMIND}"
+    )
+
+
+# ── TripleScan ────────────────────────────────────────────────────────────────
+
+def genTripleScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
+                        conditions: list = None,
+                        lookahead: str = "") -> str:
+    """TripleScan — returns full triples.
+
+    encoding  : "pattern" | "constrained" | "sparql"
+    lookahead : optional hint about how results will be used next
+    """
+    bound_side, bound_val, var_name = _bound_term(pattern)
+    s, p, o = pattern.s, pattern.p, pattern.o
+
+    cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    la_block   = f"Note: these results will then be used for: {lookahead}\n\n" \
+                 if lookahead else ""
+
+    if encoding == "pattern":
+        return (
+            f"Task: List all factual triples matching this RDF pattern:\n"
+            f"({s}, {p}, {o})\n\n"
+            f"{cond_block}"
+            f"{la_block}"
+            f"Be exhaustive. "
+            f"Return as many results as you know.\n"
+            f"{_TRIPLE_REMIND}"
+        )
+
+    if encoding == "constrained":
+        if bound_side == "o":
+            return (
+                f"Context: The object is fixed: {bound_val}\n"
+                f"         The predicate is fixed: {p}\n\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Task: Find all values of {var_name} such that the triple\n"
+                f"({var_name}, {p}, {bound_val}) factually holds.\n"
+                f"Only return values you are certain about.\n"
+                f"If none exist, return an empty list.\n"
+                f"{_TRIPLE_REMIND}"
+            )
+        else:
+            return (
+                f"Context: The subject is fixed: {bound_val}\n"
+                f"         The predicate is fixed: {p}\n\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Task: Find all values of {var_name} such that the triple\n"
+                f"({bound_val}, {p}, {var_name}) factually holds.\n"
+                f"Only return values you are certain about.\n"
+                f"If none exist, return an empty list.\n"
+                f"{_TRIPLE_REMIND}"
+            )
+
+    if encoding == "sparql":
+        return (
+            f"Task: Execute this SPARQL pattern using your knowledge:\n"
+            f"SELECT {var_name} WHERE {{ {s} {p} {o} }}\n\n"
+            f"{cond_block}"
+            f"{la_block}"
+            f"Return all matching triples in full (s, p, o) form.\n"
+            f"Be exhaustive.\n"
+            f"{_TRIPLE_REMIND}"
+        )
+
+    raise ValueError(f"Unknown encoding '{encoding}'.")
+
+
+def genTripleScanIterativePrompt(already_found: set, pattern=None) -> str:
+    values = ", ".join(sorted(str(t) for t in already_found))
+    return (
+        f"Context: The following values have already been retrieved:\n"
+        f"{values}\n\n"
+        f"Task: List more triples if there are any remaining.\n"
+        f"Do not repeat already retrieved values.\n"
+        f"If there are no more, return an empty list.\n"
+        f"{_TRIPLE_REMIND}"
+    )
+
+
+# ── ValueScan ─────────────────────────────────────────────────────────────────
+
+def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
+                       conditions: list = None,
+                       lookahead: str = "") -> str:
+    """ValueScan — returns values directly.
+
+    lookahead : optional hint about how results will be used next
+    """
+    bound_side, bound_val, var_name = _bound_term(pattern)
+    s, p, o = pattern.s, pattern.p, pattern.o
+
+    cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    la_block   = f"Note: these results will then be used for: {lookahead}\n\n" \
+                 if lookahead else ""
+
+    if encoding == "pattern":
+        return (
+            f"Task: List all values of {var_name} such that:\n"
+            f"({s}, {p}, {o}) factually holds.\n\n"
+            f"{cond_block}"
+            f"{la_block}"
+            f"Be exhaustive. "
+            f"Return as many values as you know.\n"
+            f"{_VALUE_REMIND}"
+        )
+
+    if encoding == "constrained":
+        if bound_side == "o":
+            return (
+                f"Context: The object is fixed: {bound_val}\n"
+                f"         The predicate is fixed: {p}\n\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Task: Find all values of {var_name} such that the triple\n"
+                f"({var_name}, {p}, {bound_val}) factually holds.\n"
+                f"Only return values you are certain about.\n"
+                f"If none exist, return an empty list.\n"
+                f"{_VALUE_REMIND}"
+            )
+        else:
+            return (
+                f"Context: The subject is fixed: {bound_val}\n"
+                f"         The predicate is fixed: {p}\n\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Task: Find all values of {var_name} such that the triple\n"
+                f"({bound_val}, {p}, {var_name}) factually holds.\n"
+                f"Only return values you are certain about.\n"
+                f"If none exist, return an empty list.\n"
+                f"{_VALUE_REMIND}"
+            )
+
+    if encoding == "sparql":
+        return (
+            f"Task: Execute this SPARQL pattern using your knowledge:\n"
+            f"SELECT {var_name} WHERE {{ {s} {p} {o} }}\n\n"
+            f"{cond_block}"
+            f"{la_block}"
+            f"Return only the values of {var_name}. Be exhaustive.\n"
+            f"{_VALUE_REMIND}"
+        )
+
+    raise ValueError(f"Unknown encoding '{encoding}'.")
+
+
+def genValueScanIterativePrompt(already_found: set, pattern=None) -> str:
+    values = ", ".join(sorted(str(t) for t in already_found))
+    return (
+        f"Context: The following values have already been retrieved:\n"
+        f"{values}\n\n"
+        f"Task: List more values if there are any remaining.\n"
+        f"Do not repeat already retrieved values.\n"
+        f"If there are no more, return an empty list.\n"
+        f"{_VALUE_REMIND}"
+    )
+
+
+# ── Path prompts (T3) ─────────────────────────────────────────────────────────
+
+def genSimpleConfPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMSimpleConf — confidence to solve the full two-hop path at once."""
+    return (
+        f"You need to find all ?b such that:\n"
+        f"  ({s}, {p1}, ?b) AND (?b, {p2}, {t}) both hold factually.\n\n"
+        f"How confident are you (0 to 1) that you can list all such ?b "
+        f"in a single answer without decomposing the problem?\n"
+        f"Answer with a single float. No explanation."
+    )
+
+
+def genDirectionConfPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMDirectionConf — which direction is most efficient."""
+    return (
+        f"To find all ?b where ({s}, {p1}, ?b) AND (?b, {p2}, {t}), "
+        f"I can start from either side:\n\n"
+        f"  A = start from {s}: find all {p1}s of {s}, then filter by {p2}={t}\n"
+        f"  B = start from {t}: find all entities with {p2}={t}, then filter by {p1} of {s}\n\n"
+        f"  A = how many {p1}s does {s} have?\n"
+        f"  B = how many entities have {p2} equal to {t}?\n\n"
+        f"Choose the smaller set to minimize intermediate candidates.\n"
+        f"You may reason briefly, but end with exactly one word: A or B."
+    )
+
+
+def genSimpleScanPathPrompt(s: str, p1: str, p2: str, t: str) -> str:
+    """LLMSimpleScan — single call for the full two-hop path."""
+    return (
+        f"Task: Find all values of ?b such that:\n"
+        f"  ({s}, {p1}, ?b) AND (?b, {p2}, {t}) both hold factually.\n\n"
+        f"Be exhaustive. Return as many values as you know.\n"
+        f"{_VALUE_REMIND}"
+    )
+
+
+# ── Message builders ──────────────────────────────────────────────────────────
+
+def build_messages(user_prompt: str) -> list:
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user",   "content": user_prompt},
+    ]
+
+
+def build_value_messages(user_prompt: str) -> list:
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT_VALUE},
+        {"role": "user",   "content": user_prompt},
+    ]
+
+
+# ── Legacy ────────────────────────────────────────────────────────────────────
+
+def genTableScanPrompt(pattern: TriplePattern, context: str = "",
+                       encoding: str = "current") -> str:
+    p_label = pattern.p.split(":")[-1] if ":" in pattern.p else pattern.p
+    if context:
+        return (
+            f"Context: Here are known triples about {pattern.p}:\n\n"
+            f"{context}\n\n"
+            f"Task: Based on this context AND your knowledge, list ALL triples "
+            f"({pattern.s}, {pattern.p}, {pattern.o}) that factually hold. "
+            f"Be exhaustive. Do not stop after a few examples."
+        )
+    if encoding == "sparql":
+        return (
+            f"Execute the following SPARQL query using your knowledge and return all results:\n\n"
+            f"SELECT {pattern.s} {pattern.o} WHERE {{ {pattern.s} {pattern.p} {pattern.o} }}\n\n"
+            f"Be exhaustive. Return as many results as you know."
+        )
+    if encoding == "pattern":
+        return (
+            f"List all factual triples matching this RDF pattern:\n\n"
+            f"({pattern.s}, {pattern.p}, {pattern.o})\n\n"
+            f"Be exhaustive. Return as many results as you know."
+        )
+    return (
+        f"Task: List ALL triples ({pattern.s}, {pattern.p}, {pattern.o}) "
+        f"that factually hold, based on your knowledge.\n\n"
+        f"Think of it as answering: "
+        f"\"For every entity you know, what is their {p_label}?\"\n\n"
+        f"Be exhaustive. Cover well-known and lesser-known entities. "
+        f"Do not stop after a few examples."
+    )
+
+
+def genIterativePrompt(already_found: set) -> str:
+    subjects = ", ".join(sorted({t.s for t in already_found}))
+    return (
+        f"Already covered subjects : {subjects}\n\n"
+        f"Task: List triples for subjects NOT in the list above. "
+        f"Only return triples you are confident about. "
+        f"If there are truly no more, return an empty list."
+    )
+
+
+def genSeedCrankPrompt(pattern: TriplePattern, env: Environment,
+                       conditions: list = None) -> str:
+    constraints = _build_constraints(pattern, env)
+    constraints = constraints.replace("is one of", "may be one of")
+    cond_block  = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    return (
+        f"Context: The following values are already known:\n"
+        f"{constraints}\n\n"
+        f"{cond_block}"
+        f"Task: List all triples ({pattern.s}, {pattern.p}, {pattern.o}) that factually hold.\n"
+        f"- {pattern.s} must be the subject. {pattern.o} must be the object.\n"
+        f"- Use exactly {pattern.p} as predicate. No variation.\n"
+        f"- Only use values from the lists above that are factually correct. "
+        f"If no triple holds, return an empty list."
+    )
+
+
+def genKeyCrankPrompt(pattern: TriplePattern, env: Environment,
+                      seed_value: str, direction: str,
+                      conditions: list = None) -> str:
+    cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    if direction == "L->R":
+        constraint = _build_constraints(pattern, env, side="o")
+        constraint = constraint.replace("is one of", "may be one of")
+        return (
+            f"Context: The subject is fixed: {seed_value}. "
+            f"The predicate is {pattern.p}.\n"
+            f"{cond_block}"
+            f"Task: List all triples ({seed_value}, {pattern.p}, {pattern.o}) "
+            f"that factually hold.\n"
+            f"{constraint}\n"
+            f"Only return values from the list above that are factually correct. "
+            f"If the subject has no valid {pattern.p}, or none of the candidate "
+            f"values apply, return an empty list."
+        )
+    else:
+        constraint = _build_constraints(pattern, env, side="s")
+        constraint = constraint.replace("is one of", "may be one of")
+        return (
+            f"Context: The object is fixed: {seed_value}. "
+            f"The predicate is {pattern.p}.\n"
+            f"{cond_block}"
+            f"Task: List all triples ({pattern.s}, {pattern.p}, {seed_value}) "
+            f"that factually hold.\n"
+            f"{constraint}\n"
+            f"Only return values from the list above that are factually correct. "
+            f"If no subject has {pattern.p} equal to {seed_value}, or none of "
+            f"the candidate values apply, return an empty list."
+        )
+
+
+def genCheckPrompt(triple: tuple, conditions: list = None) -> str:
+    s, p, o = triple
+    cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+    return (
+        f"Context: We are verifying a single factual triple about the predicate {p}.\n\n"
+        f"{cond_block}"
+        f"Task: Is this triple ({s}, {p}, {o}) factually valid? "
+        f"Respond only with 'yes' or 'no'. If you are uncertain, answer 'no'."
+    )
+
+
+def genConfidencePrompt(pattern: TriplePattern, env: Environment) -> str:
+    constraints = _build_constraints(pattern, env)
+    return (
+        f"Context: The following values are already known:\n"
+        f"{constraints}\n\n"
+        f"Task: Given the triple pattern ({pattern.s}, {pattern.p}, {pattern.o}), "
+        f"how confident are you to list at once, in a single answer, "
+        f"all factual triples that hold? "
+        f"Respond only with a float between 0 and 1, "
+        f"where 1 means fully confident and 0 means unable. "
+        f"Do not add any comment."
+    )
+
+
+def genConfidenceConditionTripleScanPrompt(
+    pattern:      TriplePattern,
+    env:          Environment,
+    condition:    str,
+    seed_example: str | None = None,
+) -> str:
+    constraints = _build_constraints(pattern, env)
+    seed_block  = f"\nReference example: {seed_example}\n" if seed_example else ""
+    cond_desc   = condition.replace("FILTER(", "").rstrip(")")
+    return (
+        f"Context: You are scanning the triple pattern "
+        f"({pattern.s}, {pattern.p}, {pattern.o}).\n"
+        f"{constraints}"
+        f"{seed_block}"
+        f"Condition to satisfy: {cond_desc}\n\n"
+        f"Task: How confident are you (0 to 1) that you can list factual triples "
+        f"for this pattern while correctly respecting the condition above?\n"
+        f"Answer with a single float between 0 and 1. No explanation."
+    )
+
+
+def genConditionsPrompt(conditions: set[str]) -> str:
+    conditions_str = "\n".join(f"- {c}" for c in sorted(conditions))
+    return (
+        f"Context: NEW conditions to satisfy:\n"
+        f"{conditions_str}\n\n"
+    )

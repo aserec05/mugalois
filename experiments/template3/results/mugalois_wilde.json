@@ -1,0 +1,47 @@
+{
+  "query_id": "mugalois_wilde",
+  "template": "T3_mugalois",
+  "predicate": "wrote/genre",
+  "n_expected": 4,
+  "timestamp": "2026-06-16T00:19:34",
+  "results": {
+    "MuGalois": {
+      "precision_mean": 0.9,
+      "precision_std": 0.2236,
+      "recall_mean": 0.75,
+      "recall_std": 0.3062,
+      "f1_mean": 0.8095,
+      "f1_std": 0.2756,
+      "n_runs": 5,
+      "n_generated": 3.2,
+      "time_mean": 9.01,
+      "time_std": 2.33,
+      "tokens_mean": 2975.0,
+      "tokens_std": 919.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "MuGalois_lowTau": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.49,
+      "time_std": 0.21,
+      "tokens_mean": 236.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "An Ideal Husband"
+        ]
+      }
+    }
+  }
+}

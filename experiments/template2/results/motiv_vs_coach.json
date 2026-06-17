@@ -1,0 +1,37 @@
+{
+  "query_id": "motiv_vs_coach",
+  "template": "motiv_coach_study",
+  "predicate": "style",
+  "n_expected": 46,
+  "timestamp": "2026-06-11T22:23:04",
+  "results": {
+    "Motivational": {
+      "precision_mean": 0.6005,
+      "precision_std": 0.0272,
+      "recall_mean": 0.4174,
+      "recall_std": 0.0238,
+      "f1_mean": 0.4922,
+      "f1_std": 0.0222,
+      "n_runs": 5,
+      "n_generated": 32,
+      "time_mean": 9.38,
+      "time_std": 1.59,
+      "tokens_mean": 5548.0,
+      "tokens_std": 1076.0
+    },
+    "Motivational+Coach": {
+      "precision_mean": 0.4991,
+      "precision_std": 0.0294,
+      "recall_mean": 0.4217,
+      "recall_std": 0.0195,
+      "f1_mean": 0.4565,
+      "f1_std": 0.015,
+      "n_runs": 5,
+      "n_generated": 39,
+      "time_mean": 18.92,
+      "time_std": 6.02,
+      "tokens_mean": 20570.0,
+      "tokens_std": 11419.0
+    }
+  }
+}

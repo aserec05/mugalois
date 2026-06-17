@@ -1,0 +1,5 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated
+NL,2,1.0,0.0,1.0,0.0,1.0,0.0,5,2
+SPARQL_T1a,2,1.0,0.0,0.6,0.2236,0.7334,0.1491,5,1.2
+SPARQL_T1b,2,1.0,0.0,0.5,0.0,0.6667,0.0,5,1
+ValueScan,2,1.0,0.0,1.0,0.0,1.0,0.0,5,2

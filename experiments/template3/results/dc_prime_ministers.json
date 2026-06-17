@@ -1,0 +1,212 @@
+{
+  "query_id": "un_portuguese",
+  "template": "T3_focused",
+  "predicate": "member/official language",
+  "n_expected": 9,
+  "timestamp": "2026-06-15T16:59:03",
+  "results": {
+    "NL": {
+      "precision_mean": 0.875,
+      "precision_std": 0.0,
+      "recall_mean": 0.7778,
+      "recall_std": 0.0,
+      "f1_mean": 0.8235,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 1.81,
+      "time_std": 0.68,
+      "tokens_mean": 101.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor (Timor-Leste)"
+        ],
+        "fn": [
+          "Equatorial Guinea",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "SimpleScan": {
+      "precision_mean": 0.8571,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 1.01,
+      "time_std": 0.22,
+      "tokens_mean": 120.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "GD": {
+      "precision_mean": 0.8571,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 11.77,
+      "time_std": 1.08,
+      "tokens_mean": 3477.0,
+      "tokens_std": 32.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "DG": {
+      "precision_mean": 0.9778,
+      "precision_std": 0.0497,
+      "recall_mean": 0.8445,
+      "recall_std": 0.0609,
+      "f1_mean": 0.9043,
+      "f1_std": 0.0342,
+      "n_runs": 5,
+      "n_generated": 7.8,
+      "time_mean": 6.18,
+      "time_std": 0.41,
+      "tokens_mean": 903.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "DG_motiv0": {
+      "precision_mean": 0.9778,
+      "precision_std": 0.0497,
+      "recall_mean": 0.8889,
+      "recall_std": 0.0,
+      "f1_mean": 0.9307,
+      "f1_std": 0.0234,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 7.27,
+      "time_std": 1.23,
+      "tokens_mean": 1102.0,
+      "tokens_std": 195.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "DG_motiv_closure": {
+      "precision_mean": 0.9714,
+      "precision_std": 0.0639,
+      "recall_mean": 0.7334,
+      "recall_std": 0.0609,
+      "f1_mean": 0.835,
+      "f1_std": 0.0576,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 8.3,
+      "time_std": 2.06,
+      "tokens_mean": 1554.0,
+      "tokens_std": 87.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "DG_telephone": {
+      "precision_mean": 0.9492,
+      "precision_std": 0.0705,
+      "recall_mean": 0.8,
+      "recall_std": 0.093,
+      "f1_mean": 0.866,
+      "f1_std": 0.0704,
+      "n_runs": 5,
+      "n_generated": 7.6,
+      "time_mean": 9.27,
+      "time_std": 0.44,
+      "tokens_mean": 1628.0,
+      "tokens_std": 94.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "MuGalois": {
+      "precision_mean": 0.9778,
+      "precision_std": 0.0497,
+      "recall_mean": 0.8,
+      "recall_std": 0.093,
+      "f1_mean": 0.876,
+      "f1_std": 0.0505,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 9.01,
+      "time_std": 0.78,
+      "tokens_mean": 1162.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "MuGalois_lowTau": {
+      "precision_mean": 0.9206,
+      "precision_std": 0.0736,
+      "recall_mean": 0.7556,
+      "recall_std": 0.093,
+      "f1_mean": 0.8278,
+      "f1_std": 0.0712,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 5.81,
+      "time_std": 3.36,
+      "tokens_mean": 795.0,
+      "tokens_std": 505.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    }
+  }
+}

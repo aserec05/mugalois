@@ -1,0 +1,82 @@
+{
+  "query_id": "q3",
+  "template": "T2",
+  "predicate": "genre",
+  "n_expected": 17,
+  "timestamp": "2026-06-16T12:34:19",
+  "results": {
+    "LLMScan": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0587,
+      "recall_mean": 0.3529,
+      "recall_std": 0.0,
+      "f1_mean": 0.492,
+      "f1_std": 0.011,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 4.63,
+      "time_std": 0.66,
+      "tokens_mean": 687.0,
+      "tokens_std": 6.0,
+      "examples": {
+        "fp": [
+          "post-rock"
+        ],
+        "fn": [
+          "Britpop",
+          "art rock",
+          "beat music"
+        ]
+      }
+    },
+    "LLMScan\\_Motiv": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0587,
+      "recall_mean": 0.3529,
+      "recall_std": 0.0,
+      "f1_mean": 0.492,
+      "f1_std": 0.011,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 4.28,
+      "time_std": 0.46,
+      "tokens_mean": 684.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "post-rock"
+        ],
+        "fn": [
+          "Britpop",
+          "art rock",
+          "beat music"
+        ]
+      }
+    },
+    "LLMScan\\_Tel": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0587,
+      "recall_mean": 0.3529,
+      "recall_std": 0.0,
+      "f1_mean": 0.492,
+      "f1_std": 0.011,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 4.48,
+      "time_std": 0.36,
+      "tokens_mean": 690.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "folk rock",
+          "post-rock"
+        ],
+        "fn": [
+          "Britpop",
+          "art rock",
+          "beat music"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "query_id": "mugalois_commonwealth",
+  "template": "T3_mugalois",
+  "predicate": "country/member of",
+  "n_expected": 21,
+  "timestamp": "2026-06-16T00:12:29",
+  "results": {
+    "MuGalois": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8953,
+      "recall_std": 0.0213,
+      "f1_mean": 0.9446,
+      "f1_std": 0.012,
+      "n_runs": 5,
+      "n_generated": 18.8,
+      "time_mean": 8.02,
+      "time_std": 1.0,
+      "tokens_mean": 1714.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Togo"
+        ]
+      }
+    },
+    "MuGalois_lowTau": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6285,
+      "recall_std": 0.0213,
+      "f1_mean": 0.7718,
+      "f1_std": 0.0158,
+      "n_runs": 5,
+      "n_generated": 13.2,
+      "time_mean": 1.55,
+      "time_std": 0.2,
+      "tokens_mean": 256.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    }
+  }
+}

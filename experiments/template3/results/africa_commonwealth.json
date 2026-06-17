@@ -1,0 +1,259 @@
+{
+  "query_id": "africa_commonwealth",
+  "template": "T3_focused",
+  "predicate": "country/member of",
+  "n_expected": 21,
+  "timestamp": "2026-06-15T20:29:48",
+  "results": {
+    "NL": {
+      "precision_mean": 0.9778,
+      "precision_std": 0.0305,
+      "recall_mean": 0.7238,
+      "recall_std": 0.0782,
+      "f1_mean": 0.8287,
+      "f1_std": 0.0393,
+      "n_runs": 5,
+      "n_generated": 15.6,
+      "time_mean": 1.37,
+      "time_std": 0.16,
+      "tokens_mean": 111.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "South Sudan"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "SimpleScan": {
+      "precision_mean": 0.9724,
+      "precision_std": 0.0379,
+      "recall_mean": 0.6285,
+      "recall_std": 0.0213,
+      "f1_mean": 0.763,
+      "f1_std": 0.0126,
+      "n_runs": 5,
+      "n_generated": 13.6,
+      "time_mean": 1.06,
+      "time_std": 0.19,
+      "tokens_mean": 136.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "GD": {
+      "precision_mean": 0.9238,
+      "precision_std": 0.0135,
+      "recall_mean": 0.5905,
+      "recall_std": 0.0928,
+      "f1_mean": 0.7174,
+      "f1_std": 0.078,
+      "n_runs": 5,
+      "n_generated": 13.4,
+      "time_mean": 16.47,
+      "time_std": 4.02,
+      "tokens_mean": 2267.0,
+      "tokens_std": 201.0,
+      "examples": {
+        "fp": [
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "DG": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7238,
+      "recall_std": 0.0521,
+      "f1_mean": 0.8389,
+      "f1_std": 0.0344,
+      "n_runs": 5,
+      "n_generated": 15.2,
+      "time_mean": 8.57,
+      "time_std": 1.14,
+      "tokens_mean": 1672.0,
+      "tokens_std": 24.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eswatini",
+          "Gabon",
+          "Mauritius"
+        ]
+      }
+    },
+    "DG_motiv0": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7524,
+      "recall_std": 0.0398,
+      "f1_mean": 0.8582,
+      "f1_std": 0.0258,
+      "n_runs": 5,
+      "n_generated": 15.8,
+      "time_mean": 12.27,
+      "time_std": 3.15,
+      "tokens_mean": 2004.0,
+      "tokens_std": 514.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Mozambique",
+          "Seychelles"
+        ]
+      }
+    },
+    "DG_motiv_closure": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7905,
+      "recall_std": 0.0261,
+      "f1_mean": 0.8828,
+      "f1_std": 0.0163,
+      "n_runs": 5,
+      "n_generated": 16.6,
+      "time_mean": 17.02,
+      "time_std": 1.34,
+      "tokens_mean": 8186.0,
+      "tokens_std": 805.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Seychelles",
+          "Sierra Leone"
+        ]
+      }
+    },
+    "DG_telephone": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7619,
+      "recall_std": 0.0673,
+      "f1_mean": 0.8635,
+      "f1_std": 0.0426,
+      "n_runs": 5,
+      "n_generated": 16,
+      "time_mean": 16.95,
+      "time_std": 2.71,
+      "tokens_mean": 4316.0,
+      "tokens_std": 72.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Seychelles",
+          "Sierra Leone"
+        ]
+      }
+    },
+    "DG_lookahead": {
+      "precision_mean": 0.9246,
+      "precision_std": 0.0083,
+      "recall_mean": 0.5905,
+      "recall_std": 0.0722,
+      "f1_mean": 0.719,
+      "f1_std": 0.056,
+      "n_runs": 5,
+      "n_generated": 13.4,
+      "time_mean": 9.54,
+      "time_std": 1.27,
+      "tokens_mean": 1935.0,
+      "tokens_std": 135.0,
+      "examples": {
+        "fp": [
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "DG_lookahead_closure": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7524,
+      "recall_std": 0.0521,
+      "f1_mean": 0.8579,
+      "f1_std": 0.0336,
+      "n_runs": 5,
+      "n_generated": 15.8,
+      "time_mean": 16.46,
+      "time_std": 0.96,
+      "tokens_mean": 6281.0,
+      "tokens_std": 1484.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Seychelles",
+          "Sierra Leone"
+        ]
+      }
+    },
+    "MuGalois": {
+      "precision_mean": 0.8503,
+      "precision_std": 0.069,
+      "recall_mean": 0.3524,
+      "recall_std": 0.2223,
+      "f1_mean": 0.4744,
+      "f1_std": 0.2286,
+      "n_runs": 5,
+      "n_generated": 8.4,
+      "time_mean": 17.24,
+      "time_std": 0.98,
+      "tokens_mean": 2520.0,
+      "tokens_std": 73.0,
+      "examples": {
+        "fp": [
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "MuGalois_lowTau": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6381,
+      "recall_std": 0.0261,
+      "f1_mean": 0.7788,
+      "f1_std": 0.0193,
+      "n_runs": 5,
+      "n_generated": 13.4,
+      "time_mean": 1.78,
+      "time_std": 0.06,
+      "tokens_mean": 257.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    }
+  }
+}
