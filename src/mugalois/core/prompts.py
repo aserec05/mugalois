@@ -431,3 +431,106 @@ def genConditionsPrompt(conditions: set[str]) -> str:
         f"Context: NEW conditions to satisfy:\n"
         f"{conditions_str}\n\n"
     )
+
+# ── Recursive path prompts (T5) ───────────────────────────────────────────────
+
+def genAtomicRecConfPrompt(s: str, p: str, t: str, mode: str = "plus") -> str:
+    """
+    LLMAtomicRecConf — confidence that the LLM can resolve the full
+    transitive/reflexive-transitive closure in a single answer, without
+    iterating hop by hop.
+
+    mode: "plus" (p+, s fixed)  | "star" (p*, t fixed)
+    """
+    if mode == "plus":
+        task = f"all entities reachable from {s} by following {p} one or more times"
+    else:
+        task = f"all entities that can reach {t} by following {p} zero or more times"
+
+    return (
+        f"You need to find {task} (the transitive closure of {p}).\n\n"
+        f"How confident are you (0 to 1) that you can list the ENTIRE closure "
+        f"in a single answer, without needing to expand it hop by hop?\n"
+        f"Answer with a single float. No explanation."
+    )
+
+
+def genRecScanPrompt(s: str, p: str, t: str = None, mode: str = "plus") -> str:
+    """
+    LLMRecScan — single-call attempt at the full recursive closure.
+
+    mode: "plus" (s fixed, ?b free)  | "star" (t fixed, ?a free)
+    """
+    if mode == "plus":
+        return (
+            f"Task: List all values of ?b such that ({s}, {p}+, ?b) factually "
+            f"holds — that is, ?b is reachable from {s} by following {p} one "
+            f"or more times, directly or transitively.\n\n"
+            f"Be exhaustive. Return as many values as you know.\n"
+            f"{_VALUE_REMIND}"
+        )
+    else:
+        return (
+            f"Task: List all values of ?a such that (?a, {p}*, {t}) factually "
+            f"holds — that is, ?a can reach {t} by following {p} zero or more "
+            f"times (?a = {t} itself is included).\n\n"
+            f"Be exhaustive. Return as many values as you know.\n"
+            f"{_VALUE_REMIND}"
+        )
+
+
+def genRecHopPrompt(seed: str, p: str, direction: str = "forward") -> str:
+    """
+    Single fixpoint-iteration hop: from one known node, find its
+    direct successors (or predecessors) via p.
+
+    direction: "forward"  → (seed, p, ?y)   used for p+/p* from a fixed subject
+               "backward" → (?y, p, seed)   used for p*/p+ toward a fixed object
+    """
+    if direction == "forward":
+        return (
+            f"Task: List all values of ?y such that ({seed}, {p}, ?y) "
+            f"factually holds — i.e. the direct {p} of {seed}.\n\n"
+            f"Only list direct, one-hop results. Do not expand transitively "
+            f"yourself; further hops will be requested separately.\n"
+            f"Be exhaustive. Return as many values as you know.\n"
+            f"{_VALUE_REMIND}"
+        )
+    else:
+        return (
+            f"Task: List all values of ?y such that (?y, {p}, {seed}) "
+            f"factually holds — i.e. all entities whose direct {p} is {seed}.\n\n"
+            f"Only list direct, one-hop results. Do not expand transitively "
+            f"yourself; further hops will be requested separately.\n"
+            f"Be exhaustive. Return as many values as you know.\n"
+            f"{_VALUE_REMIND}"
+        )
+
+
+def genRecHopBatchPrompt(seeds: set, p: str, direction: str = "forward") -> str:
+    """
+    Batched fixpoint hop: query several known nodes at once instead of
+    one seed per call. Cheaper in tokens; used when |seeds| grows large.
+    """
+    seeds_str = ", ".join(sorted(seeds))
+    if direction == "forward":
+        return (
+            f"Context: The following entities are already known:\n"
+            f"{seeds_str}\n\n"
+            f"Task: For EACH of these entities, list its direct {p} values "
+            f"(one hop only — do not expand transitively).\n"
+            f"Return only NEW entities not already in the list above.\n"
+            f"If none exist for a given entity, simply omit it.\n"
+            f"Be exhaustive.\n"
+            f"{_VALUE_REMIND}"
+        )
+    else:
+        return (
+            f"Context: The following entities are already known:\n"
+            f"{seeds_str}\n\n"
+            f"Task: List all entities whose direct {p} is one of the "
+            f"entities above (one hop only — do not expand transitively).\n"
+            f"Return only NEW entities not already in the list above.\n"
+            f"Be exhaustive.\n"
+            f"{_VALUE_REMIND}"
+        )

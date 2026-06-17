@@ -174,3 +174,82 @@ class Environment:
 
     def __repr__(self):
         return f"Environment({self._bindings})"
+
+
+
+@dataclass(frozen=True)
+class RecursivePattern:
+    """
+    SPARQL recursive property path: (s, p OP, o) where OP is '+' or '*'.
+ 
+    Same s/p/o vocabulary as TriplePattern for consistency, plus an
+    `operator` field. Exactly one of s, o must be a variable — the
+    other is the fixed seed the closure is computed from.
+ 
+    Examples:
+        (dbr:Einstein, :influencedBy+, ?x)  → RecursivePattern("dbr:Einstein", ":influencedBy", "?x", "+")
+        (?x, :partOf*, dbr:Europe)          → RecursivePattern("?x", ":partOf", "dbr:Europe", "*")
+ 
+    '+' is one-or-more (irreflexive): the seed itself is never included.
+    '*' is zero-or-more (reflexive):  the seed itself is always included.
+    """
+    s: str
+    p: str
+    o: str
+    operator: str
+ 
+    VALID_OPERATORS = {"+", "*"}
+ 
+    def __post_init__(self):
+        if self.operator not in self.VALID_OPERATORS:
+            raise ValueError(
+                f"Unknown recursive operator '{self.operator}'. "
+                f"Valid: {sorted(self.VALID_OPERATORS)}"
+            )
+        if self.s_is_var() and self.o_is_var():
+            raise ValueError(
+                "RecursivePattern requires exactly one fixed side "
+                f"(both s={self.s!r} and o={self.o!r} are variables)."
+            )
+        if not self.s_is_var() and not self.o_is_var():
+            raise ValueError(
+                "RecursivePattern requires exactly one variable side "
+                f"(both s={self.s!r} and o={self.o!r} are bound)."
+            )
+ 
+    def is_variable(self, term: str) -> bool:
+        return term.startswith("?")
+ 
+    def s_is_var(self) -> bool:
+        return self.is_variable(self.s)
+ 
+    def o_is_var(self) -> bool:
+        return self.is_variable(self.o)
+ 
+    def is_plus(self) -> bool:
+        """One-or-more: irreflexive, seed excluded from the result."""
+        return self.operator == "+"
+ 
+    def is_star(self) -> bool:
+        """Zero-or-more: reflexive, seed included in the result."""
+        return self.operator == "*"
+ 
+    def seed(self) -> str:
+        """The fixed anchor the closure is computed from."""
+        return self.o if self.s_is_var() else self.s
+ 
+    def var(self) -> str:
+        """The variable to resolve."""
+        return self.s if self.s_is_var() else self.o
+ 
+    def direction(self) -> str:
+        """
+        'forward'  : seed is on the left (s fixed, o is the var to find) —
+                     scan goes (seed, p, ?y) hop by hop.
+        'backward' : seed is on the right (o fixed, s is the var to find) —
+                     scan goes (?y, p, seed) hop by hop.
+        """
+        return "forward" if self.o_is_var() else "backward"
+ 
+    def __repr__(self):
+        return f"({self.s}, {self.p}{self.operator}, {self.o})"
