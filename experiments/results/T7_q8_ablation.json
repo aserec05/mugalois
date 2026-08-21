@@ -1,0 +1,211 @@
+{
+  "query_id": "T7_q8",
+  "template": "T7",
+  "predicate": "Casino Royale sequel+ / directedBy / wasBornIn / isLocatedIn+",
+  "n_expected": 11,
+  "timestamp": "2026-08-12T12:58:51",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0,
+      "f1_mean": 0.2857,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 0.94,
+      "time_std": 0.05,
+      "tokens_mean": 89.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Canada"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0,
+      "f1_mean": 0.2857,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.02,
+      "time_std": 0.23,
+      "tokens_mean": 89.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Canada"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.3367,
+      "precision_std": 0.0375,
+      "recall_mean": 0.2727,
+      "recall_std": 0.0,
+      "f1_mean": 0.3006,
+      "f1_std": 0.0151,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.1,
+      "time_std": 0.15,
+      "tokens_mean": 140.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Australia",
+          "Canada",
+          "France"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.5949,
+      "precision_std": 0.3578,
+      "recall_mean": 0.4181,
+      "recall_std": 0.0498,
+      "f1_mean": 0.444,
+      "f1_std": 0.2319,
+      "n_runs": 5,
+      "n_generated": 32,
+      "time_mean": 8.03,
+      "time_std": 2.77,
+      "tokens_mean": 1571.0,
+      "tokens_std": 266.0,
+      "examples": {
+        "fp": [
+          "Reading, Massachusetts, USA",
+          "Reading, Michigan, USA",
+          "Reading, Pennsylvania, USA"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.3497,
+      "precision_std": 0.2021,
+      "recall_mean": 0.6182,
+      "recall_std": 0.1494,
+      "f1_mean": 0.4017,
+      "f1_std": 0.1673,
+      "n_runs": 5,
+      "n_generated": 28.8,
+      "time_mean": 38.24,
+      "time_std": 14.44,
+      "tokens_mean": 6937.0,
+      "tokens_std": 3170.0,
+      "examples": {
+        "fp": [
+          "Canada",
+          "Europe",
+          "European Union"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Ulm"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.1717,
+      "precision_std": 0.091,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0643,
+      "f1_mean": 0.1561,
+      "f1_std": 0.021,
+      "n_runs": 5,
+      "n_generated": 14.2,
+      "time_mean": 21.98,
+      "time_std": 12.01,
+      "tokens_mean": 3050.0,
+      "tokens_std": 1791.0,
+      "examples": {
+        "fp": [
+          "Europe",
+          "European Union"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.7311,
+      "precision_std": 0.0426,
+      "recall_mean": 0.6364,
+      "recall_std": 0.0,
+      "f1_mean": 0.68,
+      "f1_std": 0.0182,
+      "n_runs": 5,
+      "n_generated": 9.6,
+      "time_mean": 6.67,
+      "time_std": 0.23,
+      "tokens_mean": 1581.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [
+          "Europe",
+          "North America"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "England"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.7189,
+      "precision_std": 0.0444,
+      "recall_mean": 0.6,
+      "recall_std": 0.0498,
+      "f1_mean": 0.653,
+      "f1_std": 0.0382,
+      "n_runs": 5,
+      "n_generated": 9.2,
+      "time_mean": 7.0,
+      "time_std": 0.41,
+      "tokens_mean": 1587.0,
+      "tokens_std": 19.0,
+      "examples": {
+        "fp": [
+          "Earth",
+          "Europe",
+          "North America"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "England"
+        ]
+      }
+    }
+  }
+}

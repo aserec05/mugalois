@@ -1,0 +1,166 @@
+{
+  "query_id": "T7_q7",
+  "template": "T7",
+  "predicate": "Nolan directed / hasWonOscar / sequel+",
+  "n_expected": 1,
+  "timestamp": "2026-08-12T12:55:59",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 0.94,
+      "time_std": 0.05,
+      "tokens_mean": 95.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Dunkirk",
+          "Inception"
+        ],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.04,
+      "time_std": 0.09,
+      "tokens_mean": 95.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Dunkirk",
+          "Inception"
+        ],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7334,
+      "f1_std": 0.1491,
+      "n_runs": 5,
+      "n_generated": 1.8,
+      "time_mean": 1.06,
+      "time_std": 0.11,
+      "tokens_mean": 134.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 3.87,
+      "time_std": 0.56,
+      "tokens_mean": 413.0,
+      "tokens_std": 50.0,
+      "examples": {
+        "fp": [
+          "Inception 2",
+          "Interstellar 2"
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.8,
+      "precision_std": 0.4472,
+      "recall_mean": 0.8,
+      "recall_std": 0.4472,
+      "f1_mean": 0.8,
+      "f1_std": 0.4472,
+      "n_runs": 5,
+      "n_generated": 0.8,
+      "time_mean": 14.11,
+      "time_std": 5.27,
+      "tokens_mean": 2204.0,
+      "tokens_std": 821.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "The_Dark_Knight_Rises"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 7.17,
+      "time_std": 1.48,
+      "tokens_mean": 909.0,
+      "tokens_std": 136.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.5,
+      "precision_std": 0.2887,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6333,
+      "f1_std": 0.2173,
+      "n_runs": 5,
+      "n_generated": 2.4,
+      "time_mean": 2.99,
+      "time_std": 0.2,
+      "tokens_mean": 535.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Inception 2"
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.5333,
+      "precision_std": 0.2739,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.2041,
+      "n_runs": 5,
+      "n_generated": 2.2,
+      "time_mean": 3.19,
+      "time_std": 0.39,
+      "tokens_mean": 537.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

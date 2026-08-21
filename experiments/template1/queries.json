@@ -2,52 +2,46 @@
   "q1": {
     "cardinality": "low",
     "ground_truth": ["Mileva Marić", "Elsa Einstein"],
-    "wikidata": "SELECT ?l WHERE { wd:Q937 wdt:P26 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
-    "nl_prompt": "who were Albert Einstein's spouses? List as many as you know.",
+    "nl_prompt": "Who were Albert Einstein's spouses? List as many as you know.",
+    "nl_prompt_precise": "List every person who was a spouse of Albert Einstein. Be exhaustive and include all of them.",
     "T1a": {
-      "pattern":    { "s": "dbr:Albert_Einstein", "p": "dbo:spouse", "o": "?y" },
-      "pattern_nl": { "s": "Albert Einstein",     "p": "spouse",     "o": "?y" },
-      "sparql_prompt": "SELECT ?y WHERE { dbr:Albert_Einstein dbo:spouse ?y }"
+      "pattern_nl": { "s": "Albert Einstein", "p": "spouse", "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { :Albert_Einstein :spouse ?y }"
     },
     "T1b": {
-      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "?y" },
-      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "?y" },
-      "filter": "?x = dbr:Albert_Einstein",
-      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:spouse ?y . FILTER(?x = dbr:Albert_Einstein) }"
+      "pattern_nl": { "s": "?x", "p": "spouse", "o": "?y" },
+      "filter": "?x = Albert_Einstein",
+      "sparql_prompt": "SELECT ?y WHERE { ?x :spouse ?y . FILTER(?x = :Albert_Einstein) }"
     }
   },
   "q2": {
     "cardinality": "low",
     "ground_truth": ["Arnold Sommerfeld"],
-    "wikidata": "SELECT ?l WHERE { wd:Q41523 wdt:P184 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
-    "nl_prompt": "who was Werner Heisenberg's doctoral advisor?",
+    "nl_prompt": "Who was Werner Heisenberg's doctoral advisor?",
+    "nl_prompt_precise": "Who was the doctoral advisor of Werner Heisenberg? Name every person who supervised his doctorate.",
     "T1a": {
-      "pattern":    { "s": "dbr:Werner_Heisenberg", "p": "dbo:doctoralAdvisor", "o": "?y" },
-      "pattern_nl": { "s": "Werner Heisenberg",     "p": "doctoral advisor",    "o": "?y" },
-      "sparql_prompt": "SELECT ?y WHERE { dbr:Werner_Heisenberg dbo:doctoralAdvisor ?y }"
+      "pattern_nl": { "s": "Werner Heisenberg", "p": "doctoralAdvisor", "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { :Werner_Heisenberg :doctoralAdvisor ?y }"
     },
     "T1b": {
-      "pattern":    { "s": "?x", "p": "dbo:doctoralAdvisor", "o": "?y" },
-      "pattern_nl": { "s": "?x", "p": "doctoral advisor",    "o": "?y" },
-      "filter": "?x = dbr:Werner_Heisenberg",
-      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:doctoralAdvisor ?y . FILTER(?x = dbr:Werner_Heisenberg) }"
+      "pattern_nl": { "s": "?x", "p": "doctoralAdvisor", "o": "?y" },
+      "filter": "?x = Werner_Heisenberg",
+      "sparql_prompt": "SELECT ?y WHERE { ?x :doctoralAdvisor ?y . FILTER(?x = :Werner_Heisenberg) }"
     }
   },
   "q3": {
     "cardinality": "low",
     "ground_truth": ["Albert Einstein"],
-    "wikidata": "SELECT ?l WHERE { ?s wdt:P26 wd:Q62730. ?s rdfs:label ?l. FILTER(LANG(?l)='en') }",
-    "nl_prompt": "who was married to Mileva Marić?",
+    "nl_prompt": "Who was married to Mileva Marić?",
+    "nl_prompt_precise": "List every person who was a spouse of Mileva Marić. Include all of them.",
     "T1a": {
-      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "dbr:Mileva_Marić" },
-      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "Mileva Marić"     },
-      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:spouse dbr:Mileva_Marić }"
+      "pattern_nl": { "s": "?x", "p": "spouse", "o": "Mileva Marić" },
+      "sparql_prompt": "SELECT ?x WHERE { ?x :spouse :Mileva_Marić }"
     },
     "T1b": {
-      "pattern":    { "s": "?x", "p": "dbo:spouse", "o": "?y" },
-      "pattern_nl": { "s": "?x", "p": "spouse",     "o": "?y" },
-      "filter": "?y = dbr:Mileva_Marić",
-      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:spouse ?y . FILTER(?y = dbr:Mileva_Marić) }"
+      "pattern_nl": { "s": "?x", "p": "spouse", "o": "?y" },
+      "filter": "?y = Mileva_Marić",
+      "sparql_prompt": "SELECT ?x WHERE { ?x :spouse ?y . FILTER(?y = :Mileva_Marić) }"
     }
   },
   "q4": {
@@ -62,18 +56,16 @@
       "Honorary Fellow of the Royal Society Te Apārangi",
       "72 scientist women names on the Eiffel tower"
     ],
-    "wikidata": "SELECT ?l WHERE { wd:Q7186 wdt:P166 ?o. ?o rdfs:label ?l. FILTER(LANG(?l)='en') }",
-    "nl_prompt": "what awards did Marie Curie receive? List as many as you know.",
+    "nl_prompt": "What awards did Marie Curie receive? List as many as you know.",
+    "nl_prompt_precise": "List every single award, honour, and distinction received by Marie Curie throughout her life. Be exhaustive and include lesser-known ones.",
     "T1a": {
-      "pattern":    { "s": "dbr:Marie_Curie", "p": "dbo:award", "o": "?y" },
-      "pattern_nl": { "s": "Marie Curie",     "p": "award",     "o": "?y" },
-      "sparql_prompt": "SELECT ?y WHERE { dbr:Marie_Curie dbo:award ?y }"
+      "pattern_nl": { "s": "Marie Curie", "p": "receivedAward", "o": "?y" },
+      "sparql_prompt": "SELECT ?y WHERE { :Marie_Curie :receivedAward ?y }"
     },
     "T1b": {
-      "pattern":    { "s": "?x", "p": "dbo:award", "o": "?y" },
-      "pattern_nl": { "s": "?x", "p": "award",     "o": "?y" },
-      "filter": "?x = dbr:Marie_Curie",
-      "sparql_prompt": "SELECT ?y WHERE { ?x dbo:award ?y . FILTER(?x = dbr:Marie_Curie) }"
+      "pattern_nl": { "s": "?x", "p": "receivedAward", "o": "?y" },
+      "filter": "?x = Marie_Curie",
+      "sparql_prompt": "SELECT ?y WHERE { ?x :receivedAward ?y . FILTER(?x = :Marie_Curie) }"
     }
   },
   "q5": {
@@ -100,18 +92,16 @@
       "Tony Hoare", "Vint Cerf", "Whitfield Diffie", "William Kahan",
       "Yann Le Cun", "Yoshua Bengio"
     ],
-    "wikidata": "SELECT ?l WHERE { ?s wdt:P166 wd:Q185667. ?s rdfs:label ?l. FILTER(LANG(?l)='en') ORDER BY ?l }",
-    "nl_prompt": "who are Turing Award winners? List as many as you know.",
+    "nl_prompt": "Who are Turing Award winners? List as many as you know.",
+    "nl_prompt_precise": "List every single Turing Award winner ever. Be exhaustive — include all recipients, even lesser-known ones. The Turing Award is the highest distinction in computer science.",
     "T1a": {
-      "pattern":    { "s": "?x", "p": "dbo:award", "o": "dbr:Turing_Award" },
-      "pattern_nl": { "s": "?x", "p": "award",     "o": "Turing Award"     },
-      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:award dbr:Turing_Award }"
+      "pattern_nl": { "s": "?x", "p": "receivedAward", "o": "Turing Award" },
+      "sparql_prompt": "SELECT ?x WHERE { ?x :receivedAward :Turing_Award }"
     },
     "T1b": {
-      "pattern":    { "s": "?x", "p": "dbo:award", "o": "?y" },
-      "pattern_nl": { "s": "?x", "p": "award",     "o": "?y" },
-      "filter": "?y = dbr:Turing_Award",
-      "sparql_prompt": "SELECT ?x WHERE { ?x dbo:award ?y . FILTER(?y = dbr:Turing_Award) }"
+      "pattern_nl": { "s": "?x", "p": "receivedAward", "o": "?y" },
+      "filter": "?y = Turing_Award",
+      "sparql_prompt": "SELECT ?x WHERE { ?x :receivedAward ?y . FILTER(?y = :Turing_Award) }"
     }
   }
 }

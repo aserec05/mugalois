@@ -8,6 +8,8 @@
     ],
     "wikidata": "SELECT DISTINCT ?capitalLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P36 ?capital ; rdfs:label ?name. FILTER(?name IN ('France'@en, 'Bhutan'@en, 'Eritrea'@en)) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
     "nl_prompt": "what are the capitals of France, Bhutan and Eritrea?",
+    
+    "nl_prompt_precise": "List every capital city of France, Bhutan, and Eritrea. Include all of them.",
     "pattern": {
       "s": "?country",
       "p": "capital",
@@ -113,7 +115,9 @@
       "Wild at Heart"
     ],
     "wikidata": "SELECT DISTINCT ?filmLabel WHERE { ?film wdt:P57 ?director ; wdt:P31 wd:Q11424 ; wdt:P577 ?date. FILTER(?director IN (wd:Q2001, wd:Q25191, wd:Q3772, wd:Q2071)) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?filmLabel",
-    "nl_prompt": "what films were directed by Kubrick, Nolan, Tarantino or Lynch? List as many as you know.",
+    "nl_prompt": "which films were directed either by Kubrick or Nolan, or Tarantino or Lynch?",
+    "nl_prompt_precise": "List every single film directed by Stanley Kubrick, Christopher Nolan, Quentin Tarantino, or David Lynch. Include all of them, even lesser-known or short films.",
+
     "pattern": {
       "s": "?film",
       "p": "directedBy",
@@ -136,6 +140,7 @@
         ]
       }
     ],
+    
     "sparql_prompt": "SELECT ?film WHERE { ?film directedBy ?director . FILTER(?director IN (Kubrick, Nolan, Tarantino, Lynch)) }",
     "return_var": "?film",
     "ground_truth_triples": [
@@ -458,6 +463,7 @@
       "traditional folk music"
     ],
     "wikidata": "SELECT DISTINCT ?genreLabel WHERE { VALUES ?artist { wd:Q1299 wd:Q44190 } ?artist wdt:P136 ?genre. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?genreLabel",
+    "nl_prompt_precise": "List every music genre associated with the Beatles or Radiohead, excluding pop music. Include all of them, even lesser-known ones.",
     "nl_prompt": "what music genres are associated with the Beatles and Radiohead, excluding pop?",
     "pattern": {
       "s": "?artist",
@@ -618,6 +624,7 @@
     ],
     "wikidata": "SELECT DISTINCT ?countryLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P2046 ?area. FILTER(?area > 500000 && ?area < 2000000) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY ?countryLabel",
     "nl_prompt": "which countries have an area between 500,000 and 2,000,000 km²? List as many as you know.",
+    "nl_prompt_precise": "List every country whose area is strictly between 500,000 and 2,000,000 square kilometres. Include all of them, even lesser-known ones.",
     "pattern": {
       "s": "?country",
       "p": "area",
@@ -741,6 +748,7 @@
     ],
     "wikidata": "SELECT DISTINCT ?countryLabel WHERE { ?country wdt:P31 wd:Q3624078 ; wdt:P1082 ?pop. FILTER(?pop > 10000000) SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } ORDER BY DESC(?pop)",
     "nl_prompt": "which countries have a population greater than 10 million? List as many as you know.",
+    "nl_prompt_precise": "List every country whose population is strictly greater than 10,000,000. Include all of them, even lesser-known ones.",
     "pattern": {
       "s": "?country",
       "p": "population",

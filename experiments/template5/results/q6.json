@@ -1,0 +1,148 @@
+{
+  "query_id": "q6",
+  "template": "T5",
+  "predicate": "came immediately before",
+  "n_expected": 13,
+  "timestamp": "2026-06-29T15:26:23",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.1784,
+      "precision_std": 0.0228,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.3022,
+      "f1_std": 0.0325,
+      "n_runs": 5,
+      "n_generated": 73.8,
+      "time_mean": 49.15,
+      "time_std": 92.95,
+      "tokens_mean": 3634.0,
+      "tokens_std": 6947.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander II",
+          "Pope Alexander III",
+          "Pope Alexander VII"
+        ],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.5793,
+      "precision_std": 0.4639,
+      "recall_mean": 0.8462,
+      "recall_std": 0.1088,
+      "f1_mean": 0.5803,
+      "f1_std": 0.4167,
+      "n_runs": 5,
+      "n_generated": 147.8,
+      "time_mean": 54.95,
+      "time_std": 74.18,
+      "tokens_mean": 3561.0,
+      "tokens_std": 4688.0,
+      "examples": {
+        "fp": [
+          "2. Pope John Paul II (1978-2005)"
+        ],
+        "fn": [
+          "Pope Francis",
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2308,
+      "recall_std": 0.0,
+      "f1_mean": 0.375,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.06,
+      "time_std": 0.06,
+      "tokens_mean": 108.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope John Paul I",
+          "Pope John Paul II"
+        ]
+      }
+    },
+    "LLMRecScan": {
+      "precision_mean": 0.7428,
+      "precision_std": 0.2348,
+      "recall_mean": 0.7385,
+      "recall_std": 0.1685,
+      "f1_mean": 0.7396,
+      "f1_std": 0.2012,
+      "n_runs": 5,
+      "n_generated": 13.2,
+      "time_mean": 2.82,
+      "time_std": 0.26,
+      "tokens_mean": 447.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Pius IX"
+        ]
+      }
+    },
+    "LLMFixpointScan": {
+      "precision_mean": 0.513,
+      "precision_std": 0.1223,
+      "recall_mean": 0.6,
+      "recall_std": 0.2457,
+      "f1_mean": 0.5077,
+      "f1_std": 0.0508,
+      "n_runs": 5,
+      "n_generated": 17.2,
+      "time_mean": 30.0,
+      "time_std": 18.48,
+      "tokens_mean": 4259.0,
+      "tokens_std": 2505.0,
+      "examples": {
+        "fp": [
+          "Pope Clement VIII",
+          "Pope Gregory XII",
+          "Pope Gregory XIII"
+        ],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    },
+    "MuGaloisRec": {
+      "precision_mean": 0.5109,
+      "precision_std": 0.0702,
+      "recall_mean": 0.5385,
+      "recall_std": 0.077,
+      "f1_mean": 0.5186,
+      "f1_std": 0.0412,
+      "n_runs": 5,
+      "n_generated": 14,
+      "time_mean": 25.36,
+      "time_std": 6.46,
+      "tokens_mean": 3727.0,
+      "tokens_std": 780.0,
+      "examples": {
+        "fp": [
+          "Pope Clement VIII",
+          "Pope Eusebius",
+          "Pope Gregory XV"
+        ],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T7_q1",
+  "template": "T7",
+  "predicate": "Popes born in Italy \u2014 wasBornIn / isLocatedIn+",
+  "n_expected": 216,
+  "timestamp": "2026-08-19T17:28:29",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.7136,
+      "precision_std": 0.0188,
+      "recall_mean": 0.6167,
+      "recall_std": 0.0814,
+      "f1_mean": 0.6592,
+      "f1_std": 0.0467,
+      "n_runs": 5,
+      "n_generated": 186.8,
+      "time_mean": 25.39,
+      "time_std": 4.26,
+      "tokens_mean": 3331.0,
+      "tokens_std": 369.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander I",
+          "Pope Alexander VI",
+          "Pope Anicetus"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian III",
+          "Adrian V"
+        ]
+      }
+    }
+  }
+}

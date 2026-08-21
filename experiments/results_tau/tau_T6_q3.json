@@ -1,0 +1,165 @@
+{
+  "query_id": "tau_T6_q3",
+  "template": "T6",
+  "predicate": "Marie Curie field | employer | member of | degree \u2014 4 branches, high cardinality",
+  "n_expected": 23,
+  "timestamp": "2026-08-20T10:30:50",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.6508,
+      "precision_std": 0.0727,
+      "recall_mean": 0.313,
+      "recall_std": 0.0195,
+      "f1_mean": 0.4212,
+      "f1_std": 0.0201,
+      "n_runs": 5,
+      "n_generated": 11.2,
+      "time_mean": 2.64,
+      "time_std": 0.53,
+      "tokens_mean": 310.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.6019,
+      "precision_std": 0.0668,
+      "recall_mean": 0.3217,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4174,
+      "f1_std": 0.0377,
+      "n_runs": 5,
+      "n_generated": 12.4,
+      "time_mean": 2.35,
+      "time_std": 0.25,
+      "tokens_mean": 317.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.6292,
+      "precision_std": 0.0401,
+      "recall_mean": 0.3217,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4242,
+      "f1_std": 0.035,
+      "n_runs": 5,
+      "n_generated": 11.8,
+      "time_mean": 2.51,
+      "time_std": 0.31,
+      "tokens_mean": 313.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.6259,
+      "precision_std": 0.0437,
+      "recall_mean": 0.3304,
+      "recall_std": 0.0238,
+      "f1_mean": 0.4315,
+      "f1_std": 0.0197,
+      "n_runs": 5,
+      "n_generated": 12.2,
+      "time_mean": 2.47,
+      "time_std": 0.53,
+      "tokens_mean": 316.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Paris-Sorbonne University",
+          "Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.5372,
+      "precision_std": 0.1143,
+      "recall_mean": 0.3391,
+      "recall_std": 0.0364,
+      "f1_mean": 0.4146,
+      "f1_std": 0.0602,
+      "n_runs": 5,
+      "n_generated": 14.8,
+      "time_mean": 9.96,
+      "time_std": 2.21,
+      "tokens_mean": 1276.0,
+      "tokens_std": 18.0,
+      "examples": {
+        "fp": [
+          "Bachelor of Science",
+          "Coll\u00e8ge de France",
+          "DSc"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.5845,
+      "precision_std": 0.1054,
+      "recall_mean": 0.3565,
+      "recall_std": 0.0364,
+      "f1_mean": 0.4422,
+      "f1_std": 0.0575,
+      "n_runs": 5,
+      "n_generated": 14.2,
+      "time_mean": 9.27,
+      "time_std": 0.76,
+      "tokens_mean": 1273.0,
+      "tokens_std": 15.0,
+      "examples": {
+        "fp": [
+          "Bachelor of Science",
+          "DSc",
+          "Doctor of Science"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    }
+  }
+}

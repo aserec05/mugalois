@@ -1,0 +1,179 @@
+{
+  "query_id": "rq3_T1_q2",
+  "template": "T1",
+  "predicate": "Who was Werner Heisenberg's doctoral advisor?",
+  "n_expected": 1,
+  "timestamp": "2026-08-20T23:18:13",
+  "results": {
+    "Closure_none": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7334,
+      "f1_std": 0.1491,
+      "n_runs": 5,
+      "n_generated": 1.8,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Max Planck"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_motivational": {
+      "precision_mean": 0.0331,
+      "precision_std": 0.0128,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0639,
+      "f1_std": 0.024,
+      "n_runs": 5,
+      "n_generated": 35.2,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Carl Friedrich von Weizs\u00e4cker",
+          "David Hilbert",
+          "Erwin Schr\u00f6dinger"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_forced": {
+      "precision_mean": 0.0227,
+      "precision_std": 0.0126,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0441,
+      "f1_std": 0.0239,
+      "n_runs": 5,
+      "n_generated": 53.6,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Albert Einstein",
+          "Annalen der Physik",
+          "Astrophysics"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_contrast": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7334,
+      "f1_std": 0.1491,
+      "n_runs": 5,
+      "n_generated": 1.8,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Max Planck"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_alphabet": {
+      "precision_mean": 0.44,
+      "precision_std": 0.1342,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6,
+      "f1_std": 0.1491,
+      "n_runs": 5,
+      "n_generated": 2.6,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Max Planck"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_socratic": {
+      "precision_mean": 0.2077,
+      "precision_std": 0.0946,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.3348,
+      "f1_std": 0.1457,
+      "n_runs": 5,
+      "n_generated": 8.4,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Hermann Weyl",
+          "Max Planck",
+          "Niels Bohr"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_coach": {
+      "precision_mean": 0.1,
+      "precision_std": 0.0306,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.1806,
+      "f1_std": 0.0519,
+      "n_runs": 5,
+      "n_generated": 11.2,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "Carl Friedrich von Weizs\u00e4cker",
+          "Hans Bethe",
+          "Hermann von Helmholtz"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_telephone": {
+      "precision_mean": 0.0642,
+      "precision_std": 0.0023,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.1206,
+      "f1_std": 0.0041,
+      "n_runs": 5,
+      "n_generated": 15.6,
+      "time_mean": 94.85,
+      "time_std": 11.34,
+      "tokens_mean": 96788.0,
+      "tokens_std": 29280.0,
+      "examples": {
+        "fp": [
+          "A. S. Eddington",
+          "David Hilbert",
+          "Fritz Hasen\u00f6hrl"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

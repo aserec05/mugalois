@@ -1,0 +1,35 @@
+{
+  "query_id": "q2",
+  "template": "T5",
+  "predicate": "came immediately before",
+  "n_expected": 264,
+  "timestamp": "2026-07-29T16:32:49",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.8084,
+      "precision_std": 0.3932,
+      "recall_mean": 0.5568,
+      "recall_std": 0.2484,
+      "f1_mean": 0.5325,
+      "f1_std": 0.2416,
+      "n_runs": 5,
+      "n_generated": 548.8,
+      "time_mean": 47.44,
+      "time_std": 77.63,
+      "tokens_mean": 4279.0,
+      "tokens_std": 6773.0,
+      "examples": {
+        "fp": [
+          "Pope St. Eugene IV",
+          "Pope St. Felix II",
+          "Pope St. Innocent III"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adrian I",
+          "Pope Agatho"
+        ]
+      }
+    }
+  }
+}

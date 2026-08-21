@@ -1,0 +1,63 @@
+{
+  "query_id": "T2_q1",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 3,
+  "timestamp": "2026-08-21T17:06:50",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 5.04,
+      "time_std": 0.36,
+      "tokens_mean": 525.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 5.18,
+      "time_std": 0.76,
+      "tokens_mean": 573.0,
+      "tokens_std": 63.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 5.57,
+      "time_std": 0.7,
+      "tokens_mean": 669.0,
+      "tokens_std": 69.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "query_id": "q8",
+  "template": "T4",
+  "predicate": "has member/capital/flows through",
+  "n_expected": 7,
+  "timestamp": "2026-07-29T16:27:15",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 0.2,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.1667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 2.48,
+      "time_std": 0.31,
+      "tokens_mean": 251.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Amazon River",
+          "Danube River",
+          "Pope Lawrence River"
+        ],
+        "fn": [
+          "Potomac River",
+          "Seine",
+          "Spree"
+        ]
+      }
+    }
+  }
+}

@@ -106,9 +106,19 @@ def LLMScan(
 
 # ── Strategy selection ────────────────────────────────────────────────────────
 
+SEED_FORCE_THRESHOLD = 20  # force SeedScan when |seeds| > this
+
 def _choose_strategy(pattern, env, seeds_s, seeds_o, llm, tau):
     if not seeds_s and not seeds_o:
         return "triple", None
+
+    # Force SeedScan when seeds are large — skip confidence call entirely.
+    # With many seeds, KeyScan (one LLM call per seed) is always worse.
+    # General fix across T4-T7.
+    total_seeds = len(seeds_s) + len(seeds_o)
+    if total_seeds > SEED_FORCE_THRESHOLD:
+        return "seed", None
+
     prompt = genConfidencePrompt(pattern, env)
     resp = llm.chat(build_messages(prompt))
     try:

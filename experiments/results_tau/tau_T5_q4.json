@@ -1,0 +1,145 @@
+{
+  "query_id": "tau_T5_q4",
+  "template": "T5",
+  "predicate": "a p+ ?b FILTER(?b) \u2014 forward closure, irreflexive, post-filter excludes one result",
+  "n_expected": 5,
+  "timestamp": "2026-08-20T10:19:19",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 3.32,
+      "time_std": 2.05,
+      "tokens_mean": 270.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 2.29,
+      "time_std": 0.12,
+      "tokens_mean": 270.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 2.42,
+      "time_std": 0.28,
+      "tokens_mean": 270.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 2.33,
+      "time_std": 0.66,
+      "tokens_mean": 270.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 12.24,
+      "time_std": 0.94,
+      "tokens_mean": 1661.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 12.61,
+      "time_std": 0.56,
+      "tokens_mean": 1661.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

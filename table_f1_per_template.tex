@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Model} & \textbf{T1} & \textbf{T2} & \textbf{T3} & \textbf{T4} & \textbf{T5} & \textbf{T6} & \textbf{T7} \\
+\midrule
+\textbf{NL\textsubscript{naive}} & \textbf{0.770} & \textbf{0.688} & \textbf{0.906} & 0.833 & 0.746 & 0.662 & 0.365 \\
+\textbf{NL\textsubscript{precise}} & 0.662 & 0.667 & 0.780 & \textbf{0.834} & \textbf{0.878} & 0.657 & 0.364 \\
+\textbf{SPARQL} & 0.492 & 0.625 & 0.644 & 0.507 & 0.356 & 0.533 & 0.267 \\
+\sys{}\_Hol & 0.539 & 0.396 & 0.796 & 0.794 & 0.823 & 0.622 & 0.651 \\
+\sys{}\_Dec & 0.695 & 0.658 & 0.824 & 0.682 & 0.687 & 0.655 & 0.631 \\
+\sys{}\_C & 0.671 & 0.655 & 0.748 & 0.801 & 0.788 & 0.600 & 0.366 \\
+\sys{}\_F-M & 0.674 & 0.661 & 0.762 & 0.805 & 0.818 & \textbf{0.666} & \textbf{0.763} \\
+\sys{}\_F & 0.669 & 0.642 & 0.759 & 0.816 & 0.790 & 0.661 & 0.747 \\
+\midrule
+\textit{Macro} & 0.647 & 0.624 & 0.777 & 0.759 & 0.736 & 0.632 & 0.519 \\
+\bottomrule
+\end{tabular}
+\caption{Macro-average F1 per template. Best per column in \textbf{bold}. Bottom row: average across all models.}
+\label{tab:f1_per_template}
+\end{table}

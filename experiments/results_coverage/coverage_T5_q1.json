@@ -1,0 +1,100 @@
+{
+  "query_id": "T5_q1",
+  "template": "T5",
+  "predicate": "All successors of Pius XII (forward transitive closure, irreflexive)",
+  "n_expected": 7,
+  "timestamp": "2026-08-21T10:39:49",
+  "results": {
+    "F_cov050": {
+      "precision_mean": 0.7928,
+      "precision_std": 0.0587,
+      "recall_mean": 0.8571,
+      "recall_std": 0.0,
+      "f1_mean": 0.8228,
+      "f1_std": 0.0313,
+      "n_runs": 5,
+      "n_generated": 7.6,
+      "time_mean": 4.7,
+      "time_std": 0.48,
+      "tokens_mean": 537.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Pope Paul VI",
+          "Pope Pius XI"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "F_cov065": {
+      "precision_mean": 0.7714,
+      "precision_std": 0.0479,
+      "recall_mean": 0.8571,
+      "recall_std": 0.0,
+      "f1_mean": 0.8114,
+      "f1_std": 0.0255,
+      "n_runs": 5,
+      "n_generated": 7.8,
+      "time_mean": 5.7,
+      "time_std": 1.54,
+      "tokens_mean": 538.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Pope Paul VI",
+          "Second Vatican Council"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "F_cov080": {
+      "precision_mean": 0.7714,
+      "precision_std": 0.0479,
+      "recall_mean": 0.8571,
+      "recall_std": 0.0,
+      "f1_mean": 0.8114,
+      "f1_std": 0.0255,
+      "n_runs": 5,
+      "n_generated": 7.8,
+      "time_mean": 4.93,
+      "time_std": 0.24,
+      "tokens_mean": 538.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope Paul VI"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "F_cov095": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0587,
+      "recall_mean": 0.8571,
+      "recall_std": 0.0,
+      "f1_mean": 0.8343,
+      "f1_std": 0.0313,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 4.58,
+      "time_std": 0.14,
+      "tokens_mean": 537.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope Paul VI",
+          "Second Vatican Council"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

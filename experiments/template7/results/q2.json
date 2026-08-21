@@ -1,0 +1,35 @@
+{
+  "query_id": "q2",
+  "template": "T7",
+  "predicate": "hasChild+ / wasBornIn / isLocatedIn+",
+  "n_expected": 135,
+  "timestamp": "2026-08-08T15:06:51",
+  "results": {
+    "HybridPlannerV4": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 5.63,
+      "time_std": 0.62,
+      "tokens_mean": 734.0,
+      "tokens_std": 59.0,
+      "examples": {
+        "fp": [
+          "Albert Edward, Prince of Wales",
+          "Prince Arthur, Duke of Connaught and Strathearn",
+          "Prince Leopold, Duke of Albany"
+        ],
+        "fn": [
+          "Alexandra Feodorovna (Alix of Hesse)",
+          "Alexandra, Princess of Leiningen",
+          "Andreas, 8th Prince of Leiningen"
+        ]
+      }
+    }
+  }
+}

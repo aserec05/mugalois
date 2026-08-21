@@ -1,0 +1,31 @@
+{
+  "query_id": "s_T3_q3",
+  "template": "T3",
+  "predicate": "African countries in the Commonwealth \u2014 Join optimal",
+  "n_expected": 21,
+  "timestamp": "2026-08-19T12:41:41",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.7615,
+      "precision_std": 0.3268,
+      "recall_mean": 0.5524,
+      "recall_std": 0.2198,
+      "f1_mean": 0.5525,
+      "f1_std": 0.0555,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 13.42,
+      "time_std": 7.4,
+      "tokens_mean": 3567.0,
+      "tokens_std": 2298.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Botswana",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    }
+  }
+}

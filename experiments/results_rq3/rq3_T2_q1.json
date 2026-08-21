@@ -1,0 +1,177 @@
+{
+  "query_id": "rq3_T2_q1",
+  "template": "T2",
+  "predicate": "what are the capitals of France, Bhutan and Eritrea?",
+  "n_expected": 3,
+  "timestamp": "2026-08-20T23:47:00",
+  "results": {
+    "Closure_none": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "Closure_motivational": {
+      "precision_mean": 0.1044,
+      "precision_std": 0.0061,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.1891,
+      "f1_std": 0.01,
+      "n_runs": 5,
+      "n_generated": 28.8,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          "117600 km\u00b2",
+          "3546000",
+          "38394 km\u00b2"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_forced": {
+      "precision_mean": 0.0945,
+      "precision_std": 0.0122,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.1725,
+      "f1_std": 0.0205,
+      "n_runs": 5,
+      "n_generated": 32.2,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          ".bt",
+          ".er",
+          ".fr"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_contrast": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "Closure_alphabet": {
+      "precision_mean": 0.061,
+      "precision_std": 0.0005,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.115,
+      "f1_std": 0.001,
+      "n_runs": 5,
+      "n_generated": 49.2,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          "Amsterdam",
+          "Andorra la Vella",
+          "Ankara"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_socratic": {
+      "precision_mean": 0.0429,
+      "precision_std": 0.0078,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0822,
+      "f1_std": 0.0143,
+      "n_runs": 5,
+      "n_generated": 72,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          "Abuja",
+          "Accra",
+          "Addis Ababa"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_coach": {
+      "precision_mean": 0.4145,
+      "precision_std": 0.1174,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.578,
+      "f1_std": 0.122,
+      "n_runs": 5,
+      "n_generated": 7.8,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          "Accra",
+          "Algiers",
+          "Ankara"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_telephone": {
+      "precision_mean": 0.1001,
+      "precision_std": 0.0042,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.182,
+      "f1_std": 0.0069,
+      "n_runs": 5,
+      "n_generated": 30,
+      "time_mean": 94.22,
+      "time_std": 2.51,
+      "tokens_mean": 77828.0,
+      "tokens_std": 2811.0,
+      "examples": {
+        "fp": [
+          "Algiers",
+          "Ankara",
+          "Asunci\u00f3n"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "query_id": "tau_T3_q3",
+  "template": "T3",
+  "predicate": "African countries in the Commonwealth \u2014 Join optimal",
+  "n_expected": 21,
+  "timestamp": "2026-08-19T10:44:48",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.9581,
+      "precision_std": 0.0383,
+      "recall_mean": 0.6286,
+      "recall_std": 0.0399,
+      "f1_mean": 0.7582,
+      "f1_std": 0.0298,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 2.06,
+      "time_std": 0.24,
+      "tokens_mean": 258.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.9438,
+      "precision_std": 0.0315,
+      "recall_mean": 0.6381,
+      "recall_std": 0.0261,
+      "f1_mean": 0.7613,
+      "f1_std": 0.0264,
+      "n_runs": 5,
+      "n_generated": 14.2,
+      "time_mean": 2.2,
+      "time_std": 0.15,
+      "tokens_mean": 258.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.9714,
+      "precision_std": 0.0391,
+      "recall_mean": 0.6285,
+      "recall_std": 0.0213,
+      "f1_mean": 0.763,
+      "f1_std": 0.0234,
+      "n_runs": 5,
+      "n_generated": 13.6,
+      "time_mean": 2.14,
+      "time_std": 0.2,
+      "tokens_mean": 257.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.959,
+      "precision_std": 0.0374,
+      "recall_mean": 0.6572,
+      "recall_std": 0.0213,
+      "f1_mean": 0.7797,
+      "f1_std": 0.0234,
+      "n_runs": 5,
+      "n_generated": 14.4,
+      "time_mean": 2.57,
+      "time_std": 0.31,
+      "tokens_mean": 260.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Papua New Guinea"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.4422,
+      "precision_std": 0.0829,
+      "recall_mean": 0.7143,
+      "recall_std": 0.0337,
+      "f1_mean": 0.5426,
+      "f1_std": 0.0619,
+      "n_runs": 5,
+      "n_generated": 34.8,
+      "time_mean": 15.8,
+      "time_std": 1.41,
+      "tokens_mean": 5068.0,
+      "tokens_std": 434.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Bahamas",
+          "Barbados"
+        ],
+        "fn": [
+          "Gabon",
+          "Kenya",
+          "Mozambique"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.7246,
+      "precision_std": 0.2101,
+      "recall_mean": 0.7047,
+      "recall_std": 0.0852,
+      "f1_mean": 0.6913,
+      "f1_std": 0.092,
+      "n_runs": 5,
+      "n_generated": 22.8,
+      "time_mean": 12.81,
+      "time_std": 2.56,
+      "tokens_mean": 3991.0,
+      "tokens_std": 1148.0,
+      "examples": {
+        "fp": [
+          "Barbados",
+          "Jamaica"
+        ],
+        "fn": [
+          "Gabon",
+          "Kenya",
+          "Namibia"
+        ]
+      }
+    }
+  }
+}

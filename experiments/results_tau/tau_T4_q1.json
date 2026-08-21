@@ -1,0 +1,117 @@
+{
+  "query_id": "tau_T4_q1",
+  "template": "T4",
+  "predicate": "Comedies written by Oscar Wilde \u2014 2-hop, GD optimal, low cardinality",
+  "n_expected": 4,
+  "timestamp": "2026-08-19T10:47:56",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 3.1,
+      "time_std": 0.4,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 2.99,
+      "time_std": 0.16,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 3.17,
+      "time_std": 0.29,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 3.22,
+      "time_std": 0.32,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 5.08,
+      "time_std": 0.59,
+      "tokens_mean": 896.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 5.77,
+      "time_std": 1.15,
+      "tokens_mean": 1076.0,
+      "tokens_std": 395.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

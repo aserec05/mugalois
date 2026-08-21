@@ -1,0 +1,34 @@
+{
+  "T1q5": {
+    "none": {
+      "F1_mean": 0.302,
+      "F1_std": 0.015,
+      "R_mean": 0.199,
+      "n_mean": 24.3
+    },
+    "motivational": {
+      "F1_mean": 0.347,
+      "F1_std": 0.022,
+      "R_mean": 0.273,
+      "n_mean": 44.3
+    },
+    "alphabet": {
+      "F1_mean": 0.337,
+      "F1_std": 0.033,
+      "R_mean": 0.247,
+      "n_mean": 35
+    },
+    "mot+socratic": {
+      "F1_mean": 0.316,
+      "F1_std": 0.061,
+      "R_mean": 0.277,
+      "n_mean": 61.7
+    },
+    "contrast": {
+      "F1_mean": 0.319,
+      "F1_std": 0.014,
+      "R_mean": 0.212,
+      "n_mean": 25.3
+    }
+  }
+}

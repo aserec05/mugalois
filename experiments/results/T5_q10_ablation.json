@@ -1,0 +1,201 @@
+{
+  "query_id": "T5_q10",
+  "template": "T5",
+  "predicate": "All subclasses of BaseException in Python 3 (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, multi-branch DAG, source: Python 3 official docs",
+  "n_expected": 64,
+  "timestamp": "2026-08-12T12:01:35",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.9938,
+      "precision_std": 0.0138,
+      "recall_mean": 0.7781,
+      "recall_std": 0.1337,
+      "f1_mean": 0.8673,
+      "f1_std": 0.0751,
+      "n_runs": 5,
+      "n_generated": 50.2,
+      "time_mean": 3.67,
+      "time_std": 0.4,
+      "tokens_mean": 302.0,
+      "tokens_std": 52.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.984,
+      "precision_std": 0.0001,
+      "recall_mean": 0.9625,
+      "recall_std": 0.0086,
+      "f1_mean": 0.9732,
+      "f1_std": 0.0044,
+      "n_runs": 5,
+      "n_generated": 62.6,
+      "time_mean": 3.81,
+      "time_std": 0.26,
+      "tokens_mean": 390.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "InterruptedError",
+          "StopAsyncIteration",
+          "UnicodeWarning"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.9724,
+      "precision_std": 0.0124,
+      "recall_mean": 0.8531,
+      "recall_std": 0.1028,
+      "f1_mean": 0.9058,
+      "f1_std": 0.0563,
+      "n_runs": 5,
+      "n_generated": 56.2,
+      "time_mean": 3.58,
+      "time_std": 0.76,
+      "tokens_mean": 318.0,
+      "tokens_std": 52.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "ArithmeticError",
+          "BufferError",
+          "FloatingPointError"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9817,
+      "precision_std": 0.0003,
+      "recall_mean": 0.8375,
+      "recall_std": 0.014,
+      "f1_mean": 0.9039,
+      "f1_std": 0.0084,
+      "n_runs": 5,
+      "n_generated": 54.6,
+      "time_mean": 3.03,
+      "time_std": 0.3,
+      "tokens_mean": 301.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.7944,
+      "precision_std": 0.1522,
+      "recall_mean": 0.725,
+      "recall_std": 0.1022,
+      "f1_mean": 0.7515,
+      "f1_std": 0.1067,
+      "n_runs": 5,
+      "n_generated": 60,
+      "time_mean": 27.73,
+      "time_std": 12.72,
+      "tokens_mean": 7155.0,
+      "tokens_std": 3252.0,
+      "examples": {
+        "fp": [
+          "AbstractEntity",
+          "Concept",
+          "Condition"
+        ],
+        "fn": [
+          "AssertionError",
+          "BlockingIOError",
+          "BrokenPipeError"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.9817,
+      "precision_std": 0.0003,
+      "recall_mean": 0.8375,
+      "recall_std": 0.014,
+      "f1_mean": 0.9039,
+      "f1_std": 0.0084,
+      "n_runs": 5,
+      "n_generated": 54.6,
+      "time_mean": 3.91,
+      "time_std": 0.27,
+      "tokens_mean": 424.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.9784,
+      "precision_std": 0.0079,
+      "recall_mean": 0.8469,
+      "recall_std": 0.0279,
+      "f1_mean": 0.9077,
+      "f1_std": 0.0168,
+      "n_runs": 5,
+      "n_generated": 55.4,
+      "time_mean": 5.03,
+      "time_std": 0.23,
+      "tokens_mean": 565.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9814,
+      "precision_std": 0.0004,
+      "recall_mean": 0.825,
+      "recall_std": 0.0171,
+      "f1_mean": 0.8964,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 53.8,
+      "time_mean": 6.97,
+      "time_std": 0.56,
+      "tokens_mean": 1076.0,
+      "tokens_std": 39.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionRefusedError"
+        ]
+      }
+    }
+  }
+}

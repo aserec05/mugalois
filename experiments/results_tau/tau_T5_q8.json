@@ -1,0 +1,161 @@
+{
+  "query_id": "tau_T5_q8",
+  "template": "T5",
+  "predicate": "All predecessors of Pius I, back to Peter (backward transitive closure, irreflexive) \u2014 LOW CARDINALITY, 9 hops, 1st-2nd century",
+  "n_expected": 9,
+  "timestamp": "2026-08-20T10:27:12",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 2.28,
+      "time_std": 0.41,
+      "tokens_mean": 286.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Eleutherius",
+          "Pope Pius I",
+          "Pope Soter"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Evaristus",
+          "Pope Linus"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 2.19,
+      "time_std": 0.19,
+      "tokens_mean": 290.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Eleutherius",
+          "Pope Pius I",
+          "Pope Soter"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Evaristus",
+          "Pope Linus"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.7031,
+      "precision_std": 0.1123,
+      "recall_mean": 0.7778,
+      "recall_std": 0.1571,
+      "f1_mean": 0.735,
+      "f1_std": 0.1216,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 2.39,
+      "time_std": 0.25,
+      "tokens_mean": 291.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Eleutherius",
+          "Pope Pius I",
+          "Pope Soter"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Evaristus",
+          "Pope Linus"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 2.1,
+      "time_std": 0.17,
+      "tokens_mean": 290.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Eleutherius",
+          "Pope Pius I",
+          "Pope Soter"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Evaristus",
+          "Pope Linus"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.1864,
+      "recall_mean": 0.3111,
+      "recall_std": 0.0497,
+      "f1_mean": 0.4225,
+      "f1_std": 0.0871,
+      "n_runs": 5,
+      "n_generated": 4.4,
+      "time_mean": 10.48,
+      "time_std": 1.25,
+      "tokens_mean": 1456.0,
+      "tokens_std": 233.0,
+      "examples": {
+        "fp": [
+          "Pope Fabian"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Clement I",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.75,
+      "precision_std": 0.0,
+      "recall_mean": 0.3333,
+      "recall_std": 0.0,
+      "f1_mean": 0.4615,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 9.12,
+      "time_std": 0.51,
+      "tokens_mean": 1352.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Fabian"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Clement I",
+          "Pope Hyginus"
+        ]
+      }
+    }
+  }
+}

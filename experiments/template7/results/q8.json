@@ -1,0 +1,186 @@
+{
+  "query_id": "q8",
+  "template": "T7",
+  "predicate": "sequel+ / directedBy / wasBornIn / isAdministrativelyLocatedIn*",
+  "n_expected": 11,
+  "timestamp": "2026-08-09T18:33:44",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0,
+      "f1_mean": 0.2857,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 0.84,
+      "time_std": 0.11,
+      "tokens_mean": 78.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Canada"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.4429,
+      "precision_std": 0.0319,
+      "recall_mean": 0.2727,
+      "recall_std": 0.0,
+      "f1_mean": 0.3372,
+      "f1_std": 0.0088,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 0.88,
+      "time_std": 0.04,
+      "tokens_mean": 97.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "France",
+          "Italy",
+          "Norway"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.42,
+      "precision_std": 0.0447,
+      "recall_mean": 0.3454,
+      "recall_std": 0.0407,
+      "f1_mean": 0.3754,
+      "f1_std": 0.0126,
+      "n_runs": 5,
+      "n_generated": 9.2,
+      "time_mean": 0.98,
+      "time_std": 0.05,
+      "tokens_mean": 141.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [
+          "Denmark",
+          "France",
+          "Italy"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.58,
+      "precision_std": 0.0447,
+      "recall_mean": 0.2545,
+      "recall_std": 0.0407,
+      "f1_mean": 0.3533,
+      "f1_std": 0.0484,
+      "n_runs": 5,
+      "n_generated": 4.8,
+      "time_mean": 0.9,
+      "time_std": 0.12,
+      "tokens_mean": 85.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Canada",
+          "France"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.63,
+      "precision_std": 0.0671,
+      "recall_mean": 0.2727,
+      "recall_std": 0.0,
+      "f1_mean": 0.38,
+      "f1_std": 0.0112,
+      "n_runs": 5,
+      "n_generated": 4.8,
+      "time_mean": 0.93,
+      "time_std": 0.13,
+      "tokens_mean": 185.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Canada",
+          "France"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.1968,
+      "precision_std": 0.0142,
+      "recall_mean": 0.3636,
+      "recall_std": 0.0,
+      "f1_mean": 0.2552,
+      "f1_std": 0.0116,
+      "n_runs": 5,
+      "n_generated": 20.4,
+      "time_mean": 44.16,
+      "time_std": 4.0,
+      "tokens_mean": 7261.0,
+      "tokens_std": 537.0,
+      "examples": {
+        "fp": [
+          "Belgium",
+          "Brussels",
+          "Brussels-Capital Region"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.7233,
+      "precision_std": 0.0384,
+      "recall_mean": 0.5637,
+      "recall_std": 0.0407,
+      "f1_mean": 0.6323,
+      "f1_std": 0.0236,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 6.16,
+      "time_std": 0.42,
+      "tokens_mean": 1572.0,
+      "tokens_std": 6.0,
+      "examples": {
+        "fp": [
+          "Europe",
+          "North America"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    }
+  }
+}

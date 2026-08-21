@@ -1,0 +1,81 @@
+{
+  "query_id": "T2_q2",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 58,
+  "timestamp": "2026-08-21T17:08:09",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 0.9618,
+      "precision_std": 0.0016,
+      "recall_mean": 0.4345,
+      "recall_std": 0.0189,
+      "f1_mean": 0.5984,
+      "f1_std": 0.0183,
+      "n_runs": 5,
+      "n_generated": 26.2,
+      "time_mean": 12.14,
+      "time_std": 0.91,
+      "tokens_mean": 1165.0,
+      "tokens_std": 18.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Death Proof"
+        ]
+      }
+    },
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.9618,
+      "precision_std": 0.0016,
+      "recall_mean": 0.4345,
+      "recall_std": 0.0189,
+      "f1_mean": 0.5984,
+      "f1_std": 0.0183,
+      "n_runs": 5,
+      "n_generated": 26.2,
+      "time_mean": 12.94,
+      "time_std": 1.87,
+      "tokens_mean": 1164.0,
+      "tokens_std": 16.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Batman Begins"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9618,
+      "precision_std": 0.0013,
+      "recall_mean": 0.4345,
+      "recall_std": 0.0144,
+      "f1_mean": 0.5985,
+      "f1_std": 0.014,
+      "n_runs": 5,
+      "n_generated": 26.2,
+      "time_mean": 12.85,
+      "time_std": 0.67,
+      "tokens_mean": 1278.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+        ],
+        "fn": [
+          "42 One Dream Rush",
+          "Absurda",
+          "Batman Begins"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "query_id": "T6_q9",
+  "template": "T6",
+  "predicate": "?b (won | lost final | finished third) FIFA World Cup \u2014 backward, 3 simple branches",
+  "n_expected": 21,
+  "timestamp": "2026-08-21T17:47:41",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.8649,
+      "precision_std": 0.0403,
+      "recall_mean": 0.8953,
+      "recall_std": 0.1032,
+      "f1_mean": 0.8764,
+      "f1_std": 0.0539,
+      "n_runs": 5,
+      "n_generated": 21.8,
+      "time_mean": 9.1,
+      "time_std": 0.72,
+      "tokens_mean": 1327.0,
+      "tokens_std": 181.0,
+      "examples": {
+        "fp": [
+          "Peru",
+          "United States"
+        ],
+        "fn": [
+          "Belgium"
+        ]
+      }
+    }
+  }
+}

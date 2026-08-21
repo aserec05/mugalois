@@ -1,0 +1,31 @@
+{
+  "query_id": "T4_q5",
+  "template": "T4",
+  "predicate": "Nobel Prize in Literature laureates born in Asia \u2014 4-hop, medium cardinality",
+  "n_expected": 7,
+  "timestamp": "2026-08-21T17:32:14",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.76,
+      "precision_std": 0.1342,
+      "recall_mean": 0.9429,
+      "recall_std": 0.1278,
+      "f1_mean": 0.8255,
+      "f1_std": 0.0044,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 3.72,
+      "time_std": 0.64,
+      "tokens_mean": 388.0,
+      "tokens_std": 16.0,
+      "examples": {
+        "fp": [
+          "Doris Lessing",
+          "Svetlana Alexievich",
+          "Vidiadhar Surajprasad Naipaul"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

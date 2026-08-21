@@ -1,0 +1,31 @@
+{
+  "query_id": "s_T6_q7",
+  "template": "T6",
+  "predicate": "Einstein (married to | child studied at) ?b \u2014 forward simple + T4",
+  "n_expected": 4,
+  "timestamp": "2026-08-20T09:46:34",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.5714,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 5.82,
+      "time_std": 0.84,
+      "tokens_mean": 585.0,
+      "tokens_std": 6.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

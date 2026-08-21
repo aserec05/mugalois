@@ -1,0 +1,141 @@
+{
+  "query_id": "q8",
+  "template": "T6-card",
+  "predicate": "?b (won | hosted) FIFA World Cup \u2014 backward, 2 simple branches",
+  "n_expected": 20,
+  "timestamp": "2026-07-31T13:38:36",
+  "results": {
+    "HolisticOnly": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.24,
+      "time_std": 0.11,
+      "tokens_mean": 128.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 4.25,
+      "time_std": 0.34,
+      "tokens_mean": 605.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "Card\u226410": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.59,
+      "recall_std": 0.0224,
+      "f1_mean": 0.7419,
+      "f1_std": 0.018,
+      "n_runs": 5,
+      "n_generated": 11.8,
+      "time_mean": 5.17,
+      "time_std": 1.69,
+      "tokens_mean": 610.0,
+      "tokens_std": 212.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "Card\u226415": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.57,
+      "recall_std": 0.0274,
+      "f1_mean": 0.7258,
+      "f1_std": 0.0221,
+      "n_runs": 5,
+      "n_generated": 11.4,
+      "time_mean": 3.26,
+      "time_std": 1.35,
+      "tokens_mean": 419.0,
+      "tokens_std": 259.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "Card\u226420": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.57,
+      "recall_std": 0.0274,
+      "f1_mean": 0.7258,
+      "f1_std": 0.0221,
+      "n_runs": 5,
+      "n_generated": 11.4,
+      "time_mean": 3.74,
+      "time_std": 1.68,
+      "tokens_mean": 421.0,
+      "tokens_std": 261.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 6.13,
+      "time_std": 0.46,
+      "tokens_mean": 870.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    }
+  }
+}

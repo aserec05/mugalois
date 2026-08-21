@@ -1,0 +1,31 @@
+{
+  "query_id": "q2",
+  "template": "T4",
+  "predicate": "has member/has official language",
+  "n_expected": 9,
+  "timestamp": "2026-07-29T16:22:38",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 14.19,
+      "time_std": 1.54,
+      "tokens_mean": 3591.0,
+      "tokens_std": 1045.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cape Verde",
+          "East Timor",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe"
+        ]
+      }
+    }
+  }
+}

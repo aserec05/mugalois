@@ -1,0 +1,31 @@
+{
+  "query_id": "T6_q5",
+  "template": "T6",
+  "predicate": "Einstein spouse | sibling | child | father | mother \u2014 5 branches, medium cardinality",
+  "n_expected": 8,
+  "timestamp": "2026-08-21T17:46:34",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.9464,
+      "precision_std": 0.0736,
+      "recall_mean": 0.7,
+      "recall_std": 0.1425,
+      "f1_mean": 0.7936,
+      "f1_std": 0.0828,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 7.02,
+      "time_std": 3.63,
+      "tokens_mean": 923.0,
+      "tokens_std": 404.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Elsa Einstein",
+          "Lieserl Einstein"
+        ]
+      }
+    }
+  }
+}

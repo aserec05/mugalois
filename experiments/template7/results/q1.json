@@ -1,0 +1,177 @@
+{
+  "query_id": "q1",
+  "template": "T7",
+  "predicate": "wasBornIn / isLocatedIn+",
+  "n_expected": 216,
+  "timestamp": "2026-08-09T18:12:23",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0463,
+      "recall_std": 0.0,
+      "f1_mean": 0.0885,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.51,
+      "time_std": 0.39,
+      "tokens_mean": 123.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.9846,
+      "precision_std": 0.0344,
+      "recall_mean": 0.0509,
+      "recall_std": 0.0066,
+      "f1_mean": 0.0968,
+      "f1_std": 0.0117,
+      "n_runs": 5,
+      "n_generated": 11.2,
+      "time_mean": 1.32,
+      "time_std": 0.13,
+      "tokens_mean": 137.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.7913,
+      "precision_std": 0.0507,
+      "recall_mean": 0.2158,
+      "recall_std": 0.1221,
+      "f1_mean": 0.3237,
+      "f1_std": 0.1604,
+      "n_runs": 5,
+      "n_generated": 59,
+      "time_mean": 3.19,
+      "time_std": 1.63,
+      "tokens_mean": 423.0,
+      "tokens_std": 183.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XVI",
+          "Pope Caius",
+          "Pope Dionysius"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.943,
+      "precision_std": 0.0394,
+      "recall_mean": 0.0657,
+      "recall_std": 0.0171,
+      "f1_mean": 0.1225,
+      "f1_std": 0.0305,
+      "n_runs": 5,
+      "n_generated": 15,
+      "time_mean": 2.5,
+      "time_std": 0.56,
+      "tokens_mean": 293.0,
+      "tokens_std": 53.0,
+      "examples": {
+        "fp": [
+          "Pope Francis - Born in Buenos Aires, Argentina"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.9455,
+      "precision_std": 0.0498,
+      "recall_mean": 0.0555,
+      "recall_std": 0.0127,
+      "f1_mean": 0.1048,
+      "f1_std": 0.0229,
+      "n_runs": 5,
+      "n_generated": 12.6,
+      "time_mean": 2.53,
+      "time_std": 1.54,
+      "tokens_mean": 236.0,
+      "tokens_std": 13.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.0468,
+      "precision_std": 0.0297,
+      "recall_mean": 0.0083,
+      "recall_std": 0.006,
+      "f1_mean": 0.014,
+      "f1_std": 0.0099,
+      "n_runs": 5,
+      "n_generated": 34.6,
+      "time_mean": 15.0,
+      "time_std": 3.43,
+      "tokens_mean": 5257.0,
+      "tokens_std": 2181.0,
+      "examples": {
+        "fp": [
+          "Cicero",
+          "Dante Alighieri",
+          "Federico Fellini"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.7454,
+      "precision_std": 0.0319,
+      "recall_mean": 0.5991,
+      "recall_std": 0.0887,
+      "f1_mean": 0.6597,
+      "f1_std": 0.0453,
+      "n_runs": 5,
+      "n_generated": 174.6,
+      "time_mean": 14.94,
+      "time_std": 2.87,
+      "tokens_mean": 3132.0,
+      "tokens_std": 557.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander I",
+          "Pope Anastasius I",
+          "Pope Anicetus"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian V",
+          "Agapetus II"
+        ]
+      }
+    }
+  }
+}

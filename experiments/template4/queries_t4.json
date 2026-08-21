@@ -1,0 +1,187 @@
+{
+  "q1": {
+    "description": "Comedies written by Oscar Wilde — 2-hop, GD optimal, low cardinality",
+    "source": "Wikipedia 'Oscar Wilde bibliography' — plays section, genre classification",
+    "n_hops": 2,
+    "anchors": [
+      "Oscar Wilde",
+      "?b",
+      "comedy"
+    ],
+    "predicates": [
+      "wrote",
+      "is of genre"
+    ],
+    "target_var": "?b",
+    "nl_prompt_naive": "What comedies did Oscar Wilde write?",
+    "nl_prompt_precise": "List every single play written by Oscar Wilde that belongs to the comedy genre. Include all of them, even lesser-known ones.",
+    "sparql_prompt": "SELECT ?b WHERE { Oscar_Wilde wrote ?b . ?b hasGenre comedy . }",
+    "ground_truth": [
+      "The Importance of Being Earnest",
+      "An Ideal Husband",
+      "Lady Windermere's Fan",
+      "A Woman of No Importance"
+    ]
+  },
+  "q2": {
+    "description": "UN member countries with Portuguese as official language — 2-hop, DG optimal, medium cardinality",
+    "source": "Wikipedia 'Portuguese language' (official status section) + UN member state list",
+    "n_hops": 2,
+    "anchors": [
+      "United Nations",
+      "?b",
+      "Portuguese"
+    ],
+    "predicates": [
+      "has member",
+      "has official language"
+    ],
+    "target_var": "?b",
+    "nl_prompt_naive": "Which countries are UN members and have Portuguese as an official language?",
+    "nl_prompt_precise": "List every single country that is both a member of the United Nations and recognises Portuguese as an official language. Be exhaustive.",
+    "sparql_prompt": "SELECT ?b WHERE { United_Nations hasMember ?b . ?b hasOfficialLanguage Portuguese . }",
+    "ground_truth": [
+      "Brazil",
+      "Portugal",
+      "Angola",
+      "Mozambique",
+      "Cape Verde",
+      "Guinea-Bissau",
+      "São Tomé and Príncipe",
+      "East Timor",
+      "Equatorial Guinea"
+    ]
+  },
+  "q3": {
+    "description": "Shakespeare plays primarily set in Italian cities — 3-hop, medium cardinality",
+    "source": "Encyclopaedia Britannica 'Shakespeare works' + Wikipedia individual play articles",
+    "n_hops": 3,
+    "anchors": [
+      "William Shakespeare",
+      "?b1",
+      "?b2",
+      "Italy"
+    ],
+    "predicates": [
+      "wrote",
+      "is set in",
+      "is located in"
+    ],
+    "target_var": "?b1",
+    "nl_prompt_naive": "Which Shakespeare plays are set in Italian cities?",
+    "nl_prompt_precise": "List every single play written by William Shakespeare that is set in a city or location in Italy. Include every single one.",
+    "sparql_prompt": "SELECT ?b1 WHERE { William_Shakespeare wrote ?b1 . ?b1 isSetIn ?b2 . ?b2 isLocatedIn Italy . }",
+    "ground_truth": [
+      "Romeo and Juliet",
+      "The Merchant of Venice",
+      "Othello",
+      "The Two Gentlemen of Verona",
+      "The Taming of the Shrew",
+      "Much Ado About Nothing"
+    ]
+  },
+  "q4": {
+    "description": "African member countries of the Commonwealth of Nations — 3-hop, high cardinality",
+    "source": "Wikipedia 'Member states of the Commonwealth of Nations' (2024, includes Gabon and Togo who joined 2022)",
+    "n_hops": 3,
+    "anchors": [
+      "Commonwealth of Nations",
+      "?b1",
+      "?b2",
+      "Africa"
+    ],
+    "predicates": [
+      "has member",
+      "is located in continent",
+      "has name"
+    ],
+    "target_var": "?b1",
+    "nl_prompt_naive": "Which African countries are members of the Commonwealth of Nations?",
+    "nl_prompt_precise": "List every single country in Africa that is a full member of the Commonwealth of Nations. Include all of them, including those that joined recently.",
+    "sparql_prompt": "SELECT ?b1 WHERE { Commonwealth_of_Nations hasMember ?b1 . ?b1 isLocatedOn continent Africa . ?b1 hasCapital ?b2 . ?b2 isLocatedOn continent Africa . }",
+    "ground_truth": [
+      "Botswana",
+      "Cameroon",
+      "Eswatini",
+      "Gabon",
+      "Gambia",
+      "Ghana",
+      "Kenya",
+      "Lesotho",
+      "Malawi",
+      "Mauritius",
+      "Mozambique",
+      "Namibia",
+      "Nigeria",
+      "Rwanda",
+      "Seychelles",
+      "Sierra Leone",
+      "South Africa",
+      "Tanzania",
+      "Togo",
+      "Uganda",
+      "Zambia",
+      "Zimbabwe"
+    ]
+  },
+  "q5": {
+    "description": "Nobel Prize in Literature laureates born in Asia — 4-hop, medium cardinality",
+    "source": "nobelprize.org/prizes/literature + Wikipedia individual laureate articles (birthplace)",
+    "n_hops": 4,
+    "anchors": [
+      "Nobel Prize in Literature",
+      "?b1",
+      "?b2",
+      "?b3",
+      "Asia"
+    ],
+    "predicates": [
+      "awarded to",
+      "born in",
+      "country",
+      "continent"
+    ],
+    "target_var": "?b1",
+    "nl_prompt_naive": "Which Nobel Prize in Literature winners were born in Asia?",
+    "nl_prompt_precise": "List every single Nobel Prize in Literature laureate who was born in a country in Asia. Include every single one, from the first awarded to the most recent.",
+    "sparql_prompt": "SELECT ?b1 WHERE { :Nobel_Prize_in_Literature :wasAwardedTo ?b1 . ?b1 :wasBornIn ?b2 . ?b2 :isLocatedIn :Asia }",
+    "ground_truth": [
+      "Rabindranath Tagore",
+      "Yasunari Kawabata",
+      "Kenzaburō Ōe",
+      "Gao Xingjian",
+      "Orhan Pamuk",
+      "Mo Yan",
+      "Kazuo Ishiguro"
+    ]
+  },
+  "q7": {
+    "description": "Countries that won the FIFA World Cup — 2-hop T4a pure",
+    "source": "Wikipedia 'FIFA World Cup finals'",
+    "type": "T4a",
+    "n_hops": 2,
+    "anchors": [
+      "FIFA World Cup",
+      "?b1",
+      "?b"
+    ],
+    "predicates": [
+      "won by",
+      "country"
+    ],
+    "target_var": "?b",
+    "nl_prompt_naive": "Which countries have won the FIFA World Cup?",
+    "nl_prompt_precise": "List every single country that has won the FIFA World Cup at least once. Be exhaustive.",
+    "sparql_prompt": "SELECT ?b WHERE { FIFA_World_Cup hasWinner ?b1 . ?b1 isLocatedIn ?b . }",
+    "ground_truth": [
+      "Brazil",
+      "Germany",
+      "Italy",
+      "Argentina",
+      "France",
+      "Uruguay",
+      "England",
+      "Spain"
+    ]
+  }
+}

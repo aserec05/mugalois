@@ -1,0 +1,29 @@
+{
+  "query_id": "s_T7_q7",
+  "template": "T7",
+  "predicate": "Nolan directed / hasWonOscar / sequel+",
+  "n_expected": 1,
+  "timestamp": "2026-08-20T09:48:15",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.5667,
+      "precision_std": 0.2528,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7,
+      "f1_std": 0.1826,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 6.17,
+      "time_std": 5.62,
+      "tokens_mean": 558.0,
+      "tokens_std": 47.0,
+      "examples": {
+        "fp": [
+          "Inception 2"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

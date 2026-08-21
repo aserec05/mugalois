@@ -1,0 +1,187 @@
+{
+  "query_id": "q5",
+  "template": "T7",
+  "predicate": "hasSuccessor+ [wasPresidentOf France] / wasBornIn / isAdministrativelyLocatedIn*",
+  "n_expected": 13,
+  "timestamp": "2026-08-09T18:22:18",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6,
+      "precision_std": 0.0,
+      "recall_mean": 0.2308,
+      "recall_std": 0.0,
+      "f1_mean": 0.3333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.27,
+      "time_std": 0.4,
+      "tokens_mean": 106.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Languedoc-Roussillon",
+          "Provence-Alpes-C\u00f4te d'Azur"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 0.1538,
+      "recall_std": 0.0,
+      "f1_mean": 0.2105,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 1.05,
+      "time_std": 0.1,
+      "tokens_mean": 109.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Bouches-du-Rh\u00f4ne",
+          "Pas-de-Calais",
+          "Seine-Maritime"
+        ],
+        "fn": [
+          "Amiens",
+          "Auvergne-Rh\u00f4ne-Alpes",
+          "Cantal"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.3571,
+      "precision_std": 0.0,
+      "recall_mean": 0.3846,
+      "recall_std": 0.0,
+      "f1_mean": 0.3704,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 14,
+      "time_mean": 1.31,
+      "time_std": 0.12,
+      "tokens_mean": 189.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Alsace",
+          "Bourgogne-Franche-Comt\u00e9",
+          "Bretagne"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.3077,
+      "recall_std": 0.0,
+      "f1_mean": 0.4211,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 1.05,
+      "time_std": 0.12,
+      "tokens_mean": 110.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Bretagne",
+          "Provence-Alpes-C\u00f4te d'Azur"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.24,
+      "precision_std": 0.3286,
+      "recall_mean": 0.0923,
+      "recall_std": 0.1264,
+      "f1_mean": 0.1333,
+      "f1_std": 0.1826,
+      "n_runs": 5,
+      "n_generated": 4.6,
+      "time_mean": 1.01,
+      "time_std": 0.07,
+      "tokens_mean": 207.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Bouches-du-Rh\u00f4ne",
+          "Haute-Garonne",
+          "Pas-de-Calais"
+        ],
+        "fn": [
+          "Amiens",
+          "Auvergne-Rh\u00f4ne-Alpes",
+          "Cantal"
+        ]
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.2248,
+      "precision_std": 0.1028,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.3459,
+      "f1_std": 0.1207,
+      "n_runs": 5,
+      "n_generated": 56.4,
+      "time_mean": 52.5,
+      "time_std": 9.28,
+      "tokens_mean": 10637.0,
+      "tokens_std": 3234.0,
+      "examples": {
+        "fp": [
+          "Ankara",
+          "Asia",
+          "Bahrain"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.5796,
+      "precision_std": 0.0216,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.6878,
+      "f1_std": 0.0152,
+      "n_runs": 5,
+      "n_generated": 19,
+      "time_mean": 7.48,
+      "time_std": 0.88,
+      "tokens_mean": 1771.0,
+      "tokens_std": 83.0,
+      "examples": {
+        "fp": [
+          "Castres",
+          "Coblence",
+          "Germany"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    }
+  }
+}

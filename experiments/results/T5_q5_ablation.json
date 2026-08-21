@@ -1,0 +1,179 @@
+{
+  "query_id": "T5_q5",
+  "template": "T5",
+  "predicate": "All successors of Pius IX (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, 12 hops",
+  "n_expected": 12,
+  "timestamp": "2026-08-12T11:24:02",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9565,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.83,
+      "time_std": 0.33,
+      "tokens_mean": 139.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9565,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.44,
+      "time_std": 0.12,
+      "tokens_mean": 152.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2167,
+      "recall_std": 0.1118,
+      "f1_mean": 0.345,
+      "f1_std": 0.1514,
+      "n_runs": 5,
+      "n_generated": 2.6,
+      "time_mean": 1.13,
+      "time_std": 0.11,
+      "tokens_mean": 105.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 1.7,
+      "time_std": 0.12,
+      "tokens_mean": 181.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9565,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 22.0,
+      "time_std": 0.32,
+      "tokens_mean": 3067.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 2.5,
+      "time_std": 0.15,
+      "tokens_mean": 304.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.72,
+      "time_std": 0.44,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 4.78,
+      "time_std": 0.22,
+      "tokens_mean": 562.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Pope Leo XIII"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "query_id": "T5_q2",
+  "template": "T5",
+  "predicate": "All predecessors of John Paul II, including himself (backward transitive closure, reflexive) \u2014 VERY HIGH CARDINALITY, full papal lineage",
+  "n_expected": 264,
+  "timestamp": "2026-08-21T10:41:28",
+  "results": {
+    "F_cov050": {
+      "precision_mean": 0.8216,
+      "precision_std": 0.3988,
+      "recall_mean": 0.4568,
+      "recall_std": 0.2838,
+      "f1_mean": 0.4366,
+      "f1_std": 0.1919,
+      "n_runs": 5,
+      "n_generated": 519.4,
+      "time_mean": 43.04,
+      "time_std": 69.49,
+      "tokens_mean": 4198.0,
+      "tokens_std": 6876.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian II"
+        ]
+      }
+    },
+    "F_cov065": {
+      "precision_mean": 0.9919,
+      "precision_std": 0.0046,
+      "recall_mean": 0.3848,
+      "recall_std": 0.0389,
+      "f1_mean": 0.5537,
+      "f1_std": 0.0419,
+      "n_runs": 5,
+      "n_generated": 102.4,
+      "time_mean": 10.29,
+      "time_std": 1.14,
+      "tokens_mean": 1060.0,
+      "tokens_std": 56.0,
+      "examples": {
+        "fp": [
+          "Pope St. Peter"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian II"
+        ]
+      }
+    },
+    "F_cov080": {
+      "precision_mean": 0.9919,
+      "precision_std": 0.0045,
+      "recall_mean": 0.3962,
+      "recall_std": 0.0588,
+      "f1_mean": 0.5644,
+      "f1_std": 0.058,
+      "n_runs": 5,
+      "n_generated": 105.4,
+      "time_mean": 10.95,
+      "time_std": 1.64,
+      "tokens_mean": 1072.0,
+      "tokens_std": 90.0,
+      "examples": {
+        "fp": [
+          "Pope St. Peter"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian II"
+        ]
+      }
+    },
+    "F_cov095": {
+      "precision_mean": 0.994,
+      "precision_std": 0.0055,
+      "recall_mean": 0.3394,
+      "recall_std": 0.0726,
+      "f1_mean": 0.5021,
+      "f1_std": 0.0864,
+      "n_runs": 5,
+      "n_generated": 90.2,
+      "time_mean": 9.39,
+      "time_std": 0.7,
+      "tokens_mean": 1023.0,
+      "tokens_std": 35.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian II"
+        ]
+      }
+    }
+  }
+}

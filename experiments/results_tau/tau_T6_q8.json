@@ -1,0 +1,141 @@
+{
+  "query_id": "tau_T6_q8",
+  "template": "T6",
+  "predicate": "?b (won | hosted) FIFA World Cup \u2014 backward, 2 simple branches",
+  "n_expected": 20,
+  "timestamp": "2026-08-20T10:37:27",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 2.2,
+      "time_std": 0.65,
+      "tokens_mean": 248.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 2.31,
+      "time_std": 0.64,
+      "tokens_mean": 248.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.98,
+      "time_std": 0.12,
+      "tokens_mean": 248.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 2.31,
+      "time_std": 0.65,
+      "tokens_mean": 248.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 5.2,
+      "time_std": 0.69,
+      "tokens_mean": 720.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Mexico"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 4.78,
+      "time_std": 0.35,
+      "tokens_mean": 727.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Mexico"
+        ]
+      }
+    }
+  }
+}

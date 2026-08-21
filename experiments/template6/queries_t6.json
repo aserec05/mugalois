@@ -1,0 +1,157 @@
+{
+  "q1": {
+    "description": "Einstein spouse | sibling — 2 branches, low cardinality",
+    "source": "Albert Einstein",
+    "target_var": "?b",
+    "branches_nl": ["is the spouse of", "is the sibling of"],
+    "nl_prompt_naive": "Who are Albert Einstein's spouses and siblings?",
+    "nl_prompt_precise": "List all people who were either a spouse or a sibling of Albert Einstein.",
+    "sparql_prompt": "SELECT ?b WHERE { :Albert_Einstein (:spouse | :sibling) ?b }",
+    "ground_truth": ["Mileva Marić", "Elsa Einstein", "Maja Einstein"],
+    "n_branches": 2,
+    "optimal_strategy": "holistic"
+  },
+  "q2": {
+    "description": "Marie Curie award | degree — 2 branches, medium cardinality",
+    "source": "Marie Curie",
+    "target_var": "?b",
+    "branches_nl": ["received the award", "obtained the academic degree"],
+    "nl_prompt_naive": "What awards and academic degrees did Marie Curie receive?",
+    "nl_prompt_precise": "List all awards received and academic degrees obtained by Marie Curie.",
+    "sparql_prompt": "SELECT ?b WHERE { :Marie_Curie (:receivedAward | :obtainedDegree) ?b }",
+    "ground_truth": [
+      "licentiate", "doctorate",
+      "Nobel Prize in Physics", "Nobel Prize in Chemistry",
+      "Order of the White Eagle", "Davy Medal",
+      "Willard Gibbs Award", "Elliott Cresson Medal",
+      "Matteucci Medal", "John Scott Award",
+      "Actonian Prize", "Albert Medal",
+      "Benjamin Franklin Medal", "Knight of the Legion of Honour",
+      "honorary doctor of the Jagiellonian University of Krakow",
+      "Cameron Prize of the University of Edinburgh",
+      "prix Gegner", "Honorary Fellow of the Royal Society Te Apārangi",
+      "72 scientist women names on the Eiffel tower"
+    ],
+    "n_branches": 2,
+    "optimal_strategy": "holistic"
+  },
+  "q3": {
+    "description": "Marie Curie field | employer | member of | degree — 4 branches, high cardinality",
+    "source": "Marie Curie",
+    "target_var": "?b",
+    "branches_nl": [
+      "worked in the field of",
+      "was employed by",
+      "was a member of",
+      "obtained the academic degree"
+    ],
+    "nl_prompt_naive": "What are Marie Curie's fields of work, employers, memberships and degrees?",
+    "nl_prompt_precise": "List all fields of work, employers, scientific society memberships and academic degrees of Marie Curie.",
+    "sparql_prompt": "SELECT DISTINCT ?b WHERE { :Marie_Curie (:fieldOfWork | :employer | :memberOf | :obtainedDegree) ?b }",
+    "ground_truth": [
+      "radium", "polonium", "licentiate", "chemistry",
+      "physics", "radioactivity", "doctorate", "Sorbonne",
+      "Commission on Isotopic Abundances and Atomic Weights",
+      "Royal Czech Society of Sciences",
+      "Royal Swedish Academy of Sciences",
+      "University of Paris", "Academy of Sciences of the USSR",
+      "Curie Institute",
+      "Royal Netherlands Academy of Arts and Sciences",
+      "International Committee on Intellectual Cooperation",
+      "Académie Nationale de Médecine", "Accademia Tiberina",
+      "Saint Petersburg Academy of Sciences",
+      "American Philosophical Society",
+      "German Academy of Sciences Leopoldina",
+      "Lwów Scientific Society", "Russian Academy of Sciences"
+    ],
+    "n_branches": 4,
+    "optimal_strategy": "parallel"
+  },
+  "q4": {
+    "description": "Christopher Nolan directed | produced | wrote — 3 branches, medium cardinality",
+    "source": "Christopher Nolan",
+    "target_var": "?b",
+    "branches_nl": [
+      "was directed by Christopher Nolan",
+      "was produced by Christopher Nolan",
+      "was written by Christopher Nolan"
+    ],
+    "nl_prompt_naive": "Which films did Christopher Nolan direct, produce or write?",
+    "nl_prompt_precise": "List all films that Christopher Nolan directed, produced or wrote.",
+    "sparql_prompt": "SELECT DISTINCT ?b WHERE { { ?b :directedBy :Christopher_Nolan } UNION { ?b :producedBy :Christopher_Nolan } UNION { ?b :writtenBy :Christopher_Nolan } }",
+    "ground_truth": [
+      "Batman Begins", "Memento", "Insomnia", "Man of Steel",
+      "Tenet", "The Prestige", "Interstellar", "Following",
+      "Inception", "Dunkirk", "Quay", "Transcendence",
+      "The Odyssey", "The Dark Knight", "The Dark Knight Rises",
+      "Oppenheimer", "Larceny", "The Dark Knight trilogy",
+      "Doodlebug", "Cornfield Chase"
+    ],
+    "n_branches": 3,
+    "optimal_strategy": "parallel"
+  },
+  "q5": {
+    "description": "Einstein spouse | sibling | child | father | mother — 5 branches, medium cardinality",
+    "source": "Albert Einstein",
+    "target_var": "?b",
+    "branches_nl": [
+      "is the spouse of Albert Einstein",
+      "is the sibling of Albert Einstein",
+      "is the child of Albert Einstein",
+      "is the father of Albert Einstein",
+      "is the mother of Albert Einstein"
+    ],
+    "nl_prompt_naive": "Who are Albert Einstein's spouses, siblings, children, father and mother?",
+    "nl_prompt_precise": "List all spouses, siblings, children, father and mother of Albert Einstein.",
+    "sparql_prompt": "SELECT DISTINCT ?b WHERE { :Albert_Einstein (:spouse | :sibling | :child | :father | :mother) ?b }",
+    "ground_truth": [
+      "Elsa Einstein", "Mileva Marić",
+      "Eduard Einstein", "Hans Albert Einstein",
+      "Lieserl Einstein", "Maja Einstein",
+      "Hermann Einstein", "Pauline Koch"
+    ],
+    "n_branches": 5,
+    "optimal_strategy": "parallel"
+  },
+  "q6": {
+    "description": "Einstein educated at | employer | member of | affiliation — 4 branches, high cardinality",
+    "source": "Albert Einstein",
+    "target_var": "?b",
+    "branches_nl": [
+      "is an institution where Albert Einstein studied",
+      "is an institution that employed Albert Einstein",
+      "is a society or academy that Albert Einstein was a member of",
+      "is an institution Albert Einstein was affiliated with"
+    ],
+    "nl_prompt_naive": "Where did Albert Einstein study, work and hold memberships?",
+    "nl_prompt_precise": "List all institutions where Albert Einstein studied, worked, held membership or was affiliated.",
+    "sparql_prompt": "SELECT DISTINCT ?b WHERE { :Albert_Einstein (:educatedAt | :employer | :memberOf | :affiliatedWith) ?b }",
+    "ground_truth": [
+      "ETH Zurich", "University of Zurich",
+      "Old Kantonsschule (Albert Einstein House)", "Luitpold-Gymnasium",
+      "Russian Academy of Sciences", "Royal Society",
+      "French Academy of Sciences", "Royal Swedish Academy of Sciences",
+      "Royal Netherlands Academy of Arts and Sciences",
+      "National Academy of Sciences", "Royal Prussian Academy of Sciences",
+      "Accademia Nazionale dei Lincei",
+      "Göttingen Academy of Sciences and Humanities in Lower Saxony",
+      "American Academy of Arts and Sciences",
+      "American Philosophical Society",
+      "German Academy of Sciences Leopoldina",
+      "Bavarian Academy of Sciences and Humanities",
+      "Japan Academy", "Indian National Science Academy",
+      "Brazilian Academy of Sciences",
+      "Centre international de synthèse",
+      "Accademia Nazionale delle Scienze detta dei XL",
+      "Bern", "Princeton University", "Charles University",
+      "Humboldt-Universität zu Berlin", "Leiden University",
+      "University of California, Berkeley",
+      "Institute for Advanced Study", "University of Bern",
+      "Swiss Federal Institute of Intellectual Property",
+      "Kaiser Wilhelm Society", "Deutsche Physikalische Gesellschaft",
+      "German University in Prague"
+    ],
+    "n_branches": 4,
+    "optimal_strategy": "parallel"
+  }
+}

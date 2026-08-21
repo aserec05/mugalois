@@ -1,0 +1,198 @@
+{
+  "query_id": "T3_q3",
+  "template": "T3",
+  "predicate": "African countries in the Commonwealth \u2014 Join optimal",
+  "n_expected": 21,
+  "timestamp": "2026-08-12T18:08:29",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8947,
+      "precision_std": 0.0,
+      "recall_mean": 0.8095,
+      "recall_std": 0.0,
+      "f1_mean": 0.85,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 19,
+      "time_mean": 1.78,
+      "time_std": 0.28,
+      "tokens_mean": 152.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "South Sudan",
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Eswatini",
+          "Gabon",
+          "The Gambia"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.8849,
+      "precision_std": 0.0055,
+      "recall_mean": 0.7333,
+      "recall_std": 0.0426,
+      "f1_mean": 0.8016,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 17.4,
+      "time_mean": 1.73,
+      "time_std": 0.24,
+      "tokens_mean": 161.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "South Sudan",
+          "Zimbabwe"
+        ],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.3255,
+      "precision_std": 0.0044,
+      "recall_mean": 0.5238,
+      "recall_std": 0.0,
+      "f1_mean": 0.4015,
+      "f1_std": 0.0033,
+      "n_runs": 5,
+      "n_generated": 33.8,
+      "time_mean": 2.08,
+      "time_std": 0.16,
+      "tokens_mean": 209.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Australia",
+          "Bahamas"
+        ],
+        "fn": [
+          "Botswana",
+          "Cameroon",
+          "Eswatini"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9867,
+      "precision_std": 0.0298,
+      "recall_mean": 0.6476,
+      "recall_std": 0.0261,
+      "f1_mean": 0.7814,
+      "f1_std": 0.0178,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 1.29,
+      "time_std": 0.09,
+      "tokens_mean": 137.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.9666,
+      "precision_std": 0.0305,
+      "recall_mean": 0.8476,
+      "recall_std": 0.0522,
+      "f1_mean": 0.9031,
+      "f1_std": 0.0428,
+      "n_runs": 5,
+      "n_generated": 18.4,
+      "time_mean": 8.36,
+      "time_std": 0.48,
+      "tokens_mean": 1537.0,
+      "tokens_std": 40.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Togo"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.7596,
+      "precision_std": 0.1793,
+      "recall_mean": 0.7238,
+      "recall_std": 0.0706,
+      "f1_mean": 0.7312,
+      "f1_std": 0.0986,
+      "n_runs": 5,
+      "n_generated": 21,
+      "time_mean": 12.83,
+      "time_std": 2.12,
+      "tokens_mean": 4123.0,
+      "tokens_std": 867.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Bahamas",
+          "Barbados"
+        ],
+        "fn": [
+          "Cameroon",
+          "Gabon",
+          "Mozambique"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.3905,
+      "recall_std": 0.0522,
+      "f1_mean": 0.5601,
+      "f1_std": 0.0526,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 10.17,
+      "time_std": 0.89,
+      "tokens_mean": 2058.0,
+      "tokens_std": 49.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Botswana",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.3524,
+      "recall_std": 0.0928,
+      "f1_mean": 0.515,
+      "f1_std": 0.111,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 17.71,
+      "time_std": 3.6,
+      "tokens_mean": 5633.0,
+      "tokens_std": 1113.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Botswana",
+          "Eswatini",
+          "Gabon"
+        ]
+      }
+    }
+  }
+}

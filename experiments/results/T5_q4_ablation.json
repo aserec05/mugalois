@@ -1,0 +1,188 @@
+{
+  "query_id": "T5_q4",
+  "template": "T5",
+  "predicate": "a p+ ?b FILTER(?b) \u2014 forward closure, irreflexive, post-filter excludes one result",
+  "n_expected": 5,
+  "timestamp": "2026-08-12T11:18:26",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.49,
+      "time_std": 0.42,
+      "tokens_mean": 106.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.17,
+      "time_std": 0.08,
+      "tokens_mean": 117.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.13,
+      "time_std": 0.13,
+      "tokens_mean": 122.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV",
+          "Pope Paul VI"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 1.25,
+      "time_std": 0.22,
+      "tokens_mean": 147.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.7067,
+      "precision_std": 0.2087,
+      "recall_mean": 0.68,
+      "recall_std": 0.2683,
+      "f1_mean": 0.69,
+      "f1_std": 0.246,
+      "n_runs": 5,
+      "n_generated": 4.6,
+      "time_mean": 10.2,
+      "time_std": 1.92,
+      "tokens_mean": 1430.0,
+      "tokens_std": 231.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 2.52,
+      "time_std": 0.86,
+      "tokens_mean": 270.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 3.19,
+      "time_std": 0.27,
+      "tokens_mean": 414.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 4.69,
+      "time_std": 0.37,
+      "tokens_mean": 528.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "query_id": "T3_q3",
+  "template": "T3",
+  "predicate": "African countries in the Commonwealth \u2014 Join optimal",
+  "n_expected": 21,
+  "timestamp": "2026-08-21T17:30:38",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8762,
+      "recall_std": 0.0261,
+      "f1_mean": 0.9339,
+      "f1_std": 0.0147,
+      "n_runs": 5,
+      "n_generated": 18.4,
+      "time_mean": 11.2,
+      "time_std": 1.46,
+      "tokens_mean": 1673.0,
+      "tokens_std": 42.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gabon",
+          "Togo"
+        ]
+      }
+    }
+  }
+}

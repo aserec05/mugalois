@@ -1,0 +1,217 @@
+{
+  "query_id": "rq3_T1_q5",
+  "template": "T1",
+  "predicate": "Who are Turing Award winners? List as many as you know.",
+  "n_expected": 77,
+  "timestamp": "2026-08-21T09:45:18",
+  "results": {
+    "Closure_none": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_motivational": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_forced": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_contrast": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_alphabet": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_socratic": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_coach": {
+      "precision_mean": 0.8224,
+      "precision_std": 0.0384,
+      "recall_mean": 0.2286,
+      "recall_std": 0.0197,
+      "f1_mean": 0.3574,
+      "f1_std": 0.026,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "Closure_telephone": {
+      "precision_mean": 0.8137,
+      "precision_std": 0.0238,
+      "recall_mean": 0.239,
+      "recall_std": 0.0148,
+      "f1_mean": 0.3693,
+      "f1_std": 0.0198,
+      "n_runs": 5,
+      "n_generated": 22.6,
+      "time_mean": 45.61,
+      "time_std": 2.25,
+      "tokens_mean": 15100.0,
+      "tokens_std": 642.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    }
+  }
+}

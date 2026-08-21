@@ -1,0 +1,87 @@
+{
+  "query_id": "T1_q4",
+  "template": "T1",
+  "predicate": "",
+  "n_expected": 17,
+  "timestamp": "2026-08-21T17:04:52",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 0.4889,
+      "precision_std": 0.0249,
+      "recall_mean": 0.2353,
+      "recall_std": 0.0,
+      "f1_mean": 0.3175,
+      "f1_std": 0.0055,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 2.59,
+      "time_std": 0.37,
+      "tokens_mean": 381.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Membership of the French Academy of Sciences"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.2353,
+      "recall_std": 0.0,
+      "f1_mean": 0.32,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 3.29,
+      "time_std": 0.39,
+      "tokens_mean": 377.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Membership of the French Academy of Sciences"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2981,
+      "f1_std": 0.049,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 4.17,
+      "time_std": 1.48,
+      "tokens_mean": 471.0,
+      "tokens_std": 47.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    }
+  }
+}

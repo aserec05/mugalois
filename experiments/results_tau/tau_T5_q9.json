@@ -1,0 +1,145 @@
+{
+  "query_id": "tau_T5_q9",
+  "template": "T5",
+  "predicate": "All descendants of Queen Elizabeth II (forward transitive closure, irreflexive) \u2014 MEDIUM CARDINALITY, multi-branch DAG, 3 generations",
+  "n_expected": 24,
+  "timestamp": "2026-08-19T11:54:50",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 5.11,
+      "time_std": 2.54,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 4.29,
+      "time_std": 1.19,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 3.55,
+      "time_std": 0.25,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 3.61,
+      "time_std": 0.21,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.725,
+      "precision_std": 0.1501,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8337,
+      "f1_std": 0.0985,
+      "n_runs": 5,
+      "n_generated": 34.2,
+      "time_mean": 57.85,
+      "time_std": 16.96,
+      "tokens_mean": 8319.0,
+      "tokens_std": 1919.0,
+      "examples": {
+        "fp": [
+          "Charles, Prince of Wales",
+          "Charlotte Elizabeth Diana Mountbatten-Windsor",
+          "Christopher Woolf Mapelli Mozzi"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.6996,
+      "precision_std": 0.0725,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8216,
+      "f1_std": 0.0501,
+      "n_runs": 5,
+      "n_generated": 34.6,
+      "time_mean": 57.95,
+      "time_std": 8.08,
+      "tokens_mean": 9411.0,
+      "tokens_std": 1328.0,
+      "examples": {
+        "fp": [
+          "Archie Mountbatten-Windsor",
+          "Charles, Prince of Wales",
+          "James, Viscount Severn"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

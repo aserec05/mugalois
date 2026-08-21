@@ -1,0 +1,157 @@
+{
+  "query_id": "tau_T7_q8",
+  "template": "T7",
+  "predicate": "Casino Royale sequel+ / directedBy / wasBornIn / isLocatedIn+",
+  "n_expected": 11,
+  "timestamp": "2026-08-19T18:19:11",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.4545,
+      "recall_std": 0.0,
+      "f1_mean": 0.625,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 13.27,
+      "time_std": 0.55,
+      "tokens_mean": 2096.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "California"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.8343,
+      "precision_std": 0.3706,
+      "recall_mean": 0.4727,
+      "recall_std": 0.0407,
+      "f1_mean": 0.5522,
+      "f1_std": 0.1628,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 22.79,
+      "time_std": 20.6,
+      "tokens_mean": 3458.0,
+      "tokens_std": 3033.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "California"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.156,
+      "precision_std": 0.1,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0643,
+      "f1_mean": 0.1422,
+      "f1_std": 0.0078,
+      "n_runs": 5,
+      "n_generated": 17.2,
+      "time_mean": 30.01,
+      "time_std": 11.56,
+      "tokens_mean": 4525.0,
+      "tokens_std": 2226.0,
+      "examples": {
+        "fp": [
+          "Bavaria",
+          "Berlin",
+          "Brandenburg"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.3523,
+      "precision_std": 0.2341,
+      "recall_mean": 0.2182,
+      "recall_std": 0.1036,
+      "f1_mean": 0.242,
+      "f1_std": 0.137,
+      "n_runs": 5,
+      "n_generated": 10.2,
+      "time_mean": 23.63,
+      "time_std": 14.19,
+      "tokens_mean": 3072.0,
+      "tokens_std": 2037.0,
+      "examples": {
+        "fp": [
+          "Bavaria",
+          "Belgium",
+          "Berlin"
+        ],
+        "fn": [
+          "Alameda County",
+          "Berkshire",
+          "California"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.1381,
+      "precision_std": 0.0293,
+      "recall_mean": 0.2182,
+      "recall_std": 0.0813,
+      "f1_mean": 0.1685,
+      "f1_std": 0.0456,
+      "n_runs": 5,
+      "n_generated": 17,
+      "time_mean": 36.98,
+      "time_std": 7.14,
+      "tokens_mean": 4818.0,
+      "tokens_std": 992.0,
+      "examples": {
+        "fp": [
+          "Bavaria",
+          "Berlin",
+          "Brandenburg"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.1138,
+      "precision_std": 0.025,
+      "recall_mean": 0.1818,
+      "recall_std": 0.0,
+      "f1_mean": 0.1385,
+      "f1_std": 0.0215,
+      "n_runs": 5,
+      "n_generated": 18.6,
+      "time_mean": 34.05,
+      "time_std": 5.27,
+      "tokens_mean": 5067.0,
+      "tokens_std": 1562.0,
+      "examples": {
+        "fp": [
+          "Bavaria",
+          "Berlin",
+          "Brandenburg"
+        ],
+        "fn": [
+          "Alameda County",
+          "Berkshire",
+          "California"
+        ]
+      }
+    }
+  }
+}

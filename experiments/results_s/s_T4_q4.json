@@ -1,0 +1,31 @@
+{
+  "query_id": "s_T4_q4",
+  "template": "T4",
+  "predicate": "African member countries of the Commonwealth of Nations \u2014 3-hop, high cardinality",
+  "n_expected": 22,
+  "timestamp": "2026-08-20T09:39:02",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7727,
+      "recall_std": 0.0,
+      "f1_mean": 0.8718,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 17,
+      "time_mean": 7.92,
+      "time_std": 1.41,
+      "tokens_mean": 1359.0,
+      "tokens_std": 45.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eswatini",
+          "Gabon",
+          "Seychelles"
+        ]
+      }
+    }
+  }
+}

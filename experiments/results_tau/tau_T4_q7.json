@@ -1,0 +1,145 @@
+{
+  "query_id": "tau_T4_q7",
+  "template": "T4",
+  "predicate": "Countries that won the FIFA World Cup \u2014 2-hop T4a pure",
+  "n_expected": 8,
+  "timestamp": "2026-08-20T09:58:30",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.4711,
+      "precision_std": 0.1116,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6347,
+      "f1_std": 0.095,
+      "n_runs": 5,
+      "n_generated": 17.6,
+      "time_mean": 3.31,
+      "time_std": 0.28,
+      "tokens_mean": 490.0,
+      "tokens_std": 20.0,
+      "examples": {
+        "fp": [
+          "Belgium",
+          "Czechoslovakia",
+          "Hungary"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.5244,
+      "precision_std": 0.1311,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6804,
+      "f1_std": 0.1106,
+      "n_runs": 5,
+      "n_generated": 16,
+      "time_mean": 2.98,
+      "time_std": 0.23,
+      "tokens_mean": 480.0,
+      "tokens_std": 24.0,
+      "examples": {
+        "fp": [
+          "Belgium",
+          "Czechoslovakia",
+          "Hungary"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.11,
+      "time_std": 0.47,
+      "tokens_mean": 454.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Netherlands",
+          "Portugal"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.6222,
+      "precision_std": 0.0994,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7631,
+      "f1_std": 0.0826,
+      "n_runs": 5,
+      "n_generated": 13.2,
+      "time_mean": 3.42,
+      "time_std": 0.63,
+      "tokens_mean": 462.0,
+      "tokens_std": 18.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Netherlands",
+          "Portugal"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.6134,
+      "precision_std": 0.1193,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7543,
+      "f1_std": 0.1022,
+      "n_runs": 5,
+      "n_generated": 13.6,
+      "time_mean": 3.11,
+      "time_std": 0.49,
+      "tokens_mean": 465.0,
+      "tokens_std": 23.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Netherlands",
+          "Portugal"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.3663,
+      "precision_std": 0.0742,
+      "recall_mean": 0.575,
+      "recall_std": 0.0685,
+      "f1_mean": 0.4436,
+      "f1_std": 0.0667,
+      "n_runs": 5,
+      "n_generated": 13,
+      "time_mean": 21.05,
+      "time_std": 5.01,
+      "tokens_mean": 2438.0,
+      "tokens_std": 531.0,
+      "examples": {
+        "fp": [
+          "French Republic",
+          "Japan",
+          "Russian Federation"
+        ],
+        "fn": [
+          "Argentina",
+          "England",
+          "France"
+        ]
+      }
+    }
+  }
+}

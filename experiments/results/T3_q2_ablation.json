@@ -1,0 +1,187 @@
+{
+  "query_id": "T3_q2",
+  "template": "T3",
+  "predicate": "UN Portuguese-speaking member countries \u2014 DG optimal",
+  "n_expected": 9,
+  "timestamp": "2026-08-12T18:04:44",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8889,
+      "precision_std": 0.0,
+      "recall_mean": 0.8889,
+      "recall_std": 0.0,
+      "f1_mean": 0.8889,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.41,
+      "time_std": 0.12,
+      "tokens_mean": 121.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.875,
+      "precision_std": 0.0,
+      "recall_mean": 0.7778,
+      "recall_std": 0.0,
+      "f1_mean": 0.8235,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 1.23,
+      "time_std": 0.12,
+      "tokens_mean": 124.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Equatorial Guinea",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.8571,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 1.0,
+      "time_std": 0.14,
+      "tokens_mean": 117.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.8571,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 1.21,
+      "time_std": 0.15,
+      "tokens_mean": 120.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8222,
+      "recall_std": 0.0609,
+      "f1_mean": 0.9015,
+      "f1_std": 0.0363,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 6.71,
+      "time_std": 0.77,
+      "tokens_mean": 897.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Guinea-Bissau",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.8523,
+      "precision_std": 0.0106,
+      "recall_mean": 0.6445,
+      "recall_std": 0.0497,
+      "f1_mean": 0.7333,
+      "f1_std": 0.0373,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 12.5,
+      "time_std": 0.33,
+      "tokens_mean": 3784.0,
+      "tokens_std": 16.0,
+      "examples": {
+        "fp": [
+          "East Timor"
+        ],
+        "fn": [
+          "Cape Verde",
+          "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+          "Timor-Leste"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.9778,
+      "precision_std": 0.0497,
+      "recall_mean": 0.8667,
+      "recall_std": 0.0497,
+      "f1_mean": 0.9175,
+      "f1_std": 0.0328,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 9.55,
+      "time_std": 0.74,
+      "tokens_mean": 1297.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9714,
+      "precision_std": 0.0639,
+      "recall_mean": 0.8222,
+      "recall_std": 0.0994,
+      "f1_mean": 0.8897,
+      "f1_std": 0.0832,
+      "n_runs": 5,
+      "n_generated": 7.6,
+      "time_mean": 11.39,
+      "time_std": 0.64,
+      "tokens_mean": 1959.0,
+      "tokens_std": 94.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    }
+  }
+}

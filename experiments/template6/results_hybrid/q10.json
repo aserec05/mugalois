@@ -1,0 +1,126 @@
+{
+  "query_id": "q10",
+  "template": "T6-hybrid",
+  "predicate": "Einstein (married to | had child | sibling studied at) ?b \u2014 forward, 2 simple + 1 T4",
+  "n_expected": 6,
+  "timestamp": "2026-08-09T17:24:39",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.3333,
+      "recall_std": 0.0,
+      "f1_mean": 0.4444,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 1.38,
+      "time_std": 0.11,
+      "tokens_mean": 138.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Albert Einstein's siblings, Maria (Maja) Einstein and Jakob Einstein, studied in various institutions, with Maja attending the Polytechnic Institute in Zurich."
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Hans Albert Einstein",
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 1.93,
+      "time_std": 0.27,
+      "tokens_mean": 190.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Elsa Einstein",
+          "Hans Albert Einstein"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 0.6111,
+      "precision_std": 0.031,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.7048,
+      "f1_std": 0.0213,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 5.98,
+      "time_std": 0.81,
+      "tokens_mean": 800.0,
+      "tokens_std": 55.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Munich",
+          "University of Zurich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "HolisticOnly": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 0.98,
+      "time_std": 0.14,
+      "tokens_mean": 144.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Margot Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "University of Zurich"
+        ]
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 0.625,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.7143,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 6.43,
+      "time_std": 1.18,
+      "tokens_mean": 861.0,
+      "tokens_std": 188.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Munich",
+          "University of Zurich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    }
+  }
+}

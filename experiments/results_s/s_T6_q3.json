@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T6_q3",
+  "template": "T6",
+  "predicate": "Marie Curie field | employer | member of | degree \u2014 4 branches, high cardinality",
+  "n_expected": 23,
+  "timestamp": "2026-08-20T09:45:29",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.6062,
+      "precision_std": 0.0084,
+      "recall_mean": 0.3217,
+      "recall_std": 0.0583,
+      "f1_mean": 0.4179,
+      "f1_std": 0.051,
+      "n_runs": 5,
+      "n_generated": 12.2,
+      "time_mean": 4.73,
+      "time_std": 0.62,
+      "tokens_mean": 553.0,
+      "tokens_std": 49.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics",
+          "Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    }
+  }
+}

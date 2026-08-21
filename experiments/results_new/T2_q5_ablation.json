@@ -1,0 +1,83 @@
+{
+  "query_id": "T2_q5",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 90,
+  "timestamp": "2026-08-21T17:13:57",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 0.9129,
+      "precision_std": 0.1519,
+      "recall_mean": 0.64,
+      "recall_std": 0.1639,
+      "f1_mean": 0.7267,
+      "f1_std": 0.0187,
+      "n_runs": 5,
+      "n_generated": 67.8,
+      "time_mean": 17.15,
+      "time_std": 12.2,
+      "tokens_mean": 3165.0,
+      "tokens_std": 1871.0,
+      "examples": {
+        "fp": [
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    },
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.806,
+      "precision_std": 0.1123,
+      "recall_mean": 0.8378,
+      "recall_std": 0.1664,
+      "f1_mean": 0.8055,
+      "f1_std": 0.0759,
+      "n_runs": 5,
+      "n_generated": 96,
+      "time_mean": 34.57,
+      "time_std": 17.24,
+      "tokens_mean": 5178.0,
+      "tokens_std": 1907.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Bahamas",
+          "Barbados"
+        ],
+        "fn": [
+          "Azerbaijan",
+          "Bolivia",
+          "Cameroon"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.8359,
+      "precision_std": 0.1463,
+      "recall_mean": 0.7933,
+      "recall_std": 0.207,
+      "f1_mean": 0.7838,
+      "f1_std": 0.0711,
+      "n_runs": 5,
+      "n_generated": 90.4,
+      "time_mean": 21.67,
+      "time_std": 8.96,
+      "tokens_mean": 4347.0,
+      "tokens_std": 1792.0,
+      "examples": {
+        "fp": [
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    }
+  }
+}

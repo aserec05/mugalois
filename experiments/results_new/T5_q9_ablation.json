@@ -1,0 +1,29 @@
+{
+  "query_id": "T5_q9",
+  "template": "T5",
+  "predicate": "All descendants of Queen Elizabeth II (forward transitive closure, irreflexive) \u2014 MEDIUM CARDINALITY, multi-branch DAG, 3 generations",
+  "n_expected": 24,
+  "timestamp": "2026-08-21T17:37:44",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.96,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.9796,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 5.21,
+      "time_std": 0.35,
+      "tokens_mean": 535.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Queen Elizabeth II"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

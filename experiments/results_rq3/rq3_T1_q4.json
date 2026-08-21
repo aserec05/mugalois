@@ -1,0 +1,217 @@
+{
+  "query_id": "rq3_T1_q4",
+  "template": "T1",
+  "predicate": "What awards did Marie Curie receive? List as many as you know.",
+  "n_expected": 17,
+  "timestamp": "2026-08-21T09:51:34",
+  "results": {
+    "Closure_none": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2981,
+      "f1_std": 0.049,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_motivational": {
+      "precision_mean": 0.3108,
+      "precision_std": 0.0632,
+      "recall_mean": 0.2823,
+      "recall_std": 0.0644,
+      "f1_mean": 0.2944,
+      "f1_std": 0.0612,
+      "n_runs": 5,
+      "n_generated": 15.6,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Cavendish Medal",
+          "Copley Medal",
+          "Gold Medal of the Royal Society of Arts"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_forced": {
+      "precision_mean": 0.2997,
+      "precision_std": 0.0989,
+      "recall_mean": 0.2588,
+      "recall_std": 0.0984,
+      "f1_mean": 0.2771,
+      "f1_std": 0.0979,
+      "n_runs": 5,
+      "n_generated": 14.6,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Cavendish Medal",
+          "Copley Medal",
+          "Gold Medal of the Royal Society of Arts"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_contrast": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2981,
+      "f1_std": 0.049,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_alphabet": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2981,
+      "f1_std": 0.049,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_socratic": {
+      "precision_mean": 0.4064,
+      "precision_std": 0.1217,
+      "recall_mean": 0.2706,
+      "recall_std": 0.0322,
+      "f1_mean": 0.3145,
+      "f1_std": 0.0142,
+      "n_runs": 5,
+      "n_generated": 12.4,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Graham Medal",
+          "Grammy Award"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_coach": {
+      "precision_mean": 0.166,
+      "precision_std": 0.1887,
+      "recall_mean": 0.2706,
+      "recall_std": 0.0984,
+      "f1_mean": 0.1657,
+      "f1_std": 0.0961,
+      "n_runs": 5,
+      "n_generated": 47.8,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "Closure_telephone": {
+      "precision_mean": 0.3071,
+      "precision_std": 0.038,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2474,
+      "f1_std": 0.0474,
+      "n_runs": 5,
+      "n_generated": 11.8,
+      "time_mean": 80.24,
+      "time_std": 19.37,
+      "tokens_mean": 53623.0,
+      "tokens_std": 23177.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Golden Lion for Lifetime Achievement",
+          "Grammy Award"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    }
+  }
+}

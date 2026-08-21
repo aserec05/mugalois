@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T5_q8",
+  "template": "T5",
+  "predicate": "All predecessors of Pius I, back to Peter (backward transitive closure, irreflexive) \u2014 LOW CARDINALITY, 9 hops, 1st-2nd century",
+  "n_expected": 9,
+  "timestamp": "2026-08-20T09:44:47",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 4.13,
+      "time_std": 0.55,
+      "tokens_mean": 417.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope Pius I",
+          "Pope Soter",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Evaristus",
+          "Pope Linus"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "query_id": "tau_T5_q7",
+  "template": "T5",
+  "predicate": "All successors of Martin V (forward transitive closure, irreflexive) \u2014 VERY HIGH CARDINALITY, 49 hops, 1417-1878",
+  "n_expected": 49,
+  "timestamp": "2026-08-19T11:46:49",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.8267,
+      "precision_std": 0.0067,
+      "recall_mean": 0.8367,
+      "recall_std": 0.025,
+      "f1_mean": 0.8315,
+      "f1_std": 0.0113,
+      "n_runs": 5,
+      "n_generated": 49.6,
+      "time_mean": 5.04,
+      "time_std": 1.51,
+      "tokens_mean": 507.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope Benedict XV",
+          "Pope Callixtus III"
+        ],
+        "fn": [
+          "Pope Alexander VIII",
+          "Pope Clement X",
+          "Pope Clement XI"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.8333,
+      "precision_std": 0.0,
+      "recall_mean": 0.8163,
+      "recall_std": 0.0,
+      "f1_mean": 0.8247,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 48,
+      "time_mean": 4.48,
+      "time_std": 0.33,
+      "tokens_mean": 499.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope Benedict XV",
+          "Pope Callixtus III"
+        ],
+        "fn": [
+          "Pope Alexander VIII",
+          "Pope Clement IX",
+          "Pope Clement X"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.8281,
+      "precision_std": 0.0055,
+      "recall_mean": 0.8449,
+      "recall_std": 0.031,
+      "f1_mean": 0.8361,
+      "f1_std": 0.0141,
+      "n_runs": 5,
+      "n_generated": 50,
+      "time_mean": 4.74,
+      "time_std": 0.64,
+      "tokens_mean": 509.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope Benedict XV",
+          "Pope Callixtus III"
+        ],
+        "fn": [
+          "Pope Alexander VIII",
+          "Pope Clement IX",
+          "Pope Clement X"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.8268,
+      "precision_std": 0.0047,
+      "recall_mean": 0.8572,
+      "recall_std": 0.0289,
+      "f1_mean": 0.8415,
+      "f1_std": 0.0138,
+      "n_runs": 5,
+      "n_generated": 50.8,
+      "time_mean": 4.68,
+      "time_std": 0.13,
+      "tokens_mean": 513.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope Benedict XV",
+          "Pope Callixtus III"
+        ],
+        "fn": [
+          "Pope Alexander VIII",
+          "Pope Clement X",
+          "Pope Clement XI"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.9913,
+      "precision_std": 0.0195,
+      "recall_mean": 0.3755,
+      "recall_std": 0.1403,
+      "f1_mean": 0.5308,
+      "f1_std": 0.1649,
+      "n_runs": 5,
+      "n_generated": 18.6,
+      "time_mean": 39.28,
+      "time_std": 13.21,
+      "tokens_mean": 5422.0,
+      "tokens_std": 1530.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adrian VI",
+          "Pope Alexander VII",
+          "Pope Alexander VIII"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.3551,
+      "recall_std": 0.1649,
+      "f1_mean": 0.5066,
+      "f1_std": 0.1812,
+      "n_runs": 5,
+      "n_generated": 17.4,
+      "time_mean": 37.77,
+      "time_std": 14.54,
+      "tokens_mean": 5570.0,
+      "tokens_std": 1984.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adrian VI",
+          "Pope Alexander VI",
+          "Pope Alexander VII"
+        ]
+      }
+    }
+  }
+}

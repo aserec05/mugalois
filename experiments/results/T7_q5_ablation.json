@@ -1,0 +1,211 @@
+{
+  "query_id": "T7_q5",
+  "template": "T7",
+  "predicate": "De Gaulle hasSuccessor+ / wasBornIn / isLocatedIn+",
+  "n_expected": 13,
+  "timestamp": "2026-08-12T12:41:58",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.7733,
+      "precision_std": 0.0596,
+      "recall_mean": 0.3077,
+      "recall_std": 0.0,
+      "f1_mean": 0.4397,
+      "f1_std": 0.0104,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 1.18,
+      "time_std": 0.12,
+      "tokens_mean": 111.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Bretagne"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.7467,
+      "precision_std": 0.073,
+      "recall_mean": 0.3077,
+      "recall_std": 0.0,
+      "f1_mean": 0.4351,
+      "f1_std": 0.0128,
+      "n_runs": 5,
+      "n_generated": 5.4,
+      "time_mean": 1.14,
+      "time_std": 0.09,
+      "tokens_mean": 113.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Bretagne",
+          "Provence-Alpes-C\u00f4te d'Azur"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.3571,
+      "precision_std": 0.0,
+      "recall_mean": 0.3846,
+      "recall_std": 0.0,
+      "f1_mean": 0.3704,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 14,
+      "time_mean": 1.64,
+      "time_std": 0.15,
+      "tokens_mean": 191.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Alsace",
+          "Bourgogne-Franche-Comt\u00e9",
+          "Bretagne"
+        ],
+        "fn": [
+          "Amiens",
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.4538,
+      "precision_std": 0.2473,
+      "recall_mean": 0.6615,
+      "recall_std": 0.2469,
+      "f1_mean": 0.5282,
+      "f1_std": 0.268,
+      "n_runs": 5,
+      "n_generated": 30.4,
+      "time_mean": 9.06,
+      "time_std": 1.37,
+      "tokens_mean": 1597.0,
+      "tokens_std": 190.0,
+      "examples": {
+        "fp": [
+          "Aisne",
+          "Allier",
+          "Alpes-Maritimes"
+        ],
+        "fn": [
+          "Amiens",
+          "France",
+          "Hauts-de-France"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.2949,
+      "precision_std": 0.0852,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.4318,
+      "f1_std": 0.0924,
+      "n_runs": 5,
+      "n_generated": 39.8,
+      "time_mean": 57.34,
+      "time_std": 8.98,
+      "tokens_mean": 9268.0,
+      "tokens_std": 1722.0,
+      "examples": {
+        "fp": [
+          "Belgium",
+          "Brussels",
+          "Brussels-Capital Region"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.0988,
+      "precision_std": 0.1312,
+      "recall_mean": 0.1077,
+      "recall_std": 0.0688,
+      "f1_mean": 0.0966,
+      "f1_std": 0.0985,
+      "n_runs": 5,
+      "n_generated": 22,
+      "time_mean": 37.28,
+      "time_std": 14.86,
+      "tokens_mean": 5881.0,
+      "tokens_std": 2571.0,
+      "examples": {
+        "fp": [
+          "Institut du Radium",
+          "Marie Curie",
+          "Paris"
+        ],
+        "fn": [
+          "Amiens",
+          "Auvergne-Rh\u00f4ne-Alpes",
+          "Cantal"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.568,
+      "precision_std": 0.0271,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.6795,
+      "f1_std": 0.0192,
+      "n_runs": 5,
+      "n_generated": 19.4,
+      "time_mean": 9.86,
+      "time_std": 0.84,
+      "tokens_mean": 1783.0,
+      "tokens_std": 36.0,
+      "examples": {
+        "fp": [
+          "Castres",
+          "Coblence",
+          "Germany"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.5802,
+      "precision_std": 0.0306,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.6881,
+      "f1_std": 0.0215,
+      "n_runs": 5,
+      "n_generated": 19,
+      "time_mean": 9.78,
+      "time_std": 0.39,
+      "tokens_mean": 1771.0,
+      "tokens_std": 47.0,
+      "examples": {
+        "fp": [
+          "B\u00e9ziers",
+          "Centre-Val de Loire",
+          "Chedigny"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    }
+  }
+}

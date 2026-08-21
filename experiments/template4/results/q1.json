@@ -1,0 +1,27 @@
+{
+  "query_id": "q1",
+  "template": "T4",
+  "predicate": "wrote/is of genre",
+  "n_expected": 4,
+  "timestamp": "2026-07-29T16:21:38",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 11.97,
+      "time_std": 1.17,
+      "tokens_mean": 1727.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

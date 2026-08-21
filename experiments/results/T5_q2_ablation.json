@@ -1,0 +1,193 @@
+{
+  "query_id": "T5_q2",
+  "template": "T5",
+  "predicate": "All predecessors of John Paul II, including himself (backward transitive closure, reflexive) \u2014 VERY HIGH CARDINALITY, full papal lineage",
+  "n_expected": 264,
+  "timestamp": "2026-08-12T10:35:58",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.9981,
+      "precision_std": 0.0042,
+      "recall_mean": 0.3076,
+      "recall_std": 0.1219,
+      "f1_mean": 0.4585,
+      "f1_std": 0.1567,
+      "n_runs": 5,
+      "n_generated": 81.4,
+      "time_mean": 46.59,
+      "time_std": 84.15,
+      "tokens_mean": 3765.0,
+      "tokens_std": 6882.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.9618,
+      "precision_std": 0.0535,
+      "recall_mean": 0.5697,
+      "recall_std": 0.1822,
+      "f1_mean": 0.6984,
+      "f1_std": 0.1715,
+      "n_runs": 5,
+      "n_generated": 157,
+      "time_mean": 54.68,
+      "time_std": 95.18,
+      "tokens_mean": 4065.0,
+      "tokens_std": 6718.0,
+      "examples": {
+        "fp": [
+          "Alexander VIII",
+          "Benedict XV",
+          "Calixtus II"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adrian I",
+          "Pope Adrian II"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0197,
+      "recall_std": 0.0017,
+      "f1_mean": 0.0386,
+      "f1_std": 0.0032,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 1.34,
+      "time_std": 0.12,
+      "tokens_mean": 129.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9979,
+      "precision_std": 0.0046,
+      "recall_mean": 0.4727,
+      "recall_std": 0.1771,
+      "f1_mean": 0.6277,
+      "f1_std": 0.1458,
+      "n_runs": 5,
+      "n_generated": 125,
+      "time_mean": 9.56,
+      "time_std": 4.83,
+      "tokens_mean": 866.0,
+      "tokens_std": 396.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian IV"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0803,
+      "recall_std": 0.0192,
+      "f1_mean": 0.1482,
+      "f1_std": 0.0323,
+      "n_runs": 5,
+      "n_generated": 21.2,
+      "time_mean": 37.78,
+      "time_std": 7.14,
+      "tokens_mean": 5375.0,
+      "tokens_std": 1056.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.9959,
+      "precision_std": 0.0056,
+      "recall_mean": 0.25,
+      "recall_std": 0.1425,
+      "f1_mean": 0.3811,
+      "f1_std": 0.2006,
+      "n_runs": 5,
+      "n_generated": 66.4,
+      "time_mean": 88.58,
+      "time_std": 105.56,
+      "tokens_mean": 7288.0,
+      "tokens_std": 8200.0,
+      "examples": {
+        "fp": [
+          "Pope St. Peter"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian IV"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.9807,
+      "precision_std": 0.0206,
+      "recall_mean": 0.4386,
+      "recall_std": 0.1503,
+      "f1_mean": 0.5937,
+      "f1_std": 0.1228,
+      "n_runs": 5,
+      "n_generated": 118.8,
+      "time_mean": 11.26,
+      "time_std": 3.32,
+      "tokens_mean": 1071.0,
+      "tokens_std": 328.0,
+      "examples": {
+        "fp": [
+          "Pope St. Peter"
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9975,
+      "precision_std": 0.0055,
+      "recall_mean": 0.2992,
+      "recall_std": 0.0674,
+      "f1_mean": 0.4569,
+      "f1_std": 0.0836,
+      "n_runs": 5,
+      "n_generated": 79.2,
+      "time_mean": 83.23,
+      "time_std": 99.66,
+      "tokens_mean": 7233.0,
+      "tokens_std": 8458.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    }
+  }
+}

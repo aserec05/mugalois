@@ -1,0 +1,31 @@
+{
+  "query_id": "s_T4_q5",
+  "template": "T4",
+  "predicate": "Nobel Prize in Literature laureates born in Asia \u2014 4-hop, medium cardinality",
+  "n_expected": 7,
+  "timestamp": "2026-08-19T12:44:02",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.25,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 5.85,
+      "time_std": 0.58,
+      "tokens_mean": 837.0,
+      "tokens_std": 37.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kazuo Ishiguro",
+          "Kenzabur\u014d \u014ce"
+        ]
+      }
+    }
+  }
+}

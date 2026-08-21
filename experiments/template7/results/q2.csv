@@ -1,0 +1,2 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+HybridPlannerV4,135,0.0,0.0,0.0,0.0,0.0,0.0,5,8,5.63,0.62,734.0,59.0

@@ -1,0 +1,149 @@
+{
+  "query_id": "tau_T7_q1",
+  "template": "T7",
+  "predicate": "Popes born in Italy \u2014 wasBornIn / isLocatedIn+",
+  "n_expected": 216,
+  "timestamp": "2026-08-19T17:50:25",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.7551,
+      "precision_std": 0.018,
+      "recall_mean": 0.5945,
+      "recall_std": 0.0571,
+      "f1_mean": 0.6638,
+      "f1_std": 0.0346,
+      "n_runs": 5,
+      "n_generated": 170.2,
+      "time_mean": 26.05,
+      "time_std": 3.5,
+      "tokens_mean": 3256.0,
+      "tokens_std": 282.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander V",
+          "Pope Alexander VI",
+          "Pope Anastasius I"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian I",
+          "Adrian III"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.7573,
+      "precision_std": 0.0333,
+      "recall_mean": 0.6361,
+      "recall_std": 0.0938,
+      "f1_mean": 0.6865,
+      "f1_std": 0.0437,
+      "n_runs": 5,
+      "n_generated": 182.6,
+      "time_mean": 27.5,
+      "time_std": 4.76,
+      "tokens_mean": 3448.0,
+      "tokens_std": 566.0,
+      "examples": {
+        "fp": [
+          "Pope Anastasius I",
+          "Pope Anicetus",
+          "Pope Boniface II"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian III",
+          "Adrian V"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.29,
+      "time_std": 0.35,
+      "tokens_mean": 584.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.32,
+      "time_std": 0.24,
+      "tokens_mean": 584.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.35,
+      "time_std": 0.45,
+      "tokens_mean": 584.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.35,
+      "time_std": 0.51,
+      "tokens_mean": 584.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    }
+  }
+}

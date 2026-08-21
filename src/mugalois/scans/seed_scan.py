@@ -25,6 +25,7 @@ def LLMSeedScan(
     post_filter_conds: list[AnyCondition] = None,
     max_iter:          int = 5,
     motivational:      bool = False,
+    lookahead:         str = "",
 ) -> set[Triple]:
     inject_conds      = inject_conds      or []
     post_filter_conds = post_filter_conds or []
@@ -46,11 +47,14 @@ def LLMSeedScan(
         else:
             prompt = genIterativePrompt(T)
 
+        prompt += f"\n\n{lookahead}" if lookahead else ""
+
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
             *ctx,
             {"role": "user", "content": prompt},
         ]
+    
         response = llm.chat(messages)
         T_new    = json_to_triples(response.text)
 

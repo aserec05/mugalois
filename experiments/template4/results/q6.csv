@@ -1,0 +1,7 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+NL_naive,12,0.6933,0.0149,0.5666,0.0373,0.6234,0.0291,5,9.8,1.55,0.38,98.0,1.0
+NL_precise,12,0.7,0.0,0.5833,0.0,0.6364,0.0,5,10,1.39,0.24,112.0,0.0
+SPARQL,12,0.12,0.2683,0.1,0.2236,0.1091,0.244,5,2.8,1.0,0.21,126.0,14.0
+LLMMultiHopScan,12,0.5,0.0,0.4167,0.0,0.4545,0.0,5,10,2.29,0.25,423.0,0.0
+LLMChainScan,12,0.6471,0.0,0.9167,0.0,0.7586,0.0,5,17,8.67,0.89,1359.0,42.0
+MuGaloisMultiPath,12,1.0,0.0,0.3167,0.2458,0.4457,0.237,5,3.8,3.64,1.16,522.0,44.0

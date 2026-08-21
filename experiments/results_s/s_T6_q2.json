@@ -1,0 +1,34 @@
+{
+  "query_id": "s_T6_q2",
+  "template": "T6",
+  "predicate": "Marie Curie award | degree \u2014 2 branches, medium cardinality",
+  "n_expected": 19,
+  "timestamp": "2026-08-20T09:45:09",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.1053,
+      "recall_std": 0.0,
+      "f1_mean": 0.1739,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 3.95,
+      "time_std": 0.63,
+      "tokens_mean": 410.0,
+      "tokens_std": 11.0,
+      "examples": {
+        "fp": [
+          "Doctor of Philosophy",
+          "Doctor of Science"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    }
+  }
+}
