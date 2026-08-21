@@ -1,0 +1,105 @@
+{
+  "query_id": "T5_q10",
+  "template": "T5",
+  "predicate": "All subclasses of BaseException in Python 3 (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, multi-branch DAG, source: Python 3 official docs",
+  "n_expected": 64,
+  "timestamp": "2026-08-21T10:58:58",
+  "results": {
+    "F_cov050": {
+      "precision_mean": 0.9814,
+      "precision_std": 0.0004,
+      "recall_mean": 0.825,
+      "recall_std": 0.0171,
+      "f1_mean": 0.8964,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 53.8,
+      "time_mean": 6.36,
+      "time_std": 0.23,
+      "tokens_mean": 670.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "F_cov065": {
+      "precision_mean": 0.9804,
+      "precision_std": 0.0027,
+      "recall_mean": 0.7938,
+      "recall_std": 0.0953,
+      "f1_mean": 0.8747,
+      "f1_std": 0.0636,
+      "n_runs": 5,
+      "n_generated": 51.8,
+      "time_mean": 7.36,
+      "time_std": 1.2,
+      "tokens_mean": 1031.0,
+      "tokens_std": 48.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "F_cov080": {
+      "precision_mean": 0.9818,
+      "precision_std": 0.0,
+      "recall_mean": 0.8438,
+      "recall_std": 0.0,
+      "f1_mean": 0.9076,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 55,
+      "time_mean": 7.68,
+      "time_std": 1.34,
+      "tokens_mean": 1056.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "ConnectionRefusedError"
+        ]
+      }
+    },
+    "F_cov095": {
+      "precision_mean": 0.9815,
+      "precision_std": 0.0004,
+      "recall_mean": 0.8313,
+      "recall_std": 0.0171,
+      "f1_mean": 0.9001,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 54.2,
+      "time_mean": 7.35,
+      "time_std": 0.65,
+      "tokens_mean": 993.0,
+      "tokens_std": 182.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "ConnectionRefusedError"
+        ]
+      }
+    }
+  }
+}

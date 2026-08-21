@@ -1,0 +1,31 @@
+{
+  "query_id": "T6_q4",
+  "template": "T6",
+  "predicate": "Christopher Nolan directed | produced | wrote \u2014 3 branches, medium cardinality",
+  "n_expected": 20,
+  "timestamp": "2026-08-21T17:46:06",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.925,
+      "precision_std": 0.1677,
+      "recall_mean": 0.54,
+      "recall_std": 0.0224,
+      "f1_mean": 0.6789,
+      "f1_std": 0.0689,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 10.28,
+      "time_std": 2.25,
+      "tokens_mean": 1297.0,
+      "tokens_std": 21.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "query_id": "T5_q9",
+  "template": "T5",
+  "predicate": "All descendants of Queen Elizabeth II (forward transitive closure, irreflexive) \u2014 MEDIUM CARDINALITY, multi-branch DAG, 3 generations",
+  "n_expected": 24,
+  "timestamp": "2026-08-12T11:38:53",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6417,
+      "recall_std": 0.0373,
+      "f1_mean": 0.7812,
+      "f1_std": 0.0269,
+      "n_runs": 5,
+      "n_generated": 15.4,
+      "time_mean": 2.27,
+      "time_std": 1.67,
+      "tokens_mean": 125.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "August",
+          "Isla",
+          "Lena"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.9507,
+      "precision_std": 0.045,
+      "recall_mean": 0.8417,
+      "recall_std": 0.1229,
+      "f1_mean": 0.8862,
+      "f1_std": 0.0527,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 1.61,
+      "time_std": 0.36,
+      "tokens_mean": 172.0,
+      "tokens_std": 11.0,
+      "examples": {
+        "fp": [
+          "Ernest",
+          "Wolfgang"
+        ],
+        "fn": [
+          "Archie",
+          "Lilibet"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1667,
+      "recall_std": 0.0,
+      "f1_mean": 0.2857,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 1.16,
+      "time_std": 0.07,
+      "tokens_mean": 99.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Archie",
+          "August",
+          "Beatrice"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 2.87,
+      "time_std": 0.69,
+      "tokens_mean": 271.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.7163,
+      "precision_std": 0.0718,
+      "recall_mean": 0.9833,
+      "recall_std": 0.0228,
+      "f1_mean": 0.8275,
+      "f1_std": 0.0541,
+      "n_runs": 5,
+      "n_generated": 33.2,
+      "time_mean": 58.52,
+      "time_std": 6.53,
+      "tokens_mean": 8097.0,
+      "tokens_std": 692.0,
+      "examples": {
+        "fp": [
+          "Charles, Prince of Wales",
+          "James, Viscount Severn",
+          "Lena Phillips"
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 3.69,
+      "time_std": 0.56,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 4.45,
+      "time_std": 0.28,
+      "tokens_mean": 533.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.92,
+      "precision_std": 0.0,
+      "recall_mean": 0.9583,
+      "recall_std": 0.0,
+      "f1_mean": 0.9388,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 5.89,
+      "time_std": 0.25,
+      "tokens_mean": 648.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Louis, Prince of Wales",
+          "Queen Elizabeth II"
+        ],
+        "fn": [
+          "Louise"
+        ]
+      }
+    }
+  }
+}

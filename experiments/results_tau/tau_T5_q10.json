@@ -1,0 +1,155 @@
+{
+  "query_id": "tau_T5_q10",
+  "template": "T5",
+  "predicate": "All subclasses of BaseException in Python 3 (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, multi-branch DAG, source: Python 3 official docs",
+  "n_expected": 64,
+  "timestamp": "2026-08-20T10:04:49",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.982,
+      "precision_std": 0.0004,
+      "recall_mean": 0.8532,
+      "recall_std": 0.0209,
+      "f1_mean": 0.913,
+      "f1_std": 0.012,
+      "n_runs": 5,
+      "n_generated": 55.6,
+      "time_mean": 4.03,
+      "time_std": 0.45,
+      "tokens_mean": 428.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionResetError"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.9821,
+      "precision_std": 0.0007,
+      "recall_mean": 0.8563,
+      "recall_std": 0.0339,
+      "f1_mean": 0.9146,
+      "f1_std": 0.0196,
+      "n_runs": 5,
+      "n_generated": 55.8,
+      "time_mean": 3.71,
+      "time_std": 0.26,
+      "tokens_mean": 430.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "FutureWarning",
+          "InterruptedError",
+          "KeyboardInterrupt"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.9817,
+      "precision_std": 0.0007,
+      "recall_mean": 0.8406,
+      "recall_std": 0.032,
+      "f1_mean": 0.9055,
+      "f1_std": 0.0187,
+      "n_runs": 5,
+      "n_generated": 54.8,
+      "time_mean": 4.1,
+      "time_std": 0.56,
+      "tokens_mean": 425.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionResetError"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.9817,
+      "precision_std": 0.0003,
+      "recall_mean": 0.8375,
+      "recall_std": 0.014,
+      "f1_mean": 0.9039,
+      "f1_std": 0.0084,
+      "n_runs": 5,
+      "n_generated": 54.6,
+      "time_mean": 3.98,
+      "time_std": 0.39,
+      "tokens_mean": 424.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionResetError"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.9814,
+      "precision_std": 0.0004,
+      "recall_mean": 0.825,
+      "recall_std": 0.0171,
+      "f1_mean": 0.8964,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 53.8,
+      "time_mean": 3.62,
+      "time_std": 0.47,
+      "tokens_mean": 421.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "BrokenPipeError",
+          "ConnectionAbortedError",
+          "ConnectionResetError"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.4099,
+      "precision_std": 0.3183,
+      "recall_mean": 0.7,
+      "recall_std": 0.096,
+      "f1_mean": 0.4663,
+      "f1_std": 0.2336,
+      "n_runs": 5,
+      "n_generated": 167.2,
+      "time_mean": 104.07,
+      "time_std": 108.74,
+      "tokens_mean": 24969.0,
+      "tokens_std": 24307.0,
+      "examples": {
+        "fp": [
+          "Activity",
+          "Advancement",
+          "Alteration"
+        ],
+        "fn": [
+          "AssertionError",
+          "DeprecationWarning",
+          "IndentationError"
+        ]
+      }
+    }
+  }
+}

@@ -21,22 +21,9 @@ def updateEnv(env: Environment,
               triples: set[Triple], 
               s: str, 
               o: str):
-    """
-    updateEnv(v, T, s, o) :
-      - si s is variable → v(s) UNION projection s over T
-      - si o is variable → v(o) UNION projection o over T
-
-    Definition page 3 Triples Doc
-
-    Exemple :
-      T = {(Mike, :isFriendWith, Eleven), (Dustin, :isFriendWith, Max)}
-      s = "?x", o = "?y"
-      → v("?x") devient {"Mike", "Dustin"}
-      → v("?y") devient {"Eleven", "Max"}
-    """
     if s.startswith("?"):
-        values_s = {t.s for t in triples}
-        env.update(s, values_s) # makes union
+        values_s = {str(t.s) for t in triples}  # cast ici
+        env.update(s, values_s)
     if o.startswith("?"):
-        values_o = {t.o for t in triples}
-        env.update(o, values_o) # makes union
+        values_o = {str(t.o) for t in triples}  # cast ici
+        env.update(o, values_o)

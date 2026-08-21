@@ -1,0 +1,8 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+NL_naive,0,0.0,0.0,1.0,0.0,0.0,0.0,5,1,0.95,0.08,79.0,0.0
+NL_precise,0,1.0,0.0,1.0,0.0,1.0,0.0,5,0,1.19,0.9,81.0,0.0
+SPARQL,0,0.0,0.0,1.0,0.0,0.0,0.0,5,1,0.88,0.09,122.0,0.0
+Holistic,0,0.0,0.0,1.0,0.0,0.0,0.0,5,4,0.99,0.11,97.0,0.0
+Holistic_psych,0,0.0,0.0,1.0,0.0,0.0,0.0,5,5,0.94,0.08,197.0,0.0
+Segment,0,0.0,0.0,1.0,0.0,0.0,0.0,5,1,16.78,0.57,2338.0,0.0
+µ-Galois,0,1.0,0.0,1.0,0.0,1.0,0.0,5,0,5.46,0.6,1104.0,51.0

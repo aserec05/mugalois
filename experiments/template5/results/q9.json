@@ -1,0 +1,29 @@
+{
+  "query_id": "q9",
+  "template": "T5",
+  "predicate": "is a parent of",
+  "n_expected": 24,
+  "timestamp": "2026-07-29T16:38:44",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.96,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.9796,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 25,
+      "time_mean": 4.94,
+      "time_std": 0.47,
+      "tokens_mean": 535.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Queen Elizabeth II"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

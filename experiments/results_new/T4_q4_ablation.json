@@ -1,0 +1,35 @@
+{
+  "query_id": "T4_q4",
+  "template": "T4",
+  "predicate": "African member countries of the Commonwealth of Nations \u2014 3-hop, high cardinality",
+  "n_expected": 22,
+  "timestamp": "2026-08-21T17:32:07",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.9161,
+      "precision_std": 0.1876,
+      "recall_mean": 0.4909,
+      "recall_std": 0.1992,
+      "f1_mean": 0.5966,
+      "f1_std": 0.0968,
+      "n_runs": 5,
+      "n_generated": 13.4,
+      "time_mean": 1.47,
+      "time_std": 0.29,
+      "tokens_mean": 168.0,
+      "tokens_std": 38.0,
+      "examples": {
+        "fp": [
+          "Antigua and Barbuda",
+          "Bahamas",
+          "Barbados"
+        ],
+        "fn": [
+          "Gabon",
+          "Mozambique",
+          "Namibia"
+        ]
+      }
+    }
+  }
+}

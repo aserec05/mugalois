@@ -1,0 +1,241 @@
+{
+  "query_id": "q4",
+  "template": "T6",
+  "predicate": "was directed by Christopher Nolan | was produced by Christopher Nolan | was written by Christopher Nolan",
+  "n_expected": 20,
+  "timestamp": "2026-07-30T12:15:02",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 1.27,
+      "time_std": 0.11,
+      "tokens_mean": 92.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 1.67,
+      "time_std": 0.11,
+      "tokens_mean": 141.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "UnionBranches": {
+      "precision_mean": 0.9846,
+      "precision_std": 0.0344,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.7455,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 12.2,
+      "time_mean": 3.63,
+      "time_std": 0.18,
+      "tokens_mean": 379.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "Encoding_list": {
+      "precision_mean": 0.9667,
+      "precision_std": 0.0456,
+      "recall_mean": 0.56,
+      "recall_std": 0.0418,
+      "f1_mean": 0.7083,
+      "f1_std": 0.039,
+      "n_runs": 5,
+      "n_generated": 11.6,
+      "time_mean": 1.46,
+      "time_std": 0.44,
+      "tokens_mean": 153.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Following"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "Encoding_OR": {
+      "precision_mean": 0.9846,
+      "precision_std": 0.0344,
+      "recall_mean": 0.62,
+      "recall_std": 0.0274,
+      "f1_mean": 0.7606,
+      "f1_std": 0.0266,
+      "n_runs": 5,
+      "n_generated": 12.6,
+      "time_mean": 1.29,
+      "time_std": 0.29,
+      "tokens_mean": 149.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "Encoding_natural": {
+      "precision_mean": 0.9118,
+      "precision_std": 0.0252,
+      "recall_mean": 0.61,
+      "recall_std": 0.0224,
+      "f1_mean": 0.7304,
+      "f1_std": 0.007,
+      "n_runs": 5,
+      "n_generated": 13.4,
+      "time_mean": 2.52,
+      "time_std": 0.09,
+      "tokens_mean": 294.0,
+      "tokens_std": 20.0,
+      "examples": {
+        "fp": [
+          "Following"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_high": {
+      "precision_mean": 0.9099,
+      "precision_std": 0.0295,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.723,
+      "f1_std": 0.0096,
+      "n_runs": 5,
+      "n_generated": 13.2,
+      "time_mean": 3.17,
+      "time_std": 0.34,
+      "tokens_mean": 434.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "The Batman"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_mid": {
+      "precision_mean": 0.9231,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 13,
+      "time_mean": 2.08,
+      "time_std": 0.11,
+      "tokens_mean": 292.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "The Animatrix"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_low": {
+      "precision_mean": 0.9231,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 13,
+      "time_mean": 2.12,
+      "time_std": 0.23,
+      "tokens_mean": 294.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "The Batman"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "MuGaloisChoice": {
+      "precision_mean": 0.8692,
+      "precision_std": 0.0709,
+      "recall_mean": 0.64,
+      "recall_std": 0.0548,
+      "f1_mean": 0.7354,
+      "f1_std": 0.046,
+      "n_runs": 5,
+      "n_generated": 14.8,
+      "time_mean": 2.08,
+      "time_std": 0.21,
+      "tokens_mean": 297.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [
+          "The Batman"
+        ],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    }
+  }
+}

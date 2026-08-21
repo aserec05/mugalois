@@ -1,0 +1,29 @@
+{
+  "query_id": "T3_q2",
+  "template": "T3",
+  "predicate": "UN Portuguese-speaking member countries \u2014 DG optimal",
+  "n_expected": 9,
+  "timestamp": "2026-08-21T17:29:55",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8445,
+      "recall_std": 0.0609,
+      "f1_mean": 0.9147,
+      "f1_std": 0.0363,
+      "n_runs": 5,
+      "n_generated": 7.6,
+      "time_mean": 8.6,
+      "time_std": 0.75,
+      "tokens_mean": 1022.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Timor-Leste"
+        ]
+      }
+    }
+  }
+}

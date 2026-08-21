@@ -1,0 +1,141 @@
+{
+  "query_id": "tau_T6_q7",
+  "template": "T6",
+  "predicate": "Einstein (married to | child studied at) ?b \u2014 forward simple + T4",
+  "n_expected": 4,
+  "timestamp": "2026-08-20T10:35:11",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.4555,
+      "precision_std": 0.0249,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6257,
+      "f1_std": 0.0229,
+      "n_runs": 5,
+      "n_generated": 8.8,
+      "time_mean": 4.17,
+      "time_std": 0.61,
+      "tokens_mean": 487.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Eduard Einstein",
+          "Hans Albert Einstein"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.4666,
+      "precision_std": 0.0305,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6359,
+      "f1_std": 0.0281,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 4.05,
+      "time_std": 0.7,
+      "tokens_mean": 487.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Hans Albert Einstein",
+          "Harvard University"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.4266,
+      "precision_std": 0.0243,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5978,
+      "f1_std": 0.0241,
+      "n_runs": 5,
+      "n_generated": 9.4,
+      "time_mean": 4.29,
+      "time_std": 0.35,
+      "tokens_mean": 490.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Hans Albert Einstein",
+          "Harvard University"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.4889,
+      "precision_std": 0.0249,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6564,
+      "f1_std": 0.0229,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 4.08,
+      "time_std": 0.37,
+      "tokens_mean": 485.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Hans Albert Einstein",
+          "Lieserl Einstein",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.5714,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 4.98,
+      "time_std": 0.5,
+      "tokens_mean": 628.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.6095,
+      "precision_std": 0.0522,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7564,
+      "f1_std": 0.0398,
+      "n_runs": 5,
+      "n_generated": 6.6,
+      "time_mean": 5.44,
+      "time_std": 0.94,
+      "tokens_mean": 626.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

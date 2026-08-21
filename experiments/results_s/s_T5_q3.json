@@ -1,0 +1,29 @@
+{
+  "query_id": "s_T5_q3",
+  "template": "T5",
+  "predicate": "?a p* ?b FILTER(?a) \u2014 forward closure, reflexive, seed fixed via FILTER on ?a",
+  "n_expected": 6,
+  "timestamp": "2026-08-20T09:42:48",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 3.83,
+      "time_std": 0.83,
+      "tokens_mean": 402.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

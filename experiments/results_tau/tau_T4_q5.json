@@ -1,0 +1,143 @@
+{
+  "query_id": "tau_T4_q5",
+  "template": "T4",
+  "predicate": "Nobel Prize in Literature laureates born in Asia \u2014 4-hop, medium cardinality",
+  "n_expected": 7,
+  "timestamp": "2026-08-19T10:51:53",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.8,
+      "precision_std": 0.1826,
+      "recall_mean": 0.5714,
+      "recall_std": 0.0,
+      "f1_mean": 0.6602,
+      "f1_std": 0.0613,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 3.17,
+      "time_std": 0.14,
+      "tokens_mean": 611.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Tawfiq al-Hakim",
+          "Yasushi Inoue"
+        ],
+        "fn": [
+          "Kazuo Ishiguro",
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.8,
+      "precision_std": 0.1826,
+      "recall_mean": 0.5714,
+      "recall_std": 0.0,
+      "f1_mean": 0.6602,
+      "f1_std": 0.0613,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 3.04,
+      "time_std": 0.3,
+      "tokens_mean": 613.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Kazuo Ishiguro",
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.9333,
+      "precision_std": 0.1491,
+      "recall_mean": 0.6,
+      "recall_std": 0.0639,
+      "f1_mean": 0.7261,
+      "f1_std": 0.0771,
+      "n_runs": 5,
+      "n_generated": 4.6,
+      "time_mean": 3.09,
+      "time_std": 0.24,
+      "tokens_mean": 610.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.8667,
+      "precision_std": 0.1826,
+      "recall_mean": 0.6,
+      "recall_std": 0.0639,
+      "f1_mean": 0.7037,
+      "f1_std": 0.0915,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 3.07,
+      "time_std": 0.34,
+      "tokens_mean": 611.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Kazuo Ishiguro",
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.25,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 4.35,
+      "time_std": 0.19,
+      "tokens_mean": 775.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kazuo Ishiguro",
+          "Kenzabur\u014d \u014ce"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.25,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 4.89,
+      "time_std": 0.21,
+      "tokens_mean": 775.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kazuo Ishiguro",
+          "Kenzabur\u014d \u014ce"
+        ]
+      }
+    }
+  }
+}

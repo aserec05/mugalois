@@ -1,0 +1,212 @@
+{
+  "T1q5": {
+    "none": {
+      "F1_mean": 0.373,
+      "F1_std": 0.013,
+      "R_mean": 0.238,
+      "R_std": 0.008,
+      "n_mean": 21.3,
+      "calls_mean": 1
+    },
+    "motivational": {
+      "F1_mean": 0.478,
+      "F1_std": 0.021,
+      "R_mean": 0.364,
+      "R_std": 0.034,
+      "n_mean": 40,
+      "calls_mean": 4.7
+    },
+    "alphabet": {
+      "F1_mean": 0.444,
+      "F1_std": 0.058,
+      "R_mean": 0.32,
+      "R_std": 0.067,
+      "n_mean": 33.3,
+      "calls_mean": 6.3
+    },
+    "mot+socratic": {
+      "F1_mean": 0.461,
+      "F1_std": 0.063,
+      "R_mean": 0.364,
+      "R_std": 0.103,
+      "n_mean": 43,
+      "calls_mean": 5
+    },
+    "contrast": {
+      "F1_mean": 0.433,
+      "F1_std": 0.057,
+      "R_mean": 0.299,
+      "R_std": 0.057,
+      "n_mean": 28.7,
+      "calls_mean": 3
+    }
+  },
+  "T2q2": {
+    "none": {
+      "F1_mean": 0.736,
+      "F1_std": 0.016,
+      "R_mean": 0.592,
+      "R_std": 0.02,
+      "n_mean": 35.3,
+      "calls_mean": 1
+    },
+    "motivational": {
+      "F1_mean": 0.421,
+      "F1_std": 0.103,
+      "R_mean": 0.667,
+      "R_std": 0.01,
+      "n_mean": 133.3,
+      "calls_mean": 6.3
+    },
+    "alphabet": {
+      "F1_mean": 0.295,
+      "F1_std": 0.017,
+      "R_mean": 0.632,
+      "R_std": 0.026,
+      "n_mean": 191,
+      "calls_mean": 7
+    },
+    "mot+socratic": {
+      "F1_mean": 0.457,
+      "F1_std": 0.018,
+      "R_mean": 0.649,
+      "R_std": 0.026,
+      "n_mean": 107,
+      "calls_mean": 7
+    },
+    "contrast": {
+      "F1_mean": 0.569,
+      "F1_std": 0.01,
+      "R_mean": 0.58,
+      "R_std": 0.01,
+      "n_mean": 60.3,
+      "calls_mean": 6.7
+    }
+  },
+  "T5q10": {
+    "none": {
+      "F1_mean": 0.274,
+      "F1_std": 0.423,
+      "R_mean": 0.219,
+      "R_std": 0.352,
+      "n_mean": 15.7,
+      "calls_mean": 1
+    },
+    "motivational": {
+      "F1_mean": 0.326,
+      "F1_std": 0.512,
+      "R_mean": 0.297,
+      "R_std": 0.487,
+      "n_mean": 20.7,
+      "calls_mean": 3.3
+    },
+    "alphabet": {
+      "F1_mean": 0.03,
+      "F1_std": 0.0,
+      "R_mean": 0.016,
+      "R_std": 0.0,
+      "n_mean": 3,
+      "calls_mean": 3
+    },
+    "mot+socratic": {
+      "F1_mean": 0.343,
+      "F1_std": 0.542,
+      "R_mean": 0.328,
+      "R_std": 0.541,
+      "n_mean": 22.7,
+      "calls_mean": 3.7
+    },
+    "contrast": {
+      "F1_mean": 0.03,
+      "F1_std": 0.0,
+      "R_mean": 0.016,
+      "R_std": 0.0,
+      "n_mean": 3,
+      "calls_mean": 3
+    }
+  },
+  "T2q5": {
+    "none": {
+      "F1_mean": 0.512,
+      "F1_std": 0.0,
+      "R_mean": 0.344,
+      "R_std": 0.0,
+      "n_mean": 31,
+      "calls_mean": 1
+    },
+    "motivational": {
+      "F1_mean": 0.532,
+      "F1_std": 0.013,
+      "R_mean": 0.83,
+      "R_std": 0.006,
+      "n_mean": 190.7,
+      "calls_mean": 6
+    },
+    "alphabet": {
+      "F1_mean": 0.69,
+      "F1_std": 0.008,
+      "R_mean": 0.556,
+      "R_std": 0.029,
+      "n_mean": 55,
+      "calls_mean": 7
+    },
+    "mot+socratic": {
+      "F1_mean": 0.527,
+      "F1_std": 0.012,
+      "R_mean": 0.83,
+      "R_std": 0.017,
+      "n_mean": 193.3,
+      "calls_mean": 7
+    },
+    "contrast": {
+      "F1_mean": 0.748,
+      "F1_std": 0.043,
+      "R_mean": 0.604,
+      "R_std": 0.064,
+      "n_mean": 55,
+      "calls_mean": 4.7
+    }
+  },
+  "T5q2": {
+    "none": {
+      "F1_mean": 0.543,
+      "F1_std": 0.09,
+      "R_mean": 0.376,
+      "R_std": 0.088,
+      "n_mean": 99.7,
+      "calls_mean": 1
+    },
+    "motivational": {
+      "F1_mean": 0.499,
+      "F1_std": 0.142,
+      "R_mean": 0.739,
+      "R_std": 0.228,
+      "n_mean": 598.3,
+      "calls_mean": 6
+    },
+    "alphabet": {
+      "F1_mean": 0.392,
+      "F1_std": 0.046,
+      "R_mean": 0.643,
+      "R_std": 0.072,
+      "n_mean": 609.3,
+      "calls_mean": 7
+    },
+    "mot+socratic": {
+      "F1_mean": 0.712,
+      "F1_std": 0.229,
+      "R_mean": 0.756,
+      "R_std": 0.065,
+      "n_mean": 335.7,
+      "calls_mean": 7
+    },
+    "contrast": {
+      "F1_mean": 0.563,
+      "F1_std": 0.044,
+      "R_mean": 0.393,
+      "R_std": 0.042,
+      "n_mean": 104,
+      "calls_mean": 3.3
+    }
+  }
+}

@@ -87,6 +87,7 @@ def LLMTripleScan(
         _vprint(verbose, f"[PROMPT]\n{prompt}")
 
         messages = [sys_msg, *ctx, {"role": "user", "content": prompt}]
+
         response = llm.chat(messages)
 
         _vprint(verbose, f"\n[RESPONSE RAW]\n{response.text}")

@@ -1,0 +1,139 @@
+{
+  "query_id": "q7",
+  "template": "T6-card",
+  "predicate": "Einstein (married to | child studied at) ?b \u2014 forward simple + T4",
+  "n_expected": 4,
+  "timestamp": "2026-07-31T13:36:34",
+  "results": {
+    "HolisticOnly": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.15,
+      "time_std": 0.48,
+      "tokens_mean": 105.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "ETH Zurich",
+          "University of Zurich"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 0.6095,
+      "precision_std": 0.0522,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7564,
+      "f1_std": 0.0398,
+      "n_runs": 5,
+      "n_generated": 6.6,
+      "time_mean": 3.87,
+      "time_std": 0.23,
+      "tokens_mean": 502.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Princeton University",
+          "University of Berlin"
+        ],
+        "fn": []
+      }
+    },
+    "Card\u226410": {
+      "precision_mean": 0.6286,
+      "precision_std": 0.0522,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7709,
+      "f1_std": 0.0398,
+      "n_runs": 5,
+      "n_generated": 6.4,
+      "time_mean": 4.22,
+      "time_std": 0.46,
+      "tokens_mean": 436.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    },
+    "Card\u226415": {
+      "precision_mean": 0.5905,
+      "precision_std": 0.0426,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7418,
+      "f1_std": 0.0325,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 4.38,
+      "time_std": 0.35,
+      "tokens_mean": 438.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    },
+    "Card\u226420": {
+      "precision_mean": 0.5905,
+      "precision_std": 0.0426,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7418,
+      "f1_std": 0.0325,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 4.19,
+      "time_std": 0.17,
+      "tokens_mean": 438.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 0.5905,
+      "precision_std": 0.0426,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7418,
+      "f1_std": 0.0325,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 6.43,
+      "time_std": 0.7,
+      "tokens_mean": 683.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "California Institute of Technology",
+          "Harvard University",
+          "Princeton University"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

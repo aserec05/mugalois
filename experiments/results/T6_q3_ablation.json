@@ -1,0 +1,217 @@
+{
+  "query_id": "T6_q3",
+  "template": "T6",
+  "predicate": "Marie Curie field | employer | member of | degree \u2014 4 branches, high cardinality",
+  "n_expected": 23,
+  "timestamp": "2026-08-12T16:09:23",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.2609,
+      "recall_std": 0.0,
+      "f1_mean": 0.3429,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 1.91,
+      "time_std": 0.12,
+      "tokens_mean": 167.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Doctor of Science (D.Sc.) from the University of Paris",
+          "Member of the American Academy of Arts and Sciences",
+          "Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.4808,
+      "precision_std": 0.0282,
+      "recall_mean": 0.3304,
+      "recall_std": 0.0238,
+      "f1_mean": 0.3917,
+      "f1_std": 0.0257,
+      "n_runs": 5,
+      "n_generated": 15.8,
+      "time_mean": 2.29,
+      "time_std": 0.28,
+      "tokens_mean": 198.0,
+      "tokens_std": 15.0,
+      "examples": {
+        "fp": [
+          "Chemistry",
+          "Doctor of Science",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.7317,
+      "precision_std": 0.0685,
+      "recall_mean": 0.2869,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4119,
+      "f1_std": 0.0502,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.65,
+      "time_std": 0.22,
+      "tokens_mean": 163.0,
+      "tokens_std": 16.0,
+      "examples": {
+        "fp": [
+          ":Chemistry",
+          ":Physics",
+          ":University_of_Paris"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.621,
+      "precision_std": 0.0744,
+      "recall_mean": 0.3043,
+      "recall_std": 0.0,
+      "f1_mean": 0.4075,
+      "f1_std": 0.0159,
+      "n_runs": 5,
+      "n_generated": 11.4,
+      "time_mean": 1.48,
+      "time_std": 0.13,
+      "tokens_mean": 177.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "Chemistry",
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.5688,
+      "precision_std": 0.1256,
+      "recall_mean": 0.3739,
+      "recall_std": 0.0496,
+      "f1_mean": 0.4498,
+      "f1_std": 0.0719,
+      "n_runs": 5,
+      "n_generated": 15.4,
+      "time_mean": 8.28,
+      "time_std": 0.86,
+      "tokens_mean": 1149.0,
+      "tokens_std": 20.0,
+      "examples": {
+        "fp": [
+          "Bachelor of Science",
+          "DSc",
+          "Doctor of Science"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.5475,
+      "precision_std": 0.02,
+      "recall_mean": 0.3043,
+      "recall_std": 0.0,
+      "f1_mean": 0.3911,
+      "f1_std": 0.005,
+      "n_runs": 5,
+      "n_generated": 12.8,
+      "time_mean": 2.57,
+      "time_std": 0.27,
+      "tokens_mean": 318.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Chemistry",
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.6673,
+      "precision_std": 0.0466,
+      "recall_mean": 0.3217,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4316,
+      "f1_std": 0.0241,
+      "n_runs": 5,
+      "n_generated": 11.2,
+      "time_mean": 5.55,
+      "time_std": 0.34,
+      "tokens_mean": 636.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [
+          "Chemistry",
+          "Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.6677,
+      "precision_std": 0.0722,
+      "recall_mean": 0.3043,
+      "recall_std": 0.0,
+      "f1_mean": 0.4171,
+      "f1_std": 0.0158,
+      "n_runs": 5,
+      "n_generated": 10.6,
+      "time_mean": 5.12,
+      "time_std": 0.32,
+      "tokens_mean": 633.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "Chemistry",
+          "Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    }
+  }
+}

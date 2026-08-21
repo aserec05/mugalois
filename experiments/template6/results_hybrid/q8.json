@@ -1,0 +1,119 @@
+{
+  "query_id": "q8",
+  "template": "T6-hybrid",
+  "predicate": "?b (won | hosted) FIFA World Cup \u2014 backward, 2 simple branches",
+  "n_expected": 20,
+  "timestamp": "2026-08-09T17:22:05",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.0,
+      "time_std": 0.11,
+      "tokens_mean": 76.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 1.62,
+      "time_std": 0.05,
+      "tokens_mean": 172.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Argentina",
+          "Brazil",
+          "Canada"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.94,
+      "time_std": 0.31,
+      "tokens_mean": 600.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "HolisticOnly": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.02,
+      "time_std": 0.13,
+      "tokens_mean": 128.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 5.79,
+      "time_std": 0.66,
+      "tokens_mean": 866.0,
+      "tokens_std": 6.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    }
+  }
+}

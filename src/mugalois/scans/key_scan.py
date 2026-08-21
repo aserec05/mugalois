@@ -22,6 +22,8 @@ def LLMKeyScan(
     llm:               BaseLLM,
     inject_conds:      list[AnyCondition] = None,
     post_filter_conds: list[AnyCondition] = None,
+    motivational:      bool = False,
+    lookahead:         str = "",
 ) -> set[Triple]:
     """
     KeyScan with pre-split conditions.
@@ -64,16 +66,17 @@ def LLMKeyScan(
             )
             prompt   = genCheckPrompt((triple.s, triple.p, triple.o),
                                       conditions=inject_conds)
+
+            prompt += f"\n\n{lookahead}" if lookahead else ""
             response = llm.chat(build_messages(prompt))
             if response.text.strip().lower().startswith("yes"):
                 T.add(triple)
         else:
             # one-to-many crank
-            prompt   = genKeyCrankPrompt(pattern, env, k, direction,
-                                         conditions=inject_conds)
+            prompt   = genKeyCrankPrompt(pattern, env, k, direction, conditions=inject_conds)
+            prompt += f"\n\n{lookahead}" if lookahead else ""
             response = llm.chat(build_messages(prompt))
             T = T | json_to_triples(response.text)
-
     T = post_filter(T, post_filter_conds, pattern)
     updateEnv(env, T, pattern.s, pattern.o)
     return T

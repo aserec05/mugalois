@@ -1,0 +1,97 @@
+{
+  "query_id": "q2",
+  "template": "T5-ablation",
+  "predicate": "came immediately before",
+  "n_expected": 264,
+  "timestamp": "2026-06-30T14:17:48",
+  "results": {
+    "A_baseline": {
+      "precision_mean": 0.8381,
+      "precision_std": 0.3548,
+      "recall_mean": 0.2682,
+      "recall_std": 0.0509,
+      "f1_mean": 0.3687,
+      "f1_std": 0.0692,
+      "n_runs": 5,
+      "n_generated": 143,
+      "time_mean": 21.63,
+      "time_std": 32.88,
+      "tokens_mean": 1443.0,
+      "tokens_std": 2140.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "B_motivational_only": {
+      "precision_mean": 0.9972,
+      "precision_std": 0.0063,
+      "recall_mean": 0.3,
+      "recall_std": 0.0665,
+      "f1_mean": 0.4581,
+      "f1_std": 0.0781,
+      "n_runs": 5,
+      "n_generated": 79.4,
+      "time_mean": 58.38,
+      "time_std": 106.65,
+      "tokens_mean": 4348.0,
+      "tokens_std": 6902.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "C_cap_only": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2818,
+      "recall_std": 0.0407,
+      "f1_mean": 0.4384,
+      "f1_std": 0.05,
+      "n_runs": 5,
+      "n_generated": 74.4,
+      "time_mean": 7.51,
+      "time_std": 1.15,
+      "tokens_mean": 546.0,
+      "tokens_std": 43.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    },
+    "D_motivational_capped": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2886,
+      "recall_std": 0.0513,
+      "f1_mean": 0.4461,
+      "f1_std": 0.059,
+      "n_runs": 5,
+      "n_generated": 76.2,
+      "time_mean": 12.81,
+      "time_std": 4.22,
+      "tokens_mean": 1310.0,
+      "tokens_std": 222.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    }
+  }
+}

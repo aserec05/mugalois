@@ -1,0 +1,31 @@
+{
+  "query_id": "T5_q5",
+  "template": "T5",
+  "predicate": "All successors of Pius IX (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, 12 hops",
+  "n_expected": 12,
+  "timestamp": "2026-08-21T17:36:35",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.93,
+      "time_std": 0.17,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

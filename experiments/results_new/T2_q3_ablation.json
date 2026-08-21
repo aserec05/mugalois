@@ -1,0 +1,33 @@
+{
+  "query_id": "T2_q3",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 17,
+  "timestamp": "2026-08-21T16:54:54",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 0.8533,
+      "precision_std": 0.0487,
+      "recall_mean": 0.4706,
+      "recall_std": 0.0,
+      "f1_mean": 0.6063,
+      "f1_std": 0.0125,
+      "n_runs": 5,
+      "n_generated": 9.4,
+      "time_mean": 5.51,
+      "time_std": 0.53,
+      "tokens_mean": 524.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Electronic"
+        ],
+        "fn": [
+          "Britpop",
+          "art pop",
+          "beat music"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "query_id": "rq3_T1_q1",
+  "template": "T1",
+  "predicate": "Who were Albert Einstein's spouses? List as many as you know.",
+  "n_expected": 2,
+  "timestamp": "2026-08-20T23:15:28",
+  "results": {
+    "Closure_none": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "Closure_motivational": {
+      "precision_mean": 0.0308,
+      "precision_std": 0.0084,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0597,
+      "f1_std": 0.0157,
+      "n_runs": 5,
+      "n_generated": 68,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [
+          "1875",
+          "1876",
+          "1879"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_forced": {
+      "precision_mean": 0.0377,
+      "precision_std": 0.0169,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0722,
+      "f1_std": 0.0313,
+      "n_runs": 5,
+      "n_generated": 63.6,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [
+          "1875",
+          "1876",
+          "1902"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_contrast": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "Closure_alphabet": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "Closure_socratic": {
+      "precision_mean": 0.5667,
+      "precision_std": 0.0913,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.72,
+      "f1_std": 0.073,
+      "n_runs": 5,
+      "n_generated": 3.6,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [
+          "Margaret L. L. Einstein"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_coach": {
+      "precision_mean": 0.6376,
+      "precision_std": 0.4964,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6686,
+      "f1_std": 0.4543,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [
+          "Ann Druyan",
+          "Anny E. Schr\u00f6dinger",
+          "Arline Greenbaum"
+        ],
+        "fn": []
+      }
+    },
+    "Closure_telephone": {
+      "precision_mean": 0.0998,
+      "precision_std": 0.0105,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.1814,
+      "f1_std": 0.0171,
+      "n_runs": 5,
+      "n_generated": 20.2,
+      "time_mean": 96.35,
+      "time_std": 16.65,
+      "tokens_mean": 101334.0,
+      "tokens_std": 21372.0,
+      "examples": {
+        "fp": [
+          "Anne Tesla",
+          "Catherine Barton",
+          "Catherine Maxwell"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

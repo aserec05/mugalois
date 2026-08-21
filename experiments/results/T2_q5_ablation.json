@@ -1,0 +1,207 @@
+{
+  "query_id": "T2_q5",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 90,
+  "timestamp": "2026-08-16T13:46:05",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6158,
+      "precision_std": 0.0549,
+      "recall_mean": 0.9178,
+      "recall_std": 0.0186,
+      "f1_mean": 0.7358,
+      "f1_std": 0.0388,
+      "n_runs": 5,
+      "n_generated": 135,
+      "time_mean": 27.62,
+      "time_std": 52.62,
+      "tokens_mean": 3622.0,
+      "tokens_std": 6964.0,
+      "examples": {
+        "fp": [
+          "Albania",
+          "Antigua and Barbuda",
+          "Australia"
+        ],
+        "fn": [
+          "Azerbaijan",
+          "Benin",
+          "Chad"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.6833,
+      "precision_std": 0.1809,
+      "recall_mean": 0.8067,
+      "recall_std": 0.247,
+      "f1_mean": 0.6912,
+      "f1_std": 0.112,
+      "n_runs": 5,
+      "n_generated": 117,
+      "time_mean": 28.77,
+      "time_std": 55.37,
+      "tokens_mean": 3624.0,
+      "tokens_std": 6970.0,
+      "examples": {
+        "fp": [
+          "Australia",
+          "Belarus",
+          "Bulgaria"
+        ],
+        "fn": [
+          "Azerbaijan",
+          "Benin",
+          "Burundi"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.5698,
+      "precision_std": 0.0322,
+      "recall_mean": 0.9155,
+      "recall_std": 0.0168,
+      "f1_mean": 0.702,
+      "f1_std": 0.0253,
+      "n_runs": 5,
+      "n_generated": 145,
+      "time_mean": 50.59,
+      "time_std": 62.3,
+      "tokens_mean": 6834.0,
+      "tokens_std": 8444.0,
+      "examples": {
+        "fp": [
+          "Albania",
+          "Antigua and Barbuda",
+          "Armenia"
+        ],
+        "fn": [
+          "Azerbaijan",
+          "Chad",
+          "Democratic Republic of the Congo"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1378,
+      "recall_std": 0.0217,
+      "f1_mean": 0.2417,
+      "f1_std": 0.0332,
+      "n_runs": 5,
+      "n_generated": 12.4,
+      "time_mean": 3.2,
+      "time_std": 0.51,
+      "tokens_mean": 799.0,
+      "tokens_std": 59.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Afghanistan",
+          "Algeria",
+          "Angola"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.9478,
+      "precision_std": 0.0738,
+      "recall_mean": 0.5911,
+      "recall_std": 0.0546,
+      "f1_mean": 0.724,
+      "f1_std": 0.0128,
+      "n_runs": 5,
+      "n_generated": 56.8,
+      "time_mean": 7.99,
+      "time_std": 1.4,
+      "tokens_mean": 2526.0,
+      "tokens_std": 443.0,
+      "examples": {
+        "fp": [
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.8471,
+      "precision_std": 0.1496,
+      "recall_mean": 0.6956,
+      "recall_std": 0.1544,
+      "f1_mean": 0.7405,
+      "f1_std": 0.0229,
+      "n_runs": 5,
+      "n_generated": 78.6,
+      "time_mean": 10.86,
+      "time_std": 4.86,
+      "tokens_mean": 3440.0,
+      "tokens_std": 1429.0,
+      "examples": {
+        "fp": [
+          "Bosnia and Herzegovina",
+          "Bulgaria",
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.9402,
+      "precision_std": 0.0908,
+      "recall_mean": 0.5934,
+      "recall_std": 0.0596,
+      "f1_mean": 0.722,
+      "f1_std": 0.0083,
+      "n_runs": 5,
+      "n_generated": 57.8,
+      "time_mean": 8.55,
+      "time_std": 1.66,
+      "tokens_mean": 2571.0,
+      "tokens_std": 542.0,
+      "examples": {
+        "fp": [
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.8675,
+      "precision_std": 0.1435,
+      "recall_mean": 0.6911,
+      "recall_std": 0.1542,
+      "f1_mean": 0.7465,
+      "f1_std": 0.0264,
+      "n_runs": 5,
+      "n_generated": 76.2,
+      "time_mean": 9.88,
+      "time_std": 4.09,
+      "tokens_mean": 3336.0,
+      "tokens_std": 1422.0,
+      "examples": {
+        "fp": [
+          "DR Congo"
+        ],
+        "fn": [
+          "Australia",
+          "Azerbaijan",
+          "Belgium"
+        ]
+      }
+    }
+  }
+}

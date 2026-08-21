@@ -1,0 +1,35 @@
+{
+  "query_id": "q8",
+  "template": "T5",
+  "predicate": "came immediately before",
+  "n_expected": 9,
+  "timestamp": "2026-07-29T16:38:25",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 3.76,
+      "time_std": 0.19,
+      "tokens_mean": 433.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope Sixtus I",
+          "Pope Soter",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Linus"
+        ]
+      }
+    }
+  }
+}

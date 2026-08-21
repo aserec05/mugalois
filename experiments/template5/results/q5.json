@@ -1,0 +1,31 @@
+{
+  "query_id": "q5",
+  "template": "T5",
+  "predicate": "came immediately before",
+  "n_expected": 12,
+  "timestamp": "2026-07-29T16:37:34",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.9167,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 3.98,
+      "time_std": 0.32,
+      "tokens_mean": 448.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Paul VI"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

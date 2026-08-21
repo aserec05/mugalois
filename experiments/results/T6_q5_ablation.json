@@ -1,0 +1,182 @@
+{
+  "query_id": "T6_q5",
+  "template": "T6",
+  "predicate": "Einstein spouse | sibling | child | father | mother \u2014 5 branches, medium cardinality",
+  "n_expected": 8,
+  "timestamp": "2026-08-12T16:19:43",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 1.8,
+      "time_std": 0.29,
+      "tokens_mean": 153.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.8445,
+      "precision_std": 0.0609,
+      "recall_mean": 0.95,
+      "recall_std": 0.0685,
+      "f1_mean": 0.8941,
+      "f1_std": 0.0645,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.7,
+      "time_std": 0.18,
+      "tokens_mean": 152.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Jakob Einstein"
+        ],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.8666,
+      "precision_std": 0.0746,
+      "recall_mean": 0.675,
+      "recall_std": 0.1118,
+      "f1_mean": 0.7581,
+      "f1_std": 0.0979,
+      "n_runs": 5,
+      "n_generated": 6.2,
+      "time_mean": 1.53,
+      "time_std": 0.27,
+      "tokens_mean": 139.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pauline_Einstein"
+        ],
+        "fn": [
+          "Eduard Einstein",
+          "Maja Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9095,
+      "precision_std": 0.0832,
+      "recall_mean": 0.75,
+      "recall_std": 0.0884,
+      "f1_mean": 0.8209,
+      "f1_std": 0.0809,
+      "n_runs": 5,
+      "n_generated": 6.6,
+      "time_mean": 1.14,
+      "time_std": 0.16,
+      "tokens_mean": 171.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pauline Einstein"
+        ],
+        "fn": [
+          "Maja Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0685,
+      "f1_mean": 0.7077,
+      "f1_std": 0.0561,
+      "n_runs": 5,
+      "n_generated": 4.4,
+      "time_mean": 12.53,
+      "time_std": 10.33,
+      "tokens_mean": 1109.0,
+      "tokens_std": 71.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Lieserl Einstein",
+          "Maja Einstein"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.625,
+      "recall_std": 0.0884,
+      "f1_mean": 0.7663,
+      "f1_std": 0.0674,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 9.1,
+      "time_std": 1.06,
+      "tokens_mean": 1291.0,
+      "tokens_std": 118.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Lieserl Einstein",
+          "Maja Einstein"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.65,
+      "recall_std": 0.1369,
+      "f1_mean": 0.7815,
+      "f1_std": 0.0958,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 9.24,
+      "time_std": 3.16,
+      "tokens_mean": 1223.0,
+      "tokens_std": 340.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Lieserl Einstein",
+          "Maja Einstein"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.9714,
+      "precision_std": 0.0639,
+      "recall_mean": 0.625,
+      "recall_std": 0.0884,
+      "f1_mean": 0.7549,
+      "f1_std": 0.0511,
+      "n_runs": 5,
+      "n_generated": 5.2,
+      "time_mean": 8.59,
+      "time_std": 2.52,
+      "tokens_mean": 1189.0,
+      "tokens_std": 320.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Lieserl Einstein",
+          "Maja Einstein",
+          "Pauline Koch"
+        ]
+      }
+    }
+  }
+}

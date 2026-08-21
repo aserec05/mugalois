@@ -1,0 +1,242 @@
+{
+  "query_id": "q5",
+  "template": "T6",
+  "predicate": "is the spouse of Albert Einstein | is the sibling of Albert Einstein | is the child of Albert Einstein | is the father of Albert Einstein | is the mother of Albert Einstein",
+  "n_expected": 8,
+  "timestamp": "2026-07-30T12:16:49",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.96,
+      "precision_std": 0.0894,
+      "recall_mean": 0.6,
+      "recall_std": 0.0559,
+      "f1_mean": 0.7384,
+      "f1_std": 0.0688,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.21,
+      "time_std": 0.09,
+      "tokens_mean": 105.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Siblings: Maria Einstein, Jakob Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Hans Albert Einstein",
+          "Hermann Einstein"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 2.07,
+      "time_std": 0.27,
+      "tokens_mean": 164.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eduard Einstein",
+          "Elsa Einstein",
+          "Hans Albert Einstein"
+        ]
+      }
+    },
+    "UnionBranches": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.875,
+      "recall_std": 0.0,
+      "f1_mean": 0.9333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 4.68,
+      "time_std": 0.41,
+      "tokens_mean": 488.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "Encoding_list": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6154,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.0,
+      "time_std": 0.14,
+      "tokens_mean": 164.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pauline Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Hermann Einstein",
+          "Maja Einstein"
+        ]
+      }
+    },
+    "Encoding_OR": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0568,
+      "recall_mean": 0.65,
+      "recall_std": 0.0559,
+      "f1_mean": 0.7219,
+      "f1_std": 0.0483,
+      "n_runs": 5,
+      "n_generated": 6.4,
+      "time_mean": 1.04,
+      "time_std": 0.07,
+      "tokens_mean": 153.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pauline Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "Encoding_natural": {
+      "precision_mean": 0.5763,
+      "precision_std": 0.3085,
+      "recall_mean": 0.525,
+      "recall_std": 0.2236,
+      "f1_mean": 0.5415,
+      "f1_std": 0.2799,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 2.8,
+      "time_std": 0.73,
+      "tokens_mean": 330.0,
+      "tokens_std": 58.0,
+      "examples": {
+        "fp": [
+          "Brian Greene",
+          "C. N. Yang",
+          "David Bohm"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Hans Albert Einstein",
+          "Hermann Einstein"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_high": {
+      "precision_mean": 0.9167,
+      "precision_std": 0.1179,
+      "recall_mean": 0.65,
+      "recall_std": 0.0559,
+      "f1_mean": 0.7544,
+      "f1_std": 0.0239,
+      "n_runs": 5,
+      "n_generated": 5.8,
+      "time_mean": 6.57,
+      "time_std": 3.69,
+      "tokens_mean": 935.0,
+      "tokens_std": 488.0,
+      "examples": {
+        "fp": [
+          "Pauline Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Maja Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_mid": {
+      "precision_mean": 0.7964,
+      "precision_std": 0.0964,
+      "recall_mean": 0.65,
+      "recall_std": 0.0559,
+      "f1_mean": 0.7136,
+      "f1_std": 0.0619,
+      "n_runs": 5,
+      "n_generated": 6.6,
+      "time_mean": 2.51,
+      "time_std": 0.91,
+      "tokens_mean": 384.0,
+      "tokens_std": 109.0,
+      "examples": {
+        "fp": [
+          "Pauline Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Maja Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_low": {
+      "precision_mean": 0.8571,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 7,
+      "time_mean": 2.78,
+      "time_std": 1.12,
+      "tokens_mean": 385.0,
+      "tokens_std": 108.0,
+      "examples": {
+        "fp": [
+          "Hermann Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Pauline Koch"
+        ]
+      }
+    },
+    "MuGaloisChoice": {
+      "precision_mean": 0.8262,
+      "precision_std": 0.0442,
+      "recall_mean": 0.7,
+      "recall_std": 0.0685,
+      "f1_mean": 0.7557,
+      "f1_std": 0.043,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 3.59,
+      "time_std": 0.31,
+      "tokens_mean": 502.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Hermann Einstein"
+        ],
+        "fn": [
+          "Elsa Einstein",
+          "Pauline Koch"
+        ]
+      }
+    }
+  }
+}

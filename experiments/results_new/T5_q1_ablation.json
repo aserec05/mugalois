@@ -1,0 +1,32 @@
+{
+  "query_id": "T5_q1",
+  "template": "T5",
+  "predicate": "All successors of Pius XII (forward transitive closure, irreflexive)",
+  "n_expected": 7,
+  "timestamp": "2026-08-21T17:35:24",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.8143,
+      "precision_std": 0.0587,
+      "recall_mean": 0.8571,
+      "recall_std": 0.0,
+      "f1_mean": 0.8343,
+      "f1_std": 0.0313,
+      "n_runs": 5,
+      "n_generated": 7.4,
+      "time_mean": 4.05,
+      "time_std": 0.47,
+      "tokens_mean": 423.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Pope Pius XI",
+          "Pope Pius XII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

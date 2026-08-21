@@ -1,0 +1,33 @@
+{
+  "query_id": "q10",
+  "template": "T5",
+  "predicate": "is a subclass of",
+  "n_expected": 64,
+  "timestamp": "2026-07-29T16:39:08",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.9819,
+      "precision_std": 0.0007,
+      "recall_mean": 0.85,
+      "recall_std": 0.0342,
+      "f1_mean": 0.911,
+      "f1_std": 0.0197,
+      "n_runs": 5,
+      "n_generated": 55.4,
+      "time_mean": 5.06,
+      "time_std": 0.29,
+      "tokens_mean": 565.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Exception"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "ConnectionAbortedError"
+        ]
+      }
+    }
+  }
+}

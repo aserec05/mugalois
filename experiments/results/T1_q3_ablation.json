@@ -1,0 +1,155 @@
+{
+  "query_id": "T1_q3",
+  "template": "T1",
+  "predicate": "",
+  "n_expected": 1,
+  "timestamp": "2026-08-16T13:28:10",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 0.86,
+      "time_std": 0.06,
+      "tokens_mean": 80.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 0.92,
+      "time_std": 0.12,
+      "tokens_mean": 88.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 0.86,
+      "time_std": 0.07,
+      "tokens_mean": 91.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.68,
+      "time_std": 0.17,
+      "tokens_mean": 515.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Mileva Mari\u0107"
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 1.21,
+      "time_std": 0.34,
+      "tokens_mean": 139.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 1.86,
+      "time_std": 0.18,
+      "tokens_mean": 242.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 1.83,
+      "time_std": 0.33,
+      "tokens_mean": 242.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 1.97,
+      "time_std": 0.13,
+      "tokens_mean": 242.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

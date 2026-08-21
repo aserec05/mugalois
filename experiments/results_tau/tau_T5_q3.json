@@ -1,0 +1,129 @@
+{
+  "query_id": "tau_T5_q3",
+  "template": "T5",
+  "predicate": "?a p* ?b FILTER(?a) \u2014 forward closure, reflexive, seed fixed via FILTER on ?a",
+  "n_expected": 6,
+  "timestamp": "2026-08-20T10:15:09",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 5.69,
+      "time_std": 4.31,
+      "tokens_mean": 721.0,
+      "tokens_std": 621.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 5.83,
+      "time_std": 4.75,
+      "tokens_mean": 719.0,
+      "tokens_std": 615.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 9.76,
+      "time_std": 4.39,
+      "tokens_mean": 1178.0,
+      "tokens_std": 509.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7666,
+      "recall_std": 0.1491,
+      "f1_mean": 0.8606,
+      "f1_std": 0.1084,
+      "n_runs": 5,
+      "n_generated": 4.6,
+      "time_mean": 7.6,
+      "time_std": 4.95,
+      "tokens_mean": 951.0,
+      "tokens_std": 628.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 10.32,
+      "time_std": 0.81,
+      "tokens_mean": 1402.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.9091,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 10.71,
+      "time_std": 0.85,
+      "tokens_mean": 1406.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

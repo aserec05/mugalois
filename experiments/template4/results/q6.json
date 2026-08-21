@@ -1,0 +1,157 @@
+{
+  "query_id": "q6",
+  "template": "T4",
+  "predicate": "has member/is located in continent/has name",
+  "n_expected": 12,
+  "timestamp": "2026-07-06T15:33:08",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.6933,
+      "precision_std": 0.0149,
+      "recall_mean": 0.5666,
+      "recall_std": 0.0373,
+      "f1_mean": 0.6234,
+      "f1_std": 0.0291,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 1.55,
+      "time_std": 0.38,
+      "tokens_mean": 98.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Democratic Republic of the Congo",
+          "Egypt",
+          "Ethiopia"
+        ],
+        "fn": [
+          "Cameroon",
+          "Malawi",
+          "Uganda"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.7,
+      "precision_std": 0.0,
+      "recall_mean": 0.5833,
+      "recall_std": 0.0,
+      "f1_mean": 0.6364,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.39,
+      "time_std": 0.24,
+      "tokens_mean": 112.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Democratic Republic of the Congo",
+          "Egypt",
+          "Ethiopia"
+        ],
+        "fn": [
+          "Cameroon",
+          "Malawi",
+          "Uganda"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.12,
+      "precision_std": 0.2683,
+      "recall_mean": 0.1,
+      "recall_std": 0.2236,
+      "f1_mean": 0.1091,
+      "f1_std": 0.244,
+      "n_runs": 5,
+      "n_generated": 2.8,
+      "time_mean": 1.0,
+      "time_std": 0.21,
+      "tokens_mean": 126.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [
+          "..."
+        ],
+        "fn": [
+          "Cameroon",
+          "Ghana",
+          "Kenya"
+        ]
+      }
+    },
+    "LLMMultiHopScan": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.4167,
+      "recall_std": 0.0,
+      "f1_mean": 0.4545,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 2.29,
+      "time_std": 0.25,
+      "tokens_mean": 423.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Democratic Republic of the Congo",
+          "Egypt",
+          "Ethiopia"
+        ],
+        "fn": [
+          "Cameroon",
+          "Ghana",
+          "Malawi"
+        ]
+      }
+    },
+    "LLMChainScan": {
+      "precision_mean": 0.6471,
+      "precision_std": 0.0,
+      "recall_mean": 0.9167,
+      "recall_std": 0.0,
+      "f1_mean": 0.7586,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 17,
+      "time_mean": 8.67,
+      "time_std": 0.89,
+      "tokens_mean": 1359.0,
+      "tokens_std": 42.0,
+      "examples": {
+        "fp": [
+          "Botswana",
+          "Lesotho",
+          "Mauritius"
+        ],
+        "fn": [
+          "Zimbabwe"
+        ]
+      }
+    },
+    "MuGaloisMultiPath": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.3167,
+      "recall_std": 0.2458,
+      "f1_mean": 0.4457,
+      "f1_std": 0.237,
+      "n_runs": 5,
+      "n_generated": 3.8,
+      "time_mean": 3.64,
+      "time_std": 1.16,
+      "tokens_mean": 522.0,
+      "tokens_std": 44.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cameroon",
+          "Ghana",
+          "Kenya"
+        ]
+      }
+    }
+  }
+}

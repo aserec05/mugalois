@@ -1,0 +1,207 @@
+{
+  "query_id": "T1_q5",
+  "template": "T1",
+  "predicate": "",
+  "n_expected": 77,
+  "timestamp": "2026-08-16T13:30:20",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.7441,
+      "precision_std": 0.0841,
+      "recall_mean": 0.3169,
+      "recall_std": 0.0269,
+      "f1_mean": 0.4426,
+      "f1_std": 0.0269,
+      "n_runs": 5,
+      "n_generated": 33.2,
+      "time_mean": 4.79,
+      "time_std": 2.02,
+      "tokens_mean": 570.0,
+      "tokens_std": 207.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "David P. Anderson",
+          "Francois Barre-Sinoussi"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.7393,
+      "precision_std": 0.0778,
+      "recall_mean": 0.2805,
+      "recall_std": 0.0116,
+      "f1_mean": 0.4053,
+      "f1_std": 0.0035,
+      "n_runs": 5,
+      "n_generated": 29.6,
+      "time_mean": 5.69,
+      "time_std": 1.08,
+      "tokens_mean": 753.0,
+      "tokens_std": 109.0,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Francois Barre-Sinoussi",
+          "John H. Holland"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.8217,
+      "precision_std": 0.0575,
+      "recall_mean": 0.148,
+      "recall_std": 0.0253,
+      "f1_mean": 0.2506,
+      "f1_std": 0.0389,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 1.41,
+      "time_std": 0.15,
+      "tokens_mean": 156.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Alan Turing",
+          "Geoffrey Hinton",
+          "John Hopcroft"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9236,
+      "precision_std": 0.1048,
+      "recall_mean": 0.0831,
+      "recall_std": 0.0253,
+      "f1_mean": 0.1509,
+      "f1_std": 0.0402,
+      "n_runs": 5,
+      "n_generated": 7.2,
+      "time_mean": 2.79,
+      "time_std": 0.61,
+      "tokens_mean": 728.0,
+      "tokens_std": 124.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.9074,
+      "precision_std": 0.091,
+      "recall_mean": 0.1585,
+      "recall_std": 0.0523,
+      "f1_mean": 0.2662,
+      "f1_std": 0.0736,
+      "n_runs": 5,
+      "n_generated": 13.6,
+      "time_mean": 2.8,
+      "time_std": 0.79,
+      "tokens_mean": 375.0,
+      "tokens_std": 99.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.8131,
+      "precision_std": 0.0879,
+      "recall_mean": 0.2416,
+      "recall_std": 0.0313,
+      "f1_mean": 0.3704,
+      "f1_std": 0.0338,
+      "n_runs": 5,
+      "n_generated": 23.2,
+      "time_mean": 2.87,
+      "time_std": 0.5,
+      "tokens_mean": 578.0,
+      "tokens_std": 85.0,
+      "examples": {
+        "fp": [
+          "Alonzo Church",
+          "Geoffrey Hinton",
+          "Jeff Dean"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.8218,
+      "precision_std": 0.0218,
+      "recall_mean": 0.2494,
+      "recall_std": 0.0415,
+      "f1_mean": 0.3809,
+      "f1_std": 0.0468,
+      "n_runs": 5,
+      "n_generated": 23.4,
+      "time_mean": 2.91,
+      "time_std": 0.65,
+      "tokens_mean": 604.0,
+      "tokens_std": 118.0,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton",
+          "John Hopcroft",
+          "Peter Norvig"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.8611,
+      "precision_std": 0.0457,
+      "recall_mean": 0.2442,
+      "recall_std": 0.0404,
+      "f1_mean": 0.3781,
+      "f1_std": 0.0458,
+      "n_runs": 5,
+      "n_generated": 22,
+      "time_mean": 3.1,
+      "time_std": 0.52,
+      "tokens_mean": 658.0,
+      "tokens_std": 170.0,
+      "examples": {
+        "fp": [
+          "Geoffrey Hinton"
+        ],
+        "fn": [
+          "Adi Shamir",
+          "Alan Kay",
+          "Alan Perlis"
+        ]
+      }
+    }
+  }
+}

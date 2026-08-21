@@ -1,0 +1,30 @@
+{
+  "query_id": "T6_q10",
+  "template": "T6",
+  "predicate": "Einstein (married to | had child | sibling studied at) ?b \u2014 forward, 2 simple + 1 T4",
+  "n_expected": 6,
+  "timestamp": "2026-08-21T17:48:05",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 5.11,
+      "time_std": 0.84,
+      "tokens_mean": 559.0,
+      "tokens_std": 122.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Lieserl Einstein",
+          "University of Zurich"
+        ]
+      }
+    }
+  }
+}

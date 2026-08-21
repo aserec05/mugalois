@@ -1,0 +1,33 @@
+{
+  "query_id": "s_T5_q10",
+  "template": "T5",
+  "predicate": "All subclasses of BaseException in Python 3 (forward transitive closure, irreflexive) \u2014 HIGH CARDINALITY, multi-branch DAG, source: Python 3 official docs",
+  "n_expected": 64,
+  "timestamp": "2026-08-20T09:42:20",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.9814,
+      "precision_std": 0.0004,
+      "recall_mean": 0.825,
+      "recall_std": 0.0171,
+      "f1_mean": 0.8964,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 53.8,
+      "time_mean": 5.27,
+      "time_std": 0.44,
+      "tokens_mean": 547.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "BaseException"
+        ],
+        "fn": [
+          "AssertionError",
+          "BrokenPipeError",
+          "BytesWarning"
+        ]
+      }
+    }
+  }
+}

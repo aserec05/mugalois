@@ -1,0 +1,2 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+MuGaloisRec,24,0.96,0.0,1.0,0.0,0.9796,0.0,5,25,4.94,0.47,535.0,0.0

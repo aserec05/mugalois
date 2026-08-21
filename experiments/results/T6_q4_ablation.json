@@ -1,0 +1,185 @@
+{
+  "query_id": "T6_q4",
+  "template": "T6",
+  "predicate": "Christopher Nolan directed | produced | wrote \u2014 3 branches, medium cardinality",
+  "n_expected": 20,
+  "timestamp": "2026-08-12T16:11:19",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 2.81,
+      "time_std": 2.37,
+      "tokens_mean": 131.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 2.55,
+      "time_std": 1.16,
+      "tokens_mean": 132.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.9,
+      "time_std": 0.93,
+      "tokens_mean": 143.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.9703,
+      "precision_std": 0.0407,
+      "recall_mean": 0.61,
+      "recall_std": 0.0224,
+      "f1_mean": 0.7484,
+      "f1_std": 0.0134,
+      "n_runs": 5,
+      "n_generated": 12.6,
+      "time_mean": 2.08,
+      "time_std": 0.88,
+      "tokens_mean": 162.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 8.86,
+      "time_std": 2.12,
+      "tokens_mean": 1002.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.58,
+      "recall_std": 0.0447,
+      "f1_mean": 0.7333,
+      "f1_std": 0.0373,
+      "n_runs": 5,
+      "n_generated": 11.6,
+      "time_mean": 2.9,
+      "time_std": 0.55,
+      "tokens_mean": 296.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 10.49,
+      "time_std": 0.84,
+      "tokens_mean": 1307.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 9.41,
+      "time_std": 0.85,
+      "tokens_mean": 1305.0,
+      "tokens_std": 18.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Cornfield Chase",
+          "Doodlebug",
+          "Larceny"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "query_id": "T7_q6",
+  "template": "T7",
+  "predicate": "Kennedy hasSuccessor+ / type(Democrat) / maritalStatus \u2014 GT=\u2205",
+  "n_expected": 0,
+  "timestamp": "2026-08-12T12:52:34",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 0.82,
+      "time_std": 0.06,
+      "tokens_mean": 85.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 0.88,
+      "time_std": 0.08,
+      "tokens_mean": 85.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 0.9,
+      "time_std": 0.05,
+      "tokens_mean": 120.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "..."
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.75,
+      "time_std": 0.52,
+      "tokens_mean": 1108.0,
+      "tokens_std": 52.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 8.54,
+      "time_std": 0.28,
+      "tokens_mean": 1091.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 11.53,
+      "time_std": 0.84,
+      "tokens_mean": 1305.0,
+      "tokens_std": 83.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 6.64,
+      "time_std": 0.72,
+      "tokens_mean": 1085.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 1.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.84,
+      "time_std": 0.44,
+      "tokens_mean": 1086.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

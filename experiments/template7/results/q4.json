@@ -1,0 +1,181 @@
+{
+  "query_id": "q4",
+  "template": "T7",
+  "predicate": "hasSuccessor+ / attendedUniversity / isAdministrativelyLocatedIn+",
+  "n_expected": 7,
+  "timestamp": "2026-08-09T18:18:36",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.3066,
+      "precision_std": 0.0596,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.1933,
+      "f1_std": 0.0149,
+      "n_runs": 5,
+      "n_generated": 3.4,
+      "time_mean": 0.93,
+      "time_std": 0.09,
+      "tokens_mean": 89.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "University of Cambridge",
+          "University of Edinburgh"
+        ],
+        "fn": [
+          "City of Oxford",
+          "England",
+          "Greater London"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.2,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.1667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.05,
+      "time_std": 0.14,
+      "tokens_mean": 102.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "University of Bristol",
+          "University of Cambridge",
+          "University of Edinburgh"
+        ],
+        "fn": [
+          "City of Oxford",
+          "England",
+          "Greater London"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.4,
+      "precision_std": 0.0,
+      "recall_mean": 0.2857,
+      "recall_std": 0.0,
+      "f1_mean": 0.3333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 0.94,
+      "time_std": 0.13,
+      "tokens_mean": 135.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "University of Cambridge",
+          "University of Edinburgh",
+          "University of Glasgow"
+        ],
+        "fn": [
+          "City of Oxford",
+          "England",
+          "Greater London"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.2857,
+      "recall_std": 0.0,
+      "f1_mean": 0.3636,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 1.06,
+      "time_std": 0.11,
+      "tokens_mean": 110.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "University of Cambridge, Cambridge, England",
+          "University of Edinburgh, Edinburgh, Scotland"
+        ],
+        "fn": [
+          "City of Oxford",
+          "Greater London",
+          "London"
+        ]
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.2,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.1667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.1,
+      "time_std": 0.17,
+      "tokens_mean": 199.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "University of Bristol",
+          "University of Cambridge",
+          "University of Edinburgh"
+        ],
+        "fn": [
+          "City of Oxford",
+          "England",
+          "Greater London"
+        ]
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.3867,
+      "precision_std": 0.0298,
+      "recall_mean": 0.5428,
+      "recall_std": 0.0639,
+      "f1_mean": 0.4515,
+      "f1_std": 0.0428,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 32.52,
+      "time_std": 1.94,
+      "tokens_mean": 5665.0,
+      "tokens_std": 278.0,
+      "examples": {
+        "fp": [
+          "Cambridge",
+          "Cambridgeshire",
+          "Edinburgh"
+        ],
+        "fn": [
+          "Greater London",
+          "London",
+          "Oxfordshire"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.8833,
+      "precision_std": 0.2609,
+      "recall_mean": 0.9429,
+      "recall_std": 0.1278,
+      "f1_mean": 0.9053,
+      "f1_std": 0.2118,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 6.68,
+      "time_std": 2.09,
+      "tokens_mean": 1742.0,
+      "tokens_std": 911.0,
+      "examples": {
+        "fp": [],
+        "fn": []
+      }
+    }
+  }
+}

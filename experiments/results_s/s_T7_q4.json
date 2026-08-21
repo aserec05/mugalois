@@ -1,0 +1,31 @@
+{
+  "query_id": "s_T7_q4",
+  "template": "T7",
+  "predicate": "Thatcher hasSuccessor+ / Conservative / attendedUniversity / isAdministrativelyLocatedIn+",
+  "n_expected": 7,
+  "timestamp": "2026-08-19T17:30:39",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.7225,
+      "precision_std": 0.3009,
+      "recall_mean": 0.8857,
+      "recall_std": 0.0639,
+      "f1_mean": 0.7479,
+      "f1_std": 0.2442,
+      "n_runs": 5,
+      "n_generated": 13.2,
+      "time_mean": 7.82,
+      "time_std": 1.26,
+      "tokens_mean": 1384.0,
+      "tokens_std": 100.0,
+      "examples": {
+        "fp": [
+          "Oxfordshire"
+        ],
+        "fn": [
+          "City of Oxford"
+        ]
+      }
+    }
+  }
+}

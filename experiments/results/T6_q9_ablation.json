@@ -1,0 +1,208 @@
+{
+  "query_id": "T6_q9",
+  "template": "T6",
+  "predicate": "?b (won | lost final | finished third) FIFA World Cup \u2014 backward, 3 simple branches",
+  "n_expected": 21,
+  "timestamp": "2026-08-12T16:26:16",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.5367,
+      "precision_std": 0.3412,
+      "recall_mean": 0.8953,
+      "recall_std": 0.1032,
+      "f1_mean": 0.6065,
+      "f1_std": 0.2595,
+      "n_runs": 5,
+      "n_generated": 54.6,
+      "time_mean": 35.26,
+      "time_std": 70.05,
+      "tokens_mean": 3410.0,
+      "tokens_std": 7083.0,
+      "examples": {
+        "fp": [
+          "Austria",
+          "Mexico",
+          "South Africa"
+        ],
+        "fn": [
+          "West Germany"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.4286,
+      "precision_std": 0.0,
+      "recall_mean": 0.4286,
+      "recall_std": 0.0,
+      "f1_mean": 0.4286,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 21,
+      "time_mean": 4.62,
+      "time_std": 0.4,
+      "tokens_mean": 456.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "1930: Uruguay",
+          "1934: Italy",
+          "1938: Italy"
+        ],
+        "fn": [
+          "Austria",
+          "Belgium",
+          "Chile"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.2633,
+      "precision_std": 0.1517,
+      "recall_mean": 0.9238,
+      "recall_std": 0.0261,
+      "f1_mean": 0.3932,
+      "f1_std": 0.1832,
+      "n_runs": 5,
+      "n_generated": 95.6,
+      "time_mean": 40.8,
+      "time_std": 76.76,
+      "tokens_mean": 3722.0,
+      "tokens_std": 6948.0,
+      "examples": {
+        "fp": [
+          "Australia",
+          "Austria",
+          "Cameroon"
+        ],
+        "fn": [
+          "West Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.2377,
+      "precision_std": 0.1424,
+      "recall_mean": 0.9238,
+      "recall_std": 0.0261,
+      "f1_mean": 0.3634,
+      "f1_std": 0.1619,
+      "n_runs": 5,
+      "n_generated": 98.6,
+      "time_mean": 101.97,
+      "time_std": 90.56,
+      "tokens_mean": 9803.0,
+      "tokens_std": 8637.0,
+      "examples": {
+        "fp": [
+          "Algeria",
+          "Angola",
+          "Australia"
+        ],
+        "fn": [
+          "Poland",
+          "West Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.7878,
+      "precision_std": 0.1974,
+      "recall_mean": 0.8572,
+      "recall_std": 0.1304,
+      "f1_mean": 0.7988,
+      "f1_std": 0.1277,
+      "n_runs": 5,
+      "n_generated": 25.2,
+      "time_mean": 7.66,
+      "time_std": 1.64,
+      "tokens_mean": 1340.0,
+      "tokens_std": 838.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Peru"
+        ],
+        "fn": [
+          "Austria",
+          "Belgium",
+          "Chile"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.241,
+      "precision_std": 0.1235,
+      "recall_mean": 0.9334,
+      "recall_std": 0.0261,
+      "f1_mean": 0.371,
+      "f1_std": 0.1466,
+      "n_runs": 5,
+      "n_generated": 97.2,
+      "time_mean": 5.55,
+      "time_std": 2.17,
+      "tokens_mean": 602.0,
+      "tokens_std": 210.0,
+      "examples": {
+        "fp": [
+          "Algeria",
+          "Andorra",
+          "Angola"
+        ],
+        "fn": [
+          "Poland",
+          "West Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.7008,
+      "precision_std": 0.3152,
+      "recall_mean": 0.9619,
+      "recall_std": 0.0398,
+      "f1_mean": 0.7732,
+      "f1_std": 0.2406,
+      "n_runs": 5,
+      "n_generated": 37,
+      "time_mean": 13.66,
+      "time_std": 5.23,
+      "tokens_mean": 1997.0,
+      "tokens_std": 1009.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Peru",
+          "South Africa"
+        ],
+        "fn": [
+          "Austria",
+          "West Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.8202,
+      "precision_std": 0.1754,
+      "recall_mean": 0.8762,
+      "recall_std": 0.1491,
+      "f1_mean": 0.8284,
+      "f1_std": 0.1165,
+      "n_runs": 5,
+      "n_generated": 24,
+      "time_mean": 9.14,
+      "time_std": 1.16,
+      "tokens_mean": 1445.0,
+      "tokens_std": 482.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Peru"
+        ],
+        "fn": [
+          "Austria",
+          "Belgium",
+          "Chile"
+        ]
+      }
+    }
+  }
+}

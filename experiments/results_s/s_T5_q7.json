@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T5_q7",
+  "template": "T5",
+  "predicate": "All successors of Martin V (forward transitive closure, irreflexive) \u2014 VERY HIGH CARDINALITY, 49 hops, 1417-1878",
+  "n_expected": 49,
+  "timestamp": "2026-08-19T12:48:15",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.8487,
+      "precision_std": 0.0122,
+      "recall_mean": 0.8449,
+      "recall_std": 0.0183,
+      "f1_mean": 0.8466,
+      "f1_std": 0.0027,
+      "n_runs": 5,
+      "n_generated": 48.8,
+      "time_mean": 5.64,
+      "time_std": 0.32,
+      "tokens_mean": 635.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIII",
+          "Pope Benedict XIV",
+          "Pope Francis"
+        ],
+        "fn": [
+          "Pope Alexander VIII",
+          "Pope Clement IX",
+          "Pope Clement XI"
+        ]
+      }
+    }
+  }
+}

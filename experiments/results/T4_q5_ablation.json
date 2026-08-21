@@ -1,0 +1,182 @@
+{
+  "query_id": "T4_q5",
+  "template": "T4",
+  "predicate": "Nobel Prize in Literature laureates born in Asia \u2014 4-hop, medium cardinality",
+  "n_expected": 7,
+  "timestamp": "2026-08-13T22:53:55",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8056,
+      "precision_std": 0.0644,
+      "recall_mean": 0.9428,
+      "recall_std": 0.0783,
+      "f1_mean": 0.8683,
+      "f1_std": 0.0668,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 1.29,
+      "time_std": 0.11,
+      "tokens_mean": 124.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Abdulrazak Gurnah",
+          "Bob Dylan"
+        ],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.875,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.9333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 1.51,
+      "time_std": 0.12,
+      "tokens_mean": 146.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Abdulrazak Gurnah"
+        ],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 1.01,
+      "time_std": 0.16,
+      "tokens_mean": 113.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kazuo Ishiguro",
+          "Kenzabur\u014d \u014ce"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5714,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 1.9,
+      "time_std": 0.11,
+      "tokens_mean": 483.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Kazuo Ishiguro",
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1429,
+      "recall_std": 0.0,
+      "f1_mean": 0.25,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 3.37,
+      "time_std": 0.27,
+      "tokens_mean": 656.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kazuo Ishiguro",
+          "Kenzabur\u014d \u014ce"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5714,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 3.09,
+      "time_std": 0.69,
+      "tokens_mean": 604.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Kazuo Ishiguro",
+          "Orhan Pamuk",
+          "Rabindranath Tagore"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.7,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8235,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 3.48,
+      "time_std": 0.08,
+      "tokens_mean": 395.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Doris Lessing",
+          "Svetlana Alexievich",
+          "Vidiadhar Surajprasad Naipaul"
+        ],
+        "fn": []
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.76,
+      "precision_std": 0.1342,
+      "recall_mean": 0.9429,
+      "recall_std": 0.1278,
+      "f1_mean": 0.8255,
+      "f1_std": 0.0044,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 3.36,
+      "time_std": 0.32,
+      "tokens_mean": 388.0,
+      "tokens_std": 16.0,
+      "examples": {
+        "fp": [
+          "Doris Lessing",
+          "Svetlana Alexievich",
+          "Vidiadhar Surajprasad Naipaul"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

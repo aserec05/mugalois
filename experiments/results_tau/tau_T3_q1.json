@@ -1,0 +1,132 @@
+{
+  "query_id": "tau_T3_q1",
+  "template": "T3",
+  "predicate": "Oscar Wilde comedies \u2014 GD optimal",
+  "n_expected": 4,
+  "timestamp": "2026-08-19T10:39:47",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 2.44,
+      "time_std": 0.51,
+      "tokens_mean": 236.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "An Ideal Husband"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 2.22,
+      "time_std": 0.2,
+      "tokens_mean": 236.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "An Ideal Husband"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 2.57,
+      "time_std": 1.43,
+      "tokens_mean": 236.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "An Ideal Husband"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7,
+      "recall_std": 0.1118,
+      "f1_mean": 0.819,
+      "f1_std": 0.0851,
+      "n_runs": 5,
+      "n_generated": 2.8,
+      "time_mean": 2.11,
+      "time_std": 0.14,
+      "tokens_mean": 235.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "An Ideal Husband"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.7971,
+      "precision_std": 0.3322,
+      "recall_mean": 0.65,
+      "recall_std": 0.2236,
+      "f1_mean": 0.6262,
+      "f1_std": 0.1417,
+      "n_runs": 5,
+      "n_generated": 5.4,
+      "time_mean": 8.67,
+      "time_std": 4.88,
+      "tokens_mean": 1940.0,
+      "tokens_std": 1783.0,
+      "examples": {
+        "fp": [
+          "De Profundis",
+          "Intentions",
+          "The Birthday of the Infanta"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.1118,
+      "f1_mean": 0.7048,
+      "f1_std": 0.0851,
+      "n_runs": 5,
+      "n_generated": 2.2,
+      "time_mean": 6.45,
+      "time_std": 0.57,
+      "tokens_mean": 1145.0,
+      "tokens_std": 15.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "A Woman of No Importance",
+          "An Ideal Husband"
+        ]
+      }
+    }
+  }
+}

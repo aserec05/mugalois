@@ -1,0 +1,6 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+NL_naive,6,0.6667,0.0,0.3333,0.0,0.4444,0.0,5,3,1.38,0.11,138.0,0.0
+NL_precise,6,0.0,0.0,0.0,0.0,0.0,0.0,5,0,1.93,0.27,190.0,1.0
+AllParallel,6,0.6111,0.031,0.8333,0.0,0.7048,0.0213,5,8.2,5.98,0.81,800.0,55.0
+HolisticOnly,6,0.8,0.0,0.6667,0.0,0.7273,0.0,5,5,0.98,0.14,144.0,0.0
+MuGaloisHybrid,6,0.625,0.0,0.8333,0.0,0.7143,0.0,5,8,6.43,1.18,861.0,188.0

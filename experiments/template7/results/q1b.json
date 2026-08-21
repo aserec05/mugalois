@@ -1,0 +1,183 @@
+{
+  "query_id": "q1b",
+  "template": "T7",
+  "predicate": "type\u207b\u00b9(wordnet_pope) / wasBornIn / isLocatedIn+ \u2229 Tiber isLocatedIn+",
+  "n_expected": 190,
+  "timestamp": "2026-08-09T18:15:53",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8178,
+      "precision_std": 0.0398,
+      "recall_mean": 0.0253,
+      "recall_std": 0.0094,
+      "f1_mean": 0.0489,
+      "f1_std": 0.0176,
+      "n_runs": 5,
+      "n_generated": 5.8,
+      "time_mean": 1.07,
+      "time_std": 0.1,
+      "tokens_mean": 107.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Pope Francis"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.7722,
+      "precision_std": 0.0124,
+      "recall_mean": 0.0358,
+      "recall_std": 0.0023,
+      "f1_mean": 0.0684,
+      "f1_std": 0.0044,
+      "n_runs": 5,
+      "n_generated": 8.8,
+      "time_mean": 1.73,
+      "time_std": 1.33,
+      "tokens_mean": 128.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope Francis",
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.9,
+      "precision_std": 0.0,
+      "recall_mean": 0.0474,
+      "recall_std": 0.0,
+      "f1_mean": 0.09,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.4,
+      "time_std": 0.28,
+      "tokens_mean": 163.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Francis"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.8,
+      "precision_std": 0.0,
+      "recall_mean": 0.0211,
+      "recall_std": 0.0,
+      "f1_mean": 0.041,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 1.48,
+      "time_std": 0.39,
+      "tokens_mean": 143.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.7667,
+      "precision_std": 0.0152,
+      "recall_mean": 0.0347,
+      "recall_std": 0.0028,
+      "f1_mean": 0.0665,
+      "f1_std": 0.0054,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 1.25,
+      "time_std": 0.21,
+      "tokens_mean": 225.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Pope Francis",
+          "Pope Pius IX"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10.4,
+      "time_mean": 9.95,
+      "time_std": 1.74,
+      "tokens_mean": 1462.0,
+      "tokens_std": 147.0,
+      "examples": {
+        "fp": [
+          "Augustus",
+          "Dante Alighieri",
+          "Galileo Galilei"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.6789,
+      "precision_std": 0.0198,
+      "recall_mean": 0.6295,
+      "recall_std": 0.0758,
+      "f1_mean": 0.6505,
+      "f1_std": 0.0403,
+      "n_runs": 5,
+      "n_generated": 176.6,
+      "time_mean": 15.09,
+      "time_std": 1.84,
+      "tokens_mean": 3140.0,
+      "tokens_std": 397.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander I",
+          "Pope Anastasius I",
+          "Pope Anastasius II"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian II",
+          "Agapetus II"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "query_id": "q3",
+  "template": "T6",
+  "predicate": "worked in the field of | was employed by | was a member of | obtained the academic degree",
+  "n_expected": 23,
+  "timestamp": "2026-07-30T12:12:40",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 2.13,
+      "time_std": 0.1,
+      "tokens_mean": 178.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 2.21,
+      "time_std": 0.17,
+      "tokens_mean": 184.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "UnionBranches": {
+      "precision_mean": 0.0111,
+      "precision_std": 0.0249,
+      "recall_mean": 0.0174,
+      "recall_std": 0.0389,
+      "f1_mean": 0.0136,
+      "f1_std": 0.0303,
+      "n_runs": 5,
+      "n_generated": 28.2,
+      "time_mean": 5.7,
+      "time_std": 0.49,
+      "tokens_mean": 570.0,
+      "tokens_std": 39.0,
+      "examples": {
+        "fp": [
+          "Albert Einstein",
+          "Cecil Powell",
+          "Chadwick Boseman"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "Encoding_list": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.68,
+      "time_std": 0.4,
+      "tokens_mean": 189.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Chien-Shiung Wu",
+          "Friedrich G. Joliot-Curie",
+          "Gabrielle \u00c9milie Le Tonnelier de Breteuil, Marquise du Ch\u00e2telet"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "Encoding_OR": {
+      "precision_mean": 0.5018,
+      "precision_std": 0.0924,
+      "recall_mean": 0.2261,
+      "recall_std": 0.0364,
+      "f1_mean": 0.3116,
+      "f1_std": 0.052,
+      "n_runs": 5,
+      "n_generated": 10.4,
+      "time_mean": 1.97,
+      "time_std": 1.29,
+      "tokens_mean": 161.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "Doctor of Science",
+          "Member of the French Academy of Sciences",
+          "Member of the Polish Academy of Sciences"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "Encoding_natural": {
+      "precision_mean": 0.0471,
+      "precision_std": 0.1052,
+      "recall_mean": 0.0348,
+      "recall_std": 0.0778,
+      "f1_mean": 0.04,
+      "f1_std": 0.0894,
+      "n_runs": 5,
+      "n_generated": 21.2,
+      "time_mean": 3.27,
+      "time_std": 0.59,
+      "tokens_mean": 356.0,
+      "tokens_std": 34.0,
+      "examples": {
+        "fp": [
+          "Albert Einstein",
+          "Emilio Segr\u00e8",
+          "Enrico Fermi"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_high": {
+      "precision_mean": 0.6231,
+      "precision_std": 0.0594,
+      "recall_mean": 0.3739,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4672,
+      "f1_std": 0.0466,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 4.46,
+      "time_std": 0.34,
+      "tokens_mean": 561.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics",
+          "Royal Society"
+        ],
+        "fn": [
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina",
+          "American Philosophical Society"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_mid": {
+      "precision_mean": 0.5956,
+      "precision_std": 0.0541,
+      "recall_mean": 0.3565,
+      "recall_std": 0.0195,
+      "f1_mean": 0.4459,
+      "f1_std": 0.0302,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 2.19,
+      "time_std": 0.1,
+      "tokens_mean": 311.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Curies' Laboratory",
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "MuGalois_\u03c4_low": {
+      "precision_mean": 0.589,
+      "precision_std": 0.0241,
+      "recall_mean": 0.3478,
+      "recall_std": 0.0,
+      "f1_mean": 0.4372,
+      "f1_std": 0.0066,
+      "n_runs": 5,
+      "n_generated": 13.6,
+      "time_mean": 2.22,
+      "time_std": 0.17,
+      "tokens_mean": 309.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Curies' Laboratory",
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    },
+    "MuGaloisChoice": {
+      "precision_mean": 0.6088,
+      "precision_std": 0.062,
+      "recall_mean": 0.3652,
+      "recall_std": 0.0389,
+      "f1_mean": 0.4564,
+      "f1_std": 0.0473,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 2.22,
+      "time_std": 0.24,
+      "tokens_mean": 311.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Curies' Laboratory",
+          "Nobel Prize in Chemistry",
+          "Nobel Prize in Physics"
+        ],
+        "fn": [
+          "Academy of Sciences of the USSR",
+          "Acad\u00e9mie Nationale de M\u00e9decine",
+          "Accademia Tiberina"
+        ]
+      }
+    }
+  }
+}

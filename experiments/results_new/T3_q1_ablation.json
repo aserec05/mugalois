@@ -1,0 +1,29 @@
+{
+  "query_id": "T3_q1",
+  "template": "T3",
+  "predicate": "Oscar Wilde comedies \u2014 GD optimal",
+  "n_expected": 4,
+  "timestamp": "2026-08-21T17:29:20",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.1118,
+      "f1_mean": 0.7048,
+      "f1_std": 0.0851,
+      "n_runs": 5,
+      "n_generated": 2.2,
+      "time_mean": 6.89,
+      "time_std": 0.57,
+      "tokens_mean": 1155.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "A Woman of No Importance"
+        ]
+      }
+    }
+  }
+}

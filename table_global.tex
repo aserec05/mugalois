@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{Model} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{$\pm$std} & \textbf{Card.} & \textbf{Tokens} & \textbf{Time(s)} \\
+\midrule
+\textbf{NL\textsubscript{naive}} & \textbf{0.823} & 0.669 & 0.687 & \textbf{0.030} & 0.88 & 385 & 4.1 \\
+\textbf{NL\textsubscript{precise}} & 0.758 & 0.716 & 0.690 & 0.041 & 1.03 & \textbf{355} & 3.7 \\
+\textbf{SPARQL} & 0.703 & 0.454 & 0.461 & 0.037 & 0.76 & 371 & \textbf{3.4} \\
+\midrule
+\sys{}\_Hol & 0.814 & 0.688 & 0.674 & 0.041 & 1.08 & 828 & 6.0 \\
+\sys{}\_Dec & 0.819 & 0.659 & 0.678 & 0.053 & 0.91 & 2185 & 13.5 \\
+\sys{}\_C & 0.732 & 0.654 & 0.653 & 0.032 & 0.98 & 1132 & 7.9 \\
+\sys{}\_F-M & 0.810 & \textbf{0.746} & \textbf{0.740} & 0.037 & \textbf{1.00} & 960 & 6.3 \\
+\sys{}\_F & 0.810 & 0.731 & 0.730 & 0.048 & 0.97 & 1246 & 8.3 \\
+\bottomrule
+\end{tabular}
+\caption{Global macro-average across all queries (T1--T7). Card.\,=\,$|\mathrm{gen}|/|\mathrm{GT}|$. Best per column in \textbf{bold}.}
+\label{tab:global}
+\end{table}

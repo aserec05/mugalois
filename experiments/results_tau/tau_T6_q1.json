@@ -1,0 +1,141 @@
+{
+  "query_id": "tau_T6_q1",
+  "template": "T6",
+  "predicate": "Einstein spouse | sibling \u2014 2 branches, low cardinality",
+  "n_expected": 3,
+  "timestamp": "2026-08-19T12:18:07",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.5714,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 2.28,
+      "time_std": 0.19,
+      "tokens_mean": 245.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Eduard Einstein",
+          "Hans Albert Einstein"
+        ],
+        "fn": [
+          "Maja Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.5714,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 2.21,
+      "time_std": 0.32,
+      "tokens_mean": 245.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Eduard Einstein",
+          "Hans Albert Einstein"
+        ],
+        "fn": [
+          "Maja Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.5714,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 2.19,
+      "time_std": 0.36,
+      "tokens_mean": 245.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Eduard Einstein",
+          "Hans Albert Einstein"
+        ],
+        "fn": [
+          "Maja Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.5714,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 2.09,
+      "time_std": 0.33,
+      "tokens_mean": 245.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Eduard Einstein",
+          "Hans Albert Einstein"
+        ],
+        "fn": [
+          "Maja Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.75,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 5.25,
+      "time_std": 0.69,
+      "tokens_mean": 647.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Hans Albert Einstein"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.75,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 4.89,
+      "time_std": 0.44,
+      "tokens_mean": 647.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Hans Albert Einstein"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

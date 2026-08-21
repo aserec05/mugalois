@@ -56,7 +56,8 @@ MOTIVATIONAL = (
 def genNLPrompt(nl_question: str) -> str:
     return (
         f"By your knowledge, {nl_question}\n"
-        f"Respond ONLY in valid JSON following the schema provided."
+        f"Be exhaustive."
+        f"Respond ONLY in valid JSON as: {{\"values\": [\"value1\", \"value2\", ...]}}"
     )
 
 
@@ -178,6 +179,30 @@ def genValueScanPrompt(pattern: TriplePattern, encoding: str = "pattern",
             f"Return as many values as you know.\n"
             f"{_VALUE_REMIND}"
         )
+
+    if encoding == "minimal":
+        if bound_side == "o":
+            return (
+                f"Question: what is {var_name}, such that "
+                f"{var_name} {p} {bound_val}?\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Answer only with values you are confident about. "
+                f"If none, return an empty list.\n"
+                f"{_VALUE_REMIND}"
+            )
+        else:
+            return (
+                f"Question: what is {var_name}, such that "
+                f"{bound_val} {p} {var_name}?\n"
+                f"{cond_block}"
+                f"{la_block}"
+                f"Answer only with values you are confident about. "
+                f"If none, return an empty list.\n"
+                f"{_VALUE_REMIND}"
+            )
+ 
+
 
     if encoding == "constrained":
         if bound_side == "o":
@@ -328,55 +353,84 @@ def genIterativePrompt(already_found: set) -> str:
     )
 
 
+
 def genSeedCrankPrompt(pattern: TriplePattern, env: Environment,
                        conditions: list = None) -> str:
     constraints = _build_constraints(pattern, env)
     constraints = constraints.replace("is one of", "may be one of")
     cond_block  = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+ 
+    # Determine which side carries the seed list, to phrase the
+    # universal quantification explicitly over that side.
+    var_with_seeds = pattern.s if pattern.s_is_var() else pattern.o
+    other_var      = pattern.o if pattern.s_is_var() else pattern.s
+ 
     return (
         f"Context: The following values are already known:\n"
         f"{constraints}\n\n"
         f"{cond_block}"
-        f"Task: List all triples ({pattern.s}, {pattern.p}, {pattern.o}) that factually hold.\n"
-        f"- {pattern.s} must be the subject. {pattern.o} must be the object.\n"
+        f"Task: For EACH value of {var_with_seeds} listed above, independently "
+        f"find the matching {other_var} such that the triple "
+        f"({pattern.s}, {pattern.p}, {pattern.o}) factually holds.\n"
+        f"- Treat every value of {var_with_seeds} as a SEPARATE query — "
+        f"do not require a single {other_var} that fits all of them at once.\n"
         f"- Use exactly {pattern.p} as predicate. No variation.\n"
-        f"- Only use values from the lists above that are factually correct. "
-        f"If no triple holds, return an empty list."
+        f"- If a given value of {var_with_seeds} has no valid {other_var}, "
+        f"simply omit it from the results — do not return an empty list just "
+        f"because ONE of them has no match.\n"
+        f"- Only use values from the lists above that are factually correct."
     )
+
 
 
 def genKeyCrankPrompt(pattern: TriplePattern, env: Environment,
                       seed_value: str, direction: str,
                       conditions: list = None) -> str:
     cond_block = genConditionsPrompt({repr(c) for c in conditions}) if conditions else ""
+ 
     if direction == "L->R":
         constraint = _build_constraints(pattern, env, side="o")
         constraint = constraint.replace("is one of", "may be one of")
+        restriction = (
+            f"{constraint}\n"
+            f"Only return values from the list above that are factually correct. "
+            f"If the subject has no valid {pattern.p}, or none of the candidate "
+            f"values apply, return an empty list."
+        ) if constraint else (
+            f"Only return a value if you are factually confident about it. "
+            f"If the subject has no valid {pattern.p}, return an empty list."
+        )
         return (
             f"Context: The subject is fixed: {seed_value}. "
             f"The predicate is {pattern.p}.\n"
             f"{cond_block}"
             f"Task: List all triples ({seed_value}, {pattern.p}, {pattern.o}) "
             f"that factually hold.\n"
-            f"{constraint}\n"
-            f"Only return values from the list above that are factually correct. "
-            f"If the subject has no valid {pattern.p}, or none of the candidate "
-            f"values apply, return an empty list."
+            f"{restriction}"
         )
     else:
         constraint = _build_constraints(pattern, env, side="s")
         constraint = constraint.replace("is one of", "may be one of")
+        restriction = (
+            f"{constraint}\n"
+            f"Only return values from the list above that are factually correct. "
+            f"If no subject has {pattern.p} equal to {seed_value}, or none of "
+            f"the candidate values apply, return an empty list."
+        ) if constraint else (
+            f"Only return a value if you are factually confident about it. "
+            f"If no subject has {pattern.p} equal to {seed_value}, return an "
+            f"empty list."
+        )
         return (
             f"Context: The object is fixed: {seed_value}. "
             f"The predicate is {pattern.p}.\n"
             f"{cond_block}"
             f"Task: List all triples ({pattern.s}, {pattern.p}, {seed_value}) "
             f"that factually hold.\n"
-            f"{constraint}\n"
-            f"Only return values from the list above that are factually correct. "
-            f"If no subject has {pattern.p} equal to {seed_value}, or none of "
-            f"the candidate values apply, return an empty list."
+            f"{restriction}"
         )
+ 
+
 
 
 def genCheckPrompt(triple: tuple, conditions: list = None) -> str:
@@ -455,26 +509,31 @@ def genAtomicRecConfPrompt(s: str, p: str, t: str, mode: str = "plus") -> str:
     )
 
 
-def genRecScanPrompt(s: str, p: str, t: str = None, mode: str = "plus") -> str:
-    """
-    LLMRecScan — single-call attempt at the full recursive closure.
 
-    mode: "plus" (s fixed, ?b free)  | "star" (t fixed, ?a free)
-    """
-    if mode == "plus":
+def genRecScanPrompt(s: str, p: str, t: str = None, mode: str = "plus") -> str:
+    s_is_anchor = s is not None and not str(s).startswith("?")
+    t_is_anchor = t is not None and not str(t).startswith("?")
+    incl_s = f" Include {s} itself." if mode == "star" and s_is_anchor else ""
+    incl_t = f" Include {t} itself." if mode == "star" and t_is_anchor else ""
+ 
+    if s_is_anchor:
         return (
-            f"Task: List all values of ?b such that ({s}, {p}+, ?b) factually "
-            f"holds — that is, ?b is reachable from {s} by following {p} one "
-            f"or more times, directly or transitively.\n\n"
-            f"Be exhaustive. Return as many values as you know.\n"
+            f"Task: List all entities such that {s} {p} them, "
+            f"directly or indirectly through a chain of steps, "
+            f"going all the way to the very last one in the chain.{incl_s}\n\n"
+            f"Do not skip any step — include every single one, "
+            f"without missing any intermediate entity.\n"
+            f"Be exhaustive. List every single one you know.\n"
             f"{_VALUE_REMIND}"
         )
     else:
         return (
-            f"Task: List all values of ?a such that (?a, {p}*, {t}) factually "
-            f"holds — that is, ?a can reach {t} by following {p} zero or more "
-            f"times (?a = {t} itself is included).\n\n"
-            f"Be exhaustive. Return as many values as you know.\n"
+            f"Task: List all entities that {p} {t}, "
+            f"directly or indirectly through a chain of steps, "
+            f"going all the way back to the very first one in the chain.{incl_t}\n\n"
+            f"Do not skip any step — include every single one, "
+            f"without missing any intermediate entity.\n"
+            f"Be exhaustive. List every single one you know.\n"
             f"{_VALUE_REMIND}"
         )
 

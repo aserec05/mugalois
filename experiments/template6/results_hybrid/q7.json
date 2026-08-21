@@ -1,0 +1,118 @@
+{
+  "query_id": "q7",
+  "template": "T6-hybrid",
+  "predicate": "Einstein (married to | child studied at) ?b \u2014 forward simple + T4",
+  "n_expected": 4,
+  "timestamp": "2026-08-09T17:21:09",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.6,
+      "time_std": 0.66,
+      "tokens_mean": 111.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "ETH Zurich",
+          "Elsa Einstein"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.08,
+      "time_std": 0.11,
+      "tokens_mean": 84.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "ETH Zurich",
+          "Elsa Einstein"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 0.6286,
+      "precision_std": 0.0522,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7709,
+      "f1_std": 0.0398,
+      "n_runs": 5,
+      "n_generated": 6.4,
+      "time_mean": 3.61,
+      "time_std": 0.18,
+      "tokens_mean": 501.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Harvard University",
+          "Princeton University",
+          "University of Zurich"
+        ],
+        "fn": []
+      }
+    },
+    "HolisticOnly": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.5,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 0.94,
+      "time_std": 0.09,
+      "tokens_mean": 131.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Eduard Einstein",
+          "Hans Albert"
+        ],
+        "fn": [
+          "ETH Zurich",
+          "University of Zurich"
+        ]
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 0.6095,
+      "precision_std": 0.0522,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7564,
+      "f1_std": 0.0398,
+      "n_runs": 5,
+      "n_generated": 6.6,
+      "time_mean": 5.5,
+      "time_std": 0.13,
+      "tokens_mean": 682.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "Princeton University",
+          "University of Zurich"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "query_id": "q9",
+  "template": "T6-card",
+  "predicate": "?b (won | lost final | finished third) FIFA World Cup \u2014 backward, 3 simple branches",
+  "n_expected": 21,
+  "timestamp": "2026-07-31T13:39:59",
+  "results": {
+    "HolisticOnly": {
+      "precision_mean": 0.3214,
+      "precision_std": 0.1345,
+      "recall_mean": 0.9714,
+      "recall_std": 0.0261,
+      "f1_mean": 0.4695,
+      "f1_std": 0.1528,
+      "n_runs": 5,
+      "n_generated": 75,
+      "time_mean": 3.44,
+      "time_std": 1.27,
+      "tokens_mean": 355.0,
+      "tokens_std": 131.0,
+      "examples": {
+        "fp": [
+          "Austria",
+          "Cameroon",
+          "Colombia"
+        ],
+        "fn": [
+          "Germany"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 0.8468,
+      "precision_std": 0.0783,
+      "recall_mean": 0.9143,
+      "recall_std": 0.1137,
+      "f1_mean": 0.8716,
+      "f1_std": 0.0442,
+      "n_runs": 5,
+      "n_generated": 23,
+      "time_mean": 7.48,
+      "time_std": 1.13,
+      "tokens_mean": 1278.0,
+      "tokens_std": 653.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Peru",
+          "South Africa"
+        ],
+        "fn": [
+          "Germany"
+        ]
+      }
+    },
+    "Card\u226410": {
+      "precision_mean": 0.9053,
+      "precision_std": 0.038,
+      "recall_mean": 0.8191,
+      "recall_std": 0.1444,
+      "f1_mean": 0.8551,
+      "f1_std": 0.0841,
+      "n_runs": 5,
+      "n_generated": 19,
+      "time_mean": 7.73,
+      "time_std": 0.88,
+      "tokens_mean": 1070.0,
+      "tokens_std": 44.0,
+      "examples": {
+        "fp": [
+          "Japan",
+          "Peru",
+          "South Africa"
+        ],
+        "fn": [
+          "Germany"
+        ]
+      }
+    },
+    "Card\u226415": {
+      "precision_mean": 0.1986,
+      "precision_std": 0.0492,
+      "recall_mean": 0.9619,
+      "recall_std": 0.0213,
+      "f1_mean": 0.3271,
+      "f1_std": 0.0687,
+      "n_runs": 5,
+      "n_generated": 106.8,
+      "time_mean": 38.12,
+      "time_std": 72.18,
+      "tokens_mean": 3735.0,
+      "tokens_std": 6984.0,
+      "examples": {
+        "fp": [
+          "Algeria",
+          "Angola",
+          "Anguilla"
+        ],
+        "fn": [
+          "Germany"
+        ]
+      }
+    },
+    "Card\u226420": {
+      "precision_mean": 0.3692,
+      "precision_std": 0.1369,
+      "recall_mean": 0.9714,
+      "recall_std": 0.0261,
+      "f1_mean": 0.5223,
+      "f1_std": 0.1473,
+      "n_runs": 5,
+      "n_generated": 63.2,
+      "time_mean": 4.14,
+      "time_std": 1.34,
+      "tokens_mean": 423.0,
+      "tokens_std": 96.0,
+      "examples": {
+        "fp": [
+          "Algeria",
+          "Andorra",
+          "Angola"
+        ],
+        "fn": []
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 0.9307,
+      "precision_std": 0.0352,
+      "recall_mean": 0.8762,
+      "recall_std": 0.1491,
+      "f1_mean": 0.8968,
+      "f1_std": 0.0832,
+      "n_runs": 5,
+      "n_generated": 19.8,
+      "time_mean": 9.72,
+      "time_std": 3.42,
+      "tokens_mean": 1233.0,
+      "tokens_std": 44.0,
+      "examples": {
+        "fp": [
+          "Peru"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

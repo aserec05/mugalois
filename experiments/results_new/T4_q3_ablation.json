@@ -1,0 +1,32 @@
+{
+  "query_id": "T4_q3",
+  "template": "T4",
+  "predicate": "Shakespeare plays primarily set in Italian cities \u2014 3-hop, medium cardinality",
+  "n_expected": 6,
+  "timestamp": "2026-08-21T17:32:00",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.84,
+      "precision_std": 0.0894,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.7418,
+      "f1_std": 0.0325,
+      "n_runs": 5,
+      "n_generated": 4.8,
+      "time_mean": 1.42,
+      "time_std": 0.27,
+      "tokens_mean": 146.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar"
+        ],
+        "fn": [
+          "The Taming of the Shrew",
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "query_id": "tau_T4_q3",
+  "template": "T4",
+  "predicate": "Shakespeare plays primarily set in Italian cities \u2014 3-hop, medium cardinality",
+  "n_expected": 6,
+  "timestamp": "2026-08-19T10:49:52",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.8333,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.8333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 2.95,
+      "time_std": 0.19,
+      "tokens_mean": 494.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar"
+        ],
+        "fn": [
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.8166,
+      "precision_std": 0.0373,
+      "recall_mean": 0.7666,
+      "recall_std": 0.1491,
+      "f1_mean": 0.7866,
+      "f1_std": 0.1043,
+      "n_runs": 5,
+      "n_generated": 5.6,
+      "time_mean": 3.45,
+      "time_std": 0.54,
+      "tokens_mean": 489.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar"
+        ],
+        "fn": [
+          "Much Ado About Nothing",
+          "The Taming of the Shrew",
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.8333,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.8333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 3.13,
+      "time_std": 0.41,
+      "tokens_mean": 494.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar"
+        ],
+        "fn": [
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.8333,
+      "precision_std": 0.0,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.8333,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 3.03,
+      "time_std": 0.2,
+      "tokens_mean": 494.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar"
+        ],
+        "fn": [
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.7857,
+      "precision_std": 0.1211,
+      "recall_mean": 0.7333,
+      "recall_std": 0.2236,
+      "f1_mean": 0.7477,
+      "f1_std": 0.1645,
+      "n_runs": 5,
+      "n_generated": 5.6,
+      "time_mean": 5.87,
+      "time_std": 1.21,
+      "tokens_mean": 1265.0,
+      "tokens_std": 338.0,
+      "examples": {
+        "fp": [
+          "Julius Caesar",
+          "Twelfth Night"
+        ],
+        "fn": [
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.7629,
+      "precision_std": 0.0369,
+      "recall_mean": 0.6333,
+      "recall_std": 0.1394,
+      "f1_mean": 0.6848,
+      "f1_std": 0.0792,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 5.75,
+      "time_std": 0.94,
+      "tokens_mean": 1305.0,
+      "tokens_std": 448.0,
+      "examples": {
+        "fp": [
+          "Twelfth Night"
+        ],
+        "fn": [
+          "Much Ado About Nothing",
+          "The Taming of the Shrew",
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    }
+  }
+}

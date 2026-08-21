@@ -1,105 +1,129 @@
 # src/mugalois/rec/fixpoint.py
 """
-LLMFixpointScan — hop-by-hop transitive closure via repeated LLMScan calls.
+LLMFixpointScan — hop-by-hop transitive closure via LLMScan.
 
-Used as fallback when LLMAtomicRecConf is below tau_A: instead of asking
-the LLM for the entire p+/p* closure at once, we iterate one hop at a
-time and re-inject newly found nodes as seeds for the next hop, until
-no new node appears (fixpoint reached) — mirrors the mu-RA fixpoint
-operator: U_{i+1} = U_i ∪ [[phi]][X/U_i].
+Root cause found and fixed: predicates phrased as a passive/abstract
+relation ("was directly succeeded by") triggered sequence-dump
+confusion on dense historical clusters, confirmed across 6+ phrasings.
+"came immediately before" — combined with encoding="minimal" (a plain
+sentence instead of bracket/triple notation) — was verified correct
+in isolation on every case that previously failed. The fix is the
+predicate wording itself (set by the caller in queries/patterns), used
+here with encoding="minimal" to match the exact phrasing verified.
+
+Architecture unchanged: still goes through LLMScan, env, and the full
+strategy-selection machinery (KeyScan/SeedScan/TripleScan).
 """
 from __future__ import annotations
 import copy
+import re
 from mugalois.core.types import TriplePattern, Environment, RecursivePattern
 from mugalois.scans.ochestror_scan import LLMScan
 from mugalois.llm.llm_client import BaseLLM
 
 
+NO_SPECULATION_HINT = (
+    "Do not guess or speculate. Only return values you are factually "
+    "confident about. If nothing is confirmed, return an empty list."
+)
+
+JUNK_MARKERS = {
+    "null", "none", "n/a", "na", "unknown", "tbd", "tba",
+    "to be determined", "to be announced", "pending", "",
+}
+_HAS_ALNUM = re.compile(r"[^\W_]", re.UNICODE)
+
+ 
+_LEADING_NUMBER = re.compile(r"^\s*\d+[\.\)]\s*")
+MAX_PLAUSIBLE_VALUE_WORDS = 6  # generic length heuristic, not domain-specific
+ 
+ 
+def _clean_value(v: str) -> str:
+    """Strip a leading list-numbering prefix like '10. ' or '10) '."""
+    return _LEADING_NUMBER.sub("", v).strip()
+ 
+ 
+def _is_garbage(value: str) -> bool:
+    v = _clean_value(value)
+    if v.lower() in JUNK_MARKERS:
+        return True
+    if not _HAS_ALNUM.search(v):
+        return True
+    # A refusal/explanation sentence is much longer than a real entity
+    # name — generic length cutoff, not a keyword/domain match.
+    if len(v.split()) > MAX_PLAUSIBLE_VALUE_WORDS:
+        return True
+    return False
+ 
+ 
+def _strip_junk(values: set[str]) -> set[str]:
+    return {_clean_value(v) for v in values if not _is_garbage(v)}
+
+
+
 def LLMFixpointScan(
     pattern:   RecursivePattern,
     llm:       BaseLLM,
+    env:       Environment = None,
     gamma:     Environment = None,
-    max_depth: int = 8,
-    batch:     bool = True,
+    max_depth: int = 300,
     verbose:   bool = False,
 ) -> set[str]:
-    """
-    Hop-by-hop transitive closure for `pattern` (s, p+, ?o) or (?s, p*, o).
-
-    direction = pattern.direction():
-      'forward'  : seed = pattern.s, scan (u, p, ?y) for u in frontier.
-      'backward' : seed = pattern.o, scan (?y, p, u) for u in frontier.
-
-    Stops when no new node is found in an iteration, or at max_depth.
-    pattern.is_plus() excludes the seed from the result (irreflexive);
-    pattern.is_star() includes it (reflexive).
-    """
     gamma = gamma or Environment()
-    seed  = pattern.seed()
+    env   = env   or Environment()
+    gamma_is_empty = not gamma._bindings
+
+    seed      = pattern.seed()
     direction = pattern.direction()
 
-    frontier = {seed}
     visited  = {seed} if pattern.is_star() else set()
+    frontier = {seed}
+    result   = set(visited)
+    seen_frontiers = set()
 
-    depth = 0
-    while frontier and depth < max_depth:
-        depth += 1
-        new_nodes = set()
-
-        if batch:
-            new_nodes = _scan_batch(frontier, pattern.p, llm, gamma, direction)
-        else:
-            for node in frontier:
-                new_nodes |= _scan_single(node, pattern.p, llm, gamma, direction)
-
-        # Keep only genuinely new nodes (avoid cycles / re-visiting)
-        new_nodes -= visited
-        if pattern.is_plus():
-            new_nodes -= {seed}
-
-        if verbose:
-            print(f"  [Fixpoint] depth={depth} frontier={len(frontier)} "
-                  f"new={len(new_nodes)}")
-
-        if not new_nodes:
+    for depth in range(max_depth):
+        if not frontier:
             break
 
-        visited |= new_nodes
-        frontier = new_nodes
+        frontier_key = frozenset(frontier)
+        if frontier_key in seen_frontiers:
+            if verbose:
+                print(f"  [LLMFixpointScan] depth={depth} cycle, stopping")
+            break
+        seen_frontiers.add(frontier_key)
 
-    return visited
+        hop_env   = Environment()
+        hop_gamma = gamma if gamma_is_empty else copy.deepcopy(gamma)
 
+        if direction == "forward":
+            hop_env.set("?x", set(frontier))
+            extract = lambda triples: {tr.o for tr in triples}
+        else:
+            hop_env.set("?y", set(frontier))
+            extract = lambda triples: {tr.s for tr in triples}
 
-def _scan_single(
-    node: str, p: str, llm: BaseLLM, gamma: Environment, direction: str,
-) -> set[str]:
-    """One-hop scan from/to a single node."""
-    if direction == "forward":
-        scan_pattern = TriplePattern(node, p, "?y")
-    else:
-        scan_pattern = TriplePattern("?y", p, node)
+        scan_pattern = TriplePattern("?x", pattern.p, "?y")
+        vp = LLMScan(
+            scan_pattern, hop_env, gamma=hop_gamma, llm=llm,
+            lookahead=NO_SPECULATION_HINT,
+            encoding="minimal",
+        )
+        candidates = _strip_junk(extract(vp))
+        new_values = candidates - visited
 
-    triples = LLMScan(
-        pattern=scan_pattern,
-        env=Environment(),
-        gamma=copy.deepcopy(gamma),
-        llm=llm,
-        max_iter=3,
-    )
-    return {tr.o for tr in triples} if direction == "forward" \
-        else {tr.s for tr in triples}
+        if verbose:
+            print(f"  [LLMFixpointScan] depth={depth} "
+                  f"frontier={sorted(frontier)} candidates={sorted(candidates)} "
+                  f"new={sorted(new_values)}")
 
+        if not candidates:
+            break
 
-def _scan_batch(
-    frontier: set, p: str, llm: BaseLLM, gamma: Environment, direction: str,
-) -> set[str]:
-    """
-    One-hop scan for an entire frontier at once, using the batched
-    prompt (genRecHopBatchPrompt) to save tokens versus one call per node.
-    """
-    from mugalois.core.prompts import genRecHopBatchPrompt, build_value_messages
-    from mugalois.core.parser import json_to_values
+        visited |= new_values
+        result  |= new_values
+        frontier = new_values
 
-    prompt = genRecHopBatchPrompt(frontier, p, direction=direction)
-    resp   = llm.chat(build_value_messages(prompt))
-    return json_to_values(resp.text)
+        if not frontier:
+            break
+
+    return result

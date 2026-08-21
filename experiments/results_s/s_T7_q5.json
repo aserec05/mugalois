@@ -1,0 +1,34 @@
+{
+  "query_id": "s_T7_q5",
+  "template": "T7",
+  "predicate": "De Gaulle hasSuccessor+ / wasBornIn / isLocatedIn+",
+  "n_expected": 13,
+  "timestamp": "2026-08-20T09:47:25",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.586,
+      "precision_std": 0.0258,
+      "recall_mean": 0.8462,
+      "recall_std": 0.0,
+      "f1_mean": 0.6922,
+      "f1_std": 0.0181,
+      "n_runs": 5,
+      "n_generated": 18.8,
+      "time_mean": 9.8,
+      "time_std": 0.95,
+      "tokens_mean": 1916.0,
+      "tokens_std": 253.0,
+      "examples": {
+        "fp": [
+          "Carmaux",
+          "Centre-Val de Loire",
+          "Chedigny"
+        ],
+        "fn": [
+          "Cantal",
+          "Charente"
+        ]
+      }
+    }
+  }
+}

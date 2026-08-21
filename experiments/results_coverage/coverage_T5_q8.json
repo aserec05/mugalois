@@ -1,0 +1,111 @@
+{
+  "query_id": "T5_q8",
+  "template": "T5",
+  "predicate": "All predecessors of Pius I, back to Peter (backward transitive closure, irreflexive) \u2014 LOW CARDINALITY, 9 hops, 1st-2nd century",
+  "n_expected": 9,
+  "timestamp": "2026-08-21T10:55:18",
+  "results": {
+    "F_cov050": {
+      "precision_mean": 0.635,
+      "precision_std": 0.0358,
+      "recall_mean": 0.8,
+      "recall_std": 0.1449,
+      "f1_mean": 0.702,
+      "f1_std": 0.0521,
+      "n_runs": 5,
+      "n_generated": 11.4,
+      "time_mean": 5.56,
+      "time_std": 1.49,
+      "tokens_mean": 549.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Pope Cornelius",
+          "Pope Fabian",
+          "Pope Peter"
+        ],
+        "fn": [
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "F_cov065": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 5.03,
+      "time_std": 0.92,
+      "tokens_mean": 543.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Sixtus I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "F_cov080": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 4.64,
+      "time_std": 0.3,
+      "tokens_mean": 542.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Sixtus I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "F_cov095": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 4.57,
+      "time_std": 0.44,
+      "tokens_mean": 542.0,
+      "tokens_std": 10.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Sixtus I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    }
+  }
+}

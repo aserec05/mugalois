@@ -1,0 +1,203 @@
+{
+  "query_id": "T5_q8",
+  "template": "T5",
+  "predicate": "All predecessors of Pius I, back to Peter (backward transitive closure, irreflexive) \u2014 LOW CARDINALITY, 9 hops, 1st-2nd century",
+  "n_expected": 9,
+  "timestamp": "2026-08-12T11:36:03",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.4444,
+      "recall_std": 0.0,
+      "f1_mean": 0.6154,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 1.43,
+      "time_std": 0.46,
+      "tokens_mean": 101.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.9,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.9474,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.39,
+      "time_std": 0.15,
+      "tokens_mean": 131.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "Pope Pius I"
+        ],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.0785,
+      "precision_std": 0.0065,
+      "recall_mean": 0.1111,
+      "recall_std": 0.0,
+      "f1_mean": 0.0919,
+      "f1_std": 0.0045,
+      "n_runs": 5,
+      "n_generated": 12.8,
+      "time_mean": 1.89,
+      "time_std": 0.16,
+      "tokens_mean": 174.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope_Pius_III",
+          "Pope_Pius_IV",
+          "Pope_Pius_IX"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Clement I"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.7031,
+      "precision_std": 0.1123,
+      "recall_mean": 0.7778,
+      "recall_std": 0.1571,
+      "f1_mean": 0.735,
+      "f1_std": 0.1216,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.45,
+      "time_std": 0.13,
+      "tokens_mean": 170.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Pius I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.75,
+      "precision_std": 0.0,
+      "recall_mean": 0.3333,
+      "recall_std": 0.0,
+      "f1_mean": 0.4615,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 9.37,
+      "time_std": 0.49,
+      "tokens_mean": 1231.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Fabian"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Clement I",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 2.3,
+      "time_std": 0.11,
+      "tokens_mean": 286.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Pius I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.6462,
+      "precision_std": 0.0281,
+      "recall_mean": 0.7556,
+      "recall_std": 0.1217,
+      "f1_mean": 0.6909,
+      "f1_std": 0.0332,
+      "n_runs": 5,
+      "n_generated": 10.6,
+      "time_mean": 4.14,
+      "time_std": 0.37,
+      "tokens_mean": 437.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Pope Peter",
+          "Pope Pius I",
+          "Pope Telesphorus"
+        ],
+        "fn": [
+          "Pope Alexander I",
+          "Pope Anacletus",
+          "Pope Hyginus"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.6564,
+      "precision_std": 0.0229,
+      "recall_mean": 0.7111,
+      "recall_std": 0.0994,
+      "f1_mean": 0.6788,
+      "f1_std": 0.0271,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 4.97,
+      "time_std": 0.45,
+      "tokens_mean": 542.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope Cornelius",
+          "Pope Fabian",
+          "Pope Peter"
+        ],
+        "fn": [
+          "Pope Hyginus"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "query_id": "T5_q4",
+  "template": "T5",
+  "predicate": "a p+ ?b FILTER(?b) \u2014 forward closure, irreflexive, post-filter excludes one result",
+  "n_expected": 5,
+  "timestamp": "2026-08-21T17:36:17",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.6667,
+      "precision_std": 0.0,
+      "recall_mean": 0.8,
+      "recall_std": 0.0,
+      "f1_mean": 0.7273,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 6,
+      "time_mean": 3.46,
+      "time_std": 0.24,
+      "tokens_mean": 414.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope John Paul I",
+          "Pope John XXIII"
+        ],
+        "fn": [
+          "Pope Leo XIV"
+        ]
+      }
+    }
+  }
+}

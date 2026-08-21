@@ -1,0 +1,207 @@
+{
+  "query_id": "T7_q1",
+  "template": "T7",
+  "predicate": "Popes born in Italy \u2014 wasBornIn / isLocatedIn+",
+  "n_expected": 216,
+  "timestamp": "2026-08-12T12:19:53",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.8992,
+      "precision_std": 0.0331,
+      "recall_mean": 0.0463,
+      "recall_std": 0.0191,
+      "f1_mean": 0.0876,
+      "f1_std": 0.0345,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.85,
+      "time_std": 0.51,
+      "tokens_mean": 148.0,
+      "tokens_std": 27.0,
+      "examples": {
+        "fp": [
+          "Pope Francis"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.8992,
+      "precision_std": 0.0331,
+      "recall_mean": 0.0463,
+      "recall_std": 0.0191,
+      "f1_mean": 0.0876,
+      "f1_std": 0.0345,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 2.18,
+      "time_std": 1.31,
+      "tokens_mean": 149.0,
+      "tokens_std": 27.0,
+      "examples": {
+        "fp": [
+          "Pope Francis"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.9,
+      "precision_std": 0.0,
+      "recall_mean": 0.0417,
+      "recall_std": 0.0,
+      "f1_mean": 0.0796,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 1.71,
+      "time_std": 0.26,
+      "tokens_mean": 156.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Pope Francis"
+        ],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 0.7722,
+      "precision_std": 0.0736,
+      "recall_mean": 0.6574,
+      "recall_std": 0.1196,
+      "f1_mean": 0.7069,
+      "f1_std": 0.0949,
+      "n_runs": 5,
+      "n_generated": 183.8,
+      "time_mean": 20.77,
+      "time_std": 3.75,
+      "tokens_mean": 3163.0,
+      "tokens_std": 468.0,
+      "examples": {
+        "fp": [
+          "Pope Adrian II",
+          "Pope Alexander VI",
+          "Pope Anastasius I"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian III",
+          "Adrian V"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.7519,
+      "precision_std": 0.0432,
+      "recall_mean": 0.5889,
+      "recall_std": 0.0789,
+      "f1_mean": 0.6563,
+      "f1_std": 0.0363,
+      "n_runs": 5,
+      "n_generated": 170.4,
+      "time_mean": 20.74,
+      "time_std": 4.17,
+      "tokens_mean": 3032.0,
+      "tokens_std": 506.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander VI",
+          "Pope Anastasius I",
+          "Pope Anicetus"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian V",
+          "Agapetus II"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 0,
+      "time_mean": 5.12,
+      "time_std": 0.21,
+      "tokens_mean": 584.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Adeodatus I",
+          "Adeodatus II",
+          "Adrian I"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.7327,
+      "precision_std": 0.0196,
+      "recall_mean": 0.6722,
+      "recall_std": 0.043,
+      "f1_mean": 0.7003,
+      "f1_std": 0.0211,
+      "n_runs": 5,
+      "n_generated": 198.4,
+      "time_mean": 22.22,
+      "time_std": 2.73,
+      "tokens_mean": 3479.0,
+      "tokens_std": 253.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander I",
+          "Pope Alexander VI",
+          "Pope Anastasius I"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian III",
+          "Adrian V"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.7486,
+      "precision_std": 0.027,
+      "recall_mean": 0.637,
+      "recall_std": 0.0762,
+      "f1_mean": 0.6851,
+      "f1_std": 0.0331,
+      "n_runs": 5,
+      "n_generated": 184.6,
+      "time_mean": 21.96,
+      "time_std": 5.07,
+      "tokens_mean": 3274.0,
+      "tokens_std": 465.0,
+      "examples": {
+        "fp": [
+          "Pope Alexander V",
+          "Pope Alexander VI",
+          "Pope Anastasius I"
+        ],
+        "fn": [
+          "Adeodatus II",
+          "Adrian III",
+          "Adrian V"
+        ]
+      }
+    }
+  }
+}

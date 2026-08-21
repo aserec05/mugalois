@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T4_q7",
+  "template": "T4",
+  "predicate": "Countries that won the FIFA World Cup \u2014 2-hop T4a pure",
+  "n_expected": 8,
+  "timestamp": "2026-08-20T09:39:43",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.4205,
+      "precision_std": 0.0472,
+      "recall_mean": 0.625,
+      "recall_std": 0.0,
+      "f1_mean": 0.5016,
+      "f1_std": 0.0324,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 20.85,
+      "time_std": 1.74,
+      "tokens_mean": 2335.0,
+      "tokens_std": 183.0,
+      "examples": {
+        "fp": [
+          "Croatia",
+          "French Republic",
+          "Japan"
+        ],
+        "fn": [
+          "Argentina",
+          "England",
+          "France"
+        ]
+      }
+    }
+  }
+}

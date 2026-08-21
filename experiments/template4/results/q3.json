@@ -1,0 +1,33 @@
+{
+  "query_id": "q3",
+  "template": "T4",
+  "predicate": "wrote/is set in/is located in",
+  "n_expected": 6,
+  "timestamp": "2026-07-29T16:23:48",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 0.7595,
+      "precision_std": 0.044,
+      "recall_mean": 0.6333,
+      "recall_std": 0.1826,
+      "f1_mean": 0.6805,
+      "f1_std": 0.1125,
+      "n_runs": 5,
+      "n_generated": 5,
+      "time_mean": 14.15,
+      "time_std": 0.9,
+      "tokens_mean": 2483.0,
+      "tokens_std": 521.0,
+      "examples": {
+        "fp": [
+          "Twelfth Night"
+        ],
+        "fn": [
+          "Much Ado About Nothing",
+          "The Taming of the Shrew",
+          "The Two Gentlemen of Verona"
+        ]
+      }
+    }
+  }
+}

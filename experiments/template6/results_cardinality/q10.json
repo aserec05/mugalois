@@ -1,0 +1,150 @@
+{
+  "query_id": "q10",
+  "template": "T6-card",
+  "predicate": "Einstein (married to | had child | sibling studied at) ?b \u2014 forward, 2 simple + 1 T4",
+  "n_expected": 6,
+  "timestamp": "2026-07-31T13:44:49",
+  "results": {
+    "HolisticOnly": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6667,
+      "recall_std": 0.0,
+      "f1_mean": 0.8,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 4,
+      "time_mean": 1.12,
+      "time_std": 0.21,
+      "tokens_mean": 121.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Lieserl Einstein",
+          "University of Zurich"
+        ]
+      }
+    },
+    "AllParallel": {
+      "precision_mean": 0.5834,
+      "precision_std": 0.038,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.6857,
+      "f1_std": 0.0261,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 5.99,
+      "time_std": 0.76,
+      "tokens_mean": 761.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Berlin",
+          "University of Munich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "Card\u226410": {
+      "precision_mean": 0.5834,
+      "precision_std": 0.038,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.6857,
+      "f1_std": 0.0261,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 4.42,
+      "time_std": 0.34,
+      "tokens_mean": 472.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Bern",
+          "University of Freiburg"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "Card\u226415": {
+      "precision_mean": 0.5695,
+      "precision_std": 0.031,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.6762,
+      "f1_std": 0.0213,
+      "n_runs": 5,
+      "n_generated": 8.8,
+      "time_mean": 4.58,
+      "time_std": 0.2,
+      "tokens_mean": 476.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Bern",
+          "University of Freiburg"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "Card\u226420": {
+      "precision_mean": 0.5834,
+      "precision_std": 0.038,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.6857,
+      "f1_std": 0.0261,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 4.42,
+      "time_std": 0.56,
+      "tokens_mean": 476.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Bern",
+          "University of Freiburg"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "MuGaloisHybrid": {
+      "precision_mean": 0.5695,
+      "precision_std": 0.031,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.6762,
+      "f1_std": 0.0213,
+      "n_runs": 5,
+      "n_generated": 8.8,
+      "time_mean": 10.91,
+      "time_std": 9.39,
+      "tokens_mean": 788.0,
+      "tokens_std": 125.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Bern",
+          "University of G\u00f6ttingen"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    }
+  }
+}

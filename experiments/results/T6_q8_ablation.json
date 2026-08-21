@@ -1,0 +1,185 @@
+{
+  "query_id": "T6_q8",
+  "template": "T6",
+  "predicate": "?b (won | hosted) FIFA World Cup \u2014 backward, 2 simple branches",
+  "n_expected": 20,
+  "timestamp": "2026-08-12T16:24:34",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 1.38,
+      "time_std": 0.25,
+      "tokens_mean": 116.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.69,
+      "recall_std": 0.0418,
+      "f1_mean": 0.816,
+      "f1_std": 0.0291,
+      "n_runs": 5,
+      "n_generated": 13.8,
+      "time_mean": 1.21,
+      "time_std": 0.09,
+      "tokens_mean": 121.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.9333,
+      "precision_std": 0.1087,
+      "recall_mean": 0.54,
+      "recall_std": 0.0548,
+      "f1_mean": 0.6789,
+      "f1_std": 0.0371,
+      "n_runs": 5,
+      "n_generated": 11.8,
+      "time_mean": 1.12,
+      "time_std": 0.19,
+      "tokens_mean": 135.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "England"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.59,
+      "recall_std": 0.0894,
+      "f1_mean": 0.7392,
+      "f1_std": 0.0659,
+      "n_runs": 5,
+      "n_generated": 11.8,
+      "time_mean": 1.25,
+      "time_std": 0.11,
+      "tokens_mean": 130.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 0.9846,
+      "precision_std": 0.0344,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.7455,
+      "f1_std": 0.0102,
+      "n_runs": 5,
+      "n_generated": 12.2,
+      "time_mean": 4.11,
+      "time_std": 0.59,
+      "tokens_mean": 610.0,
+      "tokens_std": 14.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.55,
+      "recall_std": 0.0,
+      "f1_mean": 0.7097,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 11,
+      "time_mean": 2.04,
+      "time_std": 0.36,
+      "tokens_mean": 248.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.6,
+      "recall_std": 0.0,
+      "f1_mean": 0.75,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 12,
+      "time_mean": 6.5,
+      "time_std": 0.63,
+      "tokens_mean": 870.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Germany"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.61,
+      "recall_std": 0.0224,
+      "f1_mean": 0.7576,
+      "f1_std": 0.0169,
+      "n_runs": 5,
+      "n_generated": 12.2,
+      "time_mean": 6.71,
+      "time_std": 0.43,
+      "tokens_mean": 865.0,
+      "tokens_std": 7.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Canada",
+          "Chile",
+          "Japan"
+        ]
+      }
+    }
+  }
+}

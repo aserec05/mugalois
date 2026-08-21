@@ -1,0 +1,31 @@
+{
+  "query_id": "q4",
+  "template": "T4",
+  "predicate": "has member/is located in continent/has name",
+  "n_expected": 22,
+  "timestamp": "2026-07-29T16:24:59",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7818,
+      "recall_std": 0.0203,
+      "f1_mean": 0.8774,
+      "f1_std": 0.0126,
+      "n_runs": 5,
+      "n_generated": 17.2,
+      "time_mean": 14.9,
+      "time_std": 0.95,
+      "tokens_mean": 2358.0,
+      "tokens_std": 53.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Eswatini",
+          "Gabon",
+          "Seychelles"
+        ]
+      }
+    }
+  }
+}

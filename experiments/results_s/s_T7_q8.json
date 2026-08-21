@@ -1,0 +1,35 @@
+{
+  "query_id": "s_T7_q8",
+  "template": "T7",
+  "predicate": "Casino Royale sequel+ / directedBy / wasBornIn / isLocatedIn+",
+  "n_expected": 11,
+  "timestamp": "2026-08-19T17:31:18",
+  "results": {
+    "\u00b5-Galois_S": {
+      "precision_mean": 0.7222,
+      "precision_std": 0.052,
+      "recall_mean": 0.5637,
+      "recall_std": 0.0407,
+      "f1_mean": 0.6326,
+      "f1_std": 0.0408,
+      "n_runs": 5,
+      "n_generated": 8.6,
+      "time_mean": 8.35,
+      "time_std": 0.75,
+      "tokens_mean": 1591.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Earth",
+          "Europe",
+          "North America"
+        ],
+        "fn": [
+          "Alameda County",
+          "Baden-W\u00fcrttemberg",
+          "Berkshire"
+        ]
+      }
+    }
+  }
+}

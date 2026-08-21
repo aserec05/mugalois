@@ -1,0 +1,5 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+A_baseline,12,1.0,0.0,0.75,0.0,0.8571,0.0,5,9,1.73,0.46,165.0,0.0
+B_motivational_only,12,1.0,0.0,0.7667,0.0373,0.8675,0.0233,5,9.2,3.01,0.54,328.0,105.0
+C_cap_only,12,1.0,0.0,0.75,0.0,0.8571,0.0,5,9,1.53,0.08,165.0,0.0
+D_motivational_capped,12,1.0,0.0,0.75,0.0,0.8571,0.0,5,9,3.32,0.81,327.0,106.0

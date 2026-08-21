@@ -1,0 +1,113 @@
+{
+  "query_id": "T5_q7",
+  "template": "T5",
+  "predicate": "All successors of Martin V (forward transitive closure, irreflexive) \u2014 VERY HIGH CARDINALITY, 49 hops, 1417-1878",
+  "n_expected": 49,
+  "timestamp": "2026-08-21T10:52:46",
+  "results": {
+    "F_cov050": {
+      "precision_mean": 0.8499,
+      "precision_std": 0.0131,
+      "recall_mean": 0.8531,
+      "recall_std": 0.0224,
+      "f1_mean": 0.8513,
+      "f1_std": 0.0101,
+      "n_runs": 5,
+      "n_generated": 49.2,
+      "time_mean": 7.24,
+      "time_std": 0.25,
+      "tokens_mean": 759.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope John Paul I",
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Callistus III",
+          "Pope Clement IX",
+          "Pope Clement XIII"
+        ]
+      }
+    },
+    "F_cov065": {
+      "precision_mean": 0.8497,
+      "precision_std": 0.0168,
+      "recall_mean": 0.8531,
+      "recall_std": 0.0224,
+      "f1_mean": 0.8513,
+      "f1_std": 0.0174,
+      "n_runs": 5,
+      "n_generated": 49.2,
+      "time_mean": 7.77,
+      "time_std": 0.64,
+      "tokens_mean": 759.0,
+      "tokens_std": 5.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope John Paul I",
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Callistus III",
+          "Pope Clement IX",
+          "Pope Clement XIII"
+        ]
+      }
+    },
+    "F_cov080": {
+      "precision_mean": 0.8456,
+      "precision_std": 0.0172,
+      "recall_mean": 0.8694,
+      "recall_std": 0.0183,
+      "f1_mean": 0.8572,
+      "f1_std": 0.0108,
+      "n_runs": 5,
+      "n_generated": 50.4,
+      "time_mean": 8.02,
+      "time_std": 0.79,
+      "tokens_mean": 764.0,
+      "tokens_std": 8.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope John Paul I",
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Callistus III",
+          "Pope Clement IX",
+          "Pope Clement XIII"
+        ]
+      }
+    },
+    "F_cov095": {
+      "precision_mean": 0.8487,
+      "precision_std": 0.0122,
+      "recall_mean": 0.8449,
+      "recall_std": 0.0183,
+      "f1_mean": 0.8466,
+      "f1_std": 0.0027,
+      "n_runs": 5,
+      "n_generated": 48.8,
+      "time_mean": 7.34,
+      "time_std": 0.51,
+      "tokens_mean": 757.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Benedict XIV",
+          "Pope John Paul I",
+          "Pope John Paul II"
+        ],
+        "fn": [
+          "Pope Callistus III",
+          "Pope Clement IX",
+          "Pope Clement XIII"
+        ]
+      }
+    }
+  }
+}

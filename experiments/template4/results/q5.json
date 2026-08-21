@@ -1,0 +1,31 @@
+{
+  "query_id": "q5",
+  "template": "T4",
+  "predicate": "awarded to/born in/country/continent",
+  "n_expected": 7,
+  "timestamp": "2026-07-29T16:26:14",
+  "results": {
+    "MuGaloisMultiPath": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.2857,
+      "recall_std": 0.0,
+      "f1_mean": 0.4444,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 9.38,
+      "time_std": 1.07,
+      "tokens_mean": 949.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Gao Xingjian",
+          "Kenzabur\u014d \u014ce",
+          "Mo Yan"
+        ]
+      }
+    }
+  }
+}

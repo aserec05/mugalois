@@ -1,0 +1,114 @@
+{
+  "q7": {
+    "description": "Einstein (married to | child studied at) ?b — forward simple + T4",
+    "source": "Albert Einstein",
+    "target_var": "?b",
+    "direction": "forward",
+    "branches_simple": [
+      "was married to"
+    ],
+    "branches_complex": [
+      {
+        "type": "T4",
+        "hops": ["had as child", "studied at"],
+        "description": "Albert Einstein had as child ?inter, ?inter studied at ?b"
+      }
+    ],
+    "sparql": "SELECT ?b WHERE { { :Albert_Einstein :marriedTo ?b } UNION { :Albert_Einstein :hasChild ?c . ?c :studiedAt ?b } }",
+    "nl_prompt_naive": "Who did Albert Einstein marry and where did his children study?",
+    "nl_prompt_precise": "List all people Albert Einstein married and all universities where his children studied.",
+    "ground_truth": [
+      "Elsa Einstein",
+      "Mileva Marić",
+      "ETH Zurich",
+      "University of Zurich"
+    ],
+    "n_branches": 2,
+    "n_simple": 1,
+    "n_complex": 1,
+    "optimal_strategy": "hybrid"
+  },
+  "q8": {
+    "description": "?b (won | hosted) FIFA World Cup — backward, 2 simple branches",
+    "source": "FIFA World Cup",
+    "target_var": "?b",
+    "direction": "backward",
+    "branches_simple": [
+      "won a",
+      "hosted a"
+    ],
+    "branches_complex": [],
+    "sparql": "SELECT DISTINCT ?b WHERE { { ?b :wonEditionOf :FIFA_World_Cup } UNION { ?b :hostedEditionOf :FIFA_World_Cup } }",
+    "nl_prompt_naive": "Which countries have won or hosted the FIFA World Cup?",
+    "nl_prompt_precise": "List all countries that won a FIFA World Cup edition and all countries that hosted a FIFA World Cup edition.",
+    "ground_truth": [
+      "Uruguay", "Italy", "France", "Brazil", "Switzerland",
+      "Sweden", "Chile", "England", "Mexico", "West Germany",
+      "Germany", "Argentina", "Spain", "United States",
+      "South Korea", "Japan", "South Africa", "Russia",
+      "Qatar", "Canada"
+    ],
+    "n_branches": 2,
+    "n_simple": 2,
+    "n_complex": 0,
+    "optimal_strategy": "holistic"
+  },
+  "q9": {
+    "description": "?b (won | lost final | finished third) FIFA World Cup — backward, 3 simple branches",
+    "source": "FIFA World Cup",
+    "target_var": "?b",
+    "direction": "backward",
+    "branches_simple": [
+      "won a",
+      "lost the final of a",
+      "finished third in a"
+    ],
+    "branches_complex": [],
+    "sparql": "SELECT DISTINCT ?b WHERE { { ?b :wonEditionOf :FIFA_World_Cup } UNION { ?b :lostFinalOf :FIFA_World_Cup } UNION { ?b :finishedThirdIn :FIFA_World_Cup } }",
+    "nl_prompt_naive": "Which countries have won, finished second, or finished third in the FIFA World Cup?",
+    "nl_prompt_precise": "List all FIFA World Cup winners, runners-up, and third-place finishers.",
+    "ground_truth": [
+      "Uruguay", "Italy", "West Germany", "Germany", "Brazil",
+      "England", "Argentina", "France", "Spain",
+      "Czechoslovakia", "Hungary", "Sweden", "Netherlands",
+      "Poland", "Austria", "Chile", "Portugal",
+      "Croatia", "Belgium", "South Korea", "Turkey"
+    ],
+    "n_branches": 3,
+    "n_simple": 3,
+    "n_complex": 0,
+    "optimal_strategy": "parallel"
+  },
+  "q10": {
+    "description": "Einstein (married to | had child | sibling studied at) ?b — forward, 2 simple + 1 T4",
+    "source": "Albert Einstein",
+    "target_var": "?b",
+    "direction": "forward",
+    "branches_simple": [
+      "was married to",
+      "had as child"
+    ],
+    "branches_complex": [
+      {
+        "type": "T4",
+        "hops": ["had as sibling", "studied at"],
+        "description": "Albert Einstein had as sibling ?inter, ?inter studied at ?b"
+      }
+    ],
+    "sparql": "SELECT ?b WHERE { { :Albert_Einstein :marriedTo ?b } UNION { :Albert_Einstein :hasChild ?b } UNION { :Albert_Einstein :hasSibling ?s . ?s :studiedAt ?b } }",
+    "nl_prompt_naive": "Who did Albert Einstein marry, who were his children, and where did his siblings study?",
+    "nl_prompt_precise": "List all spouses of Albert Einstein, all his children, and all universities where his siblings studied.",
+    "ground_truth": [
+      "Elsa Einstein",
+      "Mileva Marić",
+      "Hans Albert Einstein",
+      "Eduard Einstein",
+      "Lieserl Einstein",
+      "University of Zurich"
+    ],
+    "n_branches": 3,
+    "n_simple": 2,
+    "n_complex": 1,
+    "optimal_strategy": "hybrid"
+  }
+}

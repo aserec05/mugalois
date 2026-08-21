@@ -1,0 +1,205 @@
+{
+  "query_id": "T1_q4",
+  "template": "T1",
+  "predicate": "",
+  "n_expected": 17,
+  "timestamp": "2026-08-16T13:29:06",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.5433,
+      "precision_std": 0.083,
+      "recall_mean": 0.3294,
+      "recall_std": 0.0322,
+      "f1_mean": 0.4097,
+      "f1_std": 0.0484,
+      "n_runs": 5,
+      "n_generated": 10.4,
+      "time_mean": 1.73,
+      "time_std": 0.22,
+      "tokens_mean": 190.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Gold Medal of the Royal Society of Arts",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.2156,
+      "precision_std": 0.0294,
+      "recall_mean": 0.2706,
+      "recall_std": 0.0322,
+      "f1_mean": 0.2398,
+      "f1_std": 0.0302,
+      "n_runs": 5,
+      "n_generated": 21.4,
+      "time_mean": 2.88,
+      "time_std": 0.12,
+      "tokens_mean": 370.0,
+      "tokens_std": 12.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Curie Institute",
+          "Curie Point"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1176,
+      "recall_std": 0.0,
+      "f1_mean": 0.2105,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 0.98,
+      "time_std": 0.14,
+      "tokens_mean": 95.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_Hol": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1176,
+      "recall_std": 0.0,
+      "f1_mean": 0.2105,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 2.0,
+      "time_std": 0.24,
+      "tokens_mean": 513.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_Dec": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.1176,
+      "recall_std": 0.0,
+      "f1_mean": 0.2105,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.18,
+      "time_std": 0.18,
+      "tokens_mean": 157.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_C": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.2353,
+      "recall_std": 0.0,
+      "f1_mean": 0.32,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 1.89,
+      "time_std": 0.11,
+      "tokens_mean": 377.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_F-M": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 0.2353,
+      "recall_std": 0.0,
+      "f1_mean": 0.32,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 8,
+      "time_mean": 2.13,
+      "time_std": 0.19,
+      "tokens_mean": 376.0,
+      "tokens_std": 1.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Grammy Award",
+          "Honorary Doctorate from the University of Paris"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.6,
+      "precision_std": 0.2236,
+      "recall_mean": 0.2118,
+      "recall_std": 0.0526,
+      "f1_mean": 0.2981,
+      "f1_std": 0.049,
+      "n_runs": 5,
+      "n_generated": 6.8,
+      "time_mean": 1.95,
+      "time_std": 0.2,
+      "tokens_mean": 354.0,
+      "tokens_std": 47.0,
+      "examples": {
+        "fp": [
+          "Copley Medal",
+          "Gold Medal of the Royal Society of Arts",
+          "Grammy Award"
+        ],
+        "fn": [
+          "72 scientist women names on the Eiffel tower",
+          "Actonian Prize",
+          "Albert Medal"
+        ]
+      }
+    }
+  }
+}

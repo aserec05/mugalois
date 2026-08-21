@@ -1,0 +1,2 @@
+strategy,n_expected,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,n_runs,n_generated,time_mean,time_std,tokens_mean,tokens_std
+MuGaloisMultiPath,9,1.0,0.0,0.6667,0.0,0.8,0.0,5,6,14.19,1.54,3591.0,1045.0

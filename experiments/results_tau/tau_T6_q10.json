@@ -1,0 +1,149 @@
+{
+  "query_id": "tau_T6_q10",
+  "template": "T6",
+  "predicate": "Einstein (married to | had child | sibling studied at) ?b \u2014 forward, 2 simple + 1 T4",
+  "n_expected": 6,
+  "timestamp": "2026-08-19T12:28:29",
+  "results": {
+    "C_\u03b1=0.2": {
+      "precision_mean": 0.5511,
+      "precision_std": 0.0501,
+      "recall_mean": 0.9,
+      "recall_std": 0.0913,
+      "f1_mean": 0.6833,
+      "f1_std": 0.0632,
+      "n_runs": 5,
+      "n_generated": 9.8,
+      "time_mean": 4.3,
+      "time_std": 0.48,
+      "tokens_mean": 503.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "Maria Einstein",
+          "University of G\u00f6ttingen"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.35": {
+      "precision_mean": 0.5273,
+      "precision_std": 0.0249,
+      "recall_mean": 0.9333,
+      "recall_std": 0.0913,
+      "f1_mean": 0.6735,
+      "f1_std": 0.0443,
+      "n_runs": 5,
+      "n_generated": 10.6,
+      "time_mean": 4.44,
+      "time_std": 0.33,
+      "tokens_mean": 508.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "Maria Einstein",
+          "University of G\u00f6ttingen"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.5": {
+      "precision_mean": 0.5672,
+      "precision_std": 0.048,
+      "recall_mean": 0.8666,
+      "recall_std": 0.0746,
+      "f1_mean": 0.6845,
+      "f1_std": 0.0484,
+      "n_runs": 5,
+      "n_generated": 9.2,
+      "time_mean": 4.67,
+      "time_std": 1.87,
+      "tokens_mean": 578.0,
+      "tokens_std": 172.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "Margot Einstein",
+          "University of Munich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.6": {
+      "precision_mean": 0.5402,
+      "precision_std": 0.0421,
+      "recall_mean": 0.9,
+      "recall_std": 0.0913,
+      "f1_mean": 0.6745,
+      "f1_std": 0.054,
+      "n_runs": 5,
+      "n_generated": 10,
+      "time_mean": 3.84,
+      "time_std": 0.24,
+      "tokens_mean": 504.0,
+      "tokens_std": 4.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "Maria Einstein",
+          "University of Munich"
+        ],
+        "fn": []
+      }
+    },
+    "C_\u03b1=0.7": {
+      "precision_mean": 0.6111,
+      "precision_std": 0.031,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.7048,
+      "f1_std": 0.0213,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 6.98,
+      "time_std": 0.29,
+      "tokens_mean": 889.0,
+      "tokens_std": 3.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "Ludwig Maximilian University of Munich",
+          "University of Zurich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    },
+    "C_\u03b1=0.8": {
+      "precision_mean": 0.6111,
+      "precision_std": 0.031,
+      "recall_mean": 0.8333,
+      "recall_std": 0.0,
+      "f1_mean": 0.7048,
+      "f1_std": 0.0213,
+      "n_runs": 5,
+      "n_generated": 8.2,
+      "time_mean": 7.25,
+      "time_std": 1.06,
+      "tokens_mean": 887.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "ETH Zurich",
+          "University of Munich",
+          "University of Zurich"
+        ],
+        "fn": [
+          "Lieserl Einstein"
+        ]
+      }
+    }
+  }
+}

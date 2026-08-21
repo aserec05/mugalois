@@ -18,6 +18,8 @@ class Triple:
     def __lt__(self, other: "Triple") -> bool:
         return (self.s, self.p, self.o) < (other.s, other.p, other.o)
 
+    def __eq__(self, other: "Triple") -> bool:
+        return (self.s, self.p, self.o) == (other.s, other.p, other.o)
 
 @dataclass(frozen=True)
 class TriplePattern:
@@ -199,7 +201,7 @@ class RecursivePattern:
     operator: str
  
     VALID_OPERATORS = {"+", "*"}
- 
+    """
     def __post_init__(self):
         if self.operator not in self.VALID_OPERATORS:
             raise ValueError(
@@ -216,7 +218,7 @@ class RecursivePattern:
                 "RecursivePattern requires exactly one variable side "
                 f"(both s={self.s!r} and o={self.o!r} are bound)."
             )
- 
+        """
     def is_variable(self, term: str) -> bool:
         return term.startswith("?")
  

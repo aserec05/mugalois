@@ -1,0 +1,33 @@
+{
+  "query_id": "T5_q2",
+  "template": "T5",
+  "predicate": "All predecessors of John Paul II, including himself (backward transitive closure, reflexive) \u2014 VERY HIGH CARDINALITY, full papal lineage",
+  "n_expected": 264,
+  "timestamp": "2026-08-21T17:35:44",
+  "results": {
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 1,
+      "time_mean": 3.03,
+      "time_std": 0.38,
+      "tokens_mean": 371.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "..."
+        ],
+        "fn": [
+          "Pope Adeodatus I",
+          "Pope Adeodatus II",
+          "Pope Adrian I"
+        ]
+      }
+    }
+  }
+}

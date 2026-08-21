@@ -35,6 +35,7 @@ def LLMScan(
     pipeline=None,
     lookahead:     str   = "",
     motivational:  bool  = False,
+    encoding:      str   = "", 
 ) -> set[Triple]:
     """
     Orchestrator.
@@ -44,6 +45,8 @@ def LLMScan(
     mode="key_only"   → force KeyScan
     pipeline          → ClosurePipeline instance (overrides mode for scan)
     lookahead         → optional hint about next hop (T3 path context)
+    encoding          → optional encoding for scan prompts
+     
     """
     seeds_s = seedsOf(pattern.s, env)
     seeds_o = seedsOf(pattern.o, env)
@@ -70,7 +73,7 @@ def LLMScan(
         inject_conds      = []
         post_filter_conds = []
         pattern_vars = {t for t in (pattern.s, pattern.o)
-                        if isinstance(t, str) and t.startswith("?")}
+                        if isinstance(t, str) and t.startswith("?")} 
         for var in pattern_vars:
             post_filter_conds.extend(gamma.get(var))
     else:
@@ -79,6 +82,7 @@ def LLMScan(
             tau_c=tau_condition,
             seed_example=seed_example,
         )
+    
 
     # ── 3. run ────────────────────────────────────────────────────────────────
     if strategy == "seed":
@@ -87,6 +91,9 @@ def LLMScan(
             inject_conds=inject_conds,
             post_filter_conds=post_filter_conds,
             max_iter=max_iter,
+            lookahead=lookahead,
+            motivational=motivational,
+            #encoding=encoding
         )
 
     elif strategy == "key":
@@ -94,6 +101,8 @@ def LLMScan(
             pattern, env, llm,
             inject_conds=inject_conds,
             post_filter_conds=post_filter_conds,
+            lookahead=lookahead,   
+            motivational=motivational
         )
 
     else:  # triple
@@ -106,9 +115,13 @@ def LLMScan(
 
 # ── Strategy selection ────────────────────────────────────────────────────────
 
+SEED_FORCE_THRESHOLD = 20
+
 def _choose_strategy(pattern, env, seeds_s, seeds_o, llm, tau):
     if not seeds_s and not seeds_o:
         return "triple", None
+    if len(seeds_s) + len(seeds_o) > SEED_FORCE_THRESHOLD:
+        return "seed", None
     prompt = genConfidencePrompt(pattern, env)
     resp = llm.chat(build_messages(prompt))
     try:
@@ -133,7 +146,7 @@ def _pick_seed_example(seeds_s, seeds_o):
 # ── Triple / Value scan with optional pipeline ────────────────────────────────
 
 def _run_triple(pattern, env, llm, inject_conds, post_filter_conds,
-                max_iter, pipeline, lookahead="", motivational=False):
+                max_iter, pipeline, lookahead="", motivational=False, encoding=""):
     s_var = pattern.s_is_var()
     o_var = pattern.o_is_var()
 
@@ -151,6 +164,8 @@ def _run_triple(pattern, env, llm, inject_conds, post_filter_conds,
             max_iter=max_iter,
             lookahead=lookahead,
             motivational=motivational,
+            **({"encoding": encoding} if encoding else {}),
+            
         )
         return {Triple(v, pattern.p, pattern.o) for v in values}
 
@@ -162,6 +177,7 @@ def _run_triple(pattern, env, llm, inject_conds, post_filter_conds,
             max_iter=max_iter,
             lookahead=lookahead,
             motivational=motivational,
+            **({"encoding": encoding} if encoding else {}),
         )
         return {Triple(pattern.s, pattern.p, v) for v in values}
 

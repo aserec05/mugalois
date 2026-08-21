@@ -1,0 +1,157 @@
+{
+  "query_id": "q7",
+  "template": "T7",
+  "predicate": "directed / hasWon(Academy_Award) / hasSequel+",
+  "n_expected": 1,
+  "timestamp": "2026-08-09T18:30:02",
+  "results": {
+    "NL_naive": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 0.85,
+      "time_std": 0.06,
+      "tokens_mean": 81.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Dunkirk",
+          "Inception"
+        ],
+        "fn": []
+      }
+    },
+    "NL_precise": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.01,
+      "time_std": 0.38,
+      "tokens_mean": 91.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Inception 2"
+        ],
+        "fn": []
+      }
+    },
+    "SPARQL": {
+      "precision_mean": 0.4,
+      "precision_std": 0.2236,
+      "recall_mean": 0.8,
+      "recall_std": 0.4472,
+      "f1_mean": 0.5334,
+      "f1_std": 0.2982,
+      "n_runs": 5,
+      "n_generated": 1.8,
+      "time_mean": 0.91,
+      "time_std": 0.06,
+      "tokens_mean": 129.0,
+      "tokens_std": 2.0,
+      "examples": {
+        "fp": [
+          "Inception 2"
+        ],
+        "fn": [
+          "The_Dark_Knight_Rises"
+        ]
+      }
+    },
+    "Holistic": {
+      "precision_mean": 0.3333,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.5,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 0.95,
+      "time_std": 0.12,
+      "tokens_mean": 84.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Dunkirk",
+          "Inception"
+        ],
+        "fn": []
+      }
+    },
+    "Holistic_psych": {
+      "precision_mean": 0.5,
+      "precision_std": 0.0,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.6667,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 1.04,
+      "time_std": 0.1,
+      "tokens_mean": 180.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [
+          "Inception"
+        ],
+        "fn": []
+      }
+    },
+    "Segment": {
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 3,
+      "time_mean": 36.25,
+      "time_std": 17.13,
+      "tokens_mean": 5248.0,
+      "tokens_std": 1520.0,
+      "examples": {
+        "fp": [
+          "A Quiet Place Part II",
+          "A Quiet Place Part III",
+          "A Quiet Place Part IV"
+        ],
+        "fn": [
+          "The_Dark_Knight_Rises"
+        ]
+      }
+    },
+    "\u00b5-Galois": {
+      "precision_mean": 0.5667,
+      "precision_std": 0.2528,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.7,
+      "f1_std": 0.1826,
+      "n_runs": 5,
+      "n_generated": 2,
+      "time_mean": 3.27,
+      "time_std": 0.76,
+      "tokens_mean": 562.0,
+      "tokens_std": 55.0,
+      "examples": {
+        "fp": [
+          "Inception 2"
+        ],
+        "fn": []
+      }
+    }
+  }
+}

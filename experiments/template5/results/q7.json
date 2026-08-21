@@ -1,0 +1,35 @@
+{
+  "query_id": "q7",
+  "template": "T5",
+  "predicate": "came immediately before",
+  "n_expected": 49,
+  "timestamp": "2026-07-29T16:37:54",
+  "results": {
+    "MuGaloisRec": {
+      "precision_mean": 0.7949,
+      "precision_std": 0.0072,
+      "recall_mean": 0.7918,
+      "recall_std": 0.0365,
+      "f1_mean": 0.7931,
+      "f1_std": 0.0216,
+      "n_runs": 5,
+      "n_generated": 48.8,
+      "time_mean": 6.17,
+      "time_std": 0.65,
+      "tokens_mean": 645.0,
+      "tokens_std": 9.0,
+      "examples": {
+        "fp": [
+          "Pope Adrian VI",
+          "Pope Benedict XV",
+          "Pope Benedict XVI"
+        ],
+        "fn": [
+          "Pope Alexander VII",
+          "Pope Clement VIII",
+          "Pope Clement XI"
+        ]
+      }
+    }
+  }
+}

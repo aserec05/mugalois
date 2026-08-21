@@ -1,0 +1,97 @@
+{
+  "query_id": "q5",
+  "template": "T5-ablation",
+  "predicate": "came immediately before",
+  "n_expected": 12,
+  "timestamp": "2026-06-30T14:16:56",
+  "results": {
+    "A_baseline": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.73,
+      "time_std": 0.46,
+      "tokens_mean": 165.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    },
+    "B_motivational_only": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.7667,
+      "recall_std": 0.0373,
+      "f1_mean": 0.8675,
+      "f1_std": 0.0233,
+      "n_runs": 5,
+      "n_generated": 9.2,
+      "time_mean": 3.01,
+      "time_std": 0.54,
+      "tokens_mean": 328.0,
+      "tokens_std": 105.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    },
+    "C_cap_only": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 1.53,
+      "time_std": 0.08,
+      "tokens_mean": 165.0,
+      "tokens_std": 0.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    },
+    "D_motivational_capped": {
+      "precision_mean": 1.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.75,
+      "recall_std": 0.0,
+      "f1_mean": 0.8571,
+      "f1_std": 0.0,
+      "n_runs": 5,
+      "n_generated": 9,
+      "time_mean": 3.32,
+      "time_std": 0.81,
+      "tokens_mean": 327.0,
+      "tokens_std": 106.0,
+      "examples": {
+        "fp": [],
+        "fn": [
+          "Pope Benedict XV",
+          "Pope Benedict XVI",
+          "Pope Francis"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "query_id": "T2_q4",
+  "template": "T2",
+  "predicate": "",
+  "n_expected": 38,
+  "timestamp": "2026-08-21T17:11:19",
+  "results": {
+    "\u00b5-Galois_C_05": {
+      "precision_mean": 0.3856,
+      "precision_std": 0.1169,
+      "recall_mean": 0.2631,
+      "recall_std": 0.1765,
+      "f1_mean": 0.3072,
+      "f1_std": 0.1563,
+      "n_runs": 5,
+      "n_generated": 24.2,
+      "time_mean": 7.12,
+      "time_std": 1.87,
+      "tokens_mean": 1205.0,
+      "tokens_std": 297.0,
+      "examples": {
+        "fp": [
+          "Argentina",
+          "Australia",
+          "Brazil"
+        ],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Bolivia"
+        ]
+      }
+    },
+    "\u00b5-Galois_FM_05": {
+      "precision_mean": 0.369,
+      "precision_std": 0.1411,
+      "recall_mean": 0.4895,
+      "recall_std": 0.2874,
+      "f1_mean": 0.3779,
+      "f1_std": 0.1597,
+      "n_runs": 5,
+      "n_generated": 58.2,
+      "time_mean": 14.98,
+      "time_std": 11.39,
+      "tokens_mean": 3312.0,
+      "tokens_std": 3117.0,
+      "examples": {
+        "fp": [
+          "Argentina",
+          "Australia",
+          "Brazil"
+        ],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Bolivia"
+        ]
+      }
+    },
+    "\u00b5-Galois_F": {
+      "precision_mean": 0.3648,
+      "precision_std": 0.0626,
+      "recall_mean": 0.2895,
+      "recall_std": 0.1943,
+      "f1_mean": 0.2999,
+      "f1_std": 0.0941,
+      "n_runs": 5,
+      "n_generated": 30.6,
+      "time_mean": 9.44,
+      "time_std": 6.04,
+      "tokens_mean": 1561.0,
+      "tokens_std": 828.0,
+      "examples": {
+        "fp": [
+          "Argentina",
+          "Australia",
+          "Brazil"
+        ],
+        "fn": [
+          "Afghanistan",
+          "Angola",
+          "Bolivia"
+        ]
+      }
+    }
+  }
+}
